@@ -9,7 +9,5 @@
 	</head>
 	<body>
 		gsfasefasdfdfdfd
-		<hr>
-		<a href="<c:url value='/regGatherRegister'/>">정기모임등록</a><br><br>
 	</body>
 </html>

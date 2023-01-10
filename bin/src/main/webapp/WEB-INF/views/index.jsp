@@ -8,8 +8,6 @@
 		<title>Index</title>
 	</head>
 	<body>
-		gsfasefasdfdfdfd
-		<hr>
-		<a href="<c:url value='/regGatherRegister'/>">정기모임등록</a><br><br>
+		gsfasefasd
 	</body>
 </html>

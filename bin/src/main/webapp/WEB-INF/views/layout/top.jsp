@@ -5,11 +5,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Index</title>
+		<title>Insert title here</title>
 	</head>
 	<body>
-		gsfasefasdfdfdfd
-		<hr>
-		<a href="<c:url value='/regGatherRegister'/>">정기모임등록</a><br><br>
+		
 	</body>
 </html>

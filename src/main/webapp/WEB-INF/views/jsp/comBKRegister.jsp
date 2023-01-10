@@ -5,11 +5,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Index</title>
+		<title>모두의 버킷리스트 모임 등록 페이지</title>
 	</head>
 	<body>
 		gsfasefasdfdfdfd
-		<hr>
-		<a href="<c:url value='/regGatherRegister'/>">정기모임등록</a><br><br>
 	</body>
 </html>
