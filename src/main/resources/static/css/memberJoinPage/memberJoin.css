@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+#addressSrchBtn {
+	font-size:17px;
+	margin-left:9px;
+}
+
+
+.agreeCheck {
+	text-align:center;
+}
+
+
+#calenderImg {
+	width:25px;
+	height:25px;
+	margin-left:3px;
+	margin-bottom:-5px;
+}
+
+
+#consentTable {
+	width:500px;
+	margin:0 auto;
+}
+
+
+#consentTable tr th {
+	text-align:left;
+}
+
+
+#domainText {
+	width:auto;
+}
+
+
+#memJoinTitle {
+	text-align:center;
+	}
+
+
+#memJoinDiv {
+	
+}
+
+
+#insertEmail {
+	width:122px;
+}
+
+
+.insertMemInfo {
+	height:26px;
+	font-size:17px;
+}
+
+
+#interestInfo {
+	font-size:25px;
+	font-weight:bold;
+	padding-top:54px;
+}
+
+
+#idCheck {
+	font-size:16px;
+	height:32px;
+}
+
+
+#insertMemID {
+	width:400px;
+}
+
+
+#insertMemPW {
+	width:500px;
+}
+
+
+#insertMemPWCheck {
+	width:500px;
+}
+
+
+.insertTxt {
+	padding-bottom:23px;
+	padding-top:0px;
+}
+
+
+#joinBtn {
+	width:490px;
+	height:37px;
+	font-size:23px;
+}
+
+
+#joinMemberTable {
+	width:500px;
+	margin-left:auto;
+	margin-right:auto;
+	border-collapse:collapse;
+	border:1px solid #dcdcdc;
+}
+
+
+#joinMemberTable tr th {
+	text-align:left;
+	font-size:21px;
+}
+
+
+#joinMemberTable tr {
+	height:41px;
+}
+
+
+#sample6_postcode {
+	width:100px;
+	font-size:14px;
+}
+
+
+#sample6_address {
+	width:490px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
