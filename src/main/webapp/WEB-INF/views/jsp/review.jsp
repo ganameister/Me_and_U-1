@@ -7,7 +7,9 @@
 		<meta charset="UTF-8">
 		<title>review</title>
 		<!-- Top -->
-		<c:import url="/WEB-INF/views/layout/top.jsp" /> 	
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/review.css' />">
+		<c:import url="/WEB-INF/views/layout/top.jsp" />
+		<script src="<c:url value='/js/review.js' />"></script> 	
 		<!--//Top  -->
 	</head>	
 	<body>
