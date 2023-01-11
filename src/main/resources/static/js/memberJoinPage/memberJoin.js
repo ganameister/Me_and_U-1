@@ -9,11 +9,11 @@ $(document).ready(function() {
 		if(event.target.value !== 'directInput'){
 			// 선택값을 텍스트에 넣고 텍스트창 막음
 			$("#domainText").val(event.target.value);
-			$("#domainText").attr("disabled", true);
+			$("#domainText").attr("readonly", true);
 		} else {
 			// 공백을 넣고 텍스트창 오픈
 			$("#domainText").val('');
-			$("#domainText").attr("disabled", false);
+			$("#domainText").attr("readonly", false);
 		}
 	});
 	
