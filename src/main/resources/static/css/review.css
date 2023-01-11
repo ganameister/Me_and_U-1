@@ -9,6 +9,10 @@
     --color7: #ffffff; /*배경4*/                 
 }
 
+body {
+	width:1600px;
+	margin:auto;
+}
 
 #main {
     margin: 0;
