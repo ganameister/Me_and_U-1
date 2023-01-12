@@ -6,18 +6,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>review</title>
-		<!-- Top -->
+		<!-- Header -->
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/review.css' />">
-		<c:import url="/WEB-INF/views/layout/top.jsp" />
+		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<script src="<c:url value='/js/review.js' />"></script> 	
-		<!--//Top  -->
+		<!--//Header  -->
 	</head>	
 	<body>
 		<!-- wrap -->
 		<div id="wrap">
-			<!-- Header -->			
-			<c:import url="/WEB-INF/views/layout/head.jsp" /> 
-			<!--// Header -->
+			<!-- Top -->			
+			<c:import url="/WEB-INF/views/layout/top.jsp" /> 
+			<!--// Top -->
 			
 			<!-- main -->
 			<div id="main">
@@ -74,8 +74,34 @@
 							</div>
 						</div>
 						</li>
-						
-						<!--  -->								
+						<li>
+						<div>
+							<img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+							<div>
+							<p>은하수 촬영하기</p>
+							<p>Photo by <a href="https://unsplash.com/@wilstewart3" target="_blank">Wil Stewart</a></p>
+							</div>
+						</div>
+						</li>
+						<li>
+						<div>
+							<img src="https://images.unsplash.com/photo-1486299267070-83823f5448dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="">
+							<div>
+							<p>해리포터와 ~윙가디움 노 레비오사~</p>
+							<p>Photo by <a href="https://unsplash.com/@ignitedit" target="_blank">Mark Basarab</a></p>
+							</div>
+						</div>
+						</li>
+						<li>
+						<div>
+							<img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+							<div>
+							<p>10kg 감량 성공!</p>
+							<p>Photo by <a href="https://unsplash.com/@phiestyphung" target="_blank">Amanda Phung</a></p>
+							</div>
+						</div>
+						</li>
+						<!--삭제  -->								
 					</ol>						
 				</section>	
 				<div>

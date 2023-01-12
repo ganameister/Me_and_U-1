@@ -6,10 +6,9 @@
     --color4: #e6e5e1; /*배경4*/ 
     --color5: #627b82; /*nav,footer배경5*/
     --color6: white; /*배경6*/
-    --color7: #ffffff; /*배경4*/  
-    --color8: #ccd4c7;                 
+    --color7: #ffffff; /*배경4*/ 
+    --color8: #ccd4c7;   
 }
-
 /* navbar
 ------------------------- */
 
@@ -19,7 +18,8 @@
 }
 
 .navbar {
-	width:1600px;
+	width:100%;
+    max-width:1600px;
     display: flex;
     position:fixed;
     z-index:30;
