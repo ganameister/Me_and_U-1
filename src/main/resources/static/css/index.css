@@ -104,14 +104,6 @@ html, body {
 }
 
 /************** SlideShow 시작 **************/
-
-#slideShow {	
-	width:1920px; 
-	position: relative;
-	height: 920px;
-	text-align:center;
-}
-
 /* 양 옆 화살표 버튼 */
 #prevNextButtonBox {
 	position: relative;
@@ -120,32 +112,39 @@ html, body {
 
 #prevButton {
 	position: absolute;
-	top: 370px;
-	left: 10%;
-	opacity: 0.3;
+	top: 45vh;
+	left: 10vw;
+	opacity: 0.2;
 	cursor: pointer;
 }
 
 #nextButton {
 	position: absolute;
-	top: 370px;
-	right: 10%;
-	opacity: 0.3;
+	top: 45vh;
+	right: 10vw;
+	opacity: 0.2;
 	cursor: pointer;
 }
 
 #prevButton:hover {
-	opacity: 0.7;
+	opacity: 0.6;
 }
 
 #nextButton:hover {
-	opacity: 0.7;
+	opacity: 0.6;
 }
 
 /* 이미지 슬라이드 쇼 */
+#slideShow {	
+	width:100vw; 	/* 1920px */
+	position: relative;
+	height: 100vh;	/* 920 */
+	text-align:center;
+}
+
 #slideShowBox {
-	width:1600px;
-	height: 770px;
+	width:83vw;	/* 1600px */
+	height: 85vh;	/* 770px */
 	background-color: white;
 	overflow: hidden; /* 영역 벗어나면 숨김 */
 	z-index:30;
@@ -154,9 +153,9 @@ html, body {
 }
 
 #largeslideShowBox {
-	width:1920px;
+	width:100vw;	/* 1920px */
 	position:absolute;
-	height: 920px;
+	height: 100vh;	/* 920 */
 	background-color: white;
 	overflow: hidden;
 }
@@ -164,50 +163,34 @@ html, body {
 #largeSlidePanel {
 	position: relative;
 	width: 11520px;
-	height: 920px;
+	height: 100vh;	/* 920 */
 }
 
 #smallslidePanel {
 	position: relative;
 	width: 9600px;
-	height: 770px;
+	height: 85vh;	/* 770px */
 }
 
 .slideImage {
 	float: left;
-	width: 1600px;
-	height: 770px;
+	width: 83vw;	/* 1600px */
+	height: 85vh;	/* 770px */
 }
 .slideImage2 {
 	float: left;
-	width: 1920px;
-	height: 920px;
+	width: 100vw;	/* 1920px */
+	height: 100vh;	/* 920 */
 }
 
 #forShadow {
 	position:absolute;
-	width:1600px;
-	height:770px;
+	width:83vw;	/* 1600px */
+	height:85vh;	/* 770px */
 	top:80px;
 	margin-left:160px;
 	z-index:20;
 	box-shadow:1px 4px 30px 10px;
 }
 
-/* 컨트롤 버튼 */
-#controlButtonBox {
-	position:absolute;
-	width:1600px;
-	margin: 0 auto;
-	margin-top:-40px;
-	text-align:center;
-}
-
-#controlButtonBox img {
-	margin: 7px;
-}
-
-.controlButton:hover {
-	cursor:pointer;
-}
 /************** SlideShow 끝 **************/
