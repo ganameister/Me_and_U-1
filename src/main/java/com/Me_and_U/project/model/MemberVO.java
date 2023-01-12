@@ -16,6 +16,8 @@ public class MemberVO {
 	private String memAddress2;
 	private String memImg;
 	private String memJoy1;	// 관심 분야
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date memJoinDate;
 	
 	public String getMemId() {
 		return memId;
@@ -96,6 +98,5 @@ public class MemberVO {
 		this.memJoinDate = memJoinDate;
 	}
 	private String memJoy2;	// 세부 관심 분야
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date memJoinDate;
+
 }

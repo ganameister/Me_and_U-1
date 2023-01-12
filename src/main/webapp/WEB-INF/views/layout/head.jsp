@@ -17,8 +17,8 @@
 			</ul>	
 			<ul class="nav_login">
 				<!-- 로그인 하기 전에 보여줄 메뉴 항목 -->
-				<li><a href="#">로그인</a></li>
-				<li><a href="#">회원가입</a></li>
+				<li><a href="<c:url value='/login' />">로그인</a></li>
+				<li><a href="<c:url value='/memberJoin' />">회원가입</a></li>
 				<!-- 로그인 성공 후 보여줄 메뉴 항목 				
 				<a href="#"> 님 안녕하세요!</a>
 				<a href="#">마이페이지</a>
