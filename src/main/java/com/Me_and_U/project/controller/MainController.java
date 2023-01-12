@@ -6,13 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
-
-	
 	
 	// index 페이지 열기
 	@RequestMapping("/")
-	public String index(Model model) {
-        
+	public String index() {
 		return "index";
 	}
 	

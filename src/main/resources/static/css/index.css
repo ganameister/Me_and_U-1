@@ -1,1 +1,213 @@
-@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+/** 전체 틀 **/
+html, body {
+	width:1600px;
+	margin:auto;
+	padding-top:0;
+}
+
+/** 상단바 **/
+.none {
+	display:none;
+}
+
+.Mainnavbar a{
+    text-decoration: none;
+    color: white;
+    font-weight:bold;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+.nav_logo img {
+	margin-top:3px;
+}
+
+.Mainnavbar {
+	width:1600px;
+    display: flex;
+    position:absolute;
+    z-index:50;
+    margin:auto;
+    top:0px;
+    justify-content:space-between ;
+    align-items: center;
+    background-color: rgba( 255, 255, 255, 0 );
+}
+
+/** 폴더식 css **/
+.start-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7vh;
+  text-align: center;
+}
+
+.main-content-1 {
+  background-color: #F7F7F7;
+  border-top: 1px solid #191919;
+  border-bottom: 1px solid #191919;
+  width: 100%;
+  height: 300vh;
+}
+
+.sticky-title {
+  width: 100%;
+  height: 76vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5vh;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #FAFAFA;
+}
+
+.title {
+  border-top: 1px solid #191919;
+  background-color: #FFF;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  font-size: 2vh;
+  padding-left: 3vh;
+  color:white;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+.content {
+  height: 94vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.content > img {
+  width: 60vw;
+  height: 60vh;
+  object-fit: cover;
+  margin: 5vh 20vh 0 0;
+}
+
+/************** SlideShow 시작 **************/
+
+#slideShow {	
+	width:1920px; 
+	position: relative;
+	height: 920px;
+	text-align:center;
+}
+
+/* 양 옆 화살표 버튼 */
+#prevNextButtonBox {
+	position: relative;
+	z-index: 30;
+}
+
+#prevButton {
+	position: absolute;
+	top: 370px;
+	left: 10%;
+	opacity: 0.3;
+	cursor: pointer;
+}
+
+#nextButton {
+	position: absolute;
+	top: 370px;
+	right: 10%;
+	opacity: 0.3;
+	cursor: pointer;
+}
+
+#prevButton:hover {
+	opacity: 0.7;
+}
+
+#nextButton:hover {
+	opacity: 0.7;
+}
+
+/* 이미지 슬라이드 쇼 */
+#slideShowBox {
+	width:1600px;
+	height: 770px;
+	background-color: white;
+	overflow: hidden; /* 영역 벗어나면 숨김 */
+	z-index:30;
+	margin-left:160px;
+	padding-top:80px;
+}
+
+#largeslideShowBox {
+	width:1920px;
+	position:absolute;
+	height: 920px;
+	background-color: white;
+	overflow: hidden;
+}
+
+#largeSlidePanel {
+	position: relative;
+	width: 11520px;
+	height: 920px;
+}
+
+#smallslidePanel {
+	position: relative;
+	width: 9600px;
+	height: 770px;
+}
+
+.slideImage {
+	float: left;
+	width: 1600px;
+	height: 770px;
+}
+.slideImage2 {
+	float: left;
+	width: 1920px;
+	height: 920px;
+}
+
+#forShadow {
+	position:absolute;
+	width:1600px;
+	height:770px;
+	top:80px;
+	margin-left:160px;
+	z-index:20;
+	box-shadow:1px 4px 30px 10px;
+}
+
+/* 컨트롤 버튼 */
+#controlButtonBox {
+	position:absolute;
+	width:1600px;
+	margin: 0 auto;
+	margin-top:-40px;
+	text-align:center;
+}
+
+#controlButtonBox img {
+	margin: 7px;
+}
+
+.controlButton:hover {
+	cursor:pointer;
+}
+/************** SlideShow 끝 **************/
