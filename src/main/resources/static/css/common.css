@@ -6,8 +6,8 @@
     --color4: #e6e5e1; /*배경4*/ 
     --color5: #627b82; /*nav,footer배경5*/
     --color6: white; /*배경6*/
-    --color7: #ffffff; /*배경4*/  
-    --color8: #ccd4c7;                 
+    --color7: #ffffff; /*배경4*/             
+    --color8: #ccd4c7;      
 }
 
 /* navbar
@@ -22,7 +22,7 @@
 	width:1600px;
     display: flex;
     position:fixed;
-    z-index:30;
+    z-index:50;
     margin:auto;
     top:0px;
     justify-content:space-between ;
@@ -60,12 +60,11 @@
     padding: 8px 12px;
 }
 
-
 /* footer
 ------------------------------------- */
 .footer {
+	width:1600px;
     display: flex;
-    list-style: none;
     background-color: var(--color5);/*footer 배경색*/
 }
 
@@ -73,15 +72,31 @@
     text-decoration: none;
     color: var(--color1);/*footer 메뉴글씨*/
 }
+
+.footer ul {
+	width:740px;
+	float:center;
+	list-style: none;
+	margin-left:300px;
+}
+
 .footer li {
     padding: 8px 12px;
+    float:center;
+	display:inline-block;
 }
 .footer li:hover {
-    padding: 8px 12px;
     opacity: 50%;
 }
-.footer ul {
-    list-style: none;
+
+#btmLogo {
+	float:left;
+	margin:8px 0px 0px 10px;
+}
+
+#moveToTop {
+	margin:8px 15px 0px 380px;
+	cursor:pointer;
 }
 /* 
 -------------------------------------- */
