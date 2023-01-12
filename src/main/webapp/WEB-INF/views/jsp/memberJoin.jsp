@@ -39,7 +39,7 @@
 						<!-- 이메일 -->
 						<tr><th>이메일</th></tr>
 						<tr><td class="insertTxtTD"><input type="text" id="insertEmail" class="insertMemInfo" name="memEmail">  <span class="hyphen">@</span>
-												  <input type="text" id="domainText" class="insertMemInfo" name="">
+												  <input type="text" id="domainText" class="insertMemInfo" name="memDomain">
 							<select name="domainList" id="domainList" class="insertMemInfo">							<!-- 이메일(도메인) 선택 -->
 							<option value="directInput" selected>직접입력</option>
 							<option value="naver.com">naver.com</option>
@@ -89,7 +89,7 @@
 						
 						<tr><th>관심분야2</th></tr>
 						<tr><th class="insertTxtTD"><input type="text" placeholder="상세 관심분야 입력" name="memJoy2" class="insertMemInfo"></th></tr>
-						<tr><td><input type="hidden" name="memJoinDate" value='<fmt:formatDate value="" pattern="yyyy-MM-dd"/>'></td></tr>
+						<tr><td><input type="hidden" name="memJoinDate" value='<fmt:formatDate value="${prd.prdDate }" pattern="yyyy-MM-dd"/>'></td></tr>
 					</table>									<!-- 회원가입정보 입력 테이블 끝 -->
 					
 					

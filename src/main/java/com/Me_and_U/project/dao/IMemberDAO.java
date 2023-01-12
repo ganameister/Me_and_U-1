@@ -5,6 +5,7 @@ import com.Me_and_U.project.model.MemberVO;
 
 public interface IMemberDAO {
 	
-	public String loginCheck(String id);	// 로그인 상태 체크
-	public void insertMember(MemberVO vo);	// 신규회원등록
+	// 비밀번호 암호화하는 경우 사용하는 메소드
+	public String loginCheck(String id);
+	public void insertMember(MemberVO vo);
 }
