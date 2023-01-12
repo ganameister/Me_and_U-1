@@ -10,4 +10,8 @@ public class loginController {
 		return "jsp/memberJoin";
 	}
 	
+	@RequestMapping("/login")
+	public String login() {
+		return "jsp/login";
+	}
 }
