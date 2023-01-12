@@ -8,10 +8,11 @@
 	
 	<!-- 회원가입 -->
 		<insert id="insertMember">
-			INSERT INTO member(memId, memPw, memName, memEmail, memBirth, Gender, memHP, memZipcode,
-							   memAddress1, memAddress2, memImg, memJoy1, memJoy2, memJoinDate)
-			VALUE(#{memId}, #{memPw}, #{memName}, #{memEmail}, #{memBirth}, #{Gender}, #{memHP}, #{memZipcode}, #{memAddress1}, #{memAddress2}, #{memImg},
-				  #{memJoy1}, #{memJoy2}, #{memJoinDate})
+			INSERT INTO member(memId, memPw, memName, memEmail, Gender, memHP, memZipcode,
+							   memAddress1, memAddress2, memImg, memJoy1, memJoy2, memJoinDate, memBirth)
+			VALUE(#{memId}, #{memPw}, #{memName}, #{memEmail}, #{Gender}, #{memHP},
+				  #{memZipcode}, #{memAddress1}, #{memAddress2}, #{memImg},
+				  #{memJoy1}, #{memJoy2}, #{memJoinDate}, #{memBirth})
 		
 		</insert>
 	
