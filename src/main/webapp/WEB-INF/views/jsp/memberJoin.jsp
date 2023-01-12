@@ -1,42 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>회원가입</title>
 			<link rel="stylesheet" type="text/css" href="<c:url value='/css/memberJoinPage/memberJoin.css' />">
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
+			<c:import url="/WEB-INF/views/layout/head.jsp"/>
 			<script src="<c:url value='/js/memberJoinPage/memberJoin.js' />"></script>
 	</head>
 	<body>
-		<c:import url="/WEB-INF/views/layout/head.jsp"/>
+		<c:import url="/WEB-INF/views/layout/top.jsp"/>
 		<div id="memberJoinPageDiv">
 			<div id="memJoinDiv">
-				<form method="post" action="<c:url value='/member/insert' />">		<%-- 회원가입 폼 시작 --%>
+				<form>		<%-- 회원가입 폼 시작 --%>
 					<h1 id="memJoinTitle">회 원 가 입</h1>
 					<table id="joinMemberTable">		<!-- 회원가입정보 입력 테이블 시작 -->
-					
-						<!-- 아이디, 패스워드 -->
 						<tr><th>아이디</th></tr>
-						<tr><td class="insertTxtTD"><input type="text" maxlength="15" placeholder="아이디 입력" id="insertMemID" name="memId" class="insertMemInfo" >
+						<tr><td class="insertTxtTD"><input type="text" placeholder="아이디 입력" id="insertMemID" name="insertMemID" class="insertMemInfo">
 												  <input type="button" value="중복확인" id="idCheckBtn"></td></tr>
 						<tr><th>비밀번호</th></tr>
-						<tr><td class="insertTxtTD"><input type="password" maxlength="15" placeholder="비밀번호 입력" id="insertMemPW" name="memPw" class="insertMemInfo"></td></tr>
+						<tr><td class="insertTxtTD"><input type="password" placeholder="비밀번호 입력" id="insertMemPW" name="insertMemPW" class="insertMemInfo"></td></tr>
 						<tr><th>비밀번호 재확인</th></tr>
-						<tr><td class="insertTxtTD"><input type="password" maxlength="15" placeholder="비밀번호 입력" id="insertMemPWCheck" name="memPw" class="insertMemInfo"></td></tr>
-						
-						<!-- 이름, 휴대폰 번호 -->
+						<tr><td class="insertTxtTD"><input type="password" placeholder="비밀번호 입력" id="insertMemPWCheck" name="insertMemPWCheck" class="insertMemInfo"></td></tr>
 						<tr><th>이름</th></tr>
-						<tr><td class="insertTxtTD"><input type="text" maxlength="50" size="5" id="insertMemName" name="memName" class="insertMemInfo"></td></tr>
+						<tr><td class="insertTxtTD"><input type="text" size="5" id="insertMemName" name="insertMemName" class="insertMemInfo"></td></tr>
 						<tr><th>휴대폰 번호</th></tr>
-						<tr><td class="insertTxtTD"><input type="text" size="3" maxlength="3" class="insertMemInfo" name="memHp1"> <span class="hyphen">-</span>
-												  <input type="text" size="3" maxlength="4" class="insertMemInfo" name="memHp2"> <span class="hyphen">-</span>
-												  <input type="text" size="3" maxlength="4" class="insertMemInfo" name="memHp3"></td></tr>
-						
-						<!-- 이메일 -->
+						<tr><td class="insertTxtTD"><input type="text" size="3" class="insertMemInfo"> <span class="hyphen">-</span>
+												  <input type="text" size="3" class="insertMemInfo"> <span class="hyphen">-</span>
+												  <input type="text" size="3" class="insertMemInfo"></td></tr>
 						<tr><th>이메일</th></tr>
 						<tr><td class="insertTxtTD"><input type="text" id="insertEmail" class="insertMemInfo">  <span class="hyphen">@</span>
 												  <input type="text" id="domainText" class="insertMemInfo">
@@ -52,8 +45,6 @@
 							<option value="nate.com">nate.com</option>
 							<option value="hitel.net">hitel.net</option>
 						</select></td></tr>
-						
-						<!-- 생년월일 -->
 						<tr><th>생년월일</th></tr>
 						<tr><td class="insertTxtTD"><select id="birth_year" class="insertMemInfo">
 													  <option>출생년도</option>
@@ -65,31 +56,25 @@
 													  <option>일</option>
 												  </select>
 												  <img id="calenderImg" src="<c:url value='/img/calendar.png' />"></td></tr>
-												
-						<!-- 기타 정보 -->
 						<tr><th>성별</th></tr>
 						<tr><td class="insertTxtTD">
-							<input type="radio" name="Gender" value="남" checked><span class="gender">남</span>
-							<input type="radio" name="Gender" value="여"><span class="gender">여</span></td>
+							<input type="radio" name="gender" value="남" checked><span class="gender">남</span>
+							<input type="radio" name="gender" value="여"><span class="gender">여</span></td>
 						</tr>
-						
 						<tr><th>주소지</th></tr>
 						<tr><th>우편번호</th></tr>
-						<tr><td><input type="text" placeholder="우편번호 검색" id="sample6_postcode" class="insertMemInfo" name="memZipcode" readonly>
-								<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id="addressSrchBtn" name="" readonly></td></tr>
-						<tr><td><input type="text" placeholder="도로명 주소" id="sample6_address" class="insertMemInfo" name="memAddress1" readonly></td></tr>
-						<tr><td class="insertTxtTD"><input type="text" placeholder="상세 주소" id="sample6_detailAddress" name="memAddress2" class="insertMemInfo"></td></tr>
-						
+						<tr><td><input type="text" placeholder="우편번호 검색" id="sample6_postcode" class="insertMemInfo" readonly>
+								<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id="addressSrchBtn" readonly></td></tr>
+						<tr><td><input type="text" placeholder="도로명 주소" id="sample6_address" class="insertMemInfo" readonly></td></tr>
+						<tr><td class="insertTxtTD"><input type="text" placeholder="상세 주소" id="sample6_detailAddress" class="insertMemInfo"></td></tr>
 						<tr><td id="interestInfo"><span>관심정보</span></td></tr>
 						<tr><th>관심분야1</th></tr>
 						<tr><th class="insertTxtTD"><select name = "memJoy1" class="insertMemInfo">
 							<option>여행
 							<option>뮤지컬/공연/콘서트
 						</select></th></tr>
-						
 						<tr><th>관심분야2</th></tr>
-						<tr><th class="insertTxtTD"><input type="text" placeholder="상세 관심분야 입력" name="memJoy2" class="insertMemInfo"></th></tr>
-						<tr><td><input type="hidden" name="memJoinDate" value='<fmt:formatDate value="${prd.prdDate }" pattern="yyyy-MM-dd"/>'></td></tr>
+						<tr><th class="insertTxtTD"><input type="text" placeholder="상세 관심분야 입력" class="insertMemInfo"></th></tr>
 					</table>									<!-- 회원가입정보 입력 테이블 끝 -->
 					
 					

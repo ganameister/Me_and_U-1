@@ -11,36 +11,30 @@
 			<%-- <script src="<c:url value='/js/memberJoinPage/login.js' />"></script> --%>
 	</head>
 	<body>
-		<div id="wrap">
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
-			<div id="container">
-				<div class="contents-box">
-					<div class="login-box">
-						<h1>Me & U</h1>
-						<h2>Login</h2>
-						<form>
-							<div class="user-box">
-								<input type="text" name="" required>
-								<label>Username</label>
-							</div>
-							<div class="user-box">
-								<input type="password" name="" required>
-								<label>Password</label>
-							</div>
-							<div class="inMemberJoin">
-								<a href="#">아이디 찾기</a>
-								<span>|</span>
-								<a href="#">비밀번호 변경</a>
-								<span>|</span>
-								<a href="<c:url value='/memberJoin' />" >회원가입</a>
-							</div>
-							<button>
-								login
-							</button>
-						</form>
-					</div>
+		<c:import url="/WEB-INF/views/layout/top.jsp"/>
+		<div class="login-box">
+			<h1>Me & U</h1>
+			<h2>Login</h2>
+			<form>
+				<div class="user-box">
+					<input type="text" name="" required="">
+					<label>Username</label>
 				</div>
-			</div>
+				<div class="user-box">
+					<input type="password" name="" required="">
+					<label>Password</label>
+				</div>
+				<div class="inMemberJoin">
+					<a href="#">아이디 찾기</a>
+					<span>|</span>
+					<a href="#">비밀번호 변경</a>
+					<span>|</span>
+					<a href="<c:url value='/memberJoin' />" >회원가입</a>
+				</div>
+				<button>
+					login
+				</button>
+			</form>
 		</div>
 		<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 	</body>
