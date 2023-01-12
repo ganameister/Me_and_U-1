@@ -19,7 +19,7 @@
 	</head>
 	<body>
 		<!-- 카테고리 메뉴 top 부분 임포트 해줘야 함 -->
-		
+		<!-- 삭제해두 됨 -->
 		<!--  -->
 		<section name="input_gatherInfo">
 			<h4>정기 모임 개설</h4>
