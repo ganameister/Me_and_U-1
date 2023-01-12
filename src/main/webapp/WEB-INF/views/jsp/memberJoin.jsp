@@ -38,8 +38,8 @@
 						
 						<!-- 이메일 -->
 						<tr><th>이메일</th></tr>
-						<tr><td class="insertTxtTD"><input type="text" id="insertEmail" class="insertMemInfo">  <span class="hyphen">@</span>
-												  <input type="text" id="domainText" class="insertMemInfo">
+						<tr><td class="insertTxtTD"><input type="text" id="insertEmail" class="insertMemInfo" name="memEmail">  <span class="hyphen">@</span>
+												  <input type="text" id="domainText" class="insertMemInfo" name="memDomain">
 							<select name="domainList" id="domainList" class="insertMemInfo">							<!-- 이메일(도메인) 선택 -->
 							<option value="directInput" selected>직접입력</option>
 							<option value="naver.com">naver.com</option>
@@ -55,13 +55,13 @@
 						
 						<!-- 생년월일 -->
 						<tr><th>생년월일</th></tr>
-						<tr><td class="insertTxtTD"><select id="birth_year" class="insertMemInfo">
+						<tr><td class="insertTxtTD"><select id="birth_year" class="insertMemInfo" name="memBirth1">
 													  <option>출생년도</option>
 												  </select>
-												  <select id="birth_month" class="insertMemInfo">
+												  <select id="birth_month" class="insertMemInfo" name="memBirth2">
 													  <option>월</option>
 												  </select>
-												  <select id="birth_day" class="insertMemInfo">
+												  <select id="birth_day" class="insertMemInfo" name="memBirth3">
 													  <option>일</option>
 												  </select>
 												  <img id="calenderImg" src="<c:url value='/img/calendar.png' />"></td></tr>
