@@ -21,9 +21,15 @@ public class loginController {
 	@RequestMapping("/member/insert")
 	public String insert(MemberVO vo, @RequestParam("memHp1") String memHp1,
 									  @RequestParam("memHp2") String memHp2,
-									  @RequestParam("memHp3") String memHp3) {
+									  @RequestParam("memHp3") String memHp3,
+									  @RequestParam("memBirth1") String memBirth1,
+									  @RequestParam("memBirth2") String memBirth2,
+									  @RequestParam("memBirth3") String memBirth3,
+									  @RequestParam("memEmail") String memEmail,
+									  @RequestParam("memDomain") String memDomain) {
 		vo.setMemHP(memHp1 + "-" + memHp2 + "-" + memHp3);
-		
+		vo.setMemBirth(memBirth1 + "-" + memBirth2 + "-" + memBirth3);
+		vo.setMemEmail(memEmail + "@" + memDomain);
 		service.insertMember(vo);
 		return "jsp/login";
 	}
