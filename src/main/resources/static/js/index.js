@@ -9,7 +9,7 @@ window.onload = function(){
             this.children = this.sticky.querySelectorAll(".section");
             this.length = this.children.length;
             this.headerVh = 6;
-            this.contentVh = 92.3 - this.headerVh * this.length;
+            this.contentVh = 94.5 - this.headerVh * this.length;
             this.start = 0;
             this.end = 0;
         }
@@ -69,31 +69,23 @@ $(document).ready(function(){
 		movedIndex = index;
 		
 		// 슬라이드 이동
-		var largemoveLeft = -(index * 1920); // 왼쪽으로 이동 거리
-		$('#largeSlidePanel').animate({'left': largemoveLeft}, 'slow');
+		//var largemoveLeft = -(index * 1920); // 왼쪽으로 이동 거리
+		//$('#largeSlidePanel').animate({'left': largemoveLeft}, 'slow');
 		
-		var smallmoveLeft = -(index * 1600); // 왼쪽으로 이동 거리
-		$('#smallslidePanel').animate({'left': smallmoveLeft}, 'slow');
+		//var smallmoveLeft = -(index * 1600); // 왼쪽으로 이동 거리
+		//$('#smallslidePanel').animate({'left': smallmoveLeft}, 'slow');
+		var largemoveLeft = -(index * 100);
+		$('#largeSlidePanel').animate({'left': largemoveLeft+'vw'}, 'slow');
+
+		var smallmoveLeft = -(index * 83);
+		$('#smallslidePanel').animate({'left': smallmoveLeft+'vw'}, 'slow');
 	}
 	
 	//슬라이드 자동 랜덤 슬라이드
 	let loopInterval = setInterval(() => {
    		var randomNum = Math.floor(Math.random() * 6);
    		moveSlide(randomNum);
-	}, 7000);
-	
-	// 슬라이드에 마우스가 올라간 경우 루프 멈추기
-	$('.slidePanel').on("mouseover", () => {
-	  clearInterval(loopInterval);
-	});
-	
-	// 슬라이드에서 마우스가 나온 경우 루프 재시작하기
-	$('.slidePanel').on("mouseout", () => {
-	  	loopInterval = setInterval(() => {
-   			var randomNum = Math.floor(Math.random() * 6);
-   			moveSlide(randomNum);
-		}, 7000);
-	});
+	}, 6000);
 	
 	// prev 버튼 클릭하면 앞으로 이동
 	$('#prevButton').on('click', function(){

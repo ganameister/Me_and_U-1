@@ -17,7 +17,7 @@
 		<header>
 			<nav class="Mainnavbar">
 				<div class="nav_logo">
-					<a href="/" class="top"><img src="<c:url value='images/me_and_u.png'/>" id="logo" width="80" height="50"></a>
+					<a href="/" class="top"><img src="<c:url value='images/me_and_u2.png'/>" id="logo" width="120" height="50"></a>
 				</div>
 				<ul class="nav_menu">
 					<li><a href="<c:url value='/mybucketlist'/>">나의 버킷리스트</a></li>
