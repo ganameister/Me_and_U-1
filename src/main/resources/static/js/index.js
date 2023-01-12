@@ -87,6 +87,19 @@ $(document).ready(function(){
    		moveSlide(randomNum);
 	}, 6000);
 	
+	// 슬라이드에 마우스가 올라간 경우 루프 멈추기
+	$('.prevNextButton').on("mouseover", () => {
+	  clearInterval(loopInterval);
+	});
+
+	// 슬라이드에서 마우스가 나온 경우 루프 재시작하기
+	$('.prevNextButton').on("mouseout", () => {
+	  	loopInterval = setInterval(() => {
+   			var randomNum = Math.floor(Math.random() * 6);
+   			moveSlide(randomNum);
+		}, 6000);
+	});
+	
 	// prev 버튼 클릭하면 앞으로 이동
 	$('#prevButton').on('click', function(){
 		if(movedIndex !=0)  // 첫 번째가 아니면

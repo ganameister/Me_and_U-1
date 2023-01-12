@@ -43,8 +43,8 @@
 			<section>
 				<div id="slideShow">
 					<div id="prevNextButtonBox">
-						<img id="prevButton" src="<c:url value='/images/prevButton.png'/>">
-						<img id="nextButton" src="<c:url value='/images/nextButton.png'/>">
+						<img class="prevNextButton" id="prevButton" src="<c:url value='/images/prevButton.png'/>">
+						<img class="prevNextButton" id="nextButton" src="<c:url value='/images/nextButton.png'/>">
 					</div>
 					<div id="forShadow" class="slidePanel"></div>
 					<div id="largeslideShowBox">
