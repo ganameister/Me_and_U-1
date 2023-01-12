@@ -8,13 +8,16 @@
     --color6: white; /*배경6*/
     --color7: #ffffff; /*배경4*/                 
 }
-
-body {
+body{       
+    padding-top:67px;
 	width:1600px;
 	margin:auto;
 }
 
 #main {
+	background-color:var(--color3);/*전체배경색*/ 
+	font: sans-serif;/*글씨폰트*/
+	font-size: small;
     margin: 0;
     padding: 0;  
     outline: none;
