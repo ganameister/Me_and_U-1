@@ -24,7 +24,6 @@
 body {
 	width:1600px;
 	margin:0 auto;
-	font-size: small;
 }
 
 /* 달력 이미지 */
@@ -50,7 +49,7 @@ body {
 
 /* "이용약관" 테이블 행 */
 #consentTable tr {
-
+	
 }
 
 /* "이용약관" 테이블 헤더 */
@@ -80,7 +79,7 @@ body {
 
 /* 이메일 도메인 셀렉트 */
 #domainList{
-	width:132px;
+	width:130px;
 	
 }
 
@@ -104,7 +103,7 @@ body {
 /* 회원가입 전체 영역 */
 #memJoinDiv {
 	background:#d8eded;
-	margin:0 auto;
+	margin:80px auto 0;
 	width:860px;
 	font-family: 'Oswald', sans-serif;
 	border-radius : 15px;
@@ -150,7 +149,7 @@ body {
 
 /* ID입력 텍스트 */
 #insertMemID {
-	width:407px;
+	width:406px;
 	padding:10px 0px 10px 15px;
 }
 
@@ -222,13 +221,25 @@ body {
 
 /* 우편번호 검색 텍스트 */
 #sample6_postcode {
-	width:100px;
+	width:105px;
 	font-size:14px;
+	padding:5px 0px 5px 15px;
+	margin-bottom:6px;
 }
 
 /* 우편번호 도로명 주소 텍스트 */
 #sample6_address {
 	width:500px;
+	padding:10px 0px 10px 15px;
+	height:23px;
+	margin-bottom:6px;
+}
+
+/* 우편번호 상세주소 */
+#sample6_detailAddress {
+	padding:10px 0px 10px 15px;
+	height:23px;
+	width:260px;
 }
 
 /* 라디오 버튼 커스텀 */
