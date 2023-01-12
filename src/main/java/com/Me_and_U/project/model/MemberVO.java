@@ -9,6 +9,7 @@ public class MemberVO {
 	private String memPw;
 	private String memName;
 	private String memEmail;
+	private String memBirth;
 	private String Gender;
 	private String memHP;
 	private String memZipcode;
@@ -96,6 +97,12 @@ public class MemberVO {
 	}
 	public void setMemJoinDate(Date memJoinDate) {
 		this.memJoinDate = memJoinDate;
+	}
+	public String getMemBirth() {
+		return memBirth;
+	}
+	public void setMemBirth(String memBirth) {
+		this.memBirth = memBirth;
 	}
 	private String memJoy2;	// 세부 관심 분야
 
