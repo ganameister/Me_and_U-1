@@ -148,8 +148,9 @@ html, body {
 	background-color: white;
 	overflow: hidden; /* ¿µ¿ª ¹þ¾î³ª¸é ¼û±è */
 	z-index:30;
-	margin-left:160px;
+	/* margin-left:160px; */
 	padding-top:80px;
+	display:inline-block;
 }
 
 #largeslideShowBox {
@@ -162,20 +163,22 @@ html, body {
 
 #largeSlidePanel {
 	position: relative;
-	width: 11520px;
+	width: 600vw;
 	height: 100vh;	/* 920 */
 }
 
 #smallslidePanel {
 	position: relative;
-	width: 9600px;
+	width: 498vw;
 	height: 85vh;	/* 770px */
+	display:inline-block;
 }
 
 .slideImage {
 	float: left;
 	width: 83vw;	/* 1600px */
 	height: 85vh;	/* 770px */
+	display:inline-block;
 }
 .slideImage2 {
 	float: left;
@@ -188,9 +191,10 @@ html, body {
 	width:83vw;	/* 1600px */
 	height:85vh;	/* 770px */
 	top:80px;
-	margin-left:160px;
+	/* margin-left:160px; */
 	z-index:20;
 	box-shadow:1px 4px 30px 10px;
+	display:inline-block;
 }
 
 /************** SlideShow ³¡ **************/
