@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<div class="footer">
-		<img src="<c:url value='images/me_and_u.png'/>" id="btmLogo" width="80" height="50">
+		<img src="<c:url value='images/me_and_u2.png'/>" id="btmLogo" width="100" height="40">
 		<ul id="bottomMenu">
 			<li><a href="#">회사소개</a></li>
 			<li><a href="#">이용약관</a></li>

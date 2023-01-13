@@ -4,11 +4,11 @@
 	<header>
 		<nav class="navbar">
 			<div class="nav_logo">
-				<a href="/" class="top"><img src="<c:url value='images/me_and_u.png'/>" id="logo" width="80" height="50"></a>
+				<a href="/" class="top"><img src="<c:url value='images/me_and_u2.png'/>" id="logo" width="100" height="40"></a>
 			</div>
 			<ul class="nav_menu">
-				<li><a href="<c:url value='/mybucketlist'/>">나의 버킷리스트</a></li>
-				<li><a href="<c:url value='/combucketlist'/>">모두의 버킷리스트</a></li>
+				<li><a href="<c:url value='/myBKList'/>">나의 버킷리스트</a></li>
+				<li><a href="<c:url value='/comBKList'/>">모두의 버킷리스트</a></li>
 				<li><a href="">버킷리스트 모임</a></li>
 				<li><a href="">번개 모임</a></li>
 				<li><a href="">정기 모임</a></li>

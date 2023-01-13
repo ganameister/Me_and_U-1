@@ -1,0 +1,145 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);	/* font-family: 'Jeju Myeongjo', serif; */
+
+body {
+	width:1600px;
+	margin:auto;
+	padding-top:69px;
+	font-family: 'Jeju Myeongjo', serif;
+}
+
+hr {
+	width:850px;
+	margin-bottom:30px;
+}
+
+h4 {
+	font-size:22px;
+	margin-left:375px;
+}
+
+h5 {
+	font-size:18px;
+	margin-left:375px;
+}
+
+#wrap {
+	width:1600px;
+	margin:auto;
+	background-color:var(--color4);
+	padding-top:1px;
+}
+
+/* 테이블 부분 */
+#gatherInfo_tbl {
+  border-collapse : separate;
+  border-spacing : 10px 15px;
+  width: 850px;
+  margin:auto;
+  border:solid 1px black;
+  border-radius:6px;
+}
+
+#gatherInfo_tbl th{
+  font-size : 13px;
+  width:150px;
+}
+
+#gatherInfo_tbl .gatherInfo_input {
+  left : 100px;
+  width:150px;
+  height : 30px;
+  vertical-align: middle;
+  text-align : center;
+  border-radius : 5px;
+}
+
+#gatherInfo_tbl .gatherInfo_input2 {
+  left : 100px;
+  width:482px;
+  height : 30px;
+  vertical-align: middle;
+  text-align : center;
+  border-radius : 5px;
+}
+
+#gatherInfo_tbl .gatherInfo_input3 {
+  left : 100px;
+  width:240px;
+  height : 30px;
+  vertical-align: middle;
+  text-align : center;
+  border-radius : 5px;
+}
+
+table select {
+	width:150px;
+	height:35px;
+	border-radius : 5px;
+}
+
+#gatherInfo_tbl #recruit {
+  width : 437px;
+  font-weight : bold;
+  background-color :#E2E2E2;
+  font-size: 14px;
+}
+
+#gatherInfo_tbl .gatherInfo_inputTime {
+  left : 100px;
+  width : 200px;
+  height : 30px;
+  text-align : center;
+  border-radius : 5px;
+}
+
+/* 파일 div css 넣기 */
+.filebox label {
+  width : 175px;
+  display: inline-block;
+  padding: .5em .75em;
+  color: #999;
+  background-color: #fdfdfd;
+  font-weight : bold;
+  font-size: 13px;
+  text-align : center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-radius: .25em;
+}
+
+.filebox input[type="file"] {  /* 파일 필드 숨기기 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
+
+#summernote {
+	height : 425px; 
+	width : 850px;
+}
+
+.note-editor.note-frame, .note-editor.note-airframe {
+	margin:auto;
+}
+
+#info_Input {
+  margin-left : 1025px;
+  margin-bottom:20px;
+  width: 200px;
+  height: 40px;
+  cursor:pointer;
+  font-weight : bold;
+  font-size : 15px;
+  font-family: 'Jeju Myeongjo', serif;
+  border-radius : .25em;
+  background-color: black;
+  color : white;
+  border : none;
+}

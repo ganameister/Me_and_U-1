@@ -1,0 +1,172 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);	/* font-family: 'Jeju Myeongjo', serif; */
+
+#miniwrap {
+	width:1600px;
+	background-color:var(--color4);
+}
+
+body {
+	width:1600px;
+	margin:auto;
+	padding-top:69px;
+	font-family: 'Jeju Myeongjo', serif;
+}
+
+li {
+	list-style:none;
+}
+
+table {
+	border:1px solid black;
+	width:320px;
+	padding:0px;
+	background-color:white;
+	border-spacing: 0px;
+}
+
+.tableText {
+	padding:3px;
+}
+
+th,td {
+	line-height:20px;
+}
+
+#categoryBox {
+	height:50px;
+}
+
+#categoryBox ul {
+	float:left;
+	padding-left:0px;
+	margin:30px 0px 0px 55px;
+}
+
+#categoryBox ul li {
+	display:inline-block;
+	border-left: 1px solid #333;
+	line-height: 16px;
+	font-size:16px;
+	padding-left: 10px;
+	margin-left: 4px;
+}
+
+#categoryBox li:first-child {
+	border-left: 0px;
+}
+
+#categoryBox ul li:hover {
+	cursor:pointer;
+}
+
+#categoryBox select {
+	float:right;
+	margin:30px 60px 0px 0px;
+}
+
+#itemListBox ul {
+	float:center;
+	display:inline-block;
+	align-items: center;
+}
+
+#itemListBox ul li {
+	display:inline-block;
+	margin:27px;
+}
+
+#itemListBox ul li a {
+	text-decoration:none;
+	color:black;
+	font-size:16px;
+}
+
+
+/************** SlideShow 시작 **************/
+
+#slideShow {	
+	width:1600px; 
+	position: relative;
+	height: 370px;
+	text-align:center;
+}
+
+/* 양 옆 화살표 버튼 */
+#prevNextButtonBox {
+	position: relative;
+	z-index: 10;
+}
+
+#prevButton {
+	position: absolute;
+	top: 120px;
+	left: 4%;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+#nextButton {
+	position: absolute;
+	top: 120px;
+	right: 4%;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+#prevButton:hover {
+	opacity: 0.9;
+}
+
+#nextButton:hover {
+	opacity: 0.9;
+}
+
+/* 슬라이드 텍스트 */
+#slideText {
+	position: absolute;
+	color:white;
+	z-index: 10;
+	opacity:0.8;
+	top:145px;
+	margin-left:710px;
+	font-size:25px;
+	text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+/* 이미지 슬라이드 쇼 */
+#slideShowBox {
+	width:1600px;
+	height: 360px;
+	background-color: white;
+	overflow: hidden; /* 영역 벗어나면 숨김 */
+}
+
+#slidePanel {
+	position: relative;
+	width: 4800px;
+	height: 330px;
+}
+
+.slideImage {
+	float: left;
+	width: 1600px;
+	height: 330px;
+}
+
+/* 컨트롤 버튼 */
+#controlButtonBox {
+	margin: 0 auto;
+	text-align:center;
+}
+
+#controlButtonBox img {
+	margin: 12px;
+}
+
+.controlButton:hover {
+	cursor:pointer;
+}
+/************** SlideShow 끝 **************/
+
+

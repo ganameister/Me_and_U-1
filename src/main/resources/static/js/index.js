@@ -77,7 +77,7 @@ $(document).ready(function(){
 		var largemoveLeft = -(index * 100);
 		$('#largeSlidePanel').animate({'left': largemoveLeft+'vw'}, 'slow');
 
-		var smallmoveLeft = -(index * 83);
+		var smallmoveLeft = -(index * 83.3);
 		$('#smallslidePanel').animate({'left': smallmoveLeft+'vw'}, 'slow');
 	}
 	
@@ -85,7 +85,7 @@ $(document).ready(function(){
 	let loopInterval = setInterval(() => {
    		var randomNum = Math.floor(Math.random() * 6);
    		moveSlide(randomNum);
-	}, 6000);
+	}, 5000);
 	
 	// 슬라이드에 마우스가 올라간 경우 루프 멈추기
 	$('.prevNextButton').on("mouseover", () => {
@@ -122,7 +122,7 @@ $(document).ready(function(){
 	/** ========== 슬라이드 쇼 js 구간 끝 ========== **/
 	
 	$(window).on('scroll',function(){
-		if($(document).scrollTop() >= 70)
+		if($(document).scrollTop() >= $('#slideShowBox').height())
 		{	
 			$(".Mainnavbar").attr("class","navbar");
 		}
