@@ -1,9 +1,14 @@
 package com.Me_and_U.project.controller;
 
+import java.util.HashMap;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.Me_and_U.project.model.MemberVO;
 import com.Me_and_U.project.service.MemberService;
@@ -37,5 +42,27 @@ public class loginController {
 	@RequestMapping("/login")
 	public String login() {
 		return "jsp/login";
+	}
+	
+	// 로그인 체크
+	@ResponseBody
+	@RequestMapping("/member/login")
+	public String loginCheck(@RequestParam HashMap<String, Object> param,
+			HttpSession session) {
+		
+		String result = service.loginCheck(param);
+		
+		if(result.equals("success")) {
+			session.setAttribute("sid", param.get("id"));
+		}
+		
+		return result;
+	}
+	
+	//로그아웃
+	@RequestMapping("/member/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
 	}
 }
