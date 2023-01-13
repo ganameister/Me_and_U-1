@@ -1,8 +1,10 @@
 @charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
 
 body{
 	width:1600px;
 	margin: auto;
+	font-family: 'Jeju Myeongjo', serif;
 }
 #wrap{
 	margin-top: 70px;
@@ -18,15 +20,81 @@ body{
 margin: 20px 0px;
 list-style: none;
 }
+
 .sec2{
 	display: inline-block;
 	margin-top: 30px;
+	width: 600px;
 }
 
-.sec2 .art3 div{
-	display: inline-block;
+#combkImg, #mybkImg{
+	width: 120px;
+	height: 60px;
 }
-.sec2 .art4 div{
-	display: inline-block;
+#BtnImg{
+	width: 60px;
+	height: 60px;
+	text-align: center;
+}
+
+.sec2 .art1 img{
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	background-color: white;
+}
+.sec2 .art2 img{
+	width: 60px;
+	height: 60px;
+	text-align: center;
+}
+.sec2 .art1 #content{
+	display: flex;
+	margin-bottom: 10px;
+}
+.sec2 .art1 #click_button1{
+	margin-left:300px;
+	width:30px;
+	height:30px;
+	float: right;
+}
+.sec2 .art2 #content{
+	display: flex;
+	margin-bottom: 10px;
+}
+.sec2 .art2 #click_button2{
+	margin-left:300px;
+	width:30px;
+	height:30px;
+	float: right;
+}
+.sec2 .art3 .artdiv{
+	display: flex;
+    height: 250px;
+    overflow: hidden;
+    overflow-x:scroll;
+}
+
+.sec2 .art4 .artdiv div{
+	display: block;
+	margin-right: 30px;
+	
+}
+
+.sec2 .art4 .artdiv{
+	display: flex;
+    height: 250px;
+    overflow: hidden;
+    overflow-x:scroll;
+}
+
+.sec2 .art3 .artdiv div{
+	display: block;
+	margin-right: 30px;
+	
+}
+#regImg, #temImg{
+	width: 160px;
+	height: 160px;
 }
 
