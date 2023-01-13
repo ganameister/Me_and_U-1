@@ -17,11 +17,11 @@
 		<header>
 			<nav class="Mainnavbar">
 				<div class="nav_logo">
-					<a href="/" class="top"><img src="<c:url value='images/me_and_u2.png'/>" id="logo" width="120" height="50"></a>
+					<a href="/" class="top"><img src="<c:url value='images/me_and_u2.png'/>" id="logo" width="100" height="40"></a>
 				</div>
 				<ul class="nav_menu">
-					<li><a href="<c:url value='/mybucketlist'/>">나의 버킷리스트</a></li>
-					<li><a href="<c:url value='/combucketlist'/>">모두의 버킷리스트</a></li>
+					<li><a href="<c:url value='/myBKList'/>">나의 버킷리스트</a></li>
+					<li><a href="<c:url value='/comBKList'/>">모두의 버킷리스트</a></li>
 					<li><a href="">버킷리스트 모임</a></li>
 					<li><a href="">번개 모임</a></li>
 					<li><a href="">정기 모임</a></li>
@@ -45,6 +45,12 @@
 					<div id="prevNextButtonBox">
 						<img class="prevNextButton" id="prevButton" src="<c:url value='/images/prevButton.png'/>">
 						<img class="prevNextButton" id="nextButton" src="<c:url value='/images/nextButton.png'/>">
+					</div>
+					<div id="slideText">
+						<b id="slideTextTitle">Me & U</b> <br><br>
+						<span>나와 너</span> <br>
+						<span>우리 함께</span> <br>
+						<span>버킷리스트를 이루어보세요</span>
 					</div>
 					<div id="forShadow" class="slidePanel"></div>
 					<div id="largeslideShowBox">
