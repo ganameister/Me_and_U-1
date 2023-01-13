@@ -6,17 +6,20 @@
 
 	<mapper namespace="com.Me_and_U.project.dao.IMemberDAO">
 	
-	<!-- 회원가입 -->
+		<!-- 회원가입 -->
 		<insert id="insertMember">
 			INSERT INTO member(memId, memPw, memName, memEmail, memBirth, Gender, memHP, memZipcode,
-							   memAddress1, memAddress2, memImg, memJoy1, memJoy2, memJoinDate)
+							   memAddress1, memAddress2, memImg, memJoy1, memJoy2)
 			VALUE(#{memId}, #{memPw}, #{memName}, #{memEmail}, #{memBirth}, #{Gender}, #{memHP}, #{memZipcode}, #{memAddress1}, #{memAddress2}, #{memImg},
-				  #{memJoy1}, #{memJoy2}, #{memJoinDate})
+				  #{memJoy1}, #{memJoy2})
 		
 		</insert>
 	
 	
-	
+		<!--  암호화한 후 로그인 확인-->
+	  	<select id="loginCheck" parameterType="string" resultType="string">
+	  		SELECT memPw FROM member WHERE memId=#{memId}
+	  	</select>
 	
 	
 	

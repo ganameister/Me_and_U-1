@@ -20,11 +20,11 @@
 						<h2>Login</h2>
 						<form>
 							<div class="user-box">
-								<input type="text" name="" required>
+								<input type="text" name="" id="id" required>
 								<label>Username</label>
 							</div>
 							<div class="user-box">
-								<input type="password" name="" required>
+								<input type="password" name="" id="pw" required>
 								<label>Password</label>
 							</div>
 							<div class="inMemberJoin">
@@ -34,7 +34,7 @@
 								<span>|</span>
 								<a href="<c:url value='/memberJoin' />" >회원가입</a>
 							</div>
-							<button>
+							<button type="submit" id=loginBtn>
 								login
 							</button>
 						</form>

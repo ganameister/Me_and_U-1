@@ -189,8 +189,7 @@ body {
 	margin:13px 0px 10px 3px;
 	background:none;
 	transition: 0.25s;
-	color:#19bc8b
-	
+	color:#19bc8b;
 }
 
 /* 가입하기 버튼 호버 */
@@ -268,6 +267,34 @@ body {
 	box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
 	cursor:pointer;
 }
+
+/* 비밀번호 입력 텍스트 */
+.pwComare {
+	height:30px;
+	font-size:17px;
+	border-radius:8px;
+	border-color:white;
+}
+
+/* 휴대번호 입력 텍스트 */
+.phNum {
+	height:30px;
+	font-size:17px;
+	border-radius:8px;
+	border-color:white;
+}
+
+#pwReg {
+	font-size:13px;
+    align-items: right;
+    display:flex;
+}
+
+
+
+
+
+
 
 
 
