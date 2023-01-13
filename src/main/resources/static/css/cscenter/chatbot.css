@@ -1,88 +1,137 @@
 @charset "UTF-8";
-/* 제목
--------------------------------------- */
+
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-body { 
-    width:100%;
-    max-width:1600px; /* 상단nav 고정으로 반응형으로 다시 고침*/
-	margin:auto;
-}
-.service {
-    margin-top: 200px;    /* 상단nav 고정으로 main부분 마진줌 */
-    margin-bottom: 100px;
-    margin-left: 7rem;
-    margin-right: 10rem;
-    max-width: 1200px;
-}
-.subboardTitle {
-    color: var(--color5);
-    font-size: medium;
-}
-.boardTitle {
-    font-family: 'Lora', serif;
-    font-weight: 500;
-    font-size: xx-large;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-.underboardTitle {
-    color:grey;
-    font-size: small;
-    padding-bottom: 10px;
+
+:root {
+    --color1: #e5e2d3; /*nav,footer 글씨색1*/
+    --color2: #50655e; /*글씨색2*/
+    --color3: white; /*전체배경3*/
+    --color4: #e6e5e1; /*배경4*/ 
+    --color5: #627b82; /*nav,footer배경5*/
+    --color6: white; /*배경6*/
+    --color7: #ffffff; /*배경4*/ 
+    --color8: #ccd4c7;   
 }
 
-
-/* 카테고리
--------------------------------------- */
-.service_board_top {
-    padding-top: 20px;
-    padding-bottom: 10px;    
-    float: left;
+/* ------------chatbot------- */
+#wrap {
+	margin:0 auto; 
+	font-family: 'Noto Sans KR', sans-serif; 
 } 
-.service-midTitle {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 400;
+
+#chatHeader {
+	padding: 3px 1px; 
+	font-family: 'Dancing Script', cursive;
+	font-weight: 400;
     font-size: x-large;
-    padding-bottom: 15px;
+}
+#btnClose {
+	border: none; 
+	background: none;
+	float: right;
+}
+ 
+#chatBox {
+	height: 500px; 
+	width: 367px; 
+	overflow-y:scroll; 
+	padding:10px 15px; 
+	background:var(--color8);
+} 	
+
+/*메세지입력  */
+
+#message {
+	width: 230px;
+	height: 28px;
+	border-radius: 30px;
+    border-color: var(--color8);
 }
 
-#service_warp {
-    margin: 0;
-    padding: 0;  
-    outline: none;
-    border: none;
-    text-align: center;
-}
-#service-top {
-    padding-bottom: 10px;
+#btnSubmit {
+	float: right; 
+	background:#eeeeee; 
+	height: 28px; 
+	padding-right:0;
 }
 
-/* chatBotbutton */
-.chatBot button {
-    font-family: 'Noto Sans KR', sans-serif;
+#chatbot {
+	margin-top:10px;
+}
+
+/* Enter버튼 */
+
+#chatBot-submit {
+	font-family: 'Noto Sans KR', sans-serif;
     cursor: pointer;
     background-color:var(--color8);
     color:#ffffff;
     border-radius: 2px;
     border-style: none;
     height: 30px;
-    width: 150px;
+    width: 45px;
 }
-.chatBot button:hover {
-    opacity: 70%;
+
+#chatBot-submit:hover{
+	opacity:70%;
 }
-/* middlebuttom */
-.serviceBtn button {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 100;
+
+#recordBtn {
+	font-family: 'Noto Sans KR', sans-serif;
     cursor: pointer;
-    background: var(--color8);
+    background-color:var(--color8);
     color:#ffffff;
     border-radius: 2px;
     border-style: none;
+    height: 30px;
+    width: 45px;
 }
-.serviceBtn button:hover {
-    opacity: 70%;
+
+#stopBtn {
+	font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    background-color:var(--color8);
+    color:#ffffff;
+    border-radius: 2px;
+    border-style: none;
+    height: 30px;
+    width: 45px;
+} 
+
+
+#recordBtn:hover , 
+#stopBtn:hover {
+	opacity:70%;
 }
+.msgBox  span {
+	padding:3px 5px; 
+	word-break:break-all; 
+	display:block; 
+	max-width:300px; 
+	margin-bottom: 10px; 
+	border-radius: 10px;
+}
+								 
+.msgBox.send  span {
+	background:#fef01b; 
+	float:right; 
+}
+
+.msgBox #in {
+	width:220px; 
+	background:var(--color8);
+}
+.msgBox.receive  span {
+	background:#ffffff; 
+	float:left;
+}
+
+
+/* 
+	word-break:단어 분리 결정 줄바꿈		
+	normal: 한중일 문자는 글자기준,
+	break-all:글자 기준 줄바꿈			
+ */
+
