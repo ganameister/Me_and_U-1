@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>번개 모임 등록 페이지</title>
+		<title>모두의 버킷리스트 모임 등록 페이지</title>
 		<!-- 헤드부분 임포트  -->
 		<c:import url="/WEB-INF/views/layout/head.jsp" /> 
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/register/regGatherRegister.css' />">
@@ -48,7 +48,7 @@
 		<c:import url="/WEB-INF/views/layout/top.jsp" />
 		<!--  -->
 		<div name="input_gatherInfo" id="input_gatherInfo">
-			<h4>번개 모임 개설</h4>
+			<h4>모두의 버킷리스트 모임 개설</h4>
 			<h5>모임 정보</h5>
 			<hr id="line">
 			<form id="regGather_frm" class="regGather_frm" method="post">
