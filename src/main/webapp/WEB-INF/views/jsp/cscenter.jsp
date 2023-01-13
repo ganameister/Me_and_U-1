@@ -12,11 +12,15 @@
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenter.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
+		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
 		<script type="text/javascript">
 			function actionToggle(){
 				var action=document.querySelector('.action');
 				action.classList.toggle('active')
-			}			
+			}
+			function openchatbot() {
+				var chat = window.open("/chatbotForm", "chatbot", "width=410, height=650");
+			}
 		</script>
 		<!--//Head  -->	
 		</head>	
@@ -36,7 +40,7 @@
 						<div class="subboardTitle">SERVICE</div>
 						<div class="boardTitle">QnABoard</div>
 						<div class="underboardTitle">질문답변</div>
-						<div class="chatBot"><button id="chatBot">Chat Bot</button></div>
+						<div class="chatBot"><button onClick="openchatbot()" id="chatBot">Chat Bot</button></div>
 					</div>
 
 					<!-- 카테고리 -->
@@ -111,13 +115,13 @@
 				</section>
 				<!-- board button Box -->
 				<div class="action" onclick="actionToggle();">
-					<span id="btnPl"><img src="<c:url value='/image/free-icon-add-circularss.png'/>" ></span>
+					<span id="btnPl"><img src="<c:url value='/images/free-icon-add-circularss.png'/>" ></span>
 					<ul>
-						<li id="btn1" type="button"><img src="<c:url value='/image/free-icon-chatbot-2068998.png'/>">Chat Bot</li>
-						<li id="btn2" type="button"><img src="<c:url value='/image/question.png'/>">QNA</li>
-						<li id="btn3" type="button"><img src="<c:url value='/image/faq.png'/>">FAQ</li>
-						<li id="btn4" type="button"><img src="<c:url value='/image/free-icon-notification-bell-7322162.png'/>">Notice</li>
-						<li id="btn5" type="button"><img src="<c:url value='/image/free-icon-paper-plane-149446.png'/>">Contact us</li>
+						<li id="btn1" type="button" onClick="openchatbot()"><img src="<c:url value='/images/free-icon-chatbot-2068998.png'/>">Chat Bot</li>
+						<li id="btn2" type="button"><img src="<c:url value='/images/question.png'/>">QNA</li>
+						<li id="btn3" type="button"><img src="<c:url value='/images/faq.png'/>">FAQ</li>
+						<li id="btn4" type="button"><img src="<c:url value='/images/free-icon-notification-bell-7322162.png'/>">Notice</li>
+						<li id="btn5" type="button"><img src="<c:url value='/images/free-icon-paper-plane-149446.png'/>">Contact us</li>
 					</ul>
 				</div>			
 				<!--// button -->
