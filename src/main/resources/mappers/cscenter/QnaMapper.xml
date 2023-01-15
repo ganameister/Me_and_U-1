@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.Me_and_U.project.dao.IQnaDAO">
+		<resultMap id="qnaResult" type="com.Me_and_U.project.model.QnaVO" >
+	  		<result property="qnaNo"  column="qnaNo"  />
+	  		<result property="qnaTitle"  column="qnaTitle"  />
+	  		<result property="qnaWrite"  column="qnaWrite"  />
+	  		<result property="qnaDate"  column="qnaDate"  />
+	  		<result property="memId"  column="memId"  />
+	  		<result property="memPw"  column="memPw"  />
+	  		<result property="memName"  column="memName"  />
+	  	</resultMap>
+
+		<!-- 메인 -->
+		<select id="listAllQna" resultMap="qnaResult">
+		SELECT * 
+		FROM qna 
+		ORDER BY qnaNo DESC
+		</select>
+		
+		<!-- 상세 -->
+		<select id="detailViewQna" parameterType="int" 
+		  							resultType="com.Me_and_U.project.model.QnaVO" >
+		SELECT * 
+		FROM qna 
+		WHERE qnaNo=#{qnaNo}
+		</select>	
+			
+		<!-- 삭제 -->  
+	    <delete id="deleteQna" parameterType="int"  >
+	  	DELETE 
+	  	FROM qna 
+	  	WHERE qnaNo=#{qnaNo}
+	    </delete>  
+	    
+		<!-- 수정 -->  
+		<update id="updateQna" parameterType="com.Me_and_U.project.model.QnaVO" >
+		 UPDATE qna
+		 SET qnaTitle=#{qnaTitle},qnaWrite=#{qnaWrite}  		
+		 WHERE qnaNo=#{qnaNo}					
+		</update>
+			
+	</mapper>
+
+
+
+
+
+

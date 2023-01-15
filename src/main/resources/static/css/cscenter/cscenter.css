@@ -102,12 +102,26 @@ body {
     color: grey;
     width: 100%;
 }
+.cstable a {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 100;
+    font-size: small;
+    color: grey;
+    text-decoration:none;
+}
+.cstable a:hover {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 100;
+    font-size: small;
+    color: #000000;
+    text-decoration:none;
+}
 .cstable td {
     padding: 10px;
 }
 #boardlist_title {
-    width: 50%;
-    text-align: none;
+    width: 70%;
+    text-align: left;
 }
 
 .line {

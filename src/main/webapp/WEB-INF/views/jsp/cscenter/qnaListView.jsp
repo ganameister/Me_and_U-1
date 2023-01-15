@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>CSCenter</title>
+		<title>QNA</title>
 		<!-- Header -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,48 +66,15 @@
 								<th class="boldTitleLine">Writer.</th>
 								<th class="boldTitleLine">Date.</th>
 							</tr>
+							<c:forEach var="qna" items="${qnaList}">
 							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
+								<td class="line"><a href="<c:url value='/cscenter/detailViewQna/${qna.qnaNo}'/>" >${qna.qnaNo}</td>
+								<td class="line"id="boardlist_title"><a href="<c:url value='/cscenter/detailViewQna/${qna.qnaNo}'/>" >${qna.qnaWrite}</td>
+								<td class="line">${qna.memId}</td>
+								<td class="line"><fmt:formatDate value='${qna.qnaDate}' pattern="yyyy-MM-dd  hh:mm"/></td>
 							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
+							 </c:forEach>
+							
 							<tr class="BottomLine">
 								<th colspan="4" class="BottomLine"></th>
 							</tr>

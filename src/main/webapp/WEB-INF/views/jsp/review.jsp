@@ -56,16 +56,16 @@
 					
 						<!-- <li class="review_container" value="${rev.reviewList}"> -->
 						<li class="review_container" value="운동"> <!-- 요부분은 나중에 위의 값으로 mapping시켜줌 -->
-						
-							<div class="mem_InfoBox"><span><img src="<c:url value='images/user.png'/>" id="memImg"></span>
+							<!-- id 중앙정렬 -->
+							<div class="mem_InfoBox"><span><img src="<c:url value='/images/user.png'/>" id="memImg"></span>	
 							<span id="reviewmemId">memId</span></div>							
-							<div class="memInfo"></div>								
+														
 							<div class ="review-Info" >
 								<img  class="review-img" src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">																
 								<div class="review_underBox">									
 									<!-- 하트하트 -->
-									<div class="heartbox">
-									<button class="heartBtn" onClick="addLike();"><img src="<c:url value='/images/heart.png'/>" id="heartbtnImg" ></button>
+									<div class="heartbox">							
+									<button class="heartBtn" ><img src='<c:url value="/images/heart.png"/>' id="heartbtnImg" ></button>
 									
 									<span class="heartNo">1</span>
 									</div>
@@ -174,35 +174,6 @@
 									<span class="heartNo">1</span>
 									</div>
 									<div class="review-title"><span class="title">게임2 Category</span></div>			
-									<div class="comment"><span>To climb steep hills requires slow pace at first.
-									To climb steep hills requires slow pace at first.
-									To climb steep hills requires slow pace at first.
-									To climb steep hills requires slow pace at first.
-									To climb steep hills requires slow pace at first.
-									To climb steep hills requires slow pace at first.
-									To climb steep hills requires slow pace at first.
-									To climb steep hills requires slow pace at first.
-									To climb steep hills requires slow pace at first.
-									To climb steep hills requires slow pace at first.</span></div>
-									<div align="right"><p id="reviewDate">-2023.01.14-</p></div>							
-								</div>																
-							</div>
-						</li>
-						<li class="review_container" value="운동"> <!-- 요부분은 나중에 위의 값으로 mapping시켜줌 -->
-						
-							<div class="mem_InfoBox"><span><img src="<c:url value='images/user.png'/>" id="memImg"></span>
-							<span id="reviewmemId">memId</span></div>							
-							<div class="memInfo"></div>								
-							<div class ="review-Info" >
-								<img  class="review-img" src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">																
-								<div class="review_underBox">									
-									<!-- 하트하트 -->
-									<div class="heartbox">
-									<button class="heartBtn" onClick="addLike();"><img src="<c:url value='/images/heart.png'/>" id="heartbtnImg" ></button>
-									
-									<span class="heartNo">1</span>
-									</div>
-									<div class="review-title"><span class="title">은하수 촬영하기-운동3 Category</span></div>			
 									<div class="comment"><span>To climb steep hills requires slow pace at first.
 									To climb steep hills requires slow pace at first.
 									To climb steep hills requires slow pace at first.

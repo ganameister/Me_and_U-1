@@ -18,9 +18,29 @@ $(document).ready(function(){
 			}
 		});
 	});
-
- 
+/**
+	$(funcion(){
+		var num=0;
+		$(".heartBtn").on('click',function(){
+			if(num==0){
+				$('this').attr('src','/images/redheart.png');
+				num =1;
+			}else {
+				$('this').attr('src','/images/heart.png');
+				num=0;
+			}
+		});
+	});
 	
+
+	 	$('input').click(function(){
+	  if($(this).hasClass("active")){
+	    $(this).removeClass("active");
+	  }else{
+	    $(this).addClass("active");  
+	  }
+	});
+*/	
 	
     
 });
