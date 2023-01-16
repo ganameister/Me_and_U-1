@@ -26,12 +26,12 @@ public class QnaService implements IQnaService {
 	}
 
 	@Override
-	public void deleteQna(int qnaNo) {
+	public void deleteQna(String qnaNo) {
 		dao.deleteQna(qnaNo);
 	}
 
 	@Override
-	public QnaVO detailViewQna(int qnaNo) {
+	public QnaVO detailViewQna(String qnaNo) {
 		return dao.detailViewQna(qnaNo);
 	}
 

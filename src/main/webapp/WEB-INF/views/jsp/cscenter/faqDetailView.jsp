@@ -11,10 +11,9 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterDetailVew.css' />">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterDetailVew2.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
-		<script src="<c:url value='/js/cscenter/cscenterDetail_qna.js'/>"></script>
 		<script type="text/javascript">
 		function actionToggle(){
 			var action=document.querySelector('.action');
@@ -41,8 +40,8 @@
 					<!-- 제목 -->
 					<div class="service-top">
 						<div class="subboardTitle">SERVICE</div>
-						<div class="boardTitle">QnABoard</div>
-						<div class="underboardTitle">질문답변</div>
+						<div class="boardTitle">FaQBoard</div>
+						<div class="underboardTitle">자주묻는질문</div>
 						<div class="chatBot"><button onClick="openchatbot()" id="chatBot">Chat Bot</button></div>
 					</div>
 
@@ -53,8 +52,6 @@
 							<button id="qna">QNA</button>
 							<button id="faq">FAQ</button>
 							<button id="notice">Notice</button>
-							<button id="update">QNA 수정</button>
-							<button id="delete">QNA 삭제</button>
 						</div>
 					</div>
 					<!-- Table -->
@@ -71,13 +68,13 @@
 							</tr>
 							
 							<tr class="line">
-								<td class="line">${qna.qnaNo }</td>
-								<td class="line"id="boardlist_title">${qna.qnaTitle }</td>
-								<td class="line">${qna.memId }</td>
-								<td class="line"><fmt:formatDate value='${qna.qnaDate}' pattern="yyyy-MM-dd  hh:mm"/></td>
+								<td class="line">${faq.faqNo }</td>
+								<td class="line"id="boardlist_title">${faq.faqTitle }</td>
+								<td class="line">${faq.memId }</td>
+								<td class="line"><fmt:formatDate value='${faq.faqDate}' pattern="yyyy-MM-dd  hh:mm"/></td>
 							</tr>
 							<tr class="line">
-								<td colspan="4" class="line"id="boardlist_title">${qna.qnaWrite }</td>							
+								<td colspan="4" class="line"id="boardlist_title">${faq.faqWrite }</td>							
 							</tr>
 							
 							<tr class="BottomLine">

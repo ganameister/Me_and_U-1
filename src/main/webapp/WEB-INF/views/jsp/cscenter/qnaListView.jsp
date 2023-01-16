@@ -69,7 +69,7 @@
 							<c:forEach var="qna" items="${qnaList}">
 							<tr class="line">
 								<td class="line"><a href="<c:url value='/cscenter/detailViewQna/${qna.qnaNo}'/>" >${qna.qnaNo}</td>
-								<td class="line"id="boardlist_title"><a href="<c:url value='/cscenter/detailViewQna/${qna.qnaNo}'/>" >${qna.qnaWrite}</td>
+								<td class="line"id="boardlist_title"><a href="<c:url value='/cscenter/detailViewQna/${qna.qnaNo}'/>" >${qna.qnaTitle}</td>
 								<td class="line">${qna.memId}</td>
 								<td class="line"><fmt:formatDate value='${qna.qnaDate}' pattern="yyyy-MM-dd  hh:mm"/></td>
 							</tr>

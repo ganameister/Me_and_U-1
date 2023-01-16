@@ -22,7 +22,7 @@
 		</select>
 		
 		<!-- 상세 -->
-		<select id="detailViewQna" parameterType="int" 
+		<select id="detailViewQna" parameterType="String" 
 		  							resultType="com.Me_and_U.project.model.QnaVO" >
 		SELECT * 
 		FROM qna 
@@ -30,7 +30,7 @@
 		</select>	
 			
 		<!-- 삭제 -->  
-	    <delete id="deleteQna" parameterType="int"  >
+	    <delete id="deleteQna" parameterType="String"  >
 	  	DELETE 
 	  	FROM qna 
 	  	WHERE qnaNo=#{qnaNo}

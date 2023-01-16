@@ -4,38 +4,38 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class QnaVO {
-	private String qnaNo;
-	private String qnaTitle;
-	private String qnaWrite;//글내용
+public class FaqVO {
+	private int faqNo;
+	private String faqTitle;
+	private String faqWrite;//글내용
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date qnaDate;
+	private Date faqDate;
     private String memId;
     private String memPw;
     private String memName; //글작성자
-	public String getQnaNo() {
-		return qnaNo;
+	public int getFaqNo() {
+		return faqNo;
 	}
-	public void setQnaNo(String qnaNo) {
-		this.qnaNo = qnaNo;
+	public void setFaqNo(int faqNo) {
+		this.faqNo = faqNo;
 	}
-	public String getQnaTitle() {
-		return qnaTitle;
+	public String getFaqTitle() {
+		return faqTitle;
 	}
-	public void setQnaTitle(String qnaTitle) {
-		this.qnaTitle = qnaTitle;
+	public void setFaqTitle(String faqTitle) {
+		this.faqTitle = faqTitle;
 	}
-	public String getQnaWrite() {
-		return qnaWrite;
+	public String getFaqWrite() {
+		return faqWrite;
 	}
-	public void setQnaWrite(String qnaWrite) {
-		this.qnaWrite = qnaWrite;
+	public void setFaqWrite(String faqWrite) {
+		this.faqWrite = faqWrite;
 	}
-	public Date getQnaDate() {
-		return qnaDate;
+	public Date getFaqDate() {
+		return faqDate;
 	}
-	public void setQnaDate(Date qnaDate) {
-		this.qnaDate = qnaDate;
+	public void setFaqDate(Date faqDate) {
+		this.faqDate = faqDate;
 	}
 	public String getMemId() {
 		return memId;
@@ -56,4 +56,5 @@ public class QnaVO {
 		this.memName = memName;
 	}
 	
+    
 }

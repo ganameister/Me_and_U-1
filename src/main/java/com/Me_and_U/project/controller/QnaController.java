@@ -27,7 +27,7 @@ public class QnaController {
 	}
 	
 	@RequestMapping("/cscenter/detailViewQna/{qnaNo}")
-	public String detailViewQna(@PathVariable int qnaNo,
+	public String detailViewQna(@PathVariable String qnaNo,
 			Model model) {
 		QnaVO qna = service.detailViewQna(qnaNo);
 		model.addAttribute("qna",qna);
@@ -37,14 +37,14 @@ public class QnaController {
 	
 	
 	@RequestMapping("/cscenter/deleteQna/{qnaNo}")
-	public String deleteQna(@PathVariable int qnaNo) {
+	public String deleteQna(@PathVariable String qnaNo) {
 		service.deleteQna(qnaNo);		
 		return "redirect:/qnaListView";
 	}
 	
 	
 	@RequestMapping("/cscenter/qnaUpdateForm/{qnaNo}")
-	public String qnaUpdateForm(@PathVariable int qnaNo,
+	public String qnaUpdateForm(@PathVariable String qnaNo,
 			  Model model) {
 		
 		QnaVO qna = service.detailViewQna(qnaNo);
