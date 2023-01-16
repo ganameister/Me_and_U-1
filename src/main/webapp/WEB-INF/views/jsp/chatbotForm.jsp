@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>chatbot</title>
+		<title>Me&U chatbot</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -31,21 +31,21 @@
 					
 					<section class="chatbotForm">
 						<!-- 채팅 답변출력 -->
-						<div id="chatBox"></div>
-						<form id="chatbot">
-							<input type="button" id="recordBtn" value="마이크">
+						<div id="chatBox"></div>						
+						
+					 <form id="chatbot">
+							<input type="button" id="recordBtn" value="Mic">
 							<input type="button" id="stopBtn" value="Stop">
 							<input type="text" id="message" name="message" size="30"placeholder="챗봇'Mu'에게  상담해주세요"> 	
-							<input type="submit" value="Enter" id="chatBot-submit">
+							<input type="submit" value="Enter" id="chatBot-submit" >
 						</form> 
-						
-						
 						 
-						 
-						 
+											 
 					<!-- 	 <br><br>				  
 						 <button id="recordBtn" class="img-btnMic">음성인식</button>
-						 <button id="stopBtn" class="img-btnStop">Stop</button>				  
+						 <button id="stopBtn" class="img-btnStop">Stop</button>	
+						 <button id="recordBtn">녹음</button>
+			 				  <button id="stopBtn">정지</button>			  
 					 -->	 				  
 						 				  
 						  <div>

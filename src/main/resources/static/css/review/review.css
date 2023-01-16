@@ -178,7 +178,7 @@ body {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .image-list {
     
-    padding-top: 0;
+    padding-top: 10px;
     padding-bottom: 30px;
     margin-left:-40px;
 }
@@ -199,9 +199,15 @@ body {
 #reviewmemId {
     font-size: small;
     font-weight: bold;
+    text-align:top;
 }
-.mem_InfoBox span {
-    display: inline-block;
+.mem_InfoBox span{
+	display:inline-block;
+	text-align:center;
+	vertical-align: middle;
+}
+.mem_InfoBox {
+	margin-bottom:3px;
 }
 /*heartBox ------------------ */
 #heartbtnImg {
@@ -250,5 +256,13 @@ body {
 }
 .comment {
 	height:60px;
-	overflow:auto;
+	overflow:auto;	
+}
+.comment::-webkit-scrollbar {
+	width:5px;
+	background-color:var(--color3);
+}
+.comment::-webkit-scrollbar-thumb {
+	width:5px;
+	background-color:var(--color8);
 }

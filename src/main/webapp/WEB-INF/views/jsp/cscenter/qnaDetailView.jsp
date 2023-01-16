@@ -1,26 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>CSCenter</title>
+		<title>QNA page</title>
 		<!-- Header -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenter.css' />">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterDetailVew.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
+		<script src="<c:url value='/js/cscenter/cscenterDetail_qna.js'/>"></script>
 		<script type="text/javascript">
-			function actionToggle(){
-				var action=document.querySelector('.action');
-				action.classList.toggle('active')
-			}
-			function openchatbot() {
-				var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
-			}
+		function actionToggle(){
+			var action=document.querySelector('.action');
+			action.classList.toggle('active')
+		}
+		function openchatbot() {
+			var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
+		}
 		</script>
 		<!--//Head  -->	
 		</head>	
@@ -51,6 +53,8 @@
 							<button id="qna">QNA</button>
 							<button id="faq">FAQ</button>
 							<button id="notice">Notice</button>
+							<button id="update">QNA 수정</button>
+							<button id="delete">QNA 삭제</button>
 						</div>
 					</div>
 					<!-- Table -->
@@ -65,48 +69,17 @@
 								<th class="boldTitleLine">Writer.</th>
 								<th class="boldTitleLine">Date.</th>
 							</tr>
+							
 							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
+								<td class="line">${qna.qnaNo }</td>
+								<td class="line"id="boardlist_title">${qna.qnaTitle }</td>
+								<td class="line">${qna.memId }</td>
+								<td class="line"><fmt:formatDate value='${qna.qnaDate}' pattern="yyyy-MM-dd  hh:mm"/></td>
 							</tr>
 							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
+								<td colspan="4" class="line"id="boardlist_title">${qna.qnaWrite }</td>							
 							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
+							
 							<tr class="BottomLine">
 								<th colspan="4" class="BottomLine"></th>
 							</tr>
@@ -114,6 +87,7 @@
 					</div>
 					<!-- Table -->
 				</section>
+				
 				<!-- board button Box -->
 				<div class="action" onclick="actionToggle();">
 					<span id="btnPl"><img src="<c:url value='/images/free-icon-add-circularss.png'/>" ></span>

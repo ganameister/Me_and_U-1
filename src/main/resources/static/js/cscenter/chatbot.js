@@ -117,10 +117,10 @@
  		event.preventDefault();
  		
  		//message가 빈값인 경우 확인 메시지 출력
- 		if($('#message').val() == ""){
+		if($('#message').val() == ""){
  			alert("질문 입력하세요");
  			$('#message').focus();
- 			return false;
+			return false;
  		}
  		
  		

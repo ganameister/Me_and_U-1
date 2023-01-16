@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>CSCenter</title>
+		<title>review</title>
 		<!-- Header -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
 				var action=document.querySelector('.action');
 				action.classList.toggle('active')
 			}
-			function openchatbot() {
+cti			funon openchatbot() {
 				var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
 			}
 		</script>
@@ -65,48 +65,15 @@
 								<th class="boldTitleLine">Writer.</th>
 								<th class="boldTitleLine">Date.</th>
 							</tr>
+							<c:forEach var="qna" items="${qnaList }">
 							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
+								<td class="line"><a href="<c:url value='/cscenter/detailViewQna/${qna.qnaNo }'/>" >${qna.qnaNo }</td>
+								<td class="line"id="boardlist_title">${qna.qnaWrite }</td>
+								<td class="line">${qna.memId }</td>
+								<td class="line">${qna.qnaDate }</td>
 							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
+							 </c:forEach>
+							
 							<tr class="BottomLine">
 								<th colspan="4" class="BottomLine"></th>
 							</tr>
