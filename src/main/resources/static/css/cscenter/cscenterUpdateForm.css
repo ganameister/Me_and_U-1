@@ -87,17 +87,76 @@ body {
     opacity: 70%;
 }
 /* 수정 취소 버튼 */
-.update button {
+
+.updateQna input {
 	font-family: 'Noto Sans KR', sans-serif;
     font-weight: 100;
     cursor: pointer;
+    background: var(--color3);
+    color: grey;
+    font-size:small;
+    border-radius: 2px;
+    /* border: 1px solid var(--color5);    */
+    border-style: none; 
+}
+.updateQna input:hover {
+    opacity: 70%;
     background: var(--color8);
     color:#ffffff;
     border-radius: 2px;
     border-style: none;
 }
-.update button:hover {
-    opacity: 70%;
+
+/* input text */
+
+#qnaNo {
+	border-style :none;
+	border-bottom:1px solid var(--color5);
+	width:100%;
+	max-width:1000px;		
+}
+#qnaTitle {
+	border-style :none;
+	border-bottom:1px solid var(--color5);
+	width:100%;
+	max-width:1000px;		
+}
+#qnaWrite {
+	border: 1px solid var(--color5);
+	width:100%;
+	max-width:1000px;
+	height: 200px;
+	overflow-y:scroll;
+	text-align:top;		
+}
+#qnaNo:focus {	
+	outline:none;
+	border-bottom:1px solid var(--color8);
+	width:100%;
+	max-width:1000px;		
+}
+#qnaTitle:focus {	
+	outline:none;
+	border-bottom:1px solid var(--color8);
+	width:100%;
+	max-width:1000px;		
+}
+#qnaWrite:focus {	
+	outline:none;
+	border: 1px solid var(--color8);
+	width:100%;
+	max-width:1000px;
+	height: 200px;		
+}
+#qnaWrite::-webkit-scrollbar {
+	width:5px;
+	background-color:var(--color3);
+}
+#qnaWrite::-webkit-scrollbar-thumb {
+	background-color:var(--color5);
+}
+#qnaWrite::-webkit-scrollbar-track {
+	background-color:var(--color4);
 }
 /* #qna {
     margin-left: -35px;

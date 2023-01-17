@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>CSCenter</title>
+		<title>Notice page</title>
 		<!-- Header -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenter.css' />">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterDetailVew2.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
 		<script type="text/javascript">
@@ -24,7 +25,7 @@
 		</script>
 		<!--//Head  -->	
 		</head>	
-	<body>
+	<body>	
 		<!-- wrap -->
 		<div id="wrap">
 			<!-- Top -->			
@@ -39,8 +40,8 @@
 					<!-- 제목 -->
 					<div class="service-top">
 						<div class="subboardTitle">SERVICE</div>
-						<div class="boardTitle">QnABoard</div>
-						<div class="underboardTitle">질문답변</div>
+						<div class="boardTitle">noticeBoard</div>
+						<div class="underboardTitle">자주묻는질문</div>
 						<div class="chatBot"><button onClick="openchatbot()" id="chatBot">Chat Bot</button></div>
 					</div>
 
@@ -65,48 +66,19 @@
 								<th class="boldTitleLine">Writer.</th>
 								<th class="boldTitleLine">Date.</th>
 							</tr>
+							
 							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
+								<td class="line">${notice.noticeNo }</td>
+								<td class="line"id="boardlist_title">${notice.noticeTitle }</td>
+								<td class="line">${notice.memId }</td>
+								<td class="line"><fmt:formatDate value='${notice.noticeDate}' pattern="yyyy-MM-dd  hh:mm"/></td>
 							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
+							<tr class="line" >
+								<td id="tdwrite"></td>
+								<td colspan="2" class="line"id="boardlist_title">${notice.noticeWrite }</td>							
+								<td></td>							
 							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
-							<tr class="line">
-								<td class="line">Notice</td>
-								<td class="line"id="boardlist_title">Me&U 홈페이지 이용안내입니다</td>
-								<td class="line">admin</td>
-								<td class="line">2022.1.11</td>
-							</tr>
+							
 							<tr class="BottomLine">
 								<th colspan="4" class="BottomLine"></th>
 							</tr>
@@ -114,11 +86,12 @@
 					</div>
 					<!-- Table -->
 				</section>
+				
 				<!-- board button Box -->
 				<div class="action" onclick="actionToggle();">
 					<span id="btnPl"><img src="<c:url value='/images/free-icon-add-circularss.png'/>" ></span>
 					<ul>
-						<li id="btn1" type="button" onClick="openchatbot()"><img src="<c:url value='/images/free-icon-chatbot-2068998.png'/>">Chat Bot</li>
+						<li id="btn1" type="button" onclick="openchatbot();"><img src="<c:url value='/images/free-icon-chatbot-2068998.png'/>">Chat Bot</li>
 						<li id="btn2" type="button"><img src="<c:url value='/images/question.png'/>">QNA</li>
 						<li id="btn3" type="button"><img src="<c:url value='/images/faq.png'/>">FAQ</li>
 						<li id="btn4" type="button"><img src="<c:url value='/images/free-icon-notification-bell-7322162.png'/>">Notice</li>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
@@ -11,9 +11,10 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenter.css' />">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterQnalistView.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
+		<script src="<c:url value='/js/cscenter/cscenterQnalistView.js'/>"></script>
 		<script type="text/javascript">
 			function actionToggle(){
 				var action=document.querySelector('.action');
@@ -52,6 +53,7 @@
 							<button id="qna">QNA</button>
 							<button id="faq">FAQ</button>
 							<button id="notice">Notice</button>
+							<button id="qnaInput">QNA 등록</button>
 						</div>
 					</div>
 					<!-- Table -->
@@ -68,8 +70,8 @@
 							</tr>
 							<c:forEach var="qna" items="${qnaList}">
 							<tr class="line">
-								<td class="line"><a href="<c:url value='/cscenter/detailViewQna/${qna.qnaNo}'/>" >${qna.qnaNo}</td>
-								<td class="line"id="boardlist_title"><a href="<c:url value='/cscenter/detailViewQna/${qna.qnaNo}'/>" >${qna.qnaTitle}</td>
+								<td class="line"> <a href="<c:url value='/cscenter/detailViewQna/${qna.qnaNo}'/>"> ${qna.qnaNo}</a></td>
+								<td class="line"id="boardlist_title"> <a href="<c:url value='/cscenter/detailViewQna/${qna.qnaNo}'/>"> ${qna.qnaTitle}</a></td>
 								<td class="line">${qna.memId}</td>
 								<td class="line"><fmt:formatDate value='${qna.qnaDate}' pattern="yyyy-MM-dd  hh:mm"/></td>
 							</tr>

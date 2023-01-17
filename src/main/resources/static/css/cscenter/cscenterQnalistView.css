@@ -46,7 +46,7 @@ body {
     font-weight: 400;
     font-size: x-large;
     padding-bottom: 15px;
-    
+    margin-left:-70px;
 }
 
 #service_warp {
@@ -92,19 +92,7 @@ body {
 }  */
 /*  table 
 -------------------------------------- */
-#tdwrite {
-	height:200px;
-	overflow:auto;
-	
-}
-#tdwrite::-webkit-scrollbar {
-	width:5px;
-	background-color:var(--color3);
-}
-#tdwrite::-webkit-scrollbar-thumb {
-	width:5px;
-	background-color:var(--color8);
-}
+
 #service-board {    
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -138,6 +126,7 @@ body {
 }
 
 .line {
+    cursor:pointer;
     border-top:1px solid var(--color4);
 }
 

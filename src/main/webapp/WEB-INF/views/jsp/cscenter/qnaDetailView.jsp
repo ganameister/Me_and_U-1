@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
@@ -23,6 +23,16 @@
 		function openchatbot() {
 			var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
 		}
+		function qnadelete(){
+			var answer = confirm("삭제하시겠습니까?");
+			if(answer){
+				location.href = "<c:url value='/cscenter/deleteQna/${qna.qnaNo}'/>";
+			}
+		}
+		function qnaupdate(){
+				location.href = "<c:url value='/cscenter/qnaUpdateForm/${qna.qnaNo}'/>";			
+		}
+		
 		</script>
 		<!--//Head  -->	
 		</head>	
@@ -43,7 +53,7 @@
 						<div class="subboardTitle">SERVICE</div>
 						<div class="boardTitle">QnABoard</div>
 						<div class="underboardTitle">질문답변</div>
-						<div class="chatBot"><button onClick="openchatbot()" id="chatBot">Chat Bot</button></div>
+						<div class="chatBot"><button id="chatBot">Chat Bot</button></div>
 					</div>
 
 					<!-- 카테고리 -->
@@ -52,10 +62,10 @@
 						<div class="serviceBtn">
 							<button id="qna">QNA</button>
 							<button id="faq">FAQ</button>
-							<button id="notice">Notice</button>
-							<button id="update">QNA 수정</button>
-							<button id="delete">QNA 삭제</button>
-						</div>
+							<button id="notice">Notice</button>							
+							<button id="update" onclick="qnaupdate();">QNA 수정</button>
+							<button id="delete" onclick="qnadelete();">QNA 삭제</button>							
+							</div>
 					</div>
 					<!-- Table -->
 					<div class ="service-board">
@@ -76,8 +86,10 @@
 								<td class="line">${qna.memId }</td>
 								<td class="line"><fmt:formatDate value='${qna.qnaDate}' pattern="yyyy-MM-dd  hh:mm"/></td>
 							</tr>
-							<tr class="line">
-								<td colspan="4" class="line"id="boardlist_title">${qna.qnaWrite }</td>							
+							<tr class="line" >
+								<td id="tdwrite"></td>
+								<td colspan="2" class="line"id="boardlist_title">${qna.qnaWrite }</td>
+								<td></td>							
 							</tr>
 							
 							<tr class="BottomLine">

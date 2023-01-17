@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.Me_and_U.project.dao.INoticeDAO">
+		<resultMap id="noticeResult" type="com.Me_and_U.project.model.NoticeVO" >
+	  		<result property="noticeNo"  column="noticeNo"  />
+	  		<result property="noticeTitle"  column="noticeTitle"  />
+	  		<result property="noticeWrite"  column="noticeWrite"  />
+	  		<result property="noticeDate"  column="noticeDate"  />
+	  		<result property="memId"  column="memId"  />
+	  		<result property="memPw"  column="memPw"  />
+	  		<result property="memName"  column="memName"  />
+	  	</resultMap>
+
+		<!-- 메인 -->
+		<select id="listAllNotice" resultMap="noticeResult">
+		SELECT * 
+		FROM notice 
+		ORDER BY noticeNo DESC
+		</select>
+		
+		<!-- 상세 -->
+		<select id="detailViewNotice" parameterType="int" 
+		  							resultType="com.Me_and_U.project.model.NoticeVO" >
+		SELECT * 
+		FROM notice 
+		WHERE noticeNo=#{noticeNo}
+		</select>	
+		
+		
+	</mapper>
+
+
+
+
+

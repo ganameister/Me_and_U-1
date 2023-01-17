@@ -10,7 +10,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenter.css' />">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterQnaInsert.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
 		<script type="text/javascript">
@@ -18,7 +18,7 @@
 				var action=document.querySelector('.action');
 				action.classList.toggle('active')
 			}
-cti			funon openchatbot() {
+			function openchatbot() {
 				var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
 			}
 		</script>
@@ -55,29 +55,27 @@ cti			funon openchatbot() {
 					</div>
 					<!-- Table -->
 					<div class ="service-board">
-						<table class="cstable">
-							<tr class="TopLine">
-								<td colspan="4" class="boldTopLine"></td>
-							</tr>
-							<tr class="TitleLine">
-								<th class="boldTitleLine">No.</th>
-								<th class="boldTitleLine"id="boardlist_title">Title.</th>
-								<th class="boldTitleLine">Writer.</th>
-								<th class="boldTitleLine">Date.</th>
-							</tr>
-							<c:forEach var="qna" items="${qnaList }">
-							<tr class="line">
-								<td class="line"><a href="<c:url value='/cscenter/detailViewQna/${qna.qnaNo }'/>" >${qna.qnaNo }</td>
-								<td class="line"id="boardlist_title">${qna.qnaWrite }</td>
-								<td class="line">${qna.memId }</td>
-								<td class="line">${qna.qnaDate }</td>
-							</tr>
-							 </c:forEach>
-							
-							<tr class="BottomLine">
-								<th colspan="4" class="BottomLine"></th>
-							</tr>
-						</table>
+						<form method="post" action="<c:url value='jsp/cscenter/qnaNewForm'/>">
+							<table class="cstable">
+								<tr class="TopLine">
+									<td colspan="10" class="boldTopLine">QNA 등록</td>
+								</tr>														
+								<tr class="line" >
+									<td class="Line"width="10px">Title.</td><td colspan="9">
+										<input type="text"id="qnaTitle" name="qnaTitle"></td></tr>
+								<tr class="line">
+									<td class="Line">Write.</td><td colspan="9">
+										<textarea id="qnaWrite" name="qnaWrite"> </textarea>
+										<!-- <input type="text"id="qnaWrite" name="qnaWrite"> -->
+										</td></tr>
+								<tr class="BottomLine">
+									<th colspan="6" class="BottomLine"></th>
+								</tr>
+								<tr aling="center" class="insertQna">
+									<td colspan="5"><input type="submit" value="등록"> 
+									<input type="reset" value="취소"></td></tr>
+							</table>
+						</form>
 					</div>
 					<!-- Table -->
 				</section>

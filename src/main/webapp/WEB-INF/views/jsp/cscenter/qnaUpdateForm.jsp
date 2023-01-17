@@ -16,13 +16,13 @@
 		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
 		<script src="<c:url value='/js/cscenter/cscenterUpdateForm.js'/>"></script>
 		<script type="text/javascript">
-		function actionToggle(){
-			var action=document.querySelector('.action');
-			action.classList.toggle('active')
-		}
-		function openchatbot() {
-			var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
-		}
+			function actionToggle(){
+				var action=document.querySelector('.action');
+				action.classList.toggle('active')
+			}
+			function openchatbot() {
+				var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
+			}
 		</script>
 		<!--//Head  -->	
 		</head>	
@@ -57,37 +57,28 @@
 					</div>
 					<!-- Table -->
 					<div class ="service-board">
-					<form method="post" action="jsp/cscenter/qnaUpdateForm">
+					<form method="post" action="/cscenter/updateQna">
 						<table class="cstable">
-							<tr class="TopLine">
-								<td colspan="4" class="boldTopLine"></td>
-							</tr>
-							<tr class="TitleLine">
-								<th class="boldTitleLine">No.</th>
-								<th class="boldTitleLine"id="boardlist_title">Title.</th>
-								<th class="boldTitleLine">Writer.</th>
-								<th class="boldTitleLine">Date.</th>
-							</tr>
-							
-							<tr class="line">
-								<td class="line"><input type="text"name="id"value="${qna.qnaNo }"readonly></td>
-								<td class="line"id="boardlist_title"><input type="text"name="title"value="${qna.qnaTitle }"></td>
-								<td class="line">${qna.memId }</td>
-								<td class="line"><fmt:formatDate value='${qna.qnaDate}' pattern="yyyy-MM-dd  hh:mm"/></td>
-							</tr>
-							<tr class="line">
-								<td colspan="4" class="line"id="boardlist_title">
-								<input type="text"name="content"value="${qna.qnaWrite }"></td>							
-							</tr>
-							
-							<tr class="BottomLine">
-								<th colspan="4" class="BottomLine"></th>
-							</tr>
-						</table>
-							<div class="update">
-							<input type="submit" value="수정"> 
-							<input type="reset" value="취소">
-							</div>
+								<tr class="TopLine">
+									<td colspan="10" class="boldTopLine">QNA 수정</td>
+								</tr>														
+								<tr class="line">
+									<td class="line" width="10px">No.</td><td colspan="9">
+										<input type="text"id="qnaNo" name="qnaNo"value="${qna.qnaNo }"readonly></td>
+								<tr class="line">
+									<td class="Line">Title.</td><td colspan="9">
+										<input type="text"id="qnaTitle" name="qnaTitle"value="${qna.qnaTitle }"></td></tr>
+								<tr class="line">
+									<td class="Line">Write.</td><td colspan="9">
+										<textarea id="qnaWrite"  name="qnaWrite" value="${qna.qnaWrite }">${qna.qnaWrite } </textarea>								
+										</td></tr>
+								<tr class="BottomLine">
+									<th colspan="6" class="BottomLine"></th>
+								</tr>
+								<tr aling="center" class="updateQna">
+									<td colspan="5"><input type="submit" value="수정"> 
+									<input type="reset" value="취소"></td></tr>
+							</table>
 						</form>
 					</div>
 					<!-- Table -->
