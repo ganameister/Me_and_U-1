@@ -19,20 +19,25 @@ public class QnaService implements IQnaService {
 	public ArrayList<QnaVO> listAllQna() {
 		return dao.listAllQna();
 	}
-
+	//수정
 	@Override
 	public void updateQna(QnaVO qna) {
 		dao.updateQna(qna);
 	}
-
+	//삭제
 	@Override
-	public void deleteQna(String qnaNo) {
+	public void deleteQna(int qnaNo) {
 		dao.deleteQna(qnaNo);
 	}
-
+	
 	@Override
-	public QnaVO detailViewQna(String qnaNo) {
+	public QnaVO detailViewQna(int qnaNo) {
 		return dao.detailViewQna(qnaNo);
+	}
+	//등록
+	@Override
+	public void insertQna(QnaVO qna) {
+		dao.insertQna(qna);
 	}
 
 }

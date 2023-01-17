@@ -22,7 +22,7 @@
 		</select>
 		
 		<!-- 상세 -->
-		<select id="detailViewQna" parameterType="String" 
+		<select id="detailViewQna" parameterType="int" 
 		  							resultType="com.Me_and_U.project.model.QnaVO" >
 		SELECT * 
 		FROM qna 
@@ -30,7 +30,7 @@
 		</select>	
 			
 		<!-- 삭제 -->  
-	    <delete id="deleteQna" parameterType="String"  >
+	    <delete id="deleteQna" parameterType="int"  >
 	  	DELETE 
 	  	FROM qna 
 	  	WHERE qnaNo=#{qnaNo}
@@ -42,6 +42,13 @@
 		 SET qnaTitle=#{qnaTitle},qnaWrite=#{qnaWrite}  		
 		 WHERE qnaNo=#{qnaNo}					
 		</update>
+		
+		<!-- 등록 -->  
+		<insert id="insertQna" parameterType="com.Me_and_U.project.model.QnaVO" >
+		 INSERT INTO qna (qnaNo,qnaTitle,qnaWrite ) 		
+		 VALUES ( #{qnaNo}, #{qnaTitle},#{qnaWrite})					
+		</insert>
+		
 			
 	</mapper>
 

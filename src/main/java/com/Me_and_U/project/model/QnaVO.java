@@ -5,7 +5,7 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class QnaVO {
-	private String qnaNo;
+	private int qnaNo;
 	private String qnaTitle;
 	private String qnaWrite;//글내용
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -13,10 +13,10 @@ public class QnaVO {
     private String memId;
     private String memPw;
     private String memName; //글작성자
-	public String getQnaNo() {
+	public int getQnaNo() {
 		return qnaNo;
 	}
-	public void setQnaNo(String qnaNo) {
+	public void setQnaNo(int qnaNo) {
 		this.qnaNo = qnaNo;
 	}
 	public String getQnaTitle() {

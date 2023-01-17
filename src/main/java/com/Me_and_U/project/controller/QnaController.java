@@ -29,25 +29,26 @@ public class QnaController {
 	@RequestMapping("/cscenter/detailViewQna/{qnaNo}")
 	public String detailViewQna(@PathVariable String qnaNo,
 			Model model) {
-		QnaVO qna = service.detailViewQna(qnaNo);
+		QnaVO qna = service.detailViewQna(Integer.parseInt(qnaNo));	
 		model.addAttribute("qna",qna);
 		return "jsp/cscenter/qnaDetailView";	
 	}
 	
 	
-	
+	//삭제
 	@RequestMapping("/cscenter/deleteQna/{qnaNo}")
-	public String deleteQna(@PathVariable String qnaNo) {
+	public String deleteQna(@PathVariable int qnaNo) { 
 		service.deleteQna(qnaNo);		
 		return "redirect:/qnaListView";
 	}
 	
-	
+	//수정
 	@RequestMapping("/cscenter/qnaUpdateForm/{qnaNo}")
 	public String qnaUpdateForm(@PathVariable String qnaNo,
 			  Model model) {
 		
-		QnaVO qna = service.detailViewQna(qnaNo);
+		QnaVO qna = service.detailViewQna(Integer.parseInt(qnaNo));	
+		//integer.parsen
 		model.addAttribute("qna", qna);		
 		return "jsp/cscenter/qnaUpdateForm";
 	}
@@ -58,4 +59,16 @@ public class QnaController {
 		return "redirect:/qnaListView";
 	}
 	
+	//등록	
+	@RequestMapping("/qnaListInput")
+	public String qnaNewForm() { 		  		 
+		return "jsp/cscenter/qnaNewForm";
+	}
+	
+	@RequestMapping("jsp/cscenter/qnaNewForm")
+	public String insertQna(QnaVO qna) {
+		service.insertQna(qna);
+		
+		return "redirect:/qnaListView";
+	}
 }
