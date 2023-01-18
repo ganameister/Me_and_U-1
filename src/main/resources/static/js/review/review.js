@@ -75,6 +75,8 @@ $(document).ready(function(){
 	  }
 	});
 */	
-	
+	$("#newPost").on('click',function(){
+			window.location.href = "/reviewRegister";
+		});	
     
 });

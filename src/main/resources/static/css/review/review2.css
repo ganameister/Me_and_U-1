@@ -1,0 +1,275 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+:root {
+    --color1: #e5e2d3; /*nav,footer 글씨색1*/
+    --color2: #50655e; /*글씨색2*/
+    --color3: white; /*전체배경3*/
+    --color4: #e6e5e1; /*배경4*/ 
+    --color5: #627b82; /*nav,footer배경5*/
+    --color6: white; /*배경6*/
+    --color7: #ffffff; /*배경4*/
+    --color8: #ccd4c7;                   
+}
+
+
+#review_warp {
+    margin: 0;
+    padding: 0;  
+    outline: none;
+    border: none;
+}
+ 
+#review_warp img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+	/* object-fit:cover; */
+}
+
+
+#review_warp ol,ul {
+    list-style: none;
+}
+
+#review_warp {
+    color: var(--color2);/*리뷰글씨색*/                                        
+}
+
+
+/* title Box */
+/* 제목
+-------------------------------------- */
+
+body { 
+    width:100%;
+    max-width:1600px; 
+	margin:auto;
+}
+.review-top {
+	margin-top: 200px;   
+    margin-left: 7rem;
+    margin-right: 7rem;
+    max-width: 1200px;
+}
+.reviewBox {
+    margin-top: 111px;   
+    margin-bottom: 100px;
+    margin-left: 7rem;
+    margin-right: 7rem;
+    max-width: 1200px;
+}
+.subTitle {
+    color: var(--color5);
+    font-size: medium;
+}
+.toptitle {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: xx-large;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.underTitle {
+    color:grey;
+    font-size: small;
+    margin-top: 0;
+    margin-bottom: 7px;
+}
+
+/* 카테고리
+-------------------------------------- */
+.review_board_top {
+    padding-top: 20px;
+    padding-bottom: 10px;    
+ 	float: left;
+ 	margin-top: 20px;   
+    margin-left: 7rem;
+    margin-right: 7rem;
+    max-width: 1200px; 
+    padding-bottom:0;
+}
+
+
+.select_categ {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+    font-size: x-large;
+    padding-bottom: 15px;
+}
+
+#review_warp {
+    margin: 0;
+    padding: 0;  
+    outline: none;
+    border: none;
+    
+}
+.review-top {
+    padding-bottom: 10px;
+    text-align: center;/*우선적용  */
+}
+
+/* newPost button */
+.newPost button {
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    background-color:var(--color8);
+    color:#ffffff;
+    border-radius: 2px;
+    border-style: none;
+    height: 30px;
+    width: 150px;
+}
+.newPost button:hover {
+    opacity: 70%;
+}
+
+
+/* categ buttom */
+.cateBtn {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+    background: var(--color8);
+    color:#ffffff;
+    border-radius: 2px;
+    border-style: none;
+}
+.cateBtn:hover {
+    opacity: 70%;
+}
+/* heart button */
+.heartBtn {
+	cursor"pointer";
+	border-style:none;
+	background:var(--color3);
+}
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* searchBox
+
+.searchBox {
+    padding: 0 2.4rem;
+}
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* IMAGE LIST
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+.image-list {
+    margin-bottom: 3rem;  									
+}
+
+.image-list li {
+    background:var(--color7); /*리뷰배경색*/
+    color: var(--color2); /*리뷰글씨색*/
+}
+
+
+/* grid-view
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.grid-view {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(275px,1fr));
+    
+}
+
+/* image-list
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.image-list {
+    
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin-left:-40px;
+}
+
+
+/* div {
+    border:1px solid red;
+}   */ 
+
+/*review_topBox  -------------------*/
+#memImg {
+    margin-top:10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;     
+    justify-content: center; 
+} 
+#reviewmemId {
+    font-size: small;
+    font-weight: bold;
+    text-align:top;
+}
+.mem_InfoBox span{
+	display:inline-block;
+	text-align:center;
+	vertical-align: middle;
+}
+.mem_InfoBox {
+	margin-bottom:3px;
+}
+/*heartBox ------------------ */
+#heartbtnImg {
+    width:15px;
+    height:15px;
+    margin: 0 0.5rem;
+}
+.heartBtn {
+	background
+}
+
+.heartNo {
+	margin-left:-7px;
+    font-size: 12px;
+}
+ 
+/*new reviewBox  ---------------------*/
+.review_underBox {
+	border: 1px solid var(--color4);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;	
+}
+.review-img {
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+.comment {
+	font-size:small;
+	color:grey;
+	margin: 0 0.5rem;
+}
+#reviewDate {
+    font-size: small;
+    color:#c0c0c0;
+    margin: 0 0.5rem;
+}
+.review-title {
+    margin: 0 0.5rem;
+}
+
+.title {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: medium;
+
+}
+.comment {
+	height:60px;
+	overflow:auto;	
+}
+.comment::-webkit-scrollbar {
+	width:5px;
+	background-color:var(--color3);
+}
+.comment::-webkit-scrollbar-thumb {
+	width:5px;
+	background-color:var(--color8);
+}
