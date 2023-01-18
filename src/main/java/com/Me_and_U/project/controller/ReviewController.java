@@ -24,6 +24,8 @@ public class ReviewController {
 	@Autowired
 	ReviewService service;
 	
+	
+	//등록폼
 	//http://localhost:8080/reviewRegister
 	@RequestMapping("/reviewRegister")
 	public String reviewRegister(Model model) {

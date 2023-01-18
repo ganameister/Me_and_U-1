@@ -12,7 +12,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/review/review.css' />">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/review/review2.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<script src="<c:url value='/js/review/review.js' />"></script> 	
 		<!--//Header  -->

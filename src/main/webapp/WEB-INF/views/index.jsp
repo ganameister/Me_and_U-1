@@ -23,7 +23,7 @@
 					<li><a href="">버킷리스트 모임</a></li>
 					<li><a href="">번개 모임</a></li>
 					<li><a href="">정기 모임</a></li>
-					<li><a href="<c:url value='/review'/>">후기</a></li>
+					<li><a href="<c:url value='/reviewListView'/>">후기</a></li>
 					<li><a href="<c:url value='/noticeListView'/>">고객센터</a></li>
 				</ul>	
 				<ul class="nav_login">
