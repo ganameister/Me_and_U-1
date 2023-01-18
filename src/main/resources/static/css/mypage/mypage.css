@@ -20,7 +20,19 @@ body{
 margin: 20px 0px;
 list-style: none;
 }
+#infoedit:hover{
+cursor:pointer;
+font-weight: bold;	
+}
+#myreiew:hover{
+cursor:pointer;
+font-weight: bold;	
+}
 
+#selectreg:hover{
+cursor:pointer;
+font-weight: bold;	
+}
 .sec2{
 	display: inline-block;
 	margin-top: 30px;
@@ -71,10 +83,23 @@ list-style: none;
 .sec2 .art3 .artdiv{
 	display: flex;
     height: 250px;
-    overflow: hidden;
-    overflow-x:scroll;
+    overflow-x:auto;
+   
 }
-
+.sec2 .art3 .artdiv::-webkit-scrollbar {
+    width: 10px;
+  }
+.sec2 .art3 .artdiv::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+.sec2 .art3 .artdiv::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
 .sec2 .art4 .artdiv div{
 	display: block;
 	margin-right: 30px;
@@ -84,10 +109,22 @@ list-style: none;
 .sec2 .art4 .artdiv{
 	display: flex;
     height: 250px;
-    overflow: hidden;
-    overflow-x:scroll;
+    overflow-x:auto;
 }
-
+.sec2 .art4 .artdiv::-webkit-scrollbar {
+    width: 10px;
+  }
+.sec2 .art4 .artdiv::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+.sec2 .art4 .artdiv::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
 .sec2 .art3 .artdiv div{
 	display: block;
 	margin-right: 30px;

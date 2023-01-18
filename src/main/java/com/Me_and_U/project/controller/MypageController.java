@@ -10,4 +10,14 @@ public class MypageController {
 	private String mypage() {
 		return "jsp/mypage";
 	}
+	
+	@RequestMapping("/myreviewpage")
+	private String myreviewpage() {
+		return "jsp/myreviewpage";
+	}
+	
+	@RequestMapping("/myselectregpage")
+	private String myselectregpage() {
+		return "jsp/myselectregpage";
+	}
 }

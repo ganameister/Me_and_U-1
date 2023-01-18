@@ -42,7 +42,18 @@ $("#button_content2").css("display", "none");
 		}
 	});
 	
-
+	$("#infoedit").click(function() {
+            location.href="mypage";
+      
+    });
+    $("#myreiew").click(function() {
+            location.href="/myreviewpage";
+      
+    });
+    $("#selectreg").click(function() {
+            location.href="/myselectregpage";
+      
+    });
  
 });
 
