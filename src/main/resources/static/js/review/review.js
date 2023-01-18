@@ -18,6 +18,40 @@ $(document).ready(function(){
 			}
 		});
 	});
+	
+	//업로드한 이미지로 이미지 변경하기
+	$('#imgUpload').on('change', function(e1){
+		//파일 데이터 가져오기
+ 		var file = e1.target.files[0];
+ 		console.log(file);
+ 		var reader = new FileReader();
+ 		reader.onload =function(e2){
+			$('#preview').attr('src', e2.target.result);
+		}
+		reader.readAsDataURL(file);
+		
+		/*
+		// 파일명 추출
+ 		var fileName = $('#imgUpload').val().split("\\").pop(); // 파일명만 추출
+ 		console.log(fileName);
+ 		
+ 		$.ajax({
+ 			type:"post",
+ 			url:"imgPull",
+ 			enctype:"multipart/form-data",
+ 			processData:false,
+ 			contentType:false, 			
+ 			data: form,
+ 			//data: formData,
+ 			success:function(result){
+ 				$('#preview').attr("src",'/upload/'+fileName);
+ 			},
+ 			error:function(){
+ 				alert("실패");
+ 			}
+ 		}); // ajax 종료  */	  
+ 		
+	}); //이미지 클릭 이벤트 종료
 /**
 	$(funcion(){
 		var num=0;

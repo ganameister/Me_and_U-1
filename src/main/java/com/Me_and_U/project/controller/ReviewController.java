@@ -24,7 +24,14 @@ public class ReviewController {
 	@Autowired
 	ReviewService service;
 	
-    
+	//http://localhost:8080/reviewRegister
+	@RequestMapping("/reviewRegister")
+	public String reviewRegister(Model model) {
+		return "jsp/review/reviewRegister";
+	}
+	
+	
+	
 	
 	//리뷰게시판
 	@RequestMapping("/reviewListView")
