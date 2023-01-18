@@ -1,0 +1,161 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+
+body{
+	font-family: 'Jeju Myeongjo', serif;
+	width:100%;
+    max-width:1600px; 
+	margin:auto;
+}
+#wrap{
+	margin-top: 70px;
+}
+.sec1{
+	display: flex;
+	float: left;
+	margin-left: 10%;
+	margin-top: 100px;
+	margin-right: 50px;
+}
+.sec1 li{
+margin: 20px 0px;
+list-style: none;
+}
+
+#infoedit:hover{
+cursor:pointer;
+font-weight: bold;	
+}
+#myreiew:hover{
+cursor:pointer;
+font-weight: bold;	
+}
+
+#selectreg{
+font-weight: bold;	
+cursor:pointer;
+}
+
+.sec2{
+	display: inline-block;
+	margin-top: 30px;
+	width: 600px;
+}
+.sec2 #review-box{
+	margin-top: 20px;
+}
+.sec2 #review-box ol{
+	width: 1000px;
+}
+.review_board_top {
+    padding-top: 20px;
+    padding-bottom: 10px;    
+ 	float: left;
+ 	margin-top: 20px;   
+    margin-right: 7rem;
+    margin-bottom: 20px;
+    max-width: 1200px; 
+}
+
+
+.select_categ {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+    font-size: x-large;
+    padding-bottom: 15px;
+}
+
+.cateBtn {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+    background: var(--color8);
+    color:#ffffff;
+    border-radius: 2px;
+    border-style: none;
+}
+.cateBtn:hover {
+    opacity: 70%;
+}
+
+ .image-list {
+    margin-bottom: 3rem;  
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin-left:-40px;									
+}
+
+/* grid-view
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.grid-view {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(275px,1fr));
+    
+}
+
+.image-list li {
+    background:var(--color7); /*리뷰배경색*/
+    color: var(--color2); /*리뷰글씨색*/
+    list-style: none;
+}
+
+
+.review-img {
+	display: block;
+    max-width: 100%;
+    height: auto;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+ 
+/*new reviewBox  ---------------------*/
+.review_underBox {
+	border: 1px solid var(--color4);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;	
+}
+
+/*heartBox ------------------ */
+.heartBtn {
+	cursor:pointer;
+	border-style:none;
+	background:var(--color3);
+}
+#heartbtnImg {
+    width:15px;
+    height:15px;
+    margin: 0 0.5rem;
+}
+.heartBtn {
+	background
+}
+
+.heartNo {
+	margin-left:-7px;
+    font-size: 12px;
+}
+
+
+.review-title {
+    margin: 0 0.5rem;
+}
+
+.title {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: medium;
+
+}
+.comment {
+	font-size:small;
+	color:grey;
+	margin: 0 0.5rem;
+	height:60px;
+	overflow:auto;
+}
+#reviewDate {
+    font-size: small;
+    color:#c0c0c0;
+    margin: 0 0.5rem;
+}

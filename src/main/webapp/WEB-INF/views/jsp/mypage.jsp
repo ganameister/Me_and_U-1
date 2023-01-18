@@ -18,9 +18,9 @@
 				<section class="sec1">
 					<nav>
 						<ul>
-							<li>개인정보수정</li>
-							<li>내가 쓴 후기</li>
-							<li>찜한 정기모임</li>
+							<li id="infoedit">개인정보수정</li>
+							<li id="myreiew">내가 쓴 후기</li>
+							<li id="selectreg">찜한 정기모임</li>
 						</ul>
 					</nav>
 				</section><!-- 좌측 안내바? -->
@@ -120,10 +120,10 @@
 					<article  class="art4">
 					<h4>진행중인 번개모임</h4>
 					<div class="artdiv">
-						<div>
+						 <div>
 							<img src="<c:url value='/asd'/>" id="temImg"><br>
 							동네FC<br>같이 한달에 한번씩 공차실분들~
-						</div>
+						</div> 
 						<div>
 							<img src="<c:url value='/asd'/>" id="temImg"><br>
 							동네FC<br>같이 한달에 한번씩 공차실분들~</div>

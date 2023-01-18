@@ -1,16 +1,14 @@
 package com.Me_and_U.project.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
 public class DetailpageController {
 
-	 
+	 //모두의 버킷리스트 모임 상세페이지
 	  @RequestMapping("/comBkListGatherDetailpage")
 	  public String comBkListGatherDetailpage(Model model) {
 	 
