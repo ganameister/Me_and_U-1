@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/register/regGatherRegister.css' />">
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/register/reviewRegister.css' />">
 		<script src="<c:url value='/js/jquery-3.6.1.min.js' />"></script>
-		<script src="<c:url value='/js/register/register.js' />"></script>
+		<script src="<c:url value='/js/review/review.js' />"></script>
 		
 		<script>
 		//미리 보여줄 이미지의 크기를 조절해주는 함수 
