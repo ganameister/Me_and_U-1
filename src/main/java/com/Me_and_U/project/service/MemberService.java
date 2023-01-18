@@ -19,17 +19,18 @@ public class MemberService implements IMemberService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
-	// 로그인 체크
+	// 암호화된 비밀번호로 로그인 체크
 	@Override
-	public String loginCheck(HashMap<String, Object> map) {
-		// 
+	public String loginCheck(HashMap<String, Object> map) {		
+		// 전달된 아이디로 암호화된 비밀번호 알아온 후
 		String encodedPw = dao.loginCheck((String)map.get("id"));
 		
 		String result = "fail";
-		
-		if(encodedPw != null && passwordEncoder.matches((String)map.get("pwd"), encodedPw));{
+		// 암호화된 비밀번호와 입력해서 전달된 비밀번호와 일치하는지 확인
+		if(encodedPw != null && passwordEncoder.matches((String)map.get("pw"), encodedPw)) {
 			result = "success";
 		}
+		// matches() : 평문과 암호화된 문장 비교
 		return result;
 	}
 
@@ -42,8 +43,13 @@ public class MemberService implements IMemberService {
 		
 		// 암호화된 비밀번호로 vo에 저장한 후 vo를 mapper에 보내서 db에 저장
 		vo.setMemPw(encodedPassword); // vo에 암호화된 비밀번호 저장
-			
 		dao.insertMember(vo);
+	}
+
+	@Override
+	public String memJoinIdCheck(String memId) {
+		// TODO Auto-generated method stub
+		return dao.memJoinIdCheck(memId);
 	}
 
 }

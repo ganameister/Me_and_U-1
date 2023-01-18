@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
 /* 주소 검색 버튼 */
 #addressSrchBtn {
 	width:auto;
@@ -24,6 +24,7 @@
 body {
 	width:1600px;
 	margin:0 auto;
+	font-family: 'Jeju Myeongjo', serif;
 }
 
 /* 달력 이미지 */
@@ -102,10 +103,10 @@ body {
 
 /* 회원가입 전체 영역 */
 #memJoinDiv {
-	background:#d8eded;
+	background-color:var(--color4);;
 	margin:80px auto 0;
 	width:860px;
-	font-family: 'Oswald', sans-serif;
+
 	border-radius : 15px;
 	padding:16px 0px;
 }
@@ -137,13 +138,13 @@ body {
 	height:50px;
 	border-radius:8px;
 	padding:10px;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Jeju Myeongjo', serif;
 	height:52px;
 	cursor:pointer;
 	background-color:white;
 	font-weight:bold;
 	vertical-align:middle;
-	margin-top:-5px;
+	margin-bottom:-2px;
 	border-color:white;
 }
 
@@ -184,17 +185,17 @@ body {
 	font-size:23px;
 	border-radius:8px;
 	padding:10px;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Jeju Myeongjo', serif;
 	cursor:pointer;
 	margin:13px 0px 10px 3px;
-	background:none;
+	background:rgba(0, 0, 0, .1);
 	transition: 0.25s;
-	color:#19bc8b;
+	color:#000;
 }
 
 /* 가입하기 버튼 호버 */
 #joinBtn:hover{
-	box-shadow:inset 0 0 0 2em #19bc8b;
+	box-shadow:inset 0 0 0 2em #627b82;
 	color:#fff
 }
 

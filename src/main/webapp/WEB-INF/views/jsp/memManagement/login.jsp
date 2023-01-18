@@ -5,10 +5,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>로그인</title>
-			<link rel="stylesheet" type="text/css" href="<c:url value='/css/memberJoinPage/login.css' />">
+		<title>Me & U 로그인</title>
+			<link rel="stylesheet" type="text/css" href="<c:url value='/css/memManagement/login.css' />">
 			<c:import url="/WEB-INF/views/layout/head.jsp"/>
-			<%-- <script src="<c:url value='/js/memberJoinPage/login.js' />"></script> --%>
+			<script src="<c:url value='/js/member/login.js' />"></script>
 	</head>
 	<body>
 		<div id="wrap">
@@ -18,23 +18,25 @@
 					<div class="login-box">
 						<h1>Me & U</h1>
 						<h2>Login</h2>
-						<form>
+						
+						<!-- 로그인 폼 -->
+						<form id="loginForm" name="loginForm">
 							<div class="user-box">
-								<input type="text" name="" id="id" required>
+								<input type="text" name="id" id="id" required>
 								<label>Username</label>
 							</div>
 							<div class="user-box">
-								<input type="password" name="" id="pw" required>
+								<input type="password" name="pw" id="pw" required>
 								<label>Password</label>
 							</div>
 							<div class="inMemberJoin">
 								<a href="#">아이디 찾기</a>
 								<span>|</span>
-								<a href="#">비밀번호 변경</a>
+								<a href="<c:url value='/member/pwSearch' />"><span>비밀번호 찾기</span></a>
 								<span>|</span>
 								<a href="<c:url value='/memberJoin' />" >회원가입</a>
 							</div>
-							<button type="submit" id=loginBtn>
+							<button type="submit" id="loginBtn">
 								login
 							</button>
 						</form>
@@ -42,6 +44,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- bottom -->
 		<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 	</body>
 </html>
