@@ -6,10 +6,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>회원가입</title>
-			<link rel="stylesheet" type="text/css" href="<c:url value='/css/memberJoinPage/memberJoin.css' />">
+		<title>Me & U 회원가입</title>
+			<link rel="stylesheet" type="text/css" href="<c:url value='/css/memManagement/memberJoin.css' />">
 			<c:import url="/WEB-INF/views/layout/head.jsp"/>
-			<script src="<c:url value='/js/memberJoinPage/memberJoin.js' />"></script>
+			<script src="<c:url value='/js/member/memberJoin.js' />"></script>
 	</head>
 	<body>
 		<c:import url="/WEB-INF/views/layout/top.jsp"/>
@@ -20,18 +20,18 @@
 					<table id="joinMemberTable">		<!-- 회원가입정보 입력 테이블 시작 -->
 					
 						<!-- 아이디, 패스워드 -->
-						<tr><th>아이디</th></tr>
+						<tr><th>*아이디</th></tr>
 						<tr><td class="insertTxtTD"><input type="text" maxlength="13" placeholder="아이디 입력" id="insertMemID" name="memId" class="insertMemInfo" required>
 												  <input type="button" value="중복확인" id="idCheckBtn"></td></tr>
-						<tr><th>비밀번호<span id="pwReg">비밀번호는 숫자, 영문, 특수문자 조합으로 8~18자리를 사용해주세요</span></th></tr>
-						<tr><td class="insertTxtTD"><input type="password" maxlength="18" placeholder="비밀번호 입력" id="insertMemPW" name="memPw" class="pwComare" required></td></tr>
-						<tr><th>비밀번호 재확인</th></tr>
+						<tr><th>*비밀번호<span id="pwReg">비밀번호는 숫자, 영문, 특수문자 조합으로 8~18자리를 사용해주세요</span></th></tr>
+						<tr><td class="insertTxtTD"><input type="password" maxlength="18" placeholder="비밀번호 입력" id="insertMemPW" class="pwComare" required></td></tr>
+						<tr><th>*비밀번호 재확인</th></tr>
 						<tr><td class=""><input type="password" maxlength="18" placeholder="비밀번호 입력" id="insertMemPWCheck" name="memPw" class="pwComare" required></td></tr>
 						<tr><td class="pwCompareTD"><h4 id="pwAlert"></h4></td></tr>
 						
 						
 						<!-- 이름, 휴대폰 번호 -->
-						<tr><th>이름</th></tr>
+						<tr><th>*이름</th></tr>
 						<tr><td class="insertTxtTD"><input type="text" maxlength="50" size="5" id="insertMemName" name="memName" class="insertMemInfo" placeholder="성명 입력" required></td></tr>
 						<tr><th>휴대폰 번호</th></tr>
 						<tr><td class="insertTxtTD"><input type="text" size="3" maxlength="3" class="phNum" name="memHp1"> <span class="hyphen">-</span>

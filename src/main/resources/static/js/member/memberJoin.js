@@ -3,6 +3,40 @@
  */
 
 $(document).ready(function() {
+	var idCheckBtnClick = "noCheck";
+	// ID중복확인 버튼 클릭시
+	$('#idCheckBtn').on('click', function(){
+		event.preventDefault();
+		// 공백일 경우
+		if($('#insertMemID').val() == '') {
+			// 경고문 출력
+			alert("아이디를 입력해주세요");
+			return;
+		}
+
+		// ID 중복확인
+		$.ajax({ 
+			type: "post",
+			url: '/memberJoin/idCheck',
+			data: {
+				"id": $('#insertMemID').val()
+			},
+			dataType: 'text',
+			success:function(result) {
+				// DB에 ID값이 있을 시(중복일 시)
+				if(result == "no_use") { 
+					alert("중복된 ID입니다");
+					idCheckBtnClick = "checkOver";
+				// 중복된 값이 없을 시
+				} else {
+					alert("사용 가능한 ID입니다");
+					idCheckBtnClick = "checkComp";
+				}
+			}
+		});	// ajax종료
+	});	// 버튼 클릭 종료
+	
+
 	// 이메일을 선택하여 입력
 	$('#domainList').on("change", function(){
 		// 직접입력이 아니면
@@ -99,8 +133,9 @@ $(document).ready(function() {
 			alert("비밀번호는 숫자, 영문, 특수문자 조합으로 8~18자리를 사용해야 합니다.");
 			return false;
 		} else {
+			// 비밀번호 값
 			var pwd1=$('#insertMemPW').val();
-		// 비밀번호 재확인 값
+			// 비밀번호 재확인 값
 			var pwd2=$('#insertMemPWCheck').val();
 			// 하나라도 공백이 아닐 시 비교
 			if(pwd1 != "" || pwd2 != ""){
@@ -114,8 +149,15 @@ $(document).ready(function() {
 					// 둘중 하나라도 "동의"에 체크가 안 되어있을 시
 				} else if($(':input:radio[name=ToS]:checked').val() == "Nchecked" || $(':input:radio[name=CoPI]:checked').val() == "Nchecked") {
 				// 동의 문구 출력
-				alert("약관에 동의해주세요");
+					alert("약관에 동의해주세요");
 				return false;
+					// id중복확인 체크 여부
+				} else if(idCheckBtnClick == "noCheck") {
+					alert("ID중복확인을 해주세요");
+					return false;
+				} else if(idCheckBtnClick == "checkOver") {
+					alert("중복된 ID입니다");
+					return false;
 				} else {
 					alert("회원가입이 완료되었습니다");
 				}
@@ -137,9 +179,7 @@ $(document).ready(function() {
 		}
 	});
 	
-	
-	
-	
+
 	
 	
 	
