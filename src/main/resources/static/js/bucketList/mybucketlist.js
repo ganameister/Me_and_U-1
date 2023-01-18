@@ -68,6 +68,9 @@
 	
 	
 	/** ========== 나의 버킷리스트 js 구간 시작 ========== **/
+	
+	
+	// 줄긋기 css
 	$('.listCompleteBtn').on('click',function() {
   		//현재 row의 정보 가져오기 
   		var thisRow = $(this).closest('tr'); 
@@ -75,6 +78,85 @@
 	    //주소 input 값 가져오기
 	    thisRow.find('td:eq(1)').css("text-decoration","line-through");
   	});
+  	
+  	$('.listCompleteBtn').on('click',function() {
+  		$.ajax({
+	 		type:"post",
+	 		url:"/myBKList/FinishedmyBKList",
+	 		success:function(result){
+	 			if(result == 0){
+	 				var thisRow = $(this).closest('tr');
+	 				thisRow.find('td:eq(1)').css("text-decoration","line-through");				
+	 			}
+	 		},
+	 		error:function(){
+	 			alert("실패");
+	 		}
+	 	}); // ajax 종료
+  	});
+  	
+  	// 나의 버킷리스트 등록
+  	/* $('#listInsertBtn').on('click', function() {
+ 		event.preventDefault();
+ 	
+ 		$.ajax({
+ 			type:"post",
+ 			url:"/InsertmyBKList",
+ 			data:{"listInsertText":$('#listInsertText').val()},
+ 			dataType:"text",
+ 			success:function(result) {
+ 				if (result != null) {
+ 					alert("나의 버킷리스트가 등록되었습니다");
+ 					$("#boardTextList").append("<p>" + result + "</p>");
+ 				} else {
+ 					alert("나의 버킷리스트를 불러오지 못했습니다");
+ 				}
+ 			},
+ 			error:function() {
+ 				alert("실패했습니다 다시 시도해주세요");
+ 			},
+ 			complete:function() {
+ 			}
+ 		});
+ 	});*/
+ 	
+ 	// 나의 버킷리스트 삭제
+ 	$('#deletemyBKLBtn').on('click', function(){
+ 	 	// 선택 여부 확인 : 하나라도 선택하면 true, 아무것도 선택하지 않으면 false
+ 	 	var checked = $('.chkDelete').is(':checked');
+ 	 	
+ 	 	if(checked) { //하나라도 선택한 경우
+ 	 		var answer = confirm("선택된 버킷리스트를 삭제하시겠습니까?");
+ 	 		
+ 	 		if(answer) {
+ 	 		// 체크된 체크박스의 cartNo를 배열에 추가
+ 	 		var checkArr = new Array();
+ 	 		$('.chkDelete:checked').each(function(){
+ 	 			checkArr.push($(this).attr("data-mybkListNo"));
+ 	 		});
+ 	 		
+ 	 		// 서버로 전송
+ 	 		$.ajax({
+	 			type:"post",
+	 			url:"/myBKList/deletemyBKList",
+	 			data:{"chbox":checkArr},
+	 			success:function(result){
+	 				if(result == 1){	 					
+	 					location.href="/myBKList";
+	 				}
+	 			},
+	 			error:function(){
+	 				alert("실패");
+	 			}
+	 		}); // ajax 종료 	
+ 	 	
+ 	 		}
+ 	 	
+ 	 	} else { //아무것도 선택하지 않은 경우
+ 	 		alert("선택된 버킷리스트가 없습니다");
+ 	 	}
+ 	 });
+ 	
 	/** ========== 나의 버킷리스트 js 구간 끝 ========== **/
 	
  });

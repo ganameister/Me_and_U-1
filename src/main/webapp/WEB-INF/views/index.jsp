@@ -16,7 +16,7 @@
 	<body>
 		<header>
 			<nav class="Mainnavbar">
-					<a href="/" class="top"><img src="<c:url value='/images/me_and_u2.png'/>" id="logo" width="100" height="40"></a>
+				<a href="/" class="top"><img src="<c:url value='/images/me_and_u2.png'/>" id="logo" width="100" height="40"></a>
 				<ul class="nav_menu">
 					<li><a href="<c:url value='/myBKList'/>">나의 버킷리스트</a></li>
 					<li><a href="<c:url value='/comBKList'/>">모두의 버킷리스트</a></li>

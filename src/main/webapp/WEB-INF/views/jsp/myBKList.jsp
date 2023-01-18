@@ -41,9 +41,9 @@
 			<div id="miniWrap">
 				<section>
 					<div id="mybucketlist">
-						<form id="mybucketlistForm" method="post" <%-- action="<c:url value='/menu/boardList'/>" --%>>
+						<form id="mybucketlistForm" method="post" action="<c:url value='/myBKList/InsertmyBKList'/>">
 							<div id="listInsertBox">
-								<input type="text" id="listInsertText"placeholder="이루고 싶은 것을 입력하세요!">
+								<input type="text" id="mybkListWrite" name="mybkListWrite" placeholder="이루고 싶은 것을 입력하세요!">
 								<input type="submit" id="listInsertBtn" value="등록하기">
 							</div>
 							<div id="mybucketlistTitle">
@@ -53,28 +53,19 @@
 							</div>
 						</form>
 						<table id="mybucketlistTable" border="1">
+							<tr>
+								<th class="mylisttable1"><input type="button" id="deletemyBKLBtn" value="삭제"></th>
+								<th class="mylisttable2">내용</th>
+								<th class="mylisttable3">완료</th>
+							</tr>
+							
+							<c:forEach var="mybkl" items="${ myBKList }">
 								<tr>
-									<th class="mylisttable1"><input type="button" id="deletebucketBtn" value="삭제"></th>
-									<th class="mylisttable2">내용</th>
-									<th class="mylisttable3">완료</th>
+									<td><input type="checkbox" class="chkDelete" data-mybkListNo="${mybkl.mybkListNo }"></td>
+									<td>${ mybkl.mybkListWrite }</td>
+									<td><button id="listCompleteBtn">완료</button></td>
 								</tr>
-								<!-- 프론트용 임시 시작 -->
-								<tr> 
-									<td><input type="checkbox"></td><td>미국 가보기</td><td><button class="listCompleteBtn">완료</button></td>
-								</tr>
-								<tr>
-									<td><input type="checkbox"></td><td>자전거 국내 완주</td><td><button class="listCompleteBtn">완료</button></td>
-								</tr>
-								<tr>
-									<td><input type="checkbox"></td><td>패러글라이딩 타보기</td><td><button class="listCompleteBtn">완료</button></td>
-								</tr>
-								<!-- 프론트용 임시 끝 -->
-								<%-- <c:forEach var="mybcklist" items="${ mybucketList }">
-									<tr>
-										<td><input type="checkbox" name="mybucketlist" value="${mybcklist.mybkListNo }"></td>
-										<td>${ mybcklist.mybkListWrite }</td>
-										<td><button id="listCompleteBtn">완료</button></td>
-								</c:forEach> 백엔드때 사용 --%>
+							</c:forEach>
 						</table>
 					</div>
 				</section>

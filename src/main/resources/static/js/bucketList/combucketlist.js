@@ -66,9 +66,21 @@
 	});
 	/** ========== 슬라이드 쇼 js 구간 끝 ========== **/
 	
-	
-	
+	$cateBtn = $(".cateBtn");
+	$cateBtn.each(function(index) {
+		var search = ["전체", "여행", "운동", "게임", "문화", "음악","기타"];
+		$('#categ' + index).on('click', function() {
+			if(search[index - 1] == "전체") {
+				$(".itemContainer").show();
+			} else {
+				$(".itemContainer").hide();
+				$('.itemContainer[value*=' + search[index - 1] + ']').show();
+			}
+		});
+	});
 	
  });
+ 
+ 
 
   	

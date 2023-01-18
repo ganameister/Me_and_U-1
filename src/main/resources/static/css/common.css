@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);	/* font-family: 'Jeju Myeongjo', serif; */
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 :root {
     --color1: #e5e2d3; /*nav,footer 글씨색1*/
@@ -10,6 +10,10 @@
     --color6: white; /*배경6*/
     --color7: #ffffff; /*배경4*/             
     --color8: #ccd4c7;      
+}
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* navbar

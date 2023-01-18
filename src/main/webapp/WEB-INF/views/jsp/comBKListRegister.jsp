@@ -29,8 +29,8 @@
 				<form id="regGather_frm" class="regGather_frm" method="post">
 					<table id="gatherInfo_tbl" class="gatherInfo_tbl">
 						<tr>
-							<!-- 이미지 삽입하는 부분 js에서 해당 영역으로 보내줘야 함 -->
-							<td rowspan="3" height="240"><img src="/images/thumbnail.png">
+							<!-- 이미지 미리보기 영역-->
+							<td rowspan="3" height="240"><img src="/images/thumbnail.png" width="350" height="350">
 							<th>제목</th>
 							<td colspan="2">
 								<input type="text" class="gatherInfo_input3" placeholder="제목 입력">
@@ -41,10 +41,10 @@
 							<td>
 								<select>
 									<option>카테고리 선택</option>
-									<option>아웃도어/여행</option>
-									<option>운동/스포츠</option>
-									<option>게임/오락</option>
-									<option>문화/공연/축제</option>
+									<option>여행</option>
+									<option>운동</option>
+									<option>게임</option>
+									<option>문화</option>
 									<option>음악</option>
 									<option>기타</option>
 								</select>
@@ -69,7 +69,7 @@
 					<h5>버킷리스트 상세 설명</h5>
 					<textarea id="summernote" name="editordata"></textarea>
 					<br>
-					<input type="button" id="info_Input" class="info_Input" value="등록하기">
+					<input type="submit" id="info_Input" class="info_Input" value="등록하기">
 				</form>
 			</section>
 		</div>
