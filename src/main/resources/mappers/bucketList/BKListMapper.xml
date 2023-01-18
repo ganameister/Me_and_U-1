@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.Me_and_U.project.dao.IBKListDAO">
+  
+  	<insert id="insertmybkList" parameterType="hashmap">
+  		INSERT INTO mybklist(memId, mybkListWrite, mybkListFinished)
+  		VALUES(#{memId}, #{mybkListWrite}, 0)
+  	</insert>
+  	
+    <resultMap id="mybklistResult" type="com.Me_and_U.project.model.MyBKListVO" >
+        <result property="mybkListNo" column="mybkListNo"  />
+        <result property="mybkListWrite" column="mybkListWrite"  />
+        <result property="memId" column="memId"  />
+        <result property="mybkListFinished" column="mybkListFinished"  />
+    </resultMap>
+  	
+  	<select id="myBKListView" resultMap="mybklistResult">
+  		SELECT *
+  		FROM mybklist ORDER BY mybkListNo ASC
+  	</select>
+  	
+  	<delete id="deleteBKList" parameterType="string"> 
+		DELETE FROM mybklist WHERE mybkListNo = #{mybkListNo} 
+	</delete>
+	
+	<select id="checkMyBKLFinished" parameterType="hashmap" resultType="int">
+ 		SELECT mybkListFinished
+ 		FROM mybklist
+ 		WHERE mybkListNo=#{mybkListNo} AND memId=#{memId}
+ 	</select>
+ 	
+ 	<update id="updateMyBKLFinished" parameterType="hashmap">
+ 		UPDATE mybklist
+ 		SET mybkListFinished = 1
+ 		WHERE mybkListNo = #{mybkListNo} AND memId = #{memId} AND mybkListFinished = 0
+ 	</update>
+ 	
+ 	
+  </mapper>

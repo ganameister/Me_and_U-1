@@ -1,26 +1,24 @@
 @charset "UTF-8";
-@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);	/* font-family: 'Jeju Myeongjo', serif; */
 
 body {
 	width:1600px;
 	margin:auto;
 	padding-top:69px;
-	font-family: 'Jeju Myeongjo', serif;
 }
 
 hr {
-	width:850px;
+	width:1100px;
 	margin-bottom:30px;
 }
 
 h4 {
 	font-size:22px;
-	margin-left:375px;
+	margin-left:250px;
 }
 
 h5 {
 	font-size:18px;
-	margin-left:375px;
+	margin-left:250px;
 }
 
 #wrap {
@@ -34,14 +32,14 @@ h5 {
 #gatherInfo_tbl {
   border-collapse : separate;
   border-spacing : 10px 15px;
-  width: 850px;
+  width: 1100px;
   margin:auto;
   border:solid 1px black;
   border-radius:6px;
 }
 
 #gatherInfo_tbl th{
-  font-size : 13px;
+  font-size : 16px;
   width:150px;
 }
 
@@ -95,7 +93,7 @@ table select {
 
 /* 파일 div css 넣기 */
 .filebox label {
-  width : 175px;
+  width : 328px;
   display: inline-block;
   padding: .5em .75em;
   color: #999;
@@ -122,7 +120,7 @@ table select {
 
 #summernote {
 	height : 425px; 
-	width : 850px;
+	width : 1100px;
 }
 
 .note-editor.note-frame, .note-editor.note-airframe {
@@ -130,13 +128,13 @@ table select {
 }
 
 #info_Input {
-  margin-left : 1025px;
+  margin-left : 1180px;
   margin-bottom:20px;
-  width: 200px;
+  width: 170px;
   height: 40px;
   cursor:pointer;
   font-weight : bold;
-  font-size : 15px;
+  font-size : 16px;
   font-family: 'Jeju Myeongjo', serif;
   border-radius : .25em;
   background-color: black;
