@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+
 
 @charset "UTF-8";
 
@@ -7,7 +7,6 @@ select {
 	text-align : center;
 	width: 200px; 
 	padding: .8em .5em; 
-	font-family: 'Jeju Myeongjo', serif;
 	border: 1px solid #999; 
 	background: url('/images/selectArrow.jpg') no-repeat 95% 50%; 
 	border-radius: 0px; 
@@ -19,4 +18,107 @@ select {
 
 select::-ms-expand {
 	display: none;
+}
+
+body{       
+    padding-top:67px;
+	width:1600px;
+	margin:0 auto;	
+}
+#input_gatherInfo {
+	margin-left : 250px;
+}
+
+#line {
+	float : left;
+	width : 1100px; 
+}
+	
+/* 테이블 부분 */
+#gatherInfo_tbl {
+  border-collapse : separate;
+  border-spacing : 10px 15px;
+  width: 1100px;
+}
+
+#gatherInfo_tbl th{
+  font-size : 13px;
+  width : 150px;
+}
+
+#gatherInfo_tbl .gatherInfo_input {
+  left : 100px;
+  width : 150px;
+  height : 30px;
+  vertical-align: middle;
+  text-align : center;
+  border-radius : 5px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+#gatherInfo_tbl .gatherInfo_inputLong {
+  left : 100px;
+  width : 500px;
+  height : 30px;
+  vertical-align: middle;
+  text-align : center;
+  border-radius : 5px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+#gatherInfo_tbl #recruit {
+  width : 502px;
+  font-weight : bold;
+  background-color :#E2E2E2;
+  font-size: 14px;
+}
+
+#gatherInfo_tbl .gatherInfo_inputTime {
+  left : 100px;
+  width : 233px;
+  height : 30px;
+  text-align : center;
+  border-radius : 5px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 파일 div css 넣기 */
+.filebox label {
+  width : 330px;
+  display: inline-block;
+  padding: .5em .75em;
+  color: #999;
+  background-color: #fdfdfd;
+  font-weight : bold;
+  font-size: 13px;
+  text-align : center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-radius: .25em;
+}
+
+.filebox input[type="file"] {  /* 파일 필드 숨기기 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
+
+
+
+#info_Input {
+  margin-left : 900px;
+  width: 200px;
+  height: 40px;
+  cursor:pointer;
+  font-size : 15px;
+  border-radius : .25em;
+  background-color: black;
+  color : white;
+  border : none;
+  font-family: 'Noto Sans KR', sans-serif;
 }
