@@ -10,9 +10,9 @@ body{
 .sec1{
 	display: flex;
 	float: left;
-	margin-left: 23%;
+	margin-left: 10%;
 	margin-top: 100px;
-	margin-right: 20px;
+	margin-right: 15%;
 }
 .sec1 li{
 margin: 20px 0px;
@@ -37,7 +37,7 @@ font-weight: bold;
 	width: 600px;
 }
 
-#combkImg, #mybkImg{
+#combkImg{
 	width: 120px;
 	height: 60px;
 }
@@ -73,14 +73,14 @@ font-weight: bold;
 	margin-bottom: 10px;
 }
 .sec2 .art2 #click_button2{
-	margin-left:300px;
+	margin-left:420px;
 	width:30px;
 	height:30px;
 	float: right;
 }
 .sec2 .art3 .artdiv{
 	display: flex;
-    height: 250px;
+    height: 260px;
     overflow-x:auto;
    
 }
@@ -106,7 +106,7 @@ font-weight: bold;
 
 .sec2 .art4 .artdiv{
 	display: flex;
-    height: 250px;
+    height: 260px;
     overflow-x:auto;
 }
 .sec2 .art4 .artdiv::-webkit-scrollbar {
