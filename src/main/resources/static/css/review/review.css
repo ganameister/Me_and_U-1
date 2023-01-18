@@ -26,6 +26,7 @@
     display: block;
     max-width: 100%;
     height: auto;
+	/* object-fit:cover; */
 }
 
 
@@ -158,6 +159,8 @@ body {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* IMAGE LIST
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
 
 .image-list {
     margin-bottom: 3rem;  									

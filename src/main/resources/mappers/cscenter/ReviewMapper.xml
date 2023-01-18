@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.Me_and_U.project.dao.IReviewDAO">
+		<resultMap id="reviewResult" type="com.Me_and_U.project.model.ReviewVO" >
+	  		<result property="reviewNo"  column="reviewNo"  />
+	  		<result property="reviewHart"  column="reviewHart"  />
+	  		<result property="reviewImg"  column="reviewImg"  />
+	  		<result property="reviewTitle"  column="reviewTitle"  />
+	  		<result property="reviewWrite"  column="reviewWrite"  />
+	  		<result property="reviewDate"  column="reviewDate"  />
+	  		<result property="reviewCount"  column="reviewCount"  />
+	  		<result property="reviewCtg"  column="reviewCtg"  />
+	  		<result property="subctgNo"  column="subctgNo"  />
+	  		<result property="ctgNo"  column="ctgNo"  />
+	  		<result property="memId"  column="memId"  />
+	  		<result property="memImg"  column="memImg"  />
+	  	</resultMap>
+
+		<!-- 리뷰게시판메인 -->
+		<select id="listAllReview" resultMap="reviewResult">
+		SELECT * 
+		FROM review 
+		ORDER BY reviewNo DESC
+		</select>
+		
+		<!-- Main 페이지 -->
+		<!-- 최신순 3개 출력 -->
+		<select id="listRecentReview" resultMap="reviewResult">
+		SELECT * 
+		FROM review 
+		ORDER BY reviewNo DESC LIMIT 0,3
+		</select>	
+		
+		<!-- 상세 -->
+		<select id="detailViewReview" parameterType="int" 
+		  							resultType="com.Me_and_U.project.model.ReviewVO" >
+		SELECT * 
+		FROM review 
+		WHERE reviewNo=#{reviewNo}
+		</select>
+		
+		<!--  //나중에 memId추가 -->
+			
+		<!-- 삭제 -->  
+	    <delete id="deleteReview" parameterType="int"  >
+	  	DELETE 
+	  	FROM review 
+	  	WHERE reviewNo=#{reviewNo}
+	    </delete>  
+	    
+		<!-- 수정 -->  
+		<update id="updateReview" parameterType="com.Me_and_U.project.model.ReviewVO" >
+		 UPDATE review
+		 SET reviewTitle=#{reviewTitle},reviewWrite=#{reviewWrite},reviewImg=#{reviewImg},reviewCtg=#{reviewCtg}   		
+		 WHERE reviewNo=#{reviewNo}					
+		</update>
+		
+		
+		<!-- 등록 -->  
+		<insert id="insertReview" parameterType="com.Me_and_U.project.model.ReviewVO" >
+		 INSERT INTO review (reviewNo,reviewTitle,reviewWrite,reviewImg,reviewCtg ) 		
+		 VALUES ( #{reviewNo}, #{reviewTitle},#{reviewWrite},#{reviewCtg})					
+		</insert>
+		
+			
+	</mapper>

@@ -65,7 +65,7 @@
 							<button id="notice">Notice</button>							
 							<button id="update" onclick="qnaupdate();">QNA 수정</button>
 							<button id="delete" onclick="qnadelete();">QNA 삭제</button>							
-							</div>
+						</div>
 					</div>
 					<!-- Table -->
 					<div class ="service-board">

@@ -4,7 +4,7 @@
 	<header>
 		<nav class="navbar">
 			<div class="nav_logo">
-				<a href="/" class="top"><img src="<c:url value='images/me_and_u2.png'/>" id="logo" width="100" height="40"></a>
+				<a href="/" class="top"><img src="<c:url value='/images/me_and_u2.png'/>" id="logo" width="100" height="40"></a>
 			</div>
 			<ul class="nav_menu">
 				<li><a href="<c:url value='/myBKList'/>">나의 버킷리스트</a></li>
@@ -12,7 +12,7 @@
 				<li><a href="">버킷리스트 모임</a></li>
 				<li><a href="">번개 모임</a></li>
 				<li><a href="">정기 모임</a></li>
-				<li><a href="<c:url value='/review'/>">후기</a></li>
+				<li><a href="<c:url value='/reviewListView'/>">후기</a></li>
 				<li><a href="<c:url value='/noticeListView'/>">고객센터</a></li>
 			</ul>	
 			<ul class="nav_login">
