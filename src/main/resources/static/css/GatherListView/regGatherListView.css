@@ -1,0 +1,158 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+@charset "UTF-8";
+
+body{       
+    padding-top:67px;
+	width:1600px;
+	margin:0 auto;
+	font-family: 'Jeju Myeongjo', serif;
+}
+.sec {
+	margin-left:5%;
+	width:90%;
+}
+
+.searchCondition{
+	border-collapse : separate;
+	border-spacing : 10px 15px;
+}
+
+/* 검색창 테이블 */
+.searchCondition th{
+	width : 150px;
+	font-size: 15px;
+}
+
+.searchCondition .name{
+	font-size: 16px;
+}
+
+/* 검색창 셀렉트  */
+select {
+	text-align : center;
+	width: 200px; 
+	padding: .8em .5em; 
+	font-family: 'Jeju Myeongjo', serif;
+	border: 1px solid #999; 
+	background: url('/images/selectArrow.jpg') no-repeat 95% 50%; 
+	border-radius: 0px; 
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 8px;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+/* 검색창 부분만(아이콘 이미지 삽입) */
+.search {
+  position: relative;
+  width: 300px;
+}
+
+.search .searchName{
+	font-family: 'Jeju Myeongjo', serif;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.searchCondition .searchImg {
+  position : absolute;
+  width: 30px;
+  height : 30px;
+  top: 4px;
+  right: -15px;
+  margin: 0;
+  cursor : pointer;
+}
+/* 검색창 부분 끝 */
+
+
+/* 개설된 모임 목록 보여주는 Top */
+.listViewTop{
+    margin : 0 auto;
+    height: 30px;
+    display : block;
+}
+
+.listViewTop .listViewTitle{
+	/*  float : left;*/
+    width : 200px;
+    font-weight : bold;
+    font-size : 16px;
+    
+}
+
+.listViewTop .listViewSearchCondition{
+	width: 200px;
+	font-weight : bold;
+    font-size : 13px;
+    margin-top : 10px;
+    display : inline-block;
+}
+.listViewSearchCondition .condition{
+	width : 60px;
+	align : center;
+	font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    background: #CCD4C7;
+    color:#ffffff;
+    font-size : 13px;
+    border-radius: 8px;
+    border-style: none;
+}
+
+.listViewTop .newRegister{
+	margin-top : 10px;
+	margin-right : 10%;
+    float : right;
+    width :150px;
+    cursor : pointer;
+    /*  box-sizing: border-box;*/
+    
+}
+.newRegisterBtn{
+	font-family: 'Noto Sans KR', sans-serif;
+	color:#ffffff;
+    background-color:#50655E;
+    border-radius: 8px;
+    border-style: none;
+    cursor : pointer;
+}
+
+/* 모임 리스트 div */
+.listView{
+	margin-top: 50px;   
+    margin-bottom: 100px;
+    max-width: 1200px;
+	display:table;
+}
+
+.listView .gatherInfo{
+	width : 276px;
+	height : 334px;
+	border: 1px solid lightgray;
+	border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

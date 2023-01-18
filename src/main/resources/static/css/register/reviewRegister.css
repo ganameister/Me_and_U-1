@@ -1,0 +1,22 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+
+@charset "UTF-8";
+
+/* 검색창 셀렉트  */
+select {
+	text-align : center;
+	width: 200px; 
+	padding: .8em .5em; 
+	font-family: 'Jeju Myeongjo', serif;
+	border: 1px solid #999; 
+	background: url('/images/selectArrow.jpg') no-repeat 95% 50%; 
+	border-radius: 0px; 
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 8px;
+}
+
+select::-ms-expand {
+	display: none;
+}
