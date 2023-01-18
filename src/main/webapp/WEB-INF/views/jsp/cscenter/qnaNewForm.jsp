@@ -66,7 +66,6 @@
 								<tr class="line">
 									<td class="Line">Write.</td><td colspan="9">
 										<textarea id="qnaWrite" name="qnaWrite"> </textarea>
-										<!-- <input type="text"id="qnaWrite" name="qnaWrite"> -->
 										</td></tr>
 								<tr class="BottomLine">
 									<th colspan="6" class="BottomLine"></th>

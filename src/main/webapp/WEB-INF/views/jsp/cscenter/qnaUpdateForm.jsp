@@ -64,7 +64,7 @@
 								</tr>														
 								<tr class="line">
 									<td class="line" width="10px">No.</td><td colspan="9">
-										<input type="text"id="qnaNo" name="qnaNo"value="${qna.qnaNo }"readonly></td>
+										<input type="text"id="qnaNo" name="qnaNo"value="${qna.qnaNo }"readonly></td></tr>
 								<tr class="line">
 									<td class="Line">Title.</td><td colspan="9">
 										<input type="text"id="qnaTitle" name="qnaTitle"value="${qna.qnaTitle }"></td></tr>
