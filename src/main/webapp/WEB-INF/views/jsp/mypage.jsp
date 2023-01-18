@@ -30,20 +30,20 @@
 					<article class="art1">
 					<h4>내가 선택한 모두의 버킷리스트</h4>
 					<div id="content">
-							<img src="<c:url value='/asd'/>" id="mybkImg">다이어트<br>
+							<img src="<c:url value='/asd'/>" id="combkImg">다이어트<br>
 							10kg 감량하기<img src="<c:url value='/images/down-arrow.png' />" id="click_button1">
 						</div>
 	    			<div  id="button_content1">
 		    			<div id="content">
-							<img src="<c:url value='/asd'/>" id="mybkImg">다이어트<br>
+							<img src="<c:url value='/asd'/>" id="combkImg">다이어트<br>
 							10kg 감량하기
 						</div>
 						<div id="content">
-							<img src="<c:url value='/asd'/>" id="mybkImg">다이어트<br>
+							<img src="<c:url value='/asd'/>" id="combkImg">다이어트<br>
 							10kg 감량하기
 						</div>
 						<div id="content">
-							<img src="<c:url value='/asd'/>" id="mybkImg">다이어트<br>
+							<img src="<c:url value='/asd'/>" id="combkImg">다이어트<br>
 							10kg 감량하기
 						</div>
 	    			</div>
@@ -53,26 +53,21 @@
 					<article  class="art2">
 					<h4>나의 버킷리스트</h4>
 					<div id="content">
-							<img src="<c:url value='/asd'/>" id="mybkImg">다이어트<br>
+							다이어트<br>
 							10kg 감량하기
 							<img src="<c:url value='/images/down-arrow.png' />" id="click_button2">
 						</div>
 	    			<div  id="button_content2">
 		    			<div id="content">
-		    				<div id="Imgcontent">
-								<img src="<c:url value='/asd'/>" id="mybkImg">
-							</div>
-							<div id="text">
 								다이어트<br>
 								10kg 감량하기
-							</div>
 						</div>
 						<div id="content">
-							<img src="<c:url value='/asd'/>" id="mybkImg">다이어트<br>
+							다이어트<br>
 							10kg 감량하기
 						</div>
 						<div id="content">
-							<img src="<c:url value='/asd'/>" id="mybkImg">다이어트<br>
+							다이어트<br>
 							10kg 감량하기
 						</div>
 	    			</div>
