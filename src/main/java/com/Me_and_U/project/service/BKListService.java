@@ -26,13 +26,13 @@ public class BKListService implements IBKListService {
 	}
 
 	@Override
-	public ArrayList<MyBKListVO> myBKListView() {
-		return dao.myBKListView();
+	public ArrayList<MyBKListVO> myBKListView(String memId) {
+		return dao.myBKListView(memId);
 	}
 
 	@Override
 	public void deletemyBKList(String mybkListNo) {
-		dao.deletemyBKList(mybkListNo);
+		dao.deleteBKList(mybkListNo);
 	}
 
 	@Override
@@ -44,13 +44,13 @@ public class BKListService implements IBKListService {
 		return dao.checkMyBKLFinished(map);
 	}
 
-	@Override
-	public void updateMyBKLFinished(int mybkListNo, String memId) {
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("mybkListNo", mybkListNo);
-		map.put("memId", memId);
-		
-		dao.updateMyBKLFinished(map);
-	}
+	
+	 @Override public void updateMyBKLFinished(int mybkListNo, String memId) {
+	 HashMap<String, Object> map = new HashMap<String, Object>();
+	 map.put("mybkListNo", mybkListNo); 
+	 map.put("memId", memId);
+	 
+	 dao.updateMyBKLFinished(map); }
+	 
 
 }

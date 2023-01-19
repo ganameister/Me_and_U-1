@@ -64,61 +64,13 @@
 			moveSlide(index);
 		})
 	});
+	
+	
 	/** ========== 슬라이드 쇼 js 구간 끝 ========== **/
 	
 	
 	/** ========== 나의 버킷리스트 js 구간 시작 ========== **/
 	
-	
-	// 줄긋기 css
-	$('.listCompleteBtn').on('click',function() {
-  		//현재 row의 정보 가져오기 
-  		var thisRow = $(this).closest('tr'); 
-  
-	    //주소 input 값 가져오기
-	    thisRow.find('td:eq(1)').css("text-decoration","line-through");
-  	});
-  	
-  	$('.listCompleteBtn').on('click',function() {
-  		$.ajax({
-	 		type:"post",
-	 		url:"/myBKList/FinishedmyBKList",
-	 		success:function(result){
-	 			if(result == 0){
-	 				var thisRow = $(this).closest('tr');
-	 				thisRow.find('td:eq(1)').css("text-decoration","line-through");				
-	 			}
-	 		},
-	 		error:function(){
-	 			alert("실패");
-	 		}
-	 	}); // ajax 종료
-  	});
-  	
-  	// 나의 버킷리스트 등록
-  	/* $('#listInsertBtn').on('click', function() {
- 		event.preventDefault();
- 	
- 		$.ajax({
- 			type:"post",
- 			url:"/InsertmyBKList",
- 			data:{"listInsertText":$('#listInsertText').val()},
- 			dataType:"text",
- 			success:function(result) {
- 				if (result != null) {
- 					alert("나의 버킷리스트가 등록되었습니다");
- 					$("#boardTextList").append("<p>" + result + "</p>");
- 				} else {
- 					alert("나의 버킷리스트를 불러오지 못했습니다");
- 				}
- 			},
- 			error:function() {
- 				alert("실패했습니다 다시 시도해주세요");
- 			},
- 			complete:function() {
- 			}
- 		});
- 	});*/
  	
  	// 나의 버킷리스트 삭제
  	$('#deletemyBKLBtn').on('click', function(){
@@ -129,10 +81,10 @@
  	 		var answer = confirm("선택된 버킷리스트를 삭제하시겠습니까?");
  	 		
  	 		if(answer) {
- 	 		// 체크된 체크박스의 cartNo를 배열에 추가
+ 	 		// 체크된 체크박스의 mybkListNo를 배열에 추가
  	 		var checkArr = new Array();
  	 		$('.chkDelete:checked').each(function(){
- 	 			checkArr.push($(this).attr("data-mybkListNo"));
+ 	 			checkArr.push($(this).val());
  	 		});
  	 		
  	 		// 서버로 전송
@@ -156,7 +108,77 @@
  	 		alert("선택된 버킷리스트가 없습니다");
  	 	}
  	 });
+ 	 
+ 	//완료버튼 클릭 시 테이블의 mybkListFinished 값 체크 후 변경
+ 	$('.completeBtn').on('click',function() {
+ 		var thisRow = $(this).closest('tr');
+ 		var text = thisRow.find('.completed').text();
+ 		var mybkListNo = $(this).val();
  	
+  		$.ajax({
+	 		type:"post",
+	 		url:"/myBKList/FinishedmyBKList",
+	 		data:{ "mybkListNo": mybkListNo },
+	 		success:function(result){
+	 			if(result == 0){
+	 				alert("완료!");
+	 				location.href="/myBKList";
+	 			}
+	 			else {
+	 				alert("완료 취소!");
+	 				location.href="/myBKList";
+	 			}
+	 		},
+	 		error:function(){
+	 			alert("실패");
+	 		}
+	 	}); // ajax 종료
+  	});
+  	
+  	// mybkListFinished의 값이 1이면 CSS 적용 0이면 해제
+  	$('.mybkListFinished').each(function() {
+		if ($(this).val() == 1) {
+		$(this).closest('td').prev().addClass("completed");
+		}
+	    else {
+	    	$(this).closest('td').prev().removeClass("completed");
+	    }
+	});
+	
+	//전체, 완료, 미완료 라디오 버튼 
+	$("#AllViewMY").change(function(){
+      if($(this).is(":checked")){
+         $("td .mybkListFinished[value='1']").parent().parent().show();
+         $("td .mybkListFinished[value='0']").parent().parent().show();
+      }
+   	});
+	$("#CompletedMY").change(function(){
+      if($(this).is(":checked")){
+         $("td .mybkListFinished[value='1']").parent().parent().show();
+         $("td .mybkListFinished[value='0']").parent().parent().hide();
+      }
+      else {
+      	$("td .mybkListFinished[value='0']").parent().parent().show();
+      }
+   });
+   $("#NotCompletedMY").change(function(){
+      if($(this).is(":checked")){
+         $("td .mybkListFinished[value='0']").parent().parent().show();
+         $("td .mybkListFinished[value='1']").parent().parent().hide();
+      }
+      else {
+      	$("td .mybkListFinished[value='1']").parent().parent().show();
+      }
+   });
+	
+  	
+	/** ========== 나의 버킷리스트 js 구간 끝 ========== **/
+	
+	
+	/** ========== 모두의 버킷리스트 js 구간 시작 ========== **/
+	
+	
+	
 	/** ========== 나의 버킷리스트 js 구간 끝 ========== **/
 	
  });

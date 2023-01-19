@@ -41,29 +41,36 @@
 			<div id="miniWrap">
 				<section>
 					<div id="mybucketlist">
-						<form id="mybucketlistForm" method="post" action="<c:url value='/myBKList/InsertmyBKList'/>">
+						<form id="mybucketlistForm" method="post" action="<c:url value='/myBKList/myBKListInsert'/>">
 							<div id="listInsertBox">
 								<input type="text" id="mybkListWrite" name="mybkListWrite" placeholder="이루고 싶은 것을 입력하세요!">
 								<input type="submit" id="listInsertBtn" value="등록하기">
+								<input type="hidden" id="memIdText" value="${sessionScope.sid }">
 							</div>
 							<div id="mybucketlistTitle">
 								<b>나의 버킷리스트</b>
-								<span><input type="checkbox" name="mybucketlistView" value="complete">완료 리스트 보기
-								<input type="checkbox" name="mybucketlistView" value="notcomplete">미완료 리스트 보기</span>
+								<span>
+									<input type="radio" id="AllViewMY" name="mybucketlistView" value="All" checked>전체 보기
+									<input type="radio" id="CompletedMY" name="mybucketlistView" value="complete">완료 리스트 보기
+									<input type="radio" id="NotCompletedMY" name="mybucketlistView" value="notcomplete">미완료 리스트 보기
+								</span>
 							</div>
-						</form>
+						</form> 
 						<table id="mybucketlistTable" border="1">
 							<tr>
-								<th class="mylisttable1"><input type="button" id="deletemyBKLBtn" value="삭제"></th>
+								<th class="mylisttable1"><input type="button" id="deletemyBKLBtn" class="deleteBtn" value="삭제"></th>
 								<th class="mylisttable2">내용</th>
 								<th class="mylisttable3">완료</th>
 							</tr>
 							
 							<c:forEach var="mybkl" items="${ myBKList }">
 								<tr>
-									<td><input type="checkbox" class="chkDelete" data-mybkListNo="${mybkl.mybkListNo }"></td>
+									<td><input type="checkbox" class="chkDelete" value="${mybkl.mybkListNo}"></td>
 									<td>${ mybkl.mybkListWrite }</td>
-									<td><button id="listCompleteBtn">완료</button></td>
+									<td>
+										<input type="hidden" class="mybkListFinished" id="mybkListFinished" value="${mybkl.mybkListFinished}">
+										<button id="listCompleteBtn" class="completeBtn" value="${mybkl.mybkListNo}">완료</button>
+									</td>
 								</tr>
 							</c:forEach>
 						</table>
@@ -74,25 +81,28 @@
 					<div id="combucketlist">
 						<div id="combucketlistTitle">
 							<b>모두의 버킷리스트</b>
-							<span><input type="checkbox" name="combucketlistView" value="complete">완료 리스트 보기
-							<input type="checkbox" name="combucketlistView" value="notcomplete">미완료 리스트 보기</span>
+							<span>
+								<input type="radio" id="AllViewCOM" name="combucketlistView" value="All" checked>전체 보기
+								<input type="radio" id="CompletedCOM" name="combucketlistView" value="complete">완료 리스트 보기
+								<input type="radio" id="NotCompletedCOM" name="combucketlistView" value="notcomplete">미완료 리스트 보기
+							</span>
 						</div>
 						<table id="mybucketlistTable" border="1">
 								<tr>
-									<th class="comlisttable1"><input type="button" id="deletebucketBtn" value="삭제"></th>
+									<th class="comlisttable1"><input type="button" id="deletebucketBtn" class="deleteBtn" value="삭제"></th>
 									<th class="comlisttable2">내용</th>
 									<th class="comlisttable3">상세정보 보기</th>
 									<th class="comlisttable4">완료</th>
 								</tr>
 								<!-- 프론트용 임시 시작 -->
 								<tr> 
-									<td><input type="checkbox"></td><td>유럽 여행 가기</td><td><button class="combkdetailView">상세정보 보기</button></td><td><button class="listCompleteBtn">완료</button></td>
+									<td><input type="checkbox"></td><td>유럽 여행 가기</td><td><button id="listCompleteBtn" class="combkdetailView">상세정보 보기</button></td><td><button class="completeBtn">완료</button></td>
 								</tr>
 								<tr>
-									<td><input type="checkbox"></td><td>오지 탐험</td><td><button class="combkdetailView">상세정보 보기</button></td><td><button class="listCompleteBtn">완료</button></td>
+									<td><input type="checkbox"></td><td>오지 탐험</td><td><button id="listCompleteBtn" class="combkdetailView">상세정보 보기</button></td><td><button class="completeBtn">완료</button></td>
 								</tr>
 								<tr>
-									<td><input type="checkbox"></td><td>스카이 다이빙 해보기</td><td><button class="combkdetailView">상세정보 보기</button></td><td><button class="listCompleteBtn">완료</button></td>
+									<td><input type="checkbox"></td><td>스카이 다이빙 해보기</td><td><button class="combkdetailView">상세정보 보기</button></td><td><button class="completeBtn">완료</button></td>
 								</tr>
 								<!-- 프론트용 임시 끝 -->
 								<%-- <c:forEach var="combcklist" items="${ combucketList }">

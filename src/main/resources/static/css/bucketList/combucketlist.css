@@ -40,10 +40,11 @@ th,td {
 
 #categoryBox select {
 	margin-left:20px;
-	margin-top:31px;
+	margin-top:32px;
 	border-radius:3px;
 	color: var(--color5);
 	background: var(--color8);
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 #regBtn {
@@ -53,13 +54,13 @@ th,td {
 	color: var(--color8);
 	background: var(--color5);
 	border-radius:3px;
-	font-weight: bold;
-	font-size:14px;
+	font-size:15px;
 	width:100px;
     height:30px;
     border-radius: 2px;
     border-style: none;
     cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 

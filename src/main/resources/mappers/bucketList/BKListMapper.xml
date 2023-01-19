@@ -18,7 +18,9 @@
   	
   	<select id="myBKListView" resultMap="mybklistResult">
   		SELECT *
-  		FROM mybklist ORDER BY mybkListNo ASC
+  		FROM mybklist 
+  		WHERE memId = #{memId}
+  		ORDER BY mybkListNo ASC
   	</select>
   	
   	<delete id="deleteBKList" parameterType="string"> 
@@ -33,9 +35,11 @@
  	
  	<update id="updateMyBKLFinished" parameterType="hashmap">
  		UPDATE mybklist
- 		SET mybkListFinished = 1
- 		WHERE mybkListNo = #{mybkListNo} AND memId = #{memId} AND mybkListFinished = 0
+ 		SET mybkListFinished = CASE mybkListFinished 
+ 		WHEN 0 THEN 1
+ 		WHEN 1 THEN 0
+ 		END
+ 		WHERE mybkListNo = #{mybkListNo} AND memId = #{memId}
  	</update>
- 	
- 	
+ 	 
   </mapper>
