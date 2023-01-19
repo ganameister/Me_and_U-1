@@ -179,13 +179,13 @@ body {
 /*heartBox ------------------ */
 /* heart button 하트하트*/
 .heartBtn {
-	cursor"pointer";
+	cursor:pointer;
 	border-style:none;
 	background:var(--color3);
 }
-#heartbtnImg {
-    width:15px;
-    height:15px;
+.heartbtnImg {
+    width:25px;
+    height:25px;
     margin: 0 0.5rem;
 }
 .heartBtn {
@@ -194,7 +194,7 @@ body {
 
 .heartNo {
 	margin-left:-7px;
-    font-size: 12px;
+    font-size: 15px;
 }
  
 /*new reviewBox  ---------------------*/
