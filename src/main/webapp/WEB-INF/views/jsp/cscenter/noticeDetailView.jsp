@@ -40,7 +40,7 @@
 					<!-- 제목 -->
 					<div class="service-top">
 						<div class="subboardTitle">SERVICE</div>
-						<div class="boardTitle">noticeBoard</div>
+						<div class="boardTitle">Notice Board</div>
 						<div class="underboardTitle">자주묻는질문</div>
 						<div class="chatBot"><button onClick="openchatbot()" id="chatBot">Chat Bot</button></div>
 					</div>

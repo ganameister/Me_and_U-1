@@ -10,26 +10,26 @@ body {
 	margin:auto;
 }
 .service {
-    margin-top: 200px;    
+    margin-top: 120px;    
     margin-bottom: 100px;
      margin-left: 7rem;
-    margin-right: 10rem;
-    max-width: 1200px;
+    margin-right: 7rem;
+    
 }
 .subboardTitle {
     color: var(--color5);
-    font-size: medium;
+    font-size: 25px;
 }
 .boardTitle {
     font-family: 'Lora', serif;
     font-weight: 500;
-    font-size: xx-large;
+    font-size: 50px;
     padding-top: 10px;
     padding-bottom: 20px;
 }
 .underboardTitle {
-    color:grey;
-    font-size: small;
+    color:#606060;
+    font-size: 20px;
     padding-bottom: 10px;
 }
 
@@ -44,8 +44,9 @@ body {
 .service-midTitle {
     font-family: 'Dancing Script', cursive;
     font-weight: 400;
-    font-size: x-large;
+    font-size: xx-large;
     padding-bottom: 15px;
+    margin-left:-74px;
 }
 
 #service_warp {
@@ -62,13 +63,15 @@ body {
 /* chatBotbutton */
 .chatBot button {
     font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
     cursor: pointer;
-    background-color:var(--color8);
+    background-color:var(--color5);
     color:#ffffff;
     border-radius: 2px;
     border-style: none;
-    height: 30px;
+    height: 50px;
     width: 150px;
+    margin-top:10px;
 }
 .chatBot button:hover {
     opacity: 70%;
@@ -76,12 +79,15 @@ body {
 /* middlebuttom */
 .serviceBtn button {
     font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
+    font-size:medium;
     cursor: pointer;
-    background: var(--color8);
+    background: var(--color5);
     color:#ffffff;
     border-radius: 2px;
     border-style: none;
+    height: 40px;
+    width: 80px;
 }
 .serviceBtn button:hover {
     opacity: 70%;
@@ -89,21 +95,23 @@ body {
 /* 등록 취소 버튼 */
 .insertQna input {
 	font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 100;
-    cursor: pointer;
+     font-weight: 300;
+    font-size:medium;
     background: var(--color3);
     color: grey;
-    font-size:small;
+     height: 40px;
+    width: 80px;
     border-radius: 2px;
-    /* border: 1px solid var(--color5);    */
-    border-style: none; 
+    border: 1px solid var(--color5);   
+   /*  border-style: none;  */
 }
 .insertQna input:hover {
-    opacity: 70%;
-    background: var(--color8);
+    
+    background: var(--color5);
     color:#ffffff;
     border-radius: 2px;
     border-style: none;
+   
 }
 
 /* input text */
@@ -118,7 +126,8 @@ body {
 	border-style :none;
 	border-bottom:1px solid var(--color5);
 	width:100%;
-	max-width:1000px;		
+	max-width:1000px;
+	font-size: large;		
 }
 #qnaWrite {
 	border: 1px solid var(--color5);
@@ -126,7 +135,8 @@ body {
 	max-width:1000px;
 	height: 200px;
 	overflow-y:scroll;
-	text-align:top;		
+	text-align:top;
+	font-size: large;		
 }
 #qnaNo:focus {	
 	outline:none;
@@ -168,7 +178,7 @@ body {
 }
 .cstable {
     font-weight: 100;
-    font-size: small;
+    font-size: large;
     border-collapse: collapse;
     color: grey;
     width: 100%;
@@ -176,14 +186,14 @@ body {
 .cstable a {
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 100;
-    font-size: small;
-    color: grey;
+    font-size: large;
+    color: black;
     text-decoration:none;
 }
 .cstable a:hover {
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 100;
-    font-size: small;
+    font-size: large;
     color: #000000;
     text-decoration:none;
 }

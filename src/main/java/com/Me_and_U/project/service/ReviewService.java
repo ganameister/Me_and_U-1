@@ -47,6 +47,11 @@ public class ReviewService implements IReviewService {
 		return dao.detailViewReview(reviewNo);
 	}
 
+	@Override
+	public ArrayList<ReviewVO> reviewMypage() {
+		return dao.reviewMypage();
+	}
+
 	
 
 }

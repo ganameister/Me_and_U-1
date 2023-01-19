@@ -31,8 +31,31 @@
 		<select id="listRecentReview" resultMap="reviewResult">
 		SELECT * 
 		FROM review 
-		ORDER BY reviewNo DESC LIMIT 0,3
+		ORDER BY reviewNo DESC LIMIT 0,4
 		</select>	
+		
+		<!-- 마이 페이지 -->
+		<!-- 내가 쓴 후기 -->
+		<select id="reviewMypage" resultMap="reviewResult">
+		SELECT * 
+		FROM review 
+		where memId=#{memId}
+		</select>	
+		
+		<!-- 등록 -->  
+		<insert id="insertReview" parameterType="com.Me_and_U.project.model.ReviewVO">
+  		INSERT INTO review (memId,reviewNo,reviewTitle,reviewWrite,reviewImg,reviewCtg ) 		
+		 VALUES ( #{memId},#{reviewNo}, #{reviewTitle},#{reviewWrite},#{reviewImg},#{reviewCtg})	
+  		</insert>
+		
+		<!-- 삭제 -->  
+	    <delete id="deleteReview" parameterType="int"  >
+	  	DELETE 
+	  	FROM review 
+	  	WHERE reviewNo=#{reviewNo}
+	    </delete> 
+		
+		
 		
 		<!-- 상세 -->
 		<select id="detailViewReview" parameterType="int" 
@@ -42,14 +65,7 @@
 		WHERE reviewNo=#{reviewNo}
 		</select>
 		
-		<!--  //나중에 memId추가 -->
-			
-		<!-- 삭제 -->  
-	    <delete id="deleteReview" parameterType="int"  >
-	  	DELETE 
-	  	FROM review 
-	  	WHERE reviewNo=#{reviewNo}
-	    </delete>  
+		 
 	    
 		<!-- 수정 -->  
 		<update id="updateReview" parameterType="com.Me_and_U.project.model.ReviewVO" >
@@ -59,11 +75,15 @@
 		</update>
 		
 		
-		<!-- 등록 -->  
-		<insert id="insertReview" parameterType="com.Me_and_U.project.model.ReviewVO" >
-		 INSERT INTO review (reviewNo,reviewTitle,reviewWrite,reviewImg,reviewCtg ) 		
-		 VALUES ( #{reviewNo}, #{reviewTitle},#{reviewWrite},#{reviewCtg})					
-		</insert>
+
+		
+		<!-- <update id="updateReview" parameterType="hashmap">
+ 		UPDATE review
+		 SET reviewTitle=#{reviewTitle},reviewWrite=#{reviewWrite},reviewImg=#{reviewImg},reviewCtg=#{reviewCtg}   		
+		 WHERE reviewNo=#{reviewNo}	
+ 		</update> -->
+		
+		
 		
 			
 	</mapper>

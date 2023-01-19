@@ -29,7 +29,7 @@
 			
 				<!-- 제목 -->
 				<div class="review-top">
-					<div class="subTitle">BUCKETLIST</div>
+					<div class="subTitle">BUCKETLIST & 모임</div>
 					<div class="toptitle">Review</div>
 					<div ><p class="underTitle">후기</p></div>
 					<div class="newPost"><button id="newPost">New Post</button></div>
@@ -42,36 +42,38 @@
 						<input type="button" class="cateBtn" id="categ1" value="전체">
 						<input type="button" class="cateBtn" id="categ2" value="여행">
 						<input type="button" class="cateBtn" id="categ3" value="운동">
-						<input type="button" class="cateBtn" id="categ4" value="게임">
+						<input type="button" class="cateBtn" id="categ4" value="음식">
 						<input type="button" class="cateBtn" id="categ5" value="문화">
 						<input type="button" class="cateBtn" id="categ6" value="음악">
 						<input type="button" class="cateBtn" id="categ7" value="기타">								
 					</div>
-				</div>						
+				</div>	
+				
+									
 				<!-- 리뷰 리스트  -->			
 				<div class="reviewBox">	
 																		
 					<ol class="image-list grid-view">
 					
-			 	<c:forEach var="rev" items="${reviewList}"> 		
+			 			<c:forEach var="rev" items="${reviewList}"> 		
 			
-						<li class="review_container" value="${rev.reviewCtg}"> 
-							<!-- id 중앙정렬 -->
-							<div class="mem_InfoBox"><span><img src="<c:url value='/images/${rev.memImg }'/>" id="memImg"></span>	
-							<span id="reviewmemId">${rev.memId }</span></div>							
-														
+						<li class="review_container" value="${rev.reviewCtg}"> 							
 							<div class ="review-Info" >
-								<img  class="review-img" src="${rev.reviewImg }" alt="">																
+								<!--  리뷰이미지  -->
+																								
+									<img  class="review-img" src="<c:url value='/images/${rev.reviewImg }'/>" >
+								<!--  리뷰상세박스-글 -->
 								<div class="review_underBox">									
 									<!-- 하트하트 -->
 									<div class="heartbox">							
-									<button class="heartBtn" ><img src='<c:url value="/images/heart.png"/>' id="heartbtnImg" ></button>
-									
-									<span class="heartNo">${rev.reviewHart }</span>
+									<button class="heartBtn" id="heartBtn"" ><img src='<c:url value="/images/heart.png"/>' id="heartbtnImg" ></button>
+								
+									<span class="heartNo" >${rev.reviewHart }</span>
 									</div>
 									<div class="review-title"><span class="title">${rev.reviewTitle }</span></div>			
 									<div class="comment"><span>${rev.reviewWrite }</span></div>
-									<div align="right"><p id="reviewDate"><fmt:formatDate value='${rev.reviewDate }' pattern="yyyy-MM-dd  hh:mm"/></p></div>							
+									<div align="right">-<span id="reviewmemId">${rev.memId }</span>-<p id="reviewDate">
+										<fmt:formatDate value='${rev.reviewDate }' pattern="yyyy-MM-dd  hh:mm"/></p></div>							
 								</div>																
 							</div>
 						</li>
@@ -81,6 +83,8 @@
 					</ol>												
 				</div>
 				<!-- /div reviewBox -->						
+					
+					
 																
 			</div>
 			<!-- /review_warp -->	

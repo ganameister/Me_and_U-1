@@ -8,8 +8,11 @@
 		<title>정기 모임 등록 페이지</title>
 		<!-- 헤드부분 임포트  -->
 		<c:import url="/WEB-INF/views/layout/head.jsp" /> 
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/register/regGatherRegister.css' />">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/register/reviewRegister.css' />">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/review/reviewRegister.css' />">
 		<script src="<c:url value='/js/jquery-3.6.1.min.js' />"></script>
 		<script src="<c:url value='/js/review/review.js' />"></script>
 		
@@ -41,11 +44,18 @@
 	<body>
 		<!-- 카테고리 메뉴 top 부분 임포트 해줘야 함 -->
 		<c:import url="/WEB-INF/views/layout/top.jsp" />
+		<!-- 제목 -->
+			<div class="reviewBox">	
+				<div class="review-top">
+					
+					<div class="toptitle">Review</div>
+					<div class="subTitle">BUCKETLIST & 모임 리뷰</div>
+				</div>
+			</div>	
 		<!--  -->
 		<div name="input_gatherInfo" id="input_gatherInfo">
-			<h4>리뷰 등록</h4>
 			<hr id="line">
-			<form id="regGather_frm" class="regGather_frm" method="post">
+			<form id="regGather_frm" class="regGather_frm" method="post" action="<c:url value='jsp/review/reviewRegister'/>" enctype="multipart/form-data">
 				<table id="gatherInfo_tbl" class="gatherInfo_tbl">
 					<tr>
 						<!-- 이미지 미리보기 영역-->
@@ -62,40 +72,28 @@
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
-						<th>제목</th>
+						<th id="line">제목</th>
 						<td colspan="3">
-							<input type="text" class="gatherInfo_inputLong" placeholder="제목 입력">
+							<input type="text" class="gatherInfo_inputLong" placeholder="제목 입력" name="reviewTitle" id="reviewTitle">
 						</td>
 					</tr>
 					<tr>
-						<th>한줄 평</th>
+						<th id="line">한줄 평</th>
 						<td colspan="3">
-							<input type="text" class="gatherInfo_inputLong" placeholder="한줄평 입력">
+							<input type="text" class="gatherInfo_inputLong" placeholder="한줄평 입력" name="reviewWrite" id="reviewWrite">
 						</td>
 					</tr>
 					<tr>
-						<th>카테고리</th>
+						<th id="line">카테고리</th>
 						<td>
-							<select id="memJoy1">
-							<option value="a">전체</option>
-							<option value="b">여행</option>
-							<option value="c">운동</option>
-							<option value="d">음식</option>
-							<option value="e">공연</option>
-							<option value="f">취미</option>
-							<option value="g">기타</option>
-						</select>
-						</td>
-						<th>하위카테고리</th>
-						<td>
-							<select id="memJoy2">
-							<option value="1">전체</option>
-							<option value="2">트래킹</option>
-							<option value="3">캠핑</option>
-							<option value="4">헬스</option>
-							<option value="5">수영</option>
-							<option value="6">한식</option>
-							<option value="7">중식</option>
+							<select id="reviewCtg" name="reviewCtg">
+							<option value="전체">전체</option>
+							<option value="여행">여행</option>
+							<option value="운동">운동</option>
+							<option value="음식">음식</option>
+							<option value="문화">문화</option>
+							<option value="음악">음악</option>
+							<option value="기타">기타</option>
 						</select>
 						</td>
 					</tr>
@@ -109,18 +107,33 @@
 					</tr>
 					<tr>
 						<td>
+							<!-- 이미지파일업로드 -->
 							<div class="filebox">
-								<label for="imgUpload">이미지 선택</label>
-								<input type="file" id="imgUpload" value="이미지 선택">
+								<label for="uploadFileOrigin">이미지 선택</label>
+								<input type="file" id="uploadFileOrigin" name="uploadFileOrigin" value="이미지 선택">
 							</div>
 						</td>
 					</tr>
+					
+					
+					<!-- <h2>upload Name no Change</h2>
+		<form id="fileOriginalNameUploadForm" method="post" action="<c:url value='/fileOriginalNameUpload'/>"
+		enctype="multipart/form-data">
+		파일:<input type="file" id="uploadFileOrigin"name="uploadFileOrigin">
+		<input type="submit"value="업로드"><br>
+		</form>	 -->
+					
+					
 					
 				</table>
 				<!-- 이미지 사이즈를 조절해주는 함수 cf) 테이블 밖에 선언해주어야함 -->	
 				<script>imgSize("img");</script>
 				<br>
-				<input type="button" id="info_Input" class="info_Input" value="등록하기">
+				<hr id="line">
+				<div class="boxBtn">
+				<input type="submit" id="submitBtn" class="submitBtn" value="등록">
+				<input type="reset" id="resetBtn" class="resetBtn" value="취소">
+				</div>
 			</form>
 		</div>
 		<br>
