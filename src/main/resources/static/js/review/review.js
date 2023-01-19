@@ -8,7 +8,7 @@ $(document).ready(function(){
     
     $cateBtn = $(".cateBtn");
 	$cateBtn.each(function(index) {
-		var search = ["전체", "여행", "운동", "게임", "문화", "음악","기타"];
+		var search = ["전체", "여행", "운동", "음식", "문화", "음악","기타"];
 		$('#categ' + index).on('click', function() {
 			if(search[index - 1] == "전체") {
 				$(".review_container").show();
@@ -20,7 +20,7 @@ $(document).ready(function(){
 	});
 	
 	//업로드한 이미지로 이미지 변경하기
-	$('#imgUpload').on('change', function(e1){
+	$('#uploadFileOrigin').on('change', function(e1){
 		//파일 데이터 가져오기
  		var file = e1.target.files[0];
  		console.log(file);
@@ -52,8 +52,20 @@ $(document).ready(function(){
  		}); // ajax 종료  */	  
  		
 	}); //이미지 클릭 이벤트 종료
+
+	
+		var num=0;
+		$("#heartbtnImg").on('click',function(){
+			
+			if(num==0){
+				$(this).attr('src','/images/redheart.png');
+				num=1;
+			}else {
+				$(this).attr('src','/images/heart.png');
+				num=0;
+			}
+		}); 
 /**
-	$(funcion(){
 		var num=0;
 		$(".heartBtn").on('click',function(){
 			if(num==0){
@@ -64,8 +76,7 @@ $(document).ready(function(){
 				num=0;
 			}
 		});
-	});
-	
+
 
 	 	$('input').click(function(){
 	  if($(this).hasClass("active")){
@@ -78,5 +89,10 @@ $(document).ready(function(){
 	$("#newPost").on('click',function(){
 			window.location.href = "/reviewRegister";
 		});	
+    $("#resetBtn").on('click',function(){
+			window.location.href = "/reviewListView";
+		});	
+    
+    
     
 });

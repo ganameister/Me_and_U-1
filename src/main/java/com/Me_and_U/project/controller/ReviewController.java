@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.Me_and_U.project.model.QnaVO;
 import com.Me_and_U.project.model.ReviewVO;
 import com.Me_and_U.project.service.ReviewService;
 
@@ -24,17 +25,6 @@ public class ReviewController {
 	@Autowired
 	ReviewService service;
 	
-	
-	//등록폼
-	//http://localhost:8080/reviewRegister
-	@RequestMapping("/reviewRegister")
-	public String reviewRegister(Model model) {
-		return "jsp/review/reviewRegister";
-	}
-	
-	
-	
-	
 	//리뷰게시판
 	@RequestMapping("/reviewListView")
 	public String listAllReview(Model model) {
@@ -42,14 +32,85 @@ public class ReviewController {
 		model.addAttribute("reviewList",reviewList);			
 		return "jsp/review/reviewListView";
 	} 
-	
+	//http://localhost:8080/listRecentReview
 	//최신순
 	@RequestMapping("/listRecentReview")
 	public String listRecentReview(Model model) {
 		ArrayList<ReviewVO> reviewRec = service.listRecentReview();
 		model.addAttribute("reviewRec",reviewRec);			
-		return "jsp/review/listRecentReview";
+		return "jsp/reviewPlus";
 	} 
+	//http://localhost:8080/reviewMypage
+	//마이페이지 자신이 등록한 후기글 불러오기
+	@RequestMapping("/reviewMypage")
+	public String reviewMypage(Model model,HttpSession session) {
+		String memId = (String) session.getAttribute("sid");
+		
+		ArrayList<ReviewVO> reviewMy = service.reviewMypage();
+		model.addAttribute("reviewMy",reviewMy);			
+		return "jsp/reviewMypage";
+	}
+	//자기의 VO에서 가져와야 하나?
+	
+	
+	
+	//등록폼
+	@RequestMapping("/reviewRegister")
+	public String reviewRegister(HttpSession session) {
+		String memId = (String) session.getAttribute("sid");
+		if (memId != null ){
+			return "jsp/review/reviewRegister";
+		}else {
+			return "redirect:/login";
+		}
+				
+	}
+	//등록 성공 이제 이미지만 입력함된!
+//	@RequestMapping("jsp/review/reviewRegister")
+//	public String insertReview(ReviewVO review,HttpSession session) {
+//		String memId = (String) session.getAttribute("sid");
+//		review.setMemId(memId);
+//		service.insertReview(review);		
+//		return "redirect:/reviewListView";
+//		
+//	}
+	//등록 이미지 성공!캬~~
+	@RequestMapping("jsp/review/reviewRegister")
+	public String insertReview(ReviewVO review,
+								@RequestParam("uploadFileOrigin") MultipartFile file,
+								HttpSession session) throws  IOException {
+		
+		String memId = (String) session.getAttribute("sid");		
+		String uploadPath = "C:/springWorkspace/me_and_u_images/";				
+		String originalFileName = file.getOriginalFilename();		
+		File sendFile = new File(uploadPath + originalFileName);		
+		file.transferTo(sendFile);		
+		review.setReviewImg(originalFileName);		
+		review.setMemId(memId);		
+		service.insertReview(review);		
+		return "redirect:/reviewListView";
+		
+	}
+	
+		
+	
+	
+	
+	
+	//밑에 전부 다시수정
+		//삭제
+		@RequestMapping("/cscenter/deleteReview/{reviewNo}")
+		public String deleteReview(@PathVariable int reviewNo) { 
+			service.deleteReview(reviewNo);		
+			return "redirect:/reviewListView";
+		}
+		
+	
+	
+	
+	//밑에는 다시 수정할 예정!아직 미완성!!!
+	
+	
 	@RequestMapping("/review/detailViewReview/{reviewNo}")
 	public String detailViewQna(@PathVariable String reviewNo,
 			Model model) {
@@ -59,13 +120,6 @@ public class ReviewController {
 	}
 	
 	
-	//밑에 전부 다시수정
-	//삭제
-	@RequestMapping("/cscenter/deleteReview/{reviewNo}")
-	public String deleteReview(@PathVariable int reviewNo) { 
-		service.deleteReview(reviewNo);		
-		return "redirect:/reviewListView";
-	}
 	
 	
 	// memId에 저장
@@ -106,58 +160,6 @@ public class ReviewController {
 		service.updateReview(review);		
 		return "redirect:/reviewListView";
 	}
-	
-	//등록
-	@RequestMapping("/reviewListInput")
-	public String reviewNewForm() { 		  		 
-		return "jsp/review/reviewNewForm";
-	}
-		//->이미지 MultipartFiel file, memId httpSession으로 등록, 
-		// 카테고리reivewCtg param으로 싹다 고치기
-	@RequestMapping("jsp/review/reviewNewForm")
-	public String insertReview(ReviewVO review) {
-		service.insertReview(review);
 		
-		return "redirect:/reviewListView";
-	}
-	
-	
-	/*
-	 * @RequestMapping("/fileUploadMultiple") public String
-	 * fileUploadMultiple(@RequestParam("uploadFileMulti") ArrayList<MultipartFile>
-	 * files, Model model) throws IOException { String uploadPath =
-	 * "C:/springWorkspace/upload/";
-	 * 
-	 * ArrayList<String> originalFileNameList = new ArrayList<String>();
-	 * 
-	 * for(MultipartFile file : files) { String originalFileName =
-	 * file.getOriginalFilename();
-	 * 
-	 * originalFileNameList.add(originalFileName);
-	 * 
-	 * UUID uuid = UUID.randomUUID(); String savedFileName = uuid.toString() + "_" +
-	 * originalFileName;
-	 * 
-	 * File sendFile = new File(uploadPath + savedFileName);
-	 * 
-	 * file.transferTo(sendFile); }
-	 * 
-	 * model.addAttribute("originalFileNameList",originalFileNameList);
-	 * 
-	 * 
-	 * return "upload/fileUploadMultipleResultView"; }
-	 */
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

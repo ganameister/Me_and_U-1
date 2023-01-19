@@ -7,7 +7,8 @@ import com.Me_and_U.project.model.ReviewVO;
 
 public interface IReviewDAO {
 	public ArrayList<ReviewVO> listAllReview();
-	public ArrayList<ReviewVO> listRecentReview(); //최신순
+	public ArrayList<ReviewVO> listRecentReview(); //최신순 3개
+	public ArrayList<ReviewVO> reviewMypage(); //마이페이지 후기
 	public ReviewVO detailViewReview(int reviewNo); //상세페이지
 	public void updateReview(ReviewVO review); //수정
 	public void deleteReview(int reviewNo); 	//삭제

@@ -23,12 +23,15 @@
 }
  
 #review_warp img {
-    display: block;
+    display: block;  
     max-width: 100%;
     height: auto;
-	/* object-fit:cover; */
+	object-fit:cover;
+	
 }
-
+.review-img {
+	aspect-ratio: 13/9; /*이미지 사이즈 맞춤  */
+}
 
 #review_warp ol,ul {
     list-style: none;
@@ -48,33 +51,29 @@ body {
     max-width:1600px; 
 	margin:auto;
 }
+
 .review-top {
-	margin-top: 200px;   
+	margin-top: 120px;     
     margin-left: 7rem;
     margin-right: 7rem;
-    max-width: 1200px;
+    
 }
-.reviewBox {
-    margin-top: 111px;   
-    margin-bottom: 100px;
-    margin-left: 7rem;
-    margin-right: 7rem;
-    max-width: 1200px;
-}
+
 .subTitle {
     color: var(--color5);
-    font-size: medium;
+    font-size: 25px;
 }
 .toptitle {
     font-family: 'Lora', serif;
     font-weight: 500;
-    font-size: xx-large;
+    font-size: 50px;
     padding-top: 10px;
     padding-bottom: 20px;
+    color:black;
 }
 .underTitle {
-    color:grey;
-    font-size: small;
+    color:#606060;
+    font-size: 20px;
     margin-top: 0;
     margin-bottom: 7px;
 }
@@ -82,21 +81,22 @@ body {
 /* 카테고리
 -------------------------------------- */
 .review_board_top {
-    padding-top: 20px;
+    
     padding-bottom: 10px;    
  	float: left;
- 	margin-top: 20px;   
+ 	
     margin-left: 7rem;
     margin-right: 7rem;
     max-width: 1200px; 
     padding-bottom:0;
+   
 }
 
 
 .select_categ {
     font-family: 'Dancing Script', cursive;
     font-weight: 400;
-    font-size: x-large;
+    font-size: xx-large;
     padding-bottom: 15px;
 }
 
@@ -112,51 +112,24 @@ body {
     text-align: center;/*우선적용  */
 }
 
-/* newPost button */
-.newPost button {
-    font-family: 'Noto Sans KR', sans-serif;
-    cursor: pointer;
-    background-color:var(--color8);
-    color:#ffffff;
-    border-radius: 2px;
-    border-style: none;
-    height: 30px;
-    width: 150px;
-}
-.newPost button:hover {
-    opacity: 70%;
-}
 
 
-/* categ buttom */
-.cateBtn {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 100;
-    cursor: pointer;
-    background: var(--color8);
-    color:#ffffff;
-    border-radius: 2px;
-    border-style: none;
-}
-.cateBtn:hover {
-    opacity: 70%;
-}
-/* heart button */
-.heartBtn {
-	cursor"pointer";
-	border-style:none;
-	background:var(--color3);
+
+/* 리뷰박스------------------------------------------------------- */
+.reviewBox {
+    margin-top: 111px;   
+    margin-bottom: 100px;
+    margin-left: 7rem;
+    margin-right: 7rem;
+   
+    
 }
 
-/* --------------------------------------------- */
-/* --------------------------------------------- */
-/* --------------------------------------------- */
-/* searchBox
-
-.searchBox {
-    padding: 0 2.4rem;
+.review_container {
+	margin:2rem auto;
+	max-width: calc(100%-80px);
 }
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 /* IMAGE LIST
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -191,32 +164,25 @@ body {
 }
 
 
-/* div {
+ /* div {
     border:1px solid red;
-}   */ 
+}  */ 
 
-/*review_topBox  -------------------*/
-#memImg {
-    margin-top:10px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;     
-    justify-content: center; 
-} 
+
 #reviewmemId {
     font-size: small;
     font-weight: bold;
     text-align:top;
 }
-.mem_InfoBox span{
-	display:inline-block;
-	text-align:center;
-	vertical-align: middle;
-}
-.mem_InfoBox {
-	margin-bottom:3px;
-}
+
+
 /*heartBox ------------------ */
+/* heart button 하트하트*/
+.heartBtn {
+	cursor"pointer";
+	border-style:none;
+	background:var(--color3);
+}
 #heartbtnImg {
     width:15px;
     height:15px;
@@ -232,15 +198,19 @@ body {
 }
  
 /*new reviewBox  ---------------------*/
+
+.review-img {
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+/* 리뷰상세박스-글  */
 .review_underBox {
 	border: 1px solid var(--color4);
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;	
 }
-.review-img {
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
-}
+
 .comment {
 	font-size:small;
 	color:grey;
@@ -273,3 +243,41 @@ body {
 	width:5px;
 	background-color:var(--color8);
 }
+
+/* 버튼버튼 */
+/* newPost button */
+.newPost button {
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    font-size:20px;
+    background: var(--color5);
+    color:#ffffff;
+    border-radius: 2px;
+    border-style: none;
+    height: 50px;
+    width: 150px;
+    margin-top:10px;
+}
+.newPost button:hover {
+    opacity: 70%;
+}
+
+
+/* categ buttom */
+.cateBtn {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    font-size:medium;
+    cursor: pointer;
+    background: var(--color5);
+    color:#ffffff;
+    border-radius: 2px;
+    border-style: none;
+    height: 40px;
+    width: 70px;
+}
+.cateBtn:hover {
+    opacity: 70%;
+}
+
+
