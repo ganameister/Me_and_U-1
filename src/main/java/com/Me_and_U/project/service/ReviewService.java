@@ -48,8 +48,9 @@ public class ReviewService implements IReviewService {
 	}
 
 	@Override
-	public ArrayList<ReviewVO> reviewMypage() {
-		return dao.reviewMypage();
+	public ArrayList<ReviewVO> reviewMypage(String memId) {
+		
+		return dao.reviewMypage(memId);
 	}
 
 	

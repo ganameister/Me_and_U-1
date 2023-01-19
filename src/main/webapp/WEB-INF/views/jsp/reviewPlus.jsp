@@ -40,12 +40,13 @@
 				<li class="review_container" value="${revs.reviewCtg}"> 							
 					<div class ="review-Info" >
 						<!--  리뷰이미지  -->
-						<img  class="review-img" src="${revs.reviewImg }" alt="">																					
+						
+						<img  class="review-img" src="<c:url value='/images/${revs.reviewImg }'/>" >																					
 						<!--  리뷰상세박스-글 -->
 						<div class="review_underBox">									
 							<!-- 하트하트 -->
 							<div class="heartbox">							
-							<button class="heartBtn" ><img src='<c:url value="/images/heart.png"/>' id="heartbtnImg" ></button>			
+							<button class="heartBtn" id="heartBtn" ><img src='<c:url value="/images/heart.png"/>' class="heartbtnImg" ></button>		
 							<span class="heartNo">${revs.reviewHart }</span>
 							</div>
 							<div class="review-title"><span class="title">${revs.reviewTitle }</span></div>			

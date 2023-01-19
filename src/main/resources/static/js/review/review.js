@@ -8,13 +8,14 @@ $(document).ready(function(){
     
     $cateBtn = $(".cateBtn");
 	$cateBtn.each(function(index) {
-		var search = ["전체", "여행", "운동", "음식", "문화", "음악","기타"];
-		$('#categ' + index).on('click', function() {
-			if(search[index - 1] == "전체") {
+		var search = ["", "여행", "운동", "음식", "문화", "음악","기타"];
+	
+		$('#categ' + (index+1)).on('click', function() {
+			if(search[index] === "") {
 				$(".review_container").show();
 			} else {
 				$(".review_container").hide();
-				$('.review_container[value*=' + search[index - 1] + ']').show();
+				$('.review_container[value*=' + search[index] + ']').show();
 			}
 		});
 	});
@@ -55,7 +56,7 @@ $(document).ready(function(){
 
 	
 		var num=0;
-		$("#heartbtnImg").on('click',function(){
+		$(".heartbtnImg").on('click',function(){
 			
 			if(num==0){
 				$(this).attr('src','/images/redheart.png');

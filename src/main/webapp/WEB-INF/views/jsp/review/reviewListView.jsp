@@ -66,7 +66,7 @@
 								<div class="review_underBox">									
 									<!-- 하트하트 -->
 									<div class="heartbox">							
-									<button class="heartBtn" id="heartBtn"" ><img src='<c:url value="/images/heart.png"/>' id="heartbtnImg" ></button>
+									<button class="heartBtn" id="heartBtn" ><img src='<c:url value="/images/heart.png"/>' class="heartbtnImg" ></button>
 								
 									<span class="heartNo" >${rev.reviewHart }</span>
 									</div>

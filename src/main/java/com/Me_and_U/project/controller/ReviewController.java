@@ -46,11 +46,11 @@ public class ReviewController {
 	public String reviewMypage(Model model,HttpSession session) {
 		String memId = (String) session.getAttribute("sid");
 		
-		ArrayList<ReviewVO> reviewMy = service.reviewMypage();
+		ArrayList<ReviewVO> reviewMy = service.reviewMypage(memId);
 		model.addAttribute("reviewMy",reviewMy);			
 		return "jsp/reviewMypage";
 	}
-	//자기의 VO에서 가져와야 하나?
+	
 	
 	
 	
