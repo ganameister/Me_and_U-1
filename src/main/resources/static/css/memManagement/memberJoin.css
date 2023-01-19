@@ -103,10 +103,9 @@ body {
 
 /* 회원가입 전체 영역 */
 #memJoinDiv {
-	background-color:var(--color4);;
-	margin:80px auto 0;
+	background-color:var(--color4);
+	margin:80px auto -10px;
 	width:860px;
-
 	border-radius : 15px;
 	padding:16px 0px;
 }
@@ -127,9 +126,9 @@ body {
 
 /* "관심정보" 문구 */
 #interestInfo {
-	font-size:25px;
+	font-size:32px;
 	font-weight:bold;
-	padding-top:54px;
+	padding:40px 0 10px;
 }
 
 /* 아이디 중복 확인 버튼 */
@@ -287,11 +286,15 @@ body {
 
 #pwReg {
 	font-size:13px;
-    align-items: right;
-    display:flex;
+	align-items: right;
+	display:flex;
 }
 
-
+#idReg {
+	font-size:13px;
+	align-items: right;
+	display:flex;
+}
 
 
 

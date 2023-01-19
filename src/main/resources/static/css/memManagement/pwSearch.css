@@ -16,7 +16,7 @@ body {
 
 #logoImgBox {
 	text-align: center;
-	padding: 160px 0 20px;
+	padding: 198px 0 20px;
 }
 
 .find_inner .title_wrap {
@@ -39,6 +39,7 @@ body {
 
 #wrap {
 	height: 100%;
+	margin: 0 0 -72px;
 }
 
 #idInputText {
