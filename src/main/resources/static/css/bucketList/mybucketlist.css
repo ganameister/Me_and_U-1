@@ -147,6 +147,25 @@ textarea {
 	cursor:pointer;
 }
 
+/* #listInsertBtn {
+	width:100px;
+	height:38px;
+	margin-left:20px;
+	font-size:16px;
+	border:1px solid var(--color5);
+	background-color:var(--color5);
+	color:var(--color4);
+	border-radius:6px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+#listInsertBtn:hover {
+	color:var(--color5);
+	background-color:rgba(0,0,0,0);
+	cursor:pointer;
+} */
+
 /* 나의 버킷리스트 + 체크박스 칸 */
 #mybucketlistTitle {
 	width:1000px;	/* 52.1vw */

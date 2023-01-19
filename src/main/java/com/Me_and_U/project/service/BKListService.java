@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.Me_and_U.project.dao.IBKListDAO;
+import com.Me_and_U.project.model.ComBKListVO;
 import com.Me_and_U.project.model.MyBKListVO;
 
 @Service
@@ -51,6 +52,26 @@ public class BKListService implements IBKListService {
 	 map.put("memId", memId);
 	 
 	 dao.updateMyBKLFinished(map); }
+
+	@Override
+	public void comBKListInsert(ComBKListVO combklist) {
+		dao.comBKListInsert(combklist);
+	}
+
+	@Override
+	public ArrayList<ComBKListVO> comBKListView() {
+		return dao.comBKListView();
+	}
+
+	@Override
+	public ComBKListVO detailViewComBKList(int combkListNo) {
+		return dao.detailViewComBKList(combkListNo);
+	}
+
+	@Override
+	public void deletecomBKList(int combkListNo) {
+		dao.deletecomBKList(combkListNo);
+	}
 	 
 
 }
