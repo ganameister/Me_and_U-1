@@ -15,7 +15,7 @@
 		<c:import url="/WEB-INF/views/layout/top.jsp"/>
 			<header id="header">
 				<div id="logoImgBox">
-					<img src="<c:url value='/images/me_and_u.png' />">
+					<img src="<c:url value='/images/me_and_u2.png' />">
 				</div>
 			</header>	
 			<div id="container">

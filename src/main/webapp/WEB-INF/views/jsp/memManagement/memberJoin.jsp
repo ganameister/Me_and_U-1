@@ -20,8 +20,8 @@
 					<table id="joinMemberTable">		<!-- 회원가입정보 입력 테이블 시작 -->
 					
 						<!-- 아이디, 패스워드 -->
-						<tr><th>*아이디</th></tr>
-						<tr><td class="insertTxtTD"><input type="text" maxlength="13" placeholder="아이디 입력" id="insertMemID" name="memId" class="insertMemInfo" required>
+						<tr><th>*아이디<span id="idReg">5~16자 영문 대/소문자, 숫자만 사용 가능합니다</span></th></tr>
+						<tr><td class="insertTxtTD"><input type="text" maxlength="16" placeholder="아이디 입력" id="insertMemID" name="memId" class="insertMemInfo" required>
 												  <input type="button" value="중복확인" id="idCheckBtn"></td></tr>
 						<tr><th>*비밀번호<span id="pwReg">비밀번호는 숫자, 영문, 특수문자 조합으로 8~18자리를 사용해주세요</span></th></tr>
 						<tr><td class="insertTxtTD"><input type="password" maxlength="18" placeholder="비밀번호 입력" id="insertMemPW" class="pwComare" required></td></tr>
