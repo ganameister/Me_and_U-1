@@ -39,8 +39,9 @@ h5 {
 }
 
 #gatherInfo_tbl th{
-  font-size : 16px;
+  font-size : 17px;
   width:150px;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 #gatherInfo_tbl .gatherInfo_input {
@@ -59,6 +60,7 @@ h5 {
   vertical-align: middle;
   text-align : center;
   border-radius : 5px;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 #gatherInfo_tbl .gatherInfo_input3 {
@@ -68,12 +70,14 @@ h5 {
   vertical-align: middle;
   text-align : center;
   border-radius : 5px;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 table select {
 	width:150px;
 	height:35px;
 	border-radius : 5px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 #gatherInfo_tbl #recruit {
@@ -133,10 +137,9 @@ table select {
   width: 170px;
   height: 40px;
   cursor:pointer;
-  font-weight : bold;
-  font-size : 16px;
-  font-family: 'Jeju Myeongjo', serif;
+  font-size : 17px;
   border-radius : .25em;
+  font-family: 'Noto Sans KR', sans-serif;
   background-color: black;
   color : white;
   border : none;

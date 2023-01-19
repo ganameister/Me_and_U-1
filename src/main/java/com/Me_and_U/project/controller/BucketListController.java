@@ -2,6 +2,7 @@ package com.Me_and_U.project.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.Me_and_U.project.model.MyBKListVO;
 import com.Me_and_U.project.service.BKListService;
@@ -21,12 +23,19 @@ public class BucketListController {
 	
 	// 나의 버킷리스트 페이지 열기
 	@RequestMapping("/myBKList")
-	public String myBKList() {
+	public String myBKList(Model model,HttpSession session) {
+		
+		String memId = (String) session.getAttribute("sid");
+		
+		ArrayList<MyBKListVO> myBKList = service.myBKListView(memId);
+		model.addAttribute("myBKList", myBKList);
+		
 		return "jsp/myBKList";
 	}
 	
+	
 	// 나의 버킷리스트 등록
-	@RequestMapping("/myBKList/InsertmyBKList")
+	@RequestMapping("/myBKList/myBKListInsert")
 	public String insert(@RequestParam String mybkListWrite, Model model, HttpSession session) {
 
 		String memId = (String) session.getAttribute("sid");
@@ -35,7 +44,7 @@ public class BucketListController {
 
 			service.insertmybkList(memId, mybkListWrite);
 
-			ArrayList<MyBKListVO> myBKList = service.myBKListView();
+			ArrayList<MyBKListVO> myBKList = service.myBKListView(memId);
 			model.addAttribute("myBKList", myBKList);
 
 			return "jsp/myBKList";
@@ -52,8 +61,8 @@ public class BucketListController {
 		
 		// 배열에서 mybkListNo 추출해서 해당되는 상품 삭제
 		if(chkArr != null) {
-			for(String mybkListNo : chkArr) {
-				service.deletemyBKList(mybkListNo);
+			for(String mybkNo : chkArr) {
+				service.deletemyBKList(mybkNo);
 			}
 			
 			result = 1; // 성공
@@ -65,18 +74,14 @@ public class BucketListController {
 	// 나의 버킷리스트 완료 버튼 클릭 시 줄긋기
 	@ResponseBody
 	@RequestMapping("/myBKList/FinishedmyBKList")
-	public int checkMyBKLFinished(MyBKListVO vo, HttpSession session) {
+	public int FinishedMyBKLFinished(HttpServletRequest request, HttpSession session) {
 		
 		String memId = (String)session.getAttribute("sid");
-		vo.setMemId(memId); //vo의 memId 값 설정
-			
-		int result = service.checkMyBKLFinished(vo.getMybkListNo(), memId);
+		int mybkListNo = Integer.parseInt(request.getParameter("mybkListNo"));
 		
-		if(result == 0){
-			service.updateMyBKLFinished(vo.getMybkListNo(), memId);
-		}
-			
-//		service.updateMyBKLFinished(vo.getMybkListNo(), memId);
+		int result = service.checkMyBKLFinished(mybkListNo, memId);
+		
+		service.updateMyBKLFinished(mybkListNo, memId);
 		
 		return result;
 	}
