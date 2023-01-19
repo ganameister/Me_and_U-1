@@ -66,18 +66,38 @@
 	});
 	/** ========== 슬라이드 쇼 js 구간 끝 ========== **/
 	
+	
+	// 카테고리 필터링
 	$cateBtn = $(".cateBtn");
 	$cateBtn.each(function(index) {
-		var search = ["전체", "여행", "운동", "게임", "문화", "음악","기타"];
-		$('#categ' + index).on('click', function() {
-			if(search[index - 1] == "전체") {
+		var search = ["", "여행", "운동", "게임", "문화", "음악","기타"];
+		$('#categ' + (index+1)).on('click', function() {
+			if(search[index] == "") {
 				$(".itemContainer").show();
 			} else {
 				$(".itemContainer").hide();
-				$('.itemContainer[value*=' + search[index - 1] + ']').show();
+				$('.itemContainer[value*=' + search[index] + ']').show();
 			}
 		});
 	});
+	
+	//등록폼 진입
+	$('#registerBtn').on('click',function() {
+		window.location.href = "/comBKList/comBKListRegister";
+	});
+	
+	//업로드한 이미지로 이미지 변경하기
+	$('#uploadFileOrigin').on('change', function(e1){
+		//파일 데이터 가져오기
+ 		var file = e1.target.files[0];
+ 		console.log(file);
+ 		var reader = new FileReader();
+ 		reader.onload =function(e2){
+			$('#preview').attr('src', e2.target.result);
+		}
+		reader.readAsDataURL(file);
+	}); //이미지 클릭 이벤트 종료
+	
 	
  });
  

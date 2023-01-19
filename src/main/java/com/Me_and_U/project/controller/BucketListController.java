@@ -1,5 +1,7 @@
 package com.Me_and_U.project.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,11 +10,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.Me_and_U.project.model.ComBKListVO;
 import com.Me_and_U.project.model.MyBKListVO;
 import com.Me_and_U.project.service.BKListService;
 
@@ -20,6 +24,8 @@ import com.Me_and_U.project.service.BKListService;
 public class BucketListController {
 	@Autowired
 	BKListService service;
+	
+	/** 나의 버킷리스트 page 시작 **/
 	
 	// 나의 버킷리스트 페이지 열기
 	@RequestMapping("/myBKList")
@@ -86,21 +92,74 @@ public class BucketListController {
 		return result;
 	}
 	
+	/** 나의 버킷리스트 page 끝 **/
+	
+	
+	/** 모두의 버킷리스트 page 시작 **/
+	
 	// 모두의 버킷리스트 페이지 열기
 	@RequestMapping("/comBKList")
-	public String comBKList() {
+	public String comBKList(Model model) {
+		
+		ArrayList<ComBKListVO> comBKList = service.comBKListView();
+		model.addAttribute("comBKList", comBKList);
+		
 		return "jsp/comBKList";
 	}
 		
 	// 모두의 버킷리스트 등록 페이지 열기
-	@RequestMapping("/comBKListRegister")
-	public String comBKListRegister() {
-		return "jsp/comBKListRegister";
+	@RequestMapping("/comBKList/comBKListRegister")
+	public String comBKListRegister(HttpSession session) {
+		
+		String memId = (String) session.getAttribute("sid");
+		
+		if (memId != null ){
+			return "jsp/comBKListRegister";
+		} else {
+			return "redirect:/login";
+		} 
 	}
+	
+	// 모두의 버킷리스트 등록
+	@RequestMapping("/comBKList/comBKListInsert")
+	public String comBKListInsert(ComBKListVO combklist, @RequestParam("uploadFileOrigin") MultipartFile file,
+												HttpSession session) throws  IOException {
+			
+			String memId = (String) session.getAttribute("sid");		
+			String uploadPath = "C:/springWorkspace/me_and_u_images/";				
+			String originalFileName = file.getOriginalFilename();	
+			
+			File sendFile = new File(uploadPath + originalFileName);		
+			file.transferTo(sendFile);		
+			
+			combklist.setCombkListImg(originalFileName);	
+			combklist.setMemId(memId);		
+			
+			service.comBKListInsert(combklist);		
+			
+			return "redirect:/comBKList";
+		}
 
-	// 모두의 버킷리스트 상세 페이지 열기
-	@RequestMapping("/comBkListDetailpage")
-	public String comBkListDetailpage() {
+	// 모두의 버킷리스트 상세 페이지 열기 (글 주인에게만 삭제버튼 보임)
+	@RequestMapping("/comBKList/comBkListDetailpage/{combkListNo}")
+	public String comBkListDetailpage(@PathVariable String combkListNo, Model model, HttpSession session) {
+		String memId = (String) session.getAttribute("sid");
+		model.addAttribute("memId", memId);
+		
+		ComBKListVO combklistDetail = service.detailViewComBKList(Integer.parseInt(combkListNo));
+		model.addAttribute("combklistDetail", combklistDetail);
+		
 		return "jsp/comBkListDetailpage";
 	}
+	
+	// 모두의 버킷리스트 삭제
+	@RequestMapping("/comBKList/deletecomBKList")
+	public String deletecomBKList(int combkListNo) { 
+		
+		service.deletecomBKList(combkListNo);	
+		
+		return "redirect:/comBKList";
+	}
+	
+	/** 모두의 버킷리스트 page 끝 **/
 }

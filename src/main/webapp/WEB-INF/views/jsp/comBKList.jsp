@@ -8,7 +8,6 @@
 		<title>모두의 버킷리스트</title>
 		<!-- head import -->
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
-		<script src="/js/jquery.twbsPagination.js"></script>
 		<script src="<c:url value='/js/bucketList/combucketlist.js'/>"></script>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/bucketList/combucketlist.css'/>">
 	</head>
@@ -56,138 +55,27 @@
 				            <option>인기순</option>
 				            <option>이름순</option>
 						</select>
-						<button id="regBtn" onclick="location.href='comBKListRegister'">등록하기</button >
+						<button id="registerBtn">등록하기</button >
 					</div>
 					<div id="itemListBox">
 						<ul>
-							<%-- <c:forEach var="com" items="${comBKList }"> 백엔드용
-							    	<li class="itemContainer" value="comBKList">
-							    		<a href="<c:url value='/product/detailViewProduct/${com.comBKListNo}'/>">
+							<c:forEach var="com" items="${comBKList }">
+							    	<li class="itemContainer" value="${com.combkListCtg}">
+							    		<a href="<c:url value='/comBKList/comBkListDetailpage/${com.combkListNo}'/>">
 								    		<table>
-									    		<tr>
-										    		<td><img src="<c:url value='/images/${com.prdImg}' />" width="350" height="240"></td>			               
+									    		<tr height="240">
+										    		<td><img src="<c:url value='/images/${com.combkListImg}' />" width="320" height="240"></td>			               
 										    	</tr>
 										    	<tr>
-										    		<th>${com.title }</th>
+										    		<th class="tableText">${com.combkListTitle }</th>
 										    	</tr>
-										    	<tr>
-										    		<td>${com.subtitle }</td>
+										    	<tr height="46">
+										    		<td class="tableText">${com.combkListSubtitle }</td>
 										    	</tr>
 								    		</table>
 								    	</a>
 							    	</li>
-						    </c:forEach> --%>
-						    <!-- 프론트용 임시 시작 -->
-							<li class="itemContainer" value="여행">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">패러글라이딩 타보기</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 무서울 거 같은 액티비티 같이 해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							<li class="itemContainer" value="운동">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">패러글라이딩 타보기</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 타보기 도전해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							<li class="itemContainer" value="게임">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">패러글라이딩 타보기</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 무서울 거 같은 액티비티 같이 해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							<li class="itemContainer" value="문화">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">프론트용 임시 Title</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 타보기 도전해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							<li class="itemContainer" value="음악">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">패러글라이딩 타보기</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 무서울 거 같은 액티비티 같이 해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							<li class="itemContainer" value="기타">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">프론트용 임시 Title</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 타보기 도전해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							<li class="itemContainer" value="여행">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">패러글라이딩 타보기</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 무서울 거 같은 액티비티 같이 해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							<li class="itemContainer" value="운동">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">패러글라이딩 타보기</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 타보기 도전해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							<li class="itemContainer" value="게임">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">패러글라이딩 타보기</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 무서울 거 같은 액티비티 같이 해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							<li class="itemContainer" value="문화">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">프론트용 임시 Title</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 타보기 도전해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							<li class="itemContainer" value="음악">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">패러글라이딩 타보기</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 무서울 거 같은 액티비티 같이 해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							<li class="itemContainer" value="기타">
-								<a href="#">
-									<table>
-										<tr height="240"><td><img src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="240"></td></tr>
-										<tr><th class="tableText">프론트용 임시 Title</th></tr>
-										<tr height="46"><td class="tableText">패러글라이딩 타보기 도전해봐요!</td></tr>
-									</table>
-								</a>
-							</li>
-							
-							<!-- 프론트용 임시 끝 -->
+						    </c:forEach>
 						</ul>
 					</div>
 				</div>
