@@ -18,6 +18,7 @@
         <result property="memId" column="memId"  />
         <result property="mybkListFinished" column="mybkListFinished"  />
     </resultMap>
+    
   	
   	<!-- 나의 버킷리스트 목록 -->
   	<select id="myBKListView" resultMap="mybklistResult">
@@ -28,7 +29,7 @@
   	</select>
   	
   	<!-- 나의 버킷리스트 삭제 -->
-  	<delete id="deleteBKList" parameterType="string"> 
+  	<delete id="deletemyBKList" parameterType="int"> 
 		DELETE FROM mybklist WHERE mybkListNo = #{mybkListNo} 
 	</delete>
 	
@@ -48,7 +49,50 @@
  		END
  		WHERE mybkListNo = #{mybkListNo} AND memId = #{memId}
  	</update>
- 	 
+ 	
+ 	<!-- (나의 버킷리스트) 모두의 버킷리스트 목록 출력 -->
+  	<select id="mycomBKListView" parameterType="string" resultType="com.Me_and_U.project.model.MyComBKListVO">
+  		SELECT m.mycombkListNo, c.combkListSubtitle, c.combkListNo, m.memId, m.mycombkListFinished
+  		FROM combklist c, mycombklist m
+  		WHERE c.combkListNo = m.combkListNo AND m.memId = #{memId}
+  		ORDER BY m.mycombkListNo
+  	</select>
+  	
+  	<!-- (나의 버킷리스트) 모두의 버킷리스트 중복 체크 -->
+ 	<select id="checkCombklistInMybkl" parameterType="hashmap" resultType="int">
+ 		SELECT COUNT(*)
+ 		FROM mycombklist
+ 		WHERE combkListNo = #{combkListNo} AND memId = #{memId}
+ 	</select>
+ 	
+ 	<!-- (나의 버킷리스트) 모두의 버킷리스트에서 목록 가져오기 -->
+ 	<insert id="insertMyComBKList" parameterType="com.Me_and_U.project.model.MyComBKListVO">
+ 		INSERT INTO mycombklist(memId, combkListNo, mycombkListFinished)
+ 		VALUES(#{memId}, #{combkListNo}, 0)
+ 	</insert>
+ 	
+ 	<!-- (나의 버킷리스트) 모두의 버킷리스트 삭제 -->
+  	<delete id="deletemycomBKList" parameterType="int"> 
+		DELETE FROM mycombklist WHERE mycombkListNo = #{mycombkListNo} 
+	</delete>
+	
+	<!-- (나의 버킷리스트) 모두의 버킷리스트 완료 여부 검사 -->
+	<select id="checkMyComBKLFinished" parameterType="hashmap" resultType="int">
+ 		SELECT mycombkListFinished
+ 		FROM mycombklist
+ 		WHERE mycombkListNo=#{mycombkListNo} AND memId=#{memId}
+ 	</select>
+ 	
+ 	<!-- 나의 버킷리스트 완료 여부 자동 수정 -->
+ 	<update id="updateMyComBKLFinished" parameterType="hashmap">
+ 		UPDATE mycombklist
+ 		SET mycombkListFinished = CASE mycombkListFinished 
+ 		WHEN 0 THEN 1
+ 		WHEN 1 THEN 0
+ 		END
+ 		WHERE mycombkListNo = #{mycombkListNo} AND memId = #{memId}
+ 	</update>
+ 	
  	<!-- 나의 버킷리스트 구간 끝  -->
  	 
  	 
@@ -69,8 +113,8 @@
  	
  	<!-- 모두의 버킷리스트 등록 -->
  	<insert id="comBKListInsert" parameterType="com.Me_and_U.project.model.ComBKListVO">
-  		INSERT INTO combklist (memId,combkListNo,combkListTitle,combkListSubtitle,combkListWrite,combkListImg, combkListFinished, combkListCtg) 		
-		 VALUES ( #{memId},#{combkListNo}, #{combkListTitle},#{combkListSubtitle},#{combkListWrite}, #{combkListImg}, 0,#{combkListCtg})	
+  		INSERT INTO combklist (memId,combkListNo,combkListTitle,combkListSubtitle,combkListWrite,combkListImg, combkListCtg) 		
+		 VALUES ( #{memId},#{combkListNo}, #{combkListTitle},#{combkListSubtitle},#{combkListWrite}, #{combkListImg},#{combkListCtg})	
   	</insert>
   		
   	<!-- 모두의 버킷리스트 목록 -->
@@ -89,9 +133,8 @@
   		
   	<!-- 모두의 버킷리스트 삭제 -->
   	<delete id="deletecomBKList" parameterType="int">
-  		DELETE
-  		FROM combklist
-  		WHERE combkListNo = #{combkListNo}
+  		DELETE FROM mycombklist WHERE combkListNo = #{combkListNo};
+  		DELETE FROM combklist WHERE combkListNo = #{combkListNo};
   	</delete>
   	
   	<!-- 모두의 버킷리스트 구간 끝  -->

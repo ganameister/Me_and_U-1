@@ -38,7 +38,7 @@
 			<div id="text">
 				<b>버킷리스트 내용</b>
 				<div  id="detailDiscript"> ${combklistDetail.combkListWrite }</div><br>
-				<input type="button" value="해보기">
+				<input type="button" id="TryBTN" data-combkListNo= "${combklistDetail.combkListNo}" value="해보기">
 				<c:if test="${memId == combklistDetail.memId}">
 				    <input type="button" id="deleteComBKListBTN" data-combkListNo= "${combklistDetail.combkListNo}" value="삭제">
 				</c:if>

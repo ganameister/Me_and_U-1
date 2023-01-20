@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.Me_and_U.project.dao.IBKListDAO;
 import com.Me_and_U.project.model.ComBKListVO;
 import com.Me_and_U.project.model.MyBKListVO;
+import com.Me_and_U.project.model.MyComBKListVO;
 
 @Service
 public class BKListService implements IBKListService {
@@ -32,8 +33,8 @@ public class BKListService implements IBKListService {
 	}
 
 	@Override
-	public void deletemyBKList(String mybkListNo) {
-		dao.deleteBKList(mybkListNo);
+	public void deletemyBKList(int mybkListNo) {
+		dao.deletemyBKList(mybkListNo);
 	}
 
 	@Override
@@ -46,12 +47,14 @@ public class BKListService implements IBKListService {
 	}
 
 	
-	 @Override public void updateMyBKLFinished(int mybkListNo, String memId) {
-	 HashMap<String, Object> map = new HashMap<String, Object>();
-	 map.put("mybkListNo", mybkListNo); 
-	 map.put("memId", memId);
+	@Override 
+	public void updateMyBKLFinished(int mybkListNo, String memId) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("mybkListNo", mybkListNo); 
+		map.put("memId", memId);
 	 
-	 dao.updateMyBKLFinished(map); }
+		dao.updateMyBKLFinished(map); 
+	}
 
 	@Override
 	public void comBKListInsert(ComBKListVO combklist) {
@@ -71,6 +74,48 @@ public class BKListService implements IBKListService {
 	@Override
 	public void deletecomBKList(int combkListNo) {
 		dao.deletecomBKList(combkListNo);
+	}
+
+	@Override
+	public ArrayList<MyComBKListVO> mycomBKListView(String memId) {
+		return dao.mycomBKListView(memId);
+	}
+
+	@Override
+	public int checkCombklistInMybkl(int combkListNo, String memId) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("combkListNo", combkListNo);
+		map.put("memId", memId);
+		
+		return dao.checkCombklistInMybkl(map);
+	}
+
+	@Override
+	public void insertMyComBKList(MyComBKListVO vo) {
+		dao.insertMyComBKList(vo);
+	}
+
+	@Override
+	public void deletemycomBKList(int mycombkListNo) {
+		dao.deletemycomBKList(mycombkListNo);
+	}
+
+	@Override
+	public int checkMyComBKLFinished(int mycombkListNo, String memId) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("mycombkListNo", mycombkListNo);
+		map.put("memId", memId);
+		
+		return dao.checkMyComBKLFinished(map);
+	}
+
+	@Override
+	public void updateMyComBKLFinished(int mycombkListNo, String memId) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("mycombkListNo", mycombkListNo); 
+		map.put("memId", memId);
+	 
+		dao.updateMyComBKLFinished(map); 
 	}
 	 
 
