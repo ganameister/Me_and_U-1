@@ -1,11 +1,9 @@
 @charset "UTF-8";
-@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);	/* font-family: 'Jeju Myeongjo', serif; */
 
 body{
 	width:1600px;
 	margin:auto;
 	padding-top:69px;
-	font-family: 'Jeju Myeongjo', serif;
 	line-height:20px;
 }
 
@@ -107,6 +105,17 @@ table td{
 	float: right;
 	width: 100px;
 	margin-left: 10px;
+}
+
+#deleteComBKListBTN {
+	cursor:pointer;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight:bold;
+}
+#TryBTN {
+	cursor:pointer;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight:bold;
 }
 
 #text {

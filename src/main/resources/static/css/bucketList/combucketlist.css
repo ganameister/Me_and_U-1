@@ -23,6 +23,7 @@ table {
 	padding:0px;
 	background-color:white;
 	border-spacing: 0px;
+	border-radius:3px;
 }
 
 .tableText {
