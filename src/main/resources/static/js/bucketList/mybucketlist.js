@@ -72,6 +72,15 @@
 	/** ========== 나의 버킷리스트 js 구간 시작 ========== **/
 	
  	
+ 	// 나의 버킷리스트 등록 시 공백일 때
+ 	$('#listInsertBtn').on('click', function() {
+ 		if($('#mybkListWrite').val() == "") {
+ 			alert("이루고 싶은 것을 입력하세요");
+ 			$('#mybkListWrite').focus();
+ 			return false;
+ 		}
+ 	});
+ 	
  	// 나의 버킷리스트 삭제
  	$('#deletemyBKLBtn').on('click', function(){
  	 	// 선택 여부 확인 : 하나라도 선택하면 true, 아무것도 선택하지 않으면 false

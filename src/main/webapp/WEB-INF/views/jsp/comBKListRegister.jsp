@@ -64,7 +64,7 @@
 						<tr>
 							<th>카테고리</th>
 							<td>
-								<select name="combkListCtg">
+								<select class="selectCTG" name="combkListCtg">
 									<option>카테고리 선택</option>
 									<option>여행</option>
 									<option>운동</option>
