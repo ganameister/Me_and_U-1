@@ -98,7 +98,37 @@
 		reader.readAsDataURL(file);
 	}); //이미지 클릭 이벤트 종료
 	
+	// 모두의 버킷리스트 등록 시 공백일 때
+	$('.info_Input').on('click',function() {
 	
+		// 제목이 공백일 때
+		if($('.gatherInfo_input3').val() == "") {
+			alert("제목을 입력하세요");
+			$('.gatherInfo_input3').focus();
+			return false;
+		// 카테고리를 선택 안했을 때
+		} else if($('.selectCTG').val() == "카테고리 선택") {
+			alert("카테고리를 선택하세요");
+			$('.selectCTG').focus();
+			return false;
+		// 한줄 설명이 공백일 때
+		} else if($('.gatherInfo_input2').val() == "") {
+			alert("한줄 설명을 입력하세요");
+			$('.gatherInfo_input2').focus();
+			return false;
+		// 이미지 선택을 안했을 때
+		} else if($('#uploadFileOrigin').val() == "") {
+			alert("이미지를 선택하세요");
+			$('#uploadFileOrigin').focus();
+			return false;
+		// 상세 설명이 공백일 때
+		} else if($('#summernote').val() == "") {
+			alert("상세 설명을 입력하세요");
+			$('#summernote').focus();
+			return false;
+		}
+	});
+		
  });
  
  

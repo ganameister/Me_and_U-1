@@ -23,7 +23,12 @@ table {
 	padding:0px;
 	background-color:white;
 	border-spacing: 0px;
-	border-radius:3px;
+	border-radius:10px;
+}
+
+.combkListImg {
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
 }
 
 .tableText {
