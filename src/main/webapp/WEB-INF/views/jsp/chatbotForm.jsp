@@ -39,14 +39,7 @@
 							<input type="text" id="message" name="message" size="30"placeholder="챗봇'Mu'에게  상담해주세요"> 	
 							<input type="submit" value="Enter" id="chatBot-submit" >
 						</form> 
-						 
-											 
-					<!-- 	 <br><br>				  
-						 <button id="recordBtn" class="img-btnMic">음성인식</button>
-						 <button id="stopBtn" class="img-btnStop">Stop</button>	
-						 <button id="recordBtn">녹음</button>
-			 				  <button id="stopBtn">정지</button>			  
-					 -->	 				  
+						 			 				  
 						 				  
 						  <div>
 						  	<audio id="audio" preload="auto" controls></audio>

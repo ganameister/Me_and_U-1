@@ -137,7 +137,7 @@
  		// 서버에 전송하고 결과 받아서 처리
  		$.ajax({
  			type:"post",
- 			url:"chatbot3",
+ 			url:"chatbotMultimain",
  			data: {"message": $('#message').val()},
  			dataType :'json',
  			success:function(result){
@@ -155,7 +155,7 @@
 					}	else if(bubbles[b].type == 'template'){//이미지 답변 또는 멀티링크 답변 시작
 						if(bubbles[b].data.cover.type=="image"){//이미지 이면
 							$("#chatBox").append("<img src='" + bubbles[b].data.cover.data.imageUrl +
-																		 "' alt='이미지 없음' width='200' height='150'>");
+																		 "' alt='이미지 없음' width='340' height='300'>");
 							if(bubbles[b].data.contentTable == null){
 								$("#chatBox").append
 								("<a href='"+bubbles[b].data.cover.data.action.data.url+"' target='_blank'>" + 

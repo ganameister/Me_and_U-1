@@ -19,8 +19,7 @@ import org.springframework.stereotype.Service;
 public class ChatbotService {
 	
 	
-	public  String chatbot3main(String voiceMessage) {
-		
+	public  String chatbotMultimain(String voiceMessage) {
 		
 		
 		

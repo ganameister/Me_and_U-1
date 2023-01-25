@@ -81,7 +81,8 @@
 		<div class="main-content-1">
 			<div class="sticky">
 				<div class="sticky-title">
-					페이지 소개 문구 or 광고?
+					<!-- 페이지 소개 문구 or 광고? 수정부분-->					
+					<img src="<c:url value='/images/광고2.jpg'/>" >
 				</div>
 				<div class="section section-1">
 					<div class="title">모두의 버킷리스트</div>
