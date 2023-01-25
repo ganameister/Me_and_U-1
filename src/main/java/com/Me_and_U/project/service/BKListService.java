@@ -117,6 +117,11 @@ public class BKListService implements IBKListService {
 	 
 		dao.updateMyComBKLFinished(map); 
 	}
+
+	@Override
+	public ArrayList<ComBKListVO> listRecentComBKList() {
+		return dao.listRecentComBKList();
+	}
 	 
 
 }

@@ -11,6 +11,7 @@
 		<!-- head import -->
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/index.css' />">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/review/reviewPlus.css' />">
 		<script src="<c:url value='/js/index.js' />"></script>			
 	</head>
 	<body>
@@ -80,12 +81,32 @@
 		<div class="main-content-1">
 			<div class="sticky">
 				<div class="sticky-title">
-					페이지 소개 문구
+					페이지 소개 문구 or 광고?
 				</div>
 				<div class="section section-1">
 					<div class="title">모두의 버킷리스트</div>
 					<div class="content">
-					
+						<div id="itemListBox">
+							<ul>
+								<c:forEach var="com" items="${combkRec }">
+								    	<li class="itemContainer" value="${com.combkListCtg}">
+								    		<a href="<c:url value='/comBKList/comBkListDetailpage/${com.combkListNo}'/>">
+									    		<table class="comTable">
+										    		<tr height="240">
+											    		<td><img class="combkListImg" src="<c:url value='/images/${com.combkListImg}' />" width="320" height="240"></td>			               
+											    	</tr>
+											    	<tr>
+											    		<th class="tableText">${com.combkListTitle }</th>
+											    	</tr>
+											    	<tr height="46">
+											    		<td class="tableText">${com.combkListSubtitle }</td>
+											    	</tr>
+									    		</table>
+									    	</a>
+								    	</li>
+							    </c:forEach>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="section section-2">
@@ -103,7 +124,34 @@
 				<div class="section section-4">
 					<div class="title">후기</div>
 					<div class="content">
-					
+						<div id="review_warp">	
+							<!-- 최신순 리뷰 리스트  -->			
+							<div class="reviewBox">																				
+								<ol class="image-list grid-view">		 					
+							 		<c:forEach var="revs" items="${reviewRec}"> 		
+										<li class="review_container" value="${revs.reviewCtg}"> 							
+											<div class ="review-Info" >
+												<!--  리뷰이미지  -->
+												
+												<img  class="review-img" src="<c:url value='/images/${revs.reviewImg }'/>" >																					
+												<!--  리뷰상세박스-글 -->
+												<div class="review_underBox">									
+													<!-- 하트하트 -->
+													<div class="heartbox">							
+													<button class="heartBtn" id="heartBtn" ><img src='<c:url value="/images/heart.png"/>' class="heartbtnImg" ></button>		
+													<span class="heartNo">${revs.reviewHart }</span>
+													</div>
+													<div class="review-title"><span class="reviewtitle">${revs.reviewTitle }</span></div>			
+													<div class="comment"><span>${revs.reviewWrite }</span></div>
+													<div align="right">-<span id="reviewmemId">${revs.memId }</span>-<p id="reviewDate">
+														<fmt:formatDate value='${revs.reviewDate }' pattern="yyyy-MM-dd  hh:mm"/></p></div>							
+												</div>																
+											</div>
+										</li>				
+									 </c:forEach> 
+								</ol>												
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

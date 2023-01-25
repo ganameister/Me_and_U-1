@@ -66,6 +66,10 @@ body {
     padding: 8px 12px;
 }
 
+.shadow {
+	box-shadow: 0 4px 4px -4px black;
+}
+
 /* footer
 ------------------------------------- */
 .footer {

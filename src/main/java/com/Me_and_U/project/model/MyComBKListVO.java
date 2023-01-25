@@ -7,8 +7,22 @@ public class MyComBKListVO {
 	private int mycombkListFinished;
 	
 	//조인용 데이터
+	private String combkListTitle;
 	private String combkListSubtitle;
+	private String combkListImg;
 	
+	public String getCombkListTitle() {
+		return combkListTitle;
+	}
+	public void setCombkListTitle(String combkListTitle) {
+		this.combkListTitle = combkListTitle;
+	}
+	public String getCombkListImg() {
+		return combkListImg;
+	}
+	public void setCombkListImg(String combkListImg) {
+		this.combkListImg = combkListImg;
+	}
 	public String getCombkListSubtitle() {
 		return combkListSubtitle;
 	}

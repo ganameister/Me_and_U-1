@@ -126,9 +126,6 @@ body {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-textarea {
-}
-
 #listInsertBtn {
 	width:100px;
 	height:38px;
@@ -204,9 +201,12 @@ textarea {
 	width:60px;
 }
 
-.textdeco {
-	text-decoration:line-through;
+.mybklistWrite {
+	color:skyblue;
+	text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+	letter-spacing:0.2rem;
 }
+
 
 /************** 나의 버킷리스트 끝 **************/
 
@@ -270,6 +270,12 @@ textarea {
 }
 .comlisttable4 {
 	width:60px;
+}
+
+.combklistWrite {
+	color:skyblue;
+	text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+	letter-spacing:0.2rem;
 }
 
 /************** 모두의 버킷리스트 끝 **************/

@@ -101,6 +101,43 @@ html, body {
   margin: 5vh 20vh 0 0;
 }
 
+/* 모두의 버킷리스트 최신순 */
+/* 리스트 박스 */
+#itemListBox {
+	width:1600px;
+	margin-top:10vh;
+}
+
+#itemListBox ul {
+	float:center;
+	align-items: center;
+}
+
+#itemListBox ul li {
+	float:left;
+	margin:27px;
+}
+
+#itemListBox ul li a {
+	text-decoration:none;
+	color:black;
+	font-size:16px;
+}
+
+.comTable {
+	border:1px solid black;
+	width:320px;
+	padding:0px;
+	background-color:white;
+	border-spacing: 0px;
+	border-radius:10px;
+}
+
+.combkListImg {
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+
 /************** SlideShow 시작 **************/
 /* 양 옆 화살표 버튼 */
 #prevNextButtonBox {

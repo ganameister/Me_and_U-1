@@ -66,7 +66,7 @@
 							<c:forEach var="mybkl" items="${ myBKList }">
 								<tr>
 									<td><input type="checkbox" class="myBKLchkDelete" value="${mybkl.mybkListNo}"></td>
-									<td>${ mybkl.mybkListWrite }</td>
+									<td class="mybklistWrite">${ mybkl.mybkListWrite }</td>
 									<td>
 										<input type="hidden" class="mybkListFinished" id="mybkListFinished" value="${mybkl.mybkListFinished}">
 										<button id="listCompleteBtn" class="MYcompleteBtn" value="${mybkl.mybkListNo}">완료</button>
@@ -97,7 +97,7 @@
 								<c:forEach var="mycombkl" items="${ mycomBKList }">
 									<tr>
 										<td><input type="checkbox" class="mycomBKLchkDelete" value="${mycombkl.mycombkListNo }"></td>
-										<td>${ mycombkl.combkListSubtitle }</td>
+										<td class="combklistWrite">${ mycombkl.combkListSubtitle }</td>
 										<td>
 											<button class="combkdetailView" value="${mycombkl.combkListNo}">상세 페이지</button>
 										</td>

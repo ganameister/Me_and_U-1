@@ -50,7 +50,7 @@
 							<input type="button" class="cateBtn" id="categ6" value="음악">
 							<input type="button" class="cateBtn" id="categ7" value="기타">								
 						</div>
-						<select>
+						<select id="sortcomBKList">
 							<option>최신순</option>
 				            <option>인기순</option>
 				            <option>이름순</option>

@@ -8,4 +8,13 @@ $(document).ready(function(){
 		// html만 선택해도 됨
 		$('html, body').animate({scrollTop:0}, 500); // 0.5초 동안 top:0 위치로 스크롤 이동
 	});
+	
+	$(window).on('scroll',function(){
+		// 스크롤되는 문서의 top이 #headerBox 이상이면 메인 메뉴 고정시키고 그림자 표시
+		if($(document).scrollTop() >= $('.navbar').height()) {
+			$('.navbar').addClass('shadow');
+		} else {
+			$('.navbar').removeClass('shadow');
+		}
+	});
 })
