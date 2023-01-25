@@ -1,0 +1,32 @@
+@charset "UTF-8";
+html {
+	height: 100%;
+}
+
+header {
+	height: 72px;
+}
+
+body {
+	height: 100%;
+	margin: 0 auto;
+	width: 1600px;
+}
+
+#memIdShow {
+	border: none;
+}
+
+.wrap {
+	height: 100%;
+	margin-bottom: -72px;
+}
+
+.container {
+	
+}
+
+.content {
+	text-align: center;
+	vertical-align: middle;
+}

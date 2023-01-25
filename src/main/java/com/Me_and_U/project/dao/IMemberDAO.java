@@ -9,4 +9,6 @@ public interface IMemberDAO {
 	public String loginCheck(String id);
 	public void insertMember(MemberVO vo);
 	public String memJoinIdCheck(String memId); // 아이디 중복 체크
+	public String memInfoSearchNameCheck(String memName, String memEmail); // 이름 체크
+	public MemberVO memIdInfo(String memName, String memEmail);	// 아이디 값 가져오기
 }

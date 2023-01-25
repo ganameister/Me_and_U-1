@@ -6,6 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,7 +18,7 @@ import com.Me_and_U.project.service.MemberService;
 @Controller
 public class LoginController {
 	@Autowired
-	MemberService service;
+	MemberService memberservice;
 	
 	// 회원가입 페이지 열기
 	@RequestMapping("/memberJoin")
@@ -37,7 +39,7 @@ public class LoginController {
 	public String loginCheck(@RequestParam HashMap<String, Object> param,
 												HttpSession session) {
 		// 로그인 체크 결과 
-		String result = service.loginCheck(param); // result : "success" 또는 "fail"
+		String result = memberservice.loginCheck(param); // result : "success" 또는 "fail"
 		// 아이디와 비밀번호 일치하면 (로그인 성공하면)
 		// 서비스에서 "success" 반환받았으면
 		if(result.equals("success")) {
@@ -69,7 +71,7 @@ public class LoginController {
 		vo.setMemBirth(memBirth1 + "-" + memBirth2 + "-" + memBirth3);
 		vo.setMemEmail(memEmail + "@" + memDomain);
 		
-		service.insertMember(vo);
+		memberservice.insertMember(vo);
 		return "jsp/memManagement/login";
 	}
 	
@@ -77,13 +79,34 @@ public class LoginController {
 	@ResponseBody
 	@RequestMapping("/memberJoin/idCheck")
 	public String idCheck(@RequestParam("id") String memId) {
-		String no_result = service.memJoinIdCheck(memId);
+		String no_result = memberservice.memJoinIdCheck(memId);
 		String result="use";
 		System.out.println("no_result = " + no_result);
 		if(no_result != null) {
 			result="no_use";
 		}
 		return result;
+	}
+	
+	// 아이디 찾기 페이지 열기
+	@RequestMapping("/member/idSerachPage")
+	public String idSerachPage() {
+		return "jsp/memManagement/idSearch";
+	}
+	
+	// 아이디 찾기 결과 페이지 열기
+	@RequestMapping("/member/idSearchResult/{memName}/{memEmail}")
+	public String idSearchResult(@PathVariable String memName,
+								 @PathVariable String memEmail, Model model) {
+		MemberVO memInfo = memberservice.memIdInfo(memName, memEmail);
+		model.addAttribute("memInfo", memInfo);
+		return "jsp/memManagement/idSearchResult";
+	}
+	
+	// 비밀번호 찾기 페이지 열기
+	@RequestMapping("/member/pwSerachPage")
+	public String pwSerachPage() {
+		return "jsp/memManagement/identification";
 	}
 	
 	// 비밀번호 변경 페이지 열기

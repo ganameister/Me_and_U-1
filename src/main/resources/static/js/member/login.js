@@ -18,7 +18,7 @@ $(document).ready(function() {
 				if(result == "success"){
 					location.href="/";
 				} else {
-					alert("아이디 또는 비밀번호가 일치하지 않습니다");
+					alert("아이디 또는 비밀번호가 일치하지 않습니다.");
 				}
 			}
 		});	// ajax 종료

@@ -5,7 +5,27 @@
 
 
 	<mapper namespace="com.Me_and_U.project.dao.IMemberDAO">
-	
+		<resultMap id="memResult" type="com.Me_and_U.project.model.MemberVO" >
+	  		<result property="memId"  column="memId"  />
+	  		<result property="memPw"  column="memPw"  />
+	  		<result property="memName"  column="memName"  />
+	  		<result property="memEmail"  column="memEmail"  />
+	  		<result property="Gender"  column="Gender"  />
+	  		<result property="memHP"  column="memHP"  />
+	  		<result property="memZipcode"  column="memZipcode"  />
+	  		<result property="memAddress1"  column="memAddress1"  />
+	  		<result property="memAddress2"  column="memAddress2"  />
+	  		<result property="ctgmemImgNo"  column="memImg"  />
+	  		<result property="memJoy1"  column="memJoy1"  />
+	  		<result property="memJoy2"  column="memJoy2"  />
+	  		<result property="memJoinDate"  column="memJoinDate"  />
+		</resultMap>
+		
+		<!-- 아이디 찾기 결과 -->
+		<select id="memIdInfo" parameterType="string" resultMap="memResult">
+			SELECT * FROM member WHERE memName=#{memName} AND memEmail=#{memEmail}
+		</select>
+		
 		<!-- 회원등록-->
 		<insert id="insertMember">
 			INSERT INTO member(memId, memPw, memName, memEmail, memBirth, Gender, memHP, memZipcode,
@@ -17,16 +37,19 @@
 	
 	
 		<!--  암호화한 후 로그인 확인-->
-  	<select id="loginCheck" parameterType="string" resultType="string">
-  		SELECT memPw FROM member WHERE memId=#{id}
-  	</select>
-	
-	<select id="memJoinIdCheck" parameterType="string" resultType="string">
-		SELECT memId FROM member WHERE memId=#{memId}
-	</select>
-	
-	
-	
+	  	<select id="loginCheck" parameterType="string" resultType="string">
+	  		SELECT memPw FROM member WHERE memId=#{id}
+	  	</select>
+		
+		<!-- ID 중복체크 -->
+		<select id="memJoinIdCheck" parameterType="string" resultType="string">
+			SELECT memId FROM member WHERE memId=#{memId}
+		</select>
+		
+		<!-- 이름, 이메일 체크 -->
+		<select id="memInfoSearchNameCheck" parameterType="string" resultType="string">
+			SELECT memName FROM member WHERE memName=#{memName} AND memEmail=#{memEmail}
+		</select>
 	
 	</mapper>
 

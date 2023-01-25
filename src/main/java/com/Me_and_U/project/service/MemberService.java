@@ -52,4 +52,16 @@ public class MemberService implements IMemberService {
 		return dao.memJoinIdCheck(memId);
 	}
 
+	@Override
+	public String memInfoSearchNameCheck(String memName, String memEmail) {
+		// TODO Auto-generated method stub
+		return dao.memInfoSearchNameCheck(memName, memEmail);
+	}
+
+	@Override
+	public MemberVO memIdInfo(String memName, String memEmail) {
+		// TODO Auto-generated method stub
+		return dao.memIdInfo(memName, memEmail);
+	}
+
 }
