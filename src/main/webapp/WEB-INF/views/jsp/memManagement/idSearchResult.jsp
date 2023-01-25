@@ -13,10 +13,23 @@
 		<div class="wrap">
 			<c:import url="/WEB-INF/views/layout/top.jsp"/>
 			<div class="container">
+				<div >
+					<ul class="unl">
+						<li id="listID"><button type="button" onclick="location.href='/member/idSerachPage'"><span>아이디 찾기</span></button>
+						<li id="listPW"><button type="button" onclick="location.href='/member/pwSerachPage'"><span>비밀번호 찾기</span></button>
+					</ul>
+				</div>
+				<div id="headH2">
+					<h2>아이디 찾기</h2>
+				</div>
 				<div class="content">
 					<div class="idListWrap">
-						<span>아이디는</span><input type="text" value="${memInfo.memId}" id="memIdShow"><span>입니다</span>
+						<span>${memInfo.memName }님의 아이디</span>
+						<input type="text" value="${memInfo.memId}" id="memIdShow" readonly>
 					</div>
+				</div>
+				<div class="loginBtnWrap">
+					<button type="button" id="loginBtn"><span>로그인</span></button>
 				</div>
 			</div>
 		</div>

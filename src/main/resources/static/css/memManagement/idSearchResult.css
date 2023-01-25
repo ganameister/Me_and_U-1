@@ -3,20 +3,38 @@ html {
 	height: 100%;
 }
 
+/* 상단 바 */
 header {
 	height: 72px;
 }
 
+/* 바디 */
 body {
 	height: 100%;
 	margin: 0 auto;
 	width: 1600px;
 }
 
-#memIdShow {
-	border: none;
+/* "아아디 찾기" 문구 */
+#headH2 {
+	position: absolute;
+	top: 18%;
+	left: 30%;
+	width: 717px;
+	margin: 0 0 21px 0;
+	border-bottom: 1px solid #e5e5e5;
+	padding-left: 7px;
 }
 
+/* 유저 아이디 표시 텍스트 */
+#memIdShow {
+	border: none;
+	width: 30%;
+	font-size: 23px;
+	margin-left: 80px;
+}
+
+/* 전체 박스 */
 .wrap {
 	height: 100%;
 	margin-bottom: -72px;
@@ -26,7 +44,82 @@ body {
 	
 }
 
+/* 아이디 표시 전체 박스 */
 .content {
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	border: 1px solid #e5e5e5;
+	border-radius: 15px;
+	width: 632px;
+	height:156px;
+	padding: 20px 30px 20px 62px;
 	text-align: center;
-	vertical-align: middle;
 }
+
+/* 아이디 표시 */
+.idListWrap {
+	margin-top: 40px;
+	font-size: 23px;
+}
+
+/*  상단 찾기 전체 영역 */
+.unl {
+	list-style:none;
+	height:57px;
+	margin:0 auto;
+	padding-top:28px;
+	width:600px;
+}
+
+/* 상단 찾기 세부 영역 */
+.unl li {
+	float: left;
+	margin: 0 60px 0 27px;
+	font-size: 26px;
+	width: 207px;
+	height: 52px;
+}
+
+/* 상단 찾기 글씨 옵션 */
+.unl span {
+	font-size: 23px;
+	font-weight: bold;
+}
+
+/*  상단 찾기 버튼 */
+.unl button {
+	font-size:22px;
+	width: 195px;
+	height: 52px;
+	border-radius: 18px;
+	border: 3em white;
+	background-color: var(--color4);
+/* 	box-shadow: -1px 2px 5px 2px #848484; */
+}
+
+/* 로그인버튼 div */
+.loginBtnWrap {
+	position: absolute;
+	left: 46%;
+	top: 56%;
+}
+
+/* 하단 로그인 버튼 */
+#loginBtn {
+	height: 45px;
+	width: 115px;
+	font-size: 22px;
+	font-weight: bold;
+	background-color: var(--color4);
+	border-radius:9px;
+	border: 1px solid #A4A4A4;
+	box-shadow: -1px 2px 7px 1px #848484;
+}
+
+
+
+
+
+
+

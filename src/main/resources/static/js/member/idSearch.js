@@ -6,11 +6,12 @@
 $(document).ready(function() {
 	var emailAuthCheck = "fail";
 	const domain = "@";
-	
+	var btnClickCheck = "no";
 	// 인증번호 받기 버튼 클릭시
 	$('#mailCheckBtn').on('click', function() {
-		var email = $('#insertEmail').val() + domain + $('#domainText').val();
 		// 입력한 메일 값 가져옴
+		var email = $('#insertEmail').val() + domain + $('#domainText').val();
+		// 값 확인
 		console.log("완성된 이메일 : " + email);
 		// 인증번호
 		const checkInput = $('#mailCheckInput');
@@ -30,23 +31,21 @@ $(document).ready(function() {
 						$.ajax({
 							type:'post',
 							url: "/emailCheck",
-							data: {"email": $('#insertEmail').val() + domain +  $('#domainText').val()
+							data: {"email": email
 							},
 							success:function(data){
 								checkInput.attr("disabled", false);
 								code = data;
+								btnClickCheck = "yes";
 								alert("인증번호가 전송되었습니다.");
 							}
-						});	// ajax 종료
+						});	// if문 ajax 종료
 					} else {
-						alert("이름 또는 이메일 주소가 다릅니다");
+						alert("등록되지 않은 정보입니다.");
 					}
 				}
-			});
+			});	// ajax 종료
 		}
-		
-		// ajax로 전송
-		
 	});	// 버튼 이벤트 종료
 	
 	// 인증번호 비교
@@ -61,12 +60,10 @@ $(document).ready(function() {
 			$('#mailCheckBtn').attr("disabled", true);
 			$('#userMail').attr('readonly', true);
 			emailAuthCheck = "success";
-			console.log("emailAuthCheck = " + emailAuthCheck);
 		} else {
 			$resultMsg.html("인증번호가 일치하지 않습니다. 다시 확인해주세요.");
 			$resultMsg.css("color", "red");
 			emailAuthCheck = "fail";
-			console.log("emailAuthCheck = " + emailAuthCheck);
 		}
 	});
 	
@@ -85,7 +82,7 @@ $(document).ready(function() {
 		}
 	});
 	
-	// id찾기 다음버튼 클릭시 (미완성)
+	// id찾기 다음버튼 클릭시
 	$('#idNextBtn').on('click', function() {
 		var email = $('#insertEmail').val() + domain + $('#domainText').val();
 		var memName = $('#memName').val();
@@ -97,6 +94,10 @@ $(document).ready(function() {
 			alert("이메일을 입력해주세요.");
 		} else if($('#domainText').val() == "") {
 			alert("이메일을 확인해주세요.");
+		} else if(btnClickCheck == "no") {
+			alert("이메일 인증을 진행해주세요.");
+		} else if(emailAuthCheck == "fail") {
+			alert("인증번호를 확인해주세요.");
 		}
 	});
 	
