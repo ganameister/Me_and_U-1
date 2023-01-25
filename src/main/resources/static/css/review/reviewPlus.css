@@ -61,7 +61,7 @@ body {
 
 /* 리뷰박스------------------------------------------------------- */
 .reviewBox {
-    margin-top: 111px;   
+    margin-top: 8vh;   
     margin-bottom: 100px;
     margin-left: 7rem;
     margin-right: 7rem;
@@ -169,7 +169,7 @@ body {
     margin: 0 0.5rem;
 }
 
-.title {
+.reviewtitle {
     margin-top: 10px;
     font-weight: bold;
     font-size: medium;

@@ -46,10 +46,13 @@ th,td {
 
 #categoryBox select {
 	margin-left:20px;
-	margin-top:32px;
+	margin-top:30px;
 	border-radius:3px;
-	color: var(--color5);
-	background: var(--color8);
+	color: var(--color4);
+	background: var(--color5);
+	width:62px;
+	height:35px;
+	font-weight:bold;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -57,12 +60,13 @@ th,td {
 	float:right;
 	margin-top:31px;
 	margin-right:77px;
-	color: var(--color8);
+	color: var(--color4);
 	background: var(--color5);
 	border-radius:3px;
-	font-size:15px;
+	font-size:17px;
+	font-weight:bold;
 	width:100px;
-    height:30px;
+    height:35px;
     border-radius: 2px;
     border-style: none;
     cursor: pointer;
@@ -78,12 +82,14 @@ th,td {
 
 .cateBtn {
     font-family: 'Noto Sans KR', sans-serif;
-    color: var(--color5);
-    font-weight: 80px;
-    height:22px;
+    color: var(--color4);
+    font-weight:bold;
+    font-size:15px;
+    width:55px;
+    height:35px;
     cursor: pointer;
-    background: var(--color8);
-    border-radius: 2px;
+    background: var(--color5);
+    border-radius: 5px;
     border-style: none;
 }
 

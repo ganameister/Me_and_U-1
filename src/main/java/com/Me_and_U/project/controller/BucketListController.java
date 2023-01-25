@@ -40,7 +40,7 @@ public class BucketListController {
 		ArrayList<MyComBKListVO> mycomBKList = service.mycomBKListView(memId);
 		model.addAttribute("mycomBKList", mycomBKList);
 		
-		return "jsp/myBKList";
+		return "jsp/bucketlist_my/myBKList";
 	}
 	
 	
@@ -57,7 +57,7 @@ public class BucketListController {
 			ArrayList<MyBKListVO> myBKList = service.myBKListView(memId);
 			model.addAttribute("myBKList", myBKList);
 
-			return "jsp/myBKList";
+			return "jsp/bucketlist_my/myBKList";
 		} else {
 			return "redirect:/login";
 		}
@@ -167,7 +167,7 @@ public class BucketListController {
 		ArrayList<ComBKListVO> comBKList = service.comBKListView();
 		model.addAttribute("comBKList", comBKList);
 		
-		return "jsp/comBKList";
+		return "jsp/bucketlist_com/comBKList";
 	}
 		
 	// 모두의 버킷리스트 등록 페이지 열기
@@ -177,7 +177,7 @@ public class BucketListController {
 		String memId = (String) session.getAttribute("sid");
 		
 		if (memId != null ){
-			return "jsp/comBKListRegister";
+			return "jsp/bucketlist_com/comBKListRegister";
 		} else {
 			return "redirect:/login";
 		} 
@@ -212,7 +212,7 @@ public class BucketListController {
 		ComBKListVO combklistDetail = service.detailViewComBKList(Integer.parseInt(combkListNo));
 		model.addAttribute("combklistDetail", combklistDetail);
 		
-		return "jsp/comBkListDetailpage";
+		return "jsp/bucketlist_com/comBkListDetailpage";
 	}
 	
 	// 모두의 버킷리스트 삭제

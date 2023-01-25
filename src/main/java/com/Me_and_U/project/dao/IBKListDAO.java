@@ -26,4 +26,6 @@ public interface IBKListDAO {
 	public ArrayList<ComBKListVO> comBKListView(); // 모두의 버킷리스트 목록 보여주기
 	public ComBKListVO detailViewComBKList(int combkListNo); // 모두의 버킷리스트 상세 페이지
 	public void deletecomBKList(int combkListNo); // 모두의 버킷리스트 삭제
+	
+	public ArrayList<ComBKListVO> listRecentComBKList(); //최신순
 }

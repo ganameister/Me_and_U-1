@@ -52,11 +52,11 @@
  	
  	<!-- (나의 버킷리스트) 모두의 버킷리스트 목록 출력 -->
   	<select id="mycomBKListView" parameterType="string" resultType="com.Me_and_U.project.model.MyComBKListVO">
-  		SELECT m.mycombkListNo, c.combkListSubtitle, c.combkListNo, m.memId, m.mycombkListFinished
-  		FROM combklist c, mycombklist m
-  		WHERE c.combkListNo = m.combkListNo AND m.memId = #{memId}
-  		ORDER BY m.mycombkListNo
-  	</select>
+          SELECT m.mycombkListNo, c.combkListSubtitle,c.combkListTitle,c.combkListImg, c.combkListNo, m.memId, m.mycombkListFinished
+          FROM combklist c, mycombklist m
+          WHERE c.combkListNo = m.combkListNo AND m.memId = #{memId}
+          ORDER BY m.mycombkListNo
+    </select>
   	
   	<!-- (나의 버킷리스트) 모두의 버킷리스트 중복 체크 -->
  	<select id="checkCombklistInMybkl" parameterType="hashmap" resultType="int">
@@ -121,7 +121,7 @@
   	<select id="comBKListView" resultMap="combklistResult">
   		SELECT *
   		FROM combklist 
-  		ORDER BY combkListNo ASC
+  		ORDER BY combkListNo DESC
   	</select>
   	
   	<!-- 모두의 버킷리스트 상세 페이지 -->
@@ -137,6 +137,22 @@
   		DELETE FROM combklist WHERE combkListNo = #{combkListNo};
   	</delete>
   	
+  	<!-- Main 페이지 -->
+	<!-- 최신순 3개 출력 -->
+	<select id="listRecentComBKList" resultMap="combklistResult">
+		SELECT * 
+		FROM combklist
+		ORDER BY combkListNo DESC LIMIT 0,5
+	</select>
+  	
   	<!-- 모두의 버킷리스트 구간 끝  -->
+  	
+  	<!-- 마이페이지 -->
+  	<select id="mypage" parameterType="String" resultMap="mybklistResult">
+        SELECT * 
+        FROM mybklist ,mycombklist
+        where memId=#{memId}
+        ORDER BY mybkListNo ASC
+    </select>
   	
   </mapper>
