@@ -18,7 +18,7 @@
 	});
 	
 	$("#infoedit").click(function() {
-            location.href="mypage";
+            location.href="/mypage";
       
     });
     $("#myreiew").click(function() {
