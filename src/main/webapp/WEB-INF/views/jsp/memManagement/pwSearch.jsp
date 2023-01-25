@@ -58,7 +58,7 @@
 								<span id="mailCheckWarn"></span>
 							</div>
 							<div class="nextBtnWrap">
-								<button type="button" class="nextBtn" id="idNextBtn"><span id="nextBtnText">다음</span></button>
+								<button type="button" class="nextBtn" id="pwNextBtn"><span id="nextBtnText">다음</span></button>
 							</div>
 						</div>
 					</div>

@@ -4,13 +4,14 @@
 
 
 $(document).ready(function() {
-	const emailAuthCheck = "fail";
+	var emailAuthCheck = "fail";
+	const domain = "@";
+	var btnClickCheck = "no";
 	// 인증번호 받기 버튼 클릭시
 	$('#mailCheckBtn').on('click', function() {
 		// 입력한 메일 값 가져옴
-		const email = $('#insertEmail').val();
-		const domain = "@";
-		// 이메일 오는지 확인
+		var email = $('#insertEmail').val() + domain + $('#domainText').val();
+		// 값 확인
 		console.log("완성된 이메일 : " + email);
 		// 인증번호
 		const checkInput = $('#mailCheckInput');
@@ -22,7 +23,7 @@ $(document).ready(function() {
 				type:'post',
 				url: "/member/nameCheck",
 				data: {"memName": $('#memName').val(),
-					  "memEmail" : $('#insertEmail').val() + domain + $('#domainText').val()
+					  "memEmail" : email
 				},
 				dataType: 'text',
 				success:function(result) {
@@ -30,7 +31,7 @@ $(document).ready(function() {
 						$.ajax({
 							type:'post',
 							url: "/emailCheck",
-							data: {"email": $('#insertEmail').val() + domain +  $('#domainText').val()
+							data: {"email": email
 							},
 							success:function(data){
 								console.log("data : " + data);
@@ -38,16 +39,13 @@ $(document).ready(function() {
 								code = data;
 								alert("인증번호가 전송되었습니다.");
 							}
-						});	// ajax 종료
+						});	// if문 ajax 종료
 					} else {
 						alert("이름 또는 이메일 주소가 다릅니다");
 					}
 				}
-			});
+			});	// ajax 종료
 		}
-		
-		// ajax로 전송
-		
 	});	// 버튼 이벤트 종료
 	
 	// 인증번호 비교
@@ -84,14 +82,23 @@ $(document).ready(function() {
 		}
 	});
 	
-	// pw찾기에서 다음버튼 누를 시 (미완성) 
-	$('#idNextBtn').on("click", function() {
-		if(emailAuthCheck == "success") {
-			alert("click");
-		} else {
-			alert("이메일 인증이 필요합니다.");
+	// pw찾기에서 다음버튼 누를 시 
+	$('#pwNextBtn').on("click", function() {
+		var email = $('#insertEmail').val() + domain + $('#domainText').val();
+		var memName = $('#memName').val();
+		if(emailAuthCheck == "success"){
+			location.href='/member/idSearchResult/'+memName+'/'+email+'';
+		} else if(memName == "") {
+			alert("이름을 입력해주세요.");
+		} else if($('#insertEmail').val() == "") {
+			alert("이메일을 입력해주세요.");
+		} else if($('#domainText').val() == "") {
+			alert("이메일을 확인해주세요.");
+		} else if(btnClickCheck == "no") {
+			alert("이메일 인증을 진행해주세요.");
+		} else if(emailAuthCheck == "fail") {
+			alert("인증번호를 확인해주세요.");
 		}
-		
 	});
 	
 	
