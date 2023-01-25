@@ -42,14 +42,7 @@ public class ReviewController {
 	} 
 	//http://localhost:8080/reviewMypage
 	//마이페이지 자신이 등록한 후기글 불러오기
-	@RequestMapping("/reviewMypage")
-	public String reviewMypage(Model model,HttpSession session) {
-		String memId = (String) session.getAttribute("sid");
-		
-		ArrayList<ReviewVO> reviewMy = service.reviewMypage(memId);
-		model.addAttribute("reviewMy",reviewMy);			
-		return "jsp/reviewMypage";
-	}
+	
 	
 	
 	

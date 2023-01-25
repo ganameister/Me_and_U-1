@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/review/reviewPlus.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
-		<script src="<c:url value='/js/review/review.js' />"></script> 	
+		<script src="<c:url value='/js/mypage/myreviewpage.js' />"></script> 
 		<!--//Header  -->
 	</head>	
 	<body>
@@ -24,9 +24,30 @@
 			<c:import url="/WEB-INF/views/layout/top.jsp" /> 
 			<!--// Top -->
 
-				
+				<section class="sec1">
+					<nav>
+						<ul>
+							<li id="infoedit">개인정보수정</li>
+							<li id="myreiew">내가 쓴 후기</li>
+							<li id="selectreg">찜한 정기모임</li>
+						</ul>
+					</nav>
+		</section>
+		
+		<section class="sec2">
 			
-
+				<div class ="review_board_top">
+					<div class="select_categ" align="left">Select Category</div>
+					<div class="categoryBtn" id="categ">
+						<input type="button" class="cateBtn" id="categ1" value="전체">
+						<input type="button" class="cateBtn" id="categ2" value="여행">
+						<input type="button" class="cateBtn" id="categ3" value="운동">
+						<input type="button" class="cateBtn" id="categ4" value="게임">
+						<input type="button" class="cateBtn" id="categ5" value="문화">
+						<input type="button" class="cateBtn" id="categ6" value="음악">
+						<input type="button" class="cateBtn" id="categ7" value="기타">								
+					</div>
+				</div>
 
 
 <!-- css <link rel="stylesheet" type="text/css" href="<c:url value='/css/review/reviewPlus.css' />"> 도 꼭 추가부탁드려요-->
@@ -57,6 +78,7 @@
 					</div>
 				</li>				
 			 </c:forEach> 
+			 
 		</ol>												
 	</div>
 	<!-- /div reviewBox -->
@@ -64,7 +86,7 @@
 <!-- /review_warp -->																							
 <!-- 여기까지 -->							
 							
-							
+					</section>		
 							
 							
 							

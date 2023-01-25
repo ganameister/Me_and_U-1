@@ -3,6 +3,7 @@
 body{
 	width:1600px;
 	margin: auto;
+	font-weight: 0;
 }
 #wrap{
 	margin-top: 70px;
@@ -20,7 +21,7 @@ list-style: none;
 }
 #infoedit:hover{
 cursor:pointer;
-font-weight: bold;	
+color: red;
 }
 #myreiew:hover{
 cursor:pointer;

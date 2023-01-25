@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,48 +30,44 @@
 					<!-- 모두의 버킷리스트 -->
 					<article class="art1">
 					<h4>내가 선택한 모두의 버킷리스트</h4>
-					<div id="content">
-							<img src="<c:url value='/asd'/>" id="combkImg">다이어트<br>
-							10kg 감량하기<img src="<c:url value='/images/down-arrow.png' />" id="click_button1">
-						</div>
-	    			<div  id="button_content1">
+						<img src="<c:url value='/images/down-arrow.png' />" id="click_button1">
+						<c:forEach var="mycbkl" items="${ mycomBKList }" end="0">
 		    			<div id="content">
-							<img src="<c:url value='/asd'/>" id="combkImg">다이어트<br>
-							10kg 감량하기
+								<img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg">
+								${mycbkl.combkListTitle }<br>
+								${mycbkl.combkListSubtitle }<br>
+							
 						</div>
-						<div id="content">
-							<img src="<c:url value='/asd'/>" id="combkImg">다이어트<br>
-							10kg 감량하기
+						</c:forEach>
+	    			<div  id="button_content1">
+		    			<c:forEach var="mycbkl" items="${ mycomBKList }" begin="1">
+		    			<div id="content">
+								<img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg">
+								${mycbkl.combkListTitle }<br>
+								${mycbkl.combkListSubtitle }<br>
+							
 						</div>
-						<div id="content">
-							<img src="<c:url value='/asd'/>" id="combkImg">다이어트<br>
-							10kg 감량하기
-						</div>
+						</c:forEach>
 	    			</div>
 					</article>
 					
 					<!-- 나의 버킷리스트 -->
 					<article  class="art2">
-					<h4>나의 버킷리스트</h4>
-					<div id="content">
-							다이어트<br>
-							10kg 감량하기
-							<img src="<c:url value='/images/down-arrow.png' />" id="click_button2">
-						</div>
-	    			<div  id="button_content2">
+					<h4>나의 버킷리스트</h4><img src="<c:url value='/images/down-arrow.png' />" id="click_button2">
+					<c:forEach var="mybkl" items="${ myBKList }"  varStatus="status" end="0">
 		    			<div id="content">
-								다이어트<br>
-								10kg 감량하기
+		    				${mybkl.mybkListWrite }<br>
 						</div>
-						<div id="content">
-							다이어트<br>
-							10kg 감량하기
+	    			
+	    			</c:forEach>
+					<div  id="button_content2">
+					<c:forEach var="mybkl" items="${ myBKList }"  varStatus="status" begin="1">
+		    			<div id="content">
+		    			${mybkl.mybkListWrite }<br>
 						</div>
-						<div id="content">
-							다이어트<br>
-							10kg 감량하기
-						</div>
-	    			</div>
+	    			
+	    			</c:forEach>
+					</div>
 					</article>
 					
 					<!-- 진행중인 정기모임 -->
