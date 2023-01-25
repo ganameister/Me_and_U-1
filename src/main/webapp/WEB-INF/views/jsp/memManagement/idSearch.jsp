@@ -5,10 +5,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>인증방법선택</title>
+		<title>아이디 찾기</title>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/memManagement/pwSearch.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
-		<script src="<c:url value='/js/member/pwSearch.js' />"></script>
+		<script src="<c:url value='/js/member/idSearch.js' />"></script>
 	</head>
 	<body>
 		<div class="wrap">
@@ -16,13 +16,13 @@
 			<div class="container">
 				<div >
 					<ul class="unl">
-						<li id="listID"><button type="button" onclick="location.href='/member/idSerachPage'"><span>아이디 찾기</span></button>
-						<li id="listPW"><button type="button"><span>비밀번호 찾기</span></button>
+						<li id="listID"><button type="button"><span>아이디 찾기</span></button>
+						<li id="listPW"><button type="button" onclick="location.href='/member/pwSerachPage'"><span>비밀번호 찾기</span></button>
 					</ul>
 				</div>
 				<div class="content">
 					<div id="headH2">
-						<h2>비밀번호 찾기</h2>
+						<h2>아이디 찾기</h2>
 					</div>
 					<div class="radioSelectBox">
 						<div class="radioEmailBox">
@@ -31,7 +31,7 @@
 							</div>
 							<div class="lineWrap">
 								<span>이름</span>
-								<input type="text" class="inputTextName" id="memName">
+								<input type="text" class="inputTextName" id="memName" placeholder="${memList.memId}" >
 							</div>
 							<div class="lineWrap">
 								<span>이메일 주소</span>

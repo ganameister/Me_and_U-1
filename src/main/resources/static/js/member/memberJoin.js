@@ -13,10 +13,10 @@ $(document).ready(function() {
 		// 공백일 경우
 		if($('#insertMemID').val() == '') {
 			// 경고문 출력
-			alert("아이디를 입력해주세요");
+			alert("아이디를 입력해주세요.");
 		// 아이디 정규식 검사
 		} else if (!idReg.test($('#insertMemID').val())) {
-			alert("사용 불가능한 아이디입니다");
+			alert("사용 불가능한 아이디입니다.");
 		} else {
 			idSave = $('#insertMemID').val();
 			// ID 중복확인
@@ -30,11 +30,11 @@ $(document).ready(function() {
 				success:function(result) {
 					// DB에 ID값이 있을 시(중복일 시)
 					if(result == "no_use") { 
-						alert("중복된 ID입니다");
+						alert("중복된 ID입니다.");
 						idCheckBtnClick = "checkOver";
 					// 중복된 값이 없을 시
 					} else {
-						alert("사용 가능한 ID입니다");
+						alert("사용 가능한 ID입니다.");
 						idCheckBtnClick = "checkComp";
 					}
 				}
@@ -113,7 +113,7 @@ $(document).ready(function() {
 			// 비교결과가 같은경우 실행
 			if(pwd1 == pwd2){
 				$('.pwCompareTD').show();
-				$('#pwAlert').text('패스워드가 일치합니다');
+				$('#pwAlert').text('패스워드가 일치합니다.');
 				$('#pwAlert').css("color","#01DF3A");
 				pwdCheckpass = true;
 			// 비교결과가 다른 경우 실행
@@ -171,17 +171,17 @@ $(document).ready(function() {
 			// 비밀번호가 서로 다를 경우
 			if(pwdCheckpass == false) {
 				// 확인 문구 출력
-				alert("비밀번호가 다릅니다! 비밀번호를 확인해 주세요");
+				alert("비밀번호가 다릅니다! 비밀번호를 확인해 주세요.");
 				$('#insertMemPW').focus();
 				return false;
 
 		} else if(idCheckBtnClick == "noCheck") {
-			alert("ID중복확인을 해주세요");
+			alert("ID중복확인을 해주세요.");
 			$('#idCheckBtn').focus();
 			return false;
 			// id중복확인 체크 여부
 		} else if(idCheckBtnClick == "checkOver") {
-			alert("중복된 ID입니다");
+			alert("중복된 ID입니다.");
 			return false;
 		// 이용약관에 동의 체크 여부 확인
 		// 둘중 하나라도 "동의"에 체크가 안 되어있을 시
@@ -193,7 +193,7 @@ $(document).ready(function() {
 			alert("중복확인된 아이디와 다릅니다!");
 			return false;
 		} else {
-			alert("회원가입이 완료되었습니다");
+			alert("회원가입이 완료되었습니다.");
 		}
 	}
 	});

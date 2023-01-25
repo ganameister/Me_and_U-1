@@ -30,11 +30,11 @@
 								<label>Password</label>
 							</div>
 							<div class="inMemberJoin">
-								<a href="#">아이디 찾기</a>
+								<a href="<c:url value='/member/idSerachPage' />"><span>아이디 찾기</span></a>
 								<span>|</span>
-								<a href="<c:url value='/member/pwSearch' />"><span>비밀번호 찾기</span></a>
+								<a href="<c:url value='/member/identification' />"><span>비밀번호 찾기</span></a>
 								<span>|</span>
-								<a href="<c:url value='/memberJoin' />" >회원가입</a>
+								<a href="<c:url value='/memberJoin' />" ><span>회원가입</span></a>
 							</div>
 							<button type="submit" id="loginBtn">
 								login
@@ -44,7 +44,6 @@
 				</div>
 			</div>
 		</div>
-		
 		<!-- bottom -->
 		<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 	</body>

@@ -1,100 +1,200 @@
 @charset "UTF-8";
+
 html {
 	height: 100%;
 }
 
+/*  바디옵션 */
 body {
 	height: 100%;
-	width:1600px;
-	margin:0 auto;
-	font-family: 'Jeju Myeongjo', serif;
-}
-
-#header {
-	position:relative;
-}
-
-#logoImgBox {
-	text-align: center;
-	padding: 198px 0 20px;
-}
-
-.find_inner .title_wrap {
-	padding-bottom:40px;
-	width: 500px;
 	margin: 0 auto;
-	text-align:center;
+	width: 1600px;
 }
 
-.find_inner .title_wrap .title {
-	font-size: 18px;
-	line-height:30px;
-	margin: 0;
-	padding: 0;
-}
-
-#title_wrap {
-	text-align:center;
-}
-
-#wrap {
+/*  전체 페이지 */
+.wrap {
 	height: 100%;
 	margin: 0 0 -72px;
 }
 
-#idInputText {
+/*  컨테이너 */
+.container {
+	height: 100%;
 	position: relative;
 }
 
-/* "다음" 버튼 */
-.next_btn {
-	width: 100%;
-	margin-top:15px;
-	padding: 15px 0 16px;
-	background-color: #01abf9;
-	border-radius: 6px;
-	cursor:pointer;
+/*  비밀번호 찾기 전체 박스 */
+.content {
+	
 }
 
-#content .find_inner {
-	width: 500px;
+/*  상단 찾기 전체 영역 */
+.unl {
+	list-style:none;
+	height:57px;
+	margin:0 auto;
+	padding-top:100px;
+	width:600px;
+}
+
+/* 상단 찾기 세부 영역 */
+.unl li {
+	float: left;
+	margin: 0 60px 0 27px;
+	font-size: 26px;
+	width: 207px;
+	height: 52px;
+}
+
+/* 상단 찾기 글씨 옵션 */
+.unl span {
+	font-size: 23px;
+	font-weight: bold;
+}
+
+/*  상단 찾기 버튼 */
+.unl button {
+	font-size:22px;
+	width: 195px;
+	height: 52px;
+	border-radius: 18px;
+	border: 3em white;
+	background-color: var(--color4);
+/* 	box-shadow: -1px 2px 5px 2px #848484; */
+}
+
+/*  인증 방법 분류 박스 */
+.radioSelectBox {
 	margin: 0 auto;
-	padding: 0 20px;
-}
+}	
 
-.input_memId {
-	position:realative;
-	width: 100%;
-	border-radius: 6px;
-	font-size:16px;
-	line-height:22px;
-	box-sizing: border-box;
-	color: #303038;
-	padding: 16px 17px 14px 50px;
-}
-
-#idInputRow {
-	position: relative;
-	border-radius: 6px;
-	text-align: left;
-	box-sizing: border-box;
-}
-
-/* 아이콘 */
-.user_icon {
+/*  이메일 인증 박스 */
+.radioEmailBox {
 	position: absolute;
-	top: 12px;
-	left: 12px;
-	width: 30px;
-	height: 30px;
+	border: 1px solid #e5e5e5;
+	width: 606px;
+	height: 356px;
+	left: 27%;
+	top: 30%;
+	border-radius:15px;
+	padding: 44px 62px 20px 62px;
 }
 
-/* "다음" 텍스트 */
-#nextText {
-	font-size:17px;
-	font-weight:700;
-	color:#fff;
+/*  "비밀번호 찾기" 문구 */
+#headH2 {
+	position: absolute;
+	top: 18%;
+	left: 27%;
+	width: 717px;
+	margin: 0 0 21px 0;
+	border-bottom: 1px solid #e5e5e5;
+	padding-left: 7px;
 }
+
+/*  한 줄 속성 */
+.lineWrap {
+	margin: 20px 0 10px;
+	font-size: 22px;
+}
+
+/* 이름 입력 텍스트 */
+.inputTextName {
+	margin: 0 0 0 88px;
+	width: 274px;
+	height: 13px;
+	font-size: 21px;
+	border-radius: 15px;
+	border: 1px solid #848484;
+	padding:10px 0px 10px 15px;
+}
+
+/* 이메일 입력 텍스트 */
+.inputTextEmail {
+	border-radius:15px;
+	margin: 0 0 0 0px;
+	height: 13px;
+	font-size: 17px;
+	width: 111px;
+	border: 1px solid #848484;
+	padding:10px 0px 10px 15px;
+}
+
+/* 이메일 선택 */
+#domainList {
+	height:33px;
+	font-size:17px;
+	border-radius:5px;
+}
+/* "이메일로 인증" 라인 */
+#radioEmailWrap {
+	font-size: 18px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #e5e5e5;
+	height:40px;
+}
+
+/* 회원 이메일 */
+#insertEmail {
+	margin-left: 21px;
+}
+
+/* 인증번호 입력 텍스트 */
+#mailCheckInput {
+	width: 274px;
+	margin-left: 135px;
+	height: 12px;
+	border-radius: 15px;
+	padding:10px 0px 10px 15px;
+	vertical-align: middle;
+}
+
+/* 인증번호 받기 버튼 */
+#mailCheckBtn {
+	border-radius:15px;
+	height: 34px;
+	border: 1px solid #848484;
+	width: 116px;
+}
+
+/* 인증번호 일치여부 확인 */
+#mailCheckWarn {
+	margin-left: 135px;
+	font-size:17px;
+}
+
+/* 다음 버튼 */
+.nextBtn {
+	width: 160px;
+	height: 47px;
+	background-color: var(--color4);
+	border-radius:9px;
+	border: 1px solid #A4A4A4;
+	box-shadow: -1px 2px 7px 1px #848484;
+}
+
+/* 다음 버튼 영역 */
+.nextBtnWrap {
+	position: absolute;
+	left: 40%;
+	margin-top: 20px;
+}
+
+/* 다음 버튼 텍스트 */
+#nextBtnText{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

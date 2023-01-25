@@ -17,7 +17,7 @@ body {
 #id:-webkit-autofill {
 	-webkit-text-fill-color: #000;
     -webkit-box-shadow: 0 0 0px 1000px #fff inset;
-    box-shadow: 0 0 0px 1000px #b8b7b3 inset;
+    box-shadow: 0 0 0px 1000px var(--color4) inset;
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -33,12 +33,12 @@ body {
 /* 로그인 박스 */
 .login-box {
   position: absolute;
-  top: 50%;
+  top: 43%;
   left: 50%;
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.3);
+  background: var(--color4);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
@@ -49,7 +49,7 @@ body {
 .login-box h2 {
   margin: 0 0 30px;
   padding: 0;
-  color: #fff;
+  color: #000;
   text-align: center;
 }
 
@@ -57,7 +57,7 @@ body {
 .login-box h1 {
   margin: 0 0 30px;
   padding: 0;
-  color: #fff;
+  color: #000;
   text-align: center;
 }
 
@@ -71,10 +71,10 @@ body {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: #000;
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #000;
   outline: none;
   background: transparent;
 }
@@ -86,7 +86,7 @@ body {
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: #000;
   pointer-events: none;
   transition: .5s;
 }
@@ -96,7 +96,7 @@ body {
 .login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #fff;
+  color: #000;
   font-size: 12px;
 }
 
@@ -105,12 +105,13 @@ body {
 	font-family: "Roboto", sans-serif;
 	text-transform: uppercase;
 	outline: 0;
-	background: #4CAF50;
+	background: #b1bdc1;
 	width: 100%;
 	border: 0;
 	padding: 15px;
-	color: #FFFFFF;
+	color: #FFF;
 	font-size: 14px;
+	font-weight:700;
 	-webkit-transition: all 0.3 ease;
 	transition: all 0.3 ease;
 	cursor: pointer;
@@ -118,7 +119,7 @@ body {
 
 /* Login 버튼 호버옵션 */
 .login-box button:hover {
-	background: #43A047;
+	background: var(--color5);
 }
 
 /* id, pw 찾기, 회원가입 */
@@ -128,13 +129,13 @@ body {
 	margin: -10px auto 15px;
 	text-align: center;
 	text-decoration: none;
-	color:#fff;
+	color:#000;
 }
 
 /* id, pw 찾기, 회원가입 a테그 */
 .login-box .inMemberJoin a {
 	text-decoration: none;
-	color:#fff;
+	color:#000;
 }
 
 
