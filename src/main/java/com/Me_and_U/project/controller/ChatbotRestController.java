@@ -58,10 +58,10 @@ public class ChatbotRestController {
 		return result;
 	}	
 	
-	//챗봇3 이미지 멀티링크 반환
-	@RequestMapping("/chatbot3")
-	public String chatbot3(@RequestParam("message") String message)  {	
-		String result = chatService.chatbot3main(message);		
+	// 이미지 멀티링크 반환
+	@RequestMapping("/chatbotMultimain")
+	public String chatbotMulti(@RequestParam("message") String message)  {	
+		String result = chatService.chatbotMultimain(message);		
 		return result;
 	}			
 		
