@@ -119,9 +119,9 @@
 								<li class="itemContainer" value="여행">
 								    <a href="#">
 										<table class="comTable">
-											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="260"></td></tr>
-											<tr><th class="tableText">패러글라이딩 타기</th></tr>
-											<tr height="55"><td>패러글라이딩 무서울 거 같은 액티비티 같이 해봐요</td></tr>
+											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/보드게임.jpg'/>" width="320" height="260"></td></tr>
+											<tr><th class="tableText">보드게임 하실분 구합니다</th></tr>
+											<tr height="55"><td>한판 맛있게 쎄려봅시다</td></tr>
 										</table>
 									</a>
 								</li>
@@ -146,9 +146,9 @@
 								<li class="itemContainer" value="여행">
 								    <a href="#">
 										<table class="comTable">
-											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="260"></td></tr>
-											<tr><th class="tableText">패러글라이딩 타보기</th></tr>
-											<tr height="55"><td>패러글라이딩 무서울 거 같은 액티비티 같이 해봐요!</td></tr>
+											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/피파2.jpg'/>" width="320" height="260"></td></tr>
+											<tr><th class="tableText">피파 토너먼트하실분 급구</th></tr>
+											<tr height="55"><td>우승 시 3만원 드립니다</td></tr>
 										</table>
 									</a>
 								</li>
@@ -159,6 +159,47 @@
 				<div class="section section-3">
 					<div class="title">정기모임</div>
 					<div class="content">
+						<div id="itemListBox">
+							<ul>
+								<li class="itemContainer" value="여행">
+								    <a href="#">
+										<table class="comTable">
+											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/헬스.jpg'/>" width="320" height="260"></td></tr>
+											<tr><th class="tableText">매주 3일 헬스하실분</th></tr>
+											<tr height="55"><td>같이 몸과 마음을 수련해보아요</td></tr>
+										</table>
+									</a>
+								</li>
+								<li class="itemContainer" value="여행">
+								    <a href="#">
+										<table class="comTable">
+											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/축구.jpg'/>" width="320" height="260"></td></tr>
+											<tr><th class="tableText">매주 토요일 축구 하실분 구합니다</th></tr>
+											<tr height="55"><td>너만오면 11명</td></tr>
+										</table>
+									</a>
+								</li>
+								<li class="itemContainer" value="여행">
+								    <a href="#">
+										<table class="comTable">
+											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/조깅.jpg'/>" width="320" height="260"></td></tr>
+											<tr><th class="tableText">주말 아침에 10KM 같이 달리실분</th></tr>
+											<tr height="55"><td>혼자 달리면 심심해요 같이 운동해요!</td></tr>
+										</table>
+									</a>
+								</li>
+								<li class="itemContainer" value="여행">
+								    <a href="#">
+										<table class="comTable">
+											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/맛집.jpg'/>" width="320" height="260"></td></tr>
+											<tr><th class="tableText">주말에 맛집 탐방 주기적으로 가실분 구합니다</th></tr>
+											<tr height="55"><td>음료수 값정도는 내드릴게요.</td></tr>
+										</table>
+									</a>
+								</li>
+							</ul>
+						</div>
+					
 						<%-- <div class="listView">
 							<ul>
 								<li class="categoryList" value="여행">

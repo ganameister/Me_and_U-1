@@ -64,14 +64,14 @@
 						<tr>
 							<th>카테고리</th>
 							<td>
-								<select class="selectCTG" name="combkListCtg">
-									<option>카테고리 선택</option>
-									<option>여행</option>
-									<option>운동</option>
-									<option>게임</option>
-									<option>문화</option>
-									<option>음악</option>
-									<option>기타</option>
+								<select class="selectCTG" name="ctgNo">
+									<option value="0" selected>카테고리 선택</option>
+									<option value="1">여행/아웃도어</option>
+									<option value="2">운동/스포츠</option>
+									<option value="3">게임/오락</option>
+									<option value="4">문화/공연/축제</option>
+									<option value="5">음악/악기</option>
+									<option value="6">기타</option>
 								</select>
 							</td>
 						</tr>

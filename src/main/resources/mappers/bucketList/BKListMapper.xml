@@ -113,8 +113,8 @@
  	
  	<!-- 모두의 버킷리스트 등록 -->
  	<insert id="comBKListInsert" parameterType="com.Me_and_U.project.model.ComBKListVO">
-  		INSERT INTO combklist (memId,combkListNo,combkListTitle,combkListSubtitle,combkListWrite,combkListImg, combkListCtg, combkListView) 		
-		 VALUES ( #{memId},#{combkListNo}, #{combkListTitle},#{combkListSubtitle},#{combkListWrite}, #{combkListImg},#{combkListCtg}, 0)	
+  		INSERT INTO combklist (memId,combkListNo,combkListTitle,combkListSubtitle,combkListWrite,combkListImg, ctgNo, combkListView) 		
+		 VALUES ( #{memId},#{combkListNo}, #{combkListTitle},#{combkListSubtitle},#{combkListWrite}, #{combkListImg},#{ctgNo}, 0)	
   	</insert>
   		
   	<!-- 모두의 버킷리스트 목록 최신순 -->

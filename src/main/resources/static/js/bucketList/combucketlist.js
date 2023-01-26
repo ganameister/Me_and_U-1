@@ -70,7 +70,7 @@
 	// 카테고리 필터링
 	$cateBtn = $(".cateBtn");
 	$cateBtn.each(function(index) {
-		var search = ["", "여행", "운동", "게임", "문화", "음악","기타"];
+		var search = ["", "1", "2", "3", "4", "5","6"];
 		$('#categ' + (index+1)).on('click', function() {
 			if(search[index] == "") {
 				$(".itemContainer").show();
@@ -113,7 +113,7 @@
 			$('.gatherInfo_input3').focus();
 			return false;
 		// 카테고리를 선택 안했을 때
-		} else if($('.selectCTG').val() == "카테고리 선택") {
+		} else if($('.selectCTG').val() == "0") {
 			alert("카테고리를 선택하세요");
 			$('.selectCTG').focus();
 			return false;
