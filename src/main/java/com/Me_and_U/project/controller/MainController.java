@@ -38,5 +38,7 @@ public class MainController {
 	public String regGatherRegister() {
 		return "jsp/regGatherRegister";
 	}
+	
+	
     
 }

@@ -7,22 +7,41 @@ body{
     padding-top:67px;
 	width:1600px;
 	margin:0 auto;
-	font-family: 'Jeju Myeongjo', serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
+
+/* 영역 체크용 
+section {
+	border:1px solid red;
+}
+div{
+	border:1px solid red;
+}
+  */
 .sec {
 	margin-left:5%;
 	width:90%;
+	
+}
+
+.searchTitle{
+	margin-left : 20px;
 }
 
 .searchCondition{
+	width:500px;
 	border-collapse : separate;
-	border-spacing : 10px 15px;
+	border-spacing : 0px 15px;
 }
 
 /* 검색창 테이블 */
 .searchCondition th{
-	width : 150px;
+	width : 100px;
 	font-size: 15px;
+}
+
+.searchCondition td{
+	width : 100px;
 }
 
 .searchCondition .name{
@@ -30,11 +49,11 @@ body{
 }
 
 /* 검색창 셀렉트  */
-select {
-	text-align : center;
-	width: 200px; 
+.detailSel {
+	text-align : left;
+	width: 100px; 
 	padding: .8em .5em; 
-	font-family: 'Jeju Myeongjo', serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	border: 1px solid #999; 
 	background: url('/images/selectArrow.jpg') no-repeat 95% 50%; 
 	border-radius: 0px; 
@@ -55,7 +74,7 @@ select::-ms-expand {
 }
 
 .search .searchName{
-	font-family: 'Jeju Myeongjo', serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 input {
@@ -73,6 +92,7 @@ input {
   top: 4px;
   right: -15px;
   margin: 0;
+  margin-top : 2px;
   cursor : pointer;
 }
 /* 검색창 부분 끝 */
@@ -87,20 +107,31 @@ input {
 
 .listViewTop .listViewTitle{
 	/*  float : left;*/
+	margin-left : 20px;
     width : 200px;
     font-weight : bold;
     font-size : 16px;
     
 }
+.listViewSearchCondition{
+	margin-top : 10px;
+	display : inline-block;
+}
 
-.listViewTop .listViewSearchCondition{
+.listViewSearchCondition2{
+	margin-top : 10px;
+	margin-left : 10px;
+	display : inline-block;
+}
+
+.categoryBox{
 	width: 200px;
 	font-weight : bold;
     font-size : 13px;
     margin-top : 10px;
     display : inline-block;
 }
-.listViewSearchCondition .condition{
+.categoryBtn{
 	width : 60px;
 	align : center;
 	font-family: 'Noto Sans KR', sans-serif;
@@ -110,17 +141,40 @@ input {
     font-size : 13px;
     border-radius: 8px;
     border-style: none;
+    display : inline-block;
+}
+
+.categoryBtn:hover{
+	background-color :#50655E;
+    transition : 0.8s;
+}
+.listViewSearchCondition{
+	margin-left : 20px;
+}
+.searchSel{
+	text-align : left;
+	width : 80px;
+	padding: .8em .5em; 
+	font-family: 'Noto Sans KR', sans-serif;
+	border: 1px solid #999; 
+	background: url('/images/selectArrow.jpg') no-repeat 95% 50%; 
+	border-radius: 0px; 
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 8px;
+	display : inline-block;
 }
 
 .listViewTop .newRegister{
 	margin-top : 10px;
-	margin-right : 10%;
+	margin-right : 13.3%;
     float : right;
     width :150px;
     cursor : pointer;
-    /*  box-sizing: border-box;*/
     
 }
+
 .newRegisterBtn{
 	font-family: 'Noto Sans KR', sans-serif;
 	color:#ffffff;
@@ -134,19 +188,222 @@ input {
 .listView{
 	margin-top: 50px;   
     margin-bottom: 100px;
-    max-width: 1200px;
+    max-width: 1300px;
 	display:table;
 }
-
-.listView .gatherInfo{
-	width : 276px;
-	height : 334px;
-	border: 1px solid lightgray;
-	border-radius: 8px;
+ul {
+	font-size:0;	/* ul에 비어있는 줄의 간격을 줄일 수 있음 */
 }
 
+ul > li{
+	display : inline-block;
+	vertical-align : top;
+}
 
+ul > li > a{
+	display : block;
+	text-decoration : none;
+}
+ul > li > a .gatherInfo{
+	width : 276px;
+	height : 360px;
+	border: 1px solid lightgray;
+	border-radius: 8px;
+	position : relative;
+	overflow : hidden;	/* 요소 외부영역 가리기 */
+}
 
+ ul > li > a .preview ::after{	/*  가상요소 삽입 */
+	content:'';
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,.5);
+	z-index:1;
+	opacity:0;
+} 
+
+.doIt{
+	font-family: 'Noto Sans KR', sans-serif;
+	color:#ffffff;
+    background-color:#CCD4C7;
+    border-radius: 8px;
+    border-style: none;
+    cursor : pointer;
+}
+
+.bottom{
+	position :absolute;
+	color:#fff;
+	bottom : 300%;
+	left : 30px;
+	z-index:2;
+	font-size : 26px;
+	font-weight:900;
+}
+
+ul > li > a:hover .bottom	{
+	left : 73%;
+	bottom : 52%;
+}
+
+ul > li > a:hover .preview	{
+	filter:brightness(0.5);
+}
+
+.gatherInfo:hover ~ .preview	{
+	filter:brightness(0.5);
+}
+
+.preview{
+	width : 100%;
+	height : 180px;
+	border-top-left-radius : 8px;
+	border-top-right-radius : 8px;
+}
+.gatherInfo:hover ~ .preview{
+	filter:brightness(0.5);
+}
+
+.preview:hover{		/*  */
+	filter:brightness(0.5);
+}
+
+.bottom:hover ~ .preview{
+	filter:brightness(0.5);
+}
+
+.gatherName{
+	width: 271px;
+	height : 43px;
+	margin-left : 5px;
+	margin-top : 3px;
+	margin-bottom : 5px;
+	font-size : 14px;
+	font-weight : bold;
+	text-align : left;
+	border-bottom : 1px solid lightgray;
+	overflow:hidden; 		/* 글자 자르기 */
+	text-overflow:ellipsis; /* 말줄임표(...) 표시 */
+	word-wrap: break-word;
+	display: -webkit-box;
+  	-webkit-line-clamp: 2;
+ 	-webkit-box-orient: vertical;
+}
+
+.gather_InfoTbl {
+	width : 276px;
+	font-size : 14px; 
+	font-weight : normal;
+	border-collapse: separate;
+	border-spacing: 0 5px;
+  	
+}
+
+.gather_InfoTbl .content{
+	border-collapse: separate;
+	
+}
+
+.gather_InfoTbl th {
+	font-weight : normal;
+	width : 60px;
+	text-align : center;
+}
+
+.gather_InfoTbl td {
+	width : 210px;
+	display : block;
+	white-space:nowrap;		/* 줄바꿈 방지 */
+	text-overflow:ellipsis; /* 말줄임표(...) 표시 */
+	overflow:hidden; 		/* 글자 자르기 */
+}
+
+.infoList {
+	display : inline-block;
+	margin-left : 5px;
+	font-weight : normal;
+	width : 60px;
+	font-size : 15px;
+	text-align : center;
+}
+
+.infoContent{
+	display : inline-block;
+	width : 210px;
+	font-weight : normal;
+	white-space:nowrap;		/* 줄바꿈 방지 */
+	text-overflow:ellipsis; /* 말줄임표(...) 표시 */
+	overflow:hidden; 		/* 글자 자르기 */
+}
+
+.diff_bar{
+	font-size : 15px;
+	color : lightgray;
+}
+
+ul{
+	padding : 0px;	
+	margin : 0px;
+    list-style:none;
+}
+.categoryList{
+	float : left;
+	margin : 20px;	
+}
+
+.progressBox{
+	width:276px;
+	position: absolute;
+	z-index: 2;
+}
+
+/* 모집 정원 그래프 */
+
+progress {
+   background-color: #f3f3f3;
+   border: 0;
+   width: 100%;
+   height: 18px;
+   border-radius: 6px;
+}
+progress::-webkit-progress-bar {	/* 프로그래스 바 배경 */
+    background:#f0f0f0;
+    border-radius:8px;
+    box-shadow: inset 3px 3px 10px #ccc;
+}
+progress::-webkit-progress-value {	/* 프로그레스 바의 진행 요소(내부 색칠 그래프) */
+    border-radius:8px;
+    background: #50655E;
+    background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);
+    background: linear-gradient(to right, #93F9B9, #1D976C);
+}
+
+.progress-value {
+  position: absolute;
+   padding: 10px 5px;
+   line-height: 20px;
+   margin-left: 5px;
+   font-size: .8em;
+   color: #555;
+   height: 18px;
+   left : 30px;
+   top : 5px;
+   z-index : 3;
+}
+
+/* 추가 */
+.recruit_RateTxt{
+	position: absolute;
+	z-index: 3;
+	background: transparent;
+	margin-left : 100px;
+	margin-top : 3px;
+	font-size : 13px;
+}
 
 
 
