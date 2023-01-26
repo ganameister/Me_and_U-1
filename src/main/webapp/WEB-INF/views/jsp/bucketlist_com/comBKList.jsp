@@ -43,11 +43,11 @@
 						<!-- 카테고리 -->
 						<div class="categoryBtn" id="categ">
 							<input type="button" class="cateBtn" id="categ1" value="전체">
-							<input type="button" class="cateBtn" id="categ2" value="여행">
-							<input type="button" class="cateBtn" id="categ3" value="운동">
-							<input type="button" class="cateBtn" id="categ4" value="게임">
-							<input type="button" class="cateBtn" id="categ5" value="문화">
-							<input type="button" class="cateBtn" id="categ6" value="음악">
+							<input type="button" class="cateBtn" id="categ2" value="여행/아웃도어">
+							<input type="button" class="cateBtn" id="categ3" value="운동/스포츠">
+							<input type="button" class="cateBtn" id="categ4" value="게임/오락">
+							<input type="button" class="cateBtn" id="categ5" value="문화/공연/축제">
+							<input type="button" class="cateBtn" id="categ6" value="음악/악기">
 							<input type="button" class="cateBtn" id="categ7" value="기타">								
 						</div>
 						<!-- <select id="sortcomBKList" name="sortcomBKList">
@@ -67,7 +67,7 @@
 					<div id="itemListBox">
 						<ul>
 							<c:forEach var="com" items="${comBKList }">
-							    	<li class="itemContainer" value="${com.combkListCtg}">
+							    	<li class="itemContainer" value="${com.ctgNo}">
 							    		<a href="<c:url value='/comBKList/comBkListDetailpage/${com.combkListNo}'/>">
 								    		<table>
 									    		<tr height="260">
@@ -78,6 +78,9 @@
 										    	</tr>
 										    	<tr height="46">
 										    		<td class="tableText">${com.combkListSubtitle }</td>
+										    	</tr>
+										    	<tr>
+										    		<td class="tableTextView">조회수 : ${com.combkListView }</td>
 										    	</tr>
 								    		</table>
 								    	</a>
