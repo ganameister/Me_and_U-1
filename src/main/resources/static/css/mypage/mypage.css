@@ -52,7 +52,14 @@ font-weight: bold;
 	margin-top: 30px;
 	width: 600px;
 }
-
+.sec3{
+	display: flex;
+	float:right;
+	font-weight: 400;
+	margin-left: 10%;
+	margin-top: 100px;
+	margin-right: 10%;
+}
 #combkImg{
 	width: 200px;
 	height: 100px;
