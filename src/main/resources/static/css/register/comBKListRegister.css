@@ -140,7 +140,8 @@ table select {
   font-size : 17px;
   border-radius : .25em;
   font-family: 'Noto Sans KR', sans-serif;
-  background-color: black;
+  background-color: rgb(94, 94, 94);
+  border:1px solid black;
   color : white;
   border : none;
 }

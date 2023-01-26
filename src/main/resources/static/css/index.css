@@ -38,6 +38,12 @@ html, body {
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
 
+.sticky-title img {
+	width:100%;
+	height:68vh;
+	margin-top:8vh;
+}
+
 /** Æú´õ½Ä css **/
 .start-screen {
   display: flex;
