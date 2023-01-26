@@ -12,7 +12,6 @@
 		
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/GatherListView/regGatherListView.css' />">
 		<script src="<c:url value='/js/jquery-3.6.1.min.js' />"></script>	
-		<script src="<c:url value='/js/gatherListView/jquery-ui.js' />"></script>	
 		<script src="<c:url value='/js/gatherListView/gatherListView.js' />"></script>	
 		<script>
 		/*  document.getElementById('recruit_Rate').value = '00';  프로그래스바 진행률 업데이트 하는 코드 00대신 +1을 해주어야함 */
@@ -23,8 +22,7 @@
 		<c:import url="/WEB-INF/views/layout/top.jsp" />
 		<!-- 검색창 섹션 -->
 		<section id="searchSec" class="sec">
-			<br>
-			<h4 class="searchTitle">상세검색</h4>
+			<br><br><br>
 			<table class="searchCondition" >
 				<tr>
 					<th>카테고리</th>
@@ -53,10 +51,8 @@
 							<option value="9">경북</option>
 						</select>
 					</td>
-				</tr>
-				<tr>
 					<th>모임명</th>
-					<td colspan="3">
+					<td>
 						<div class="search">
 			 				 <input type="text" class="searchName" id="searchName" placeholder="모임명 입력">
 			  				 <img src="<c:url value='/images/search3.png'/>" class="searchImg">
@@ -115,8 +111,8 @@
 									</tr>
 								</table>
 								<div class="gather_progress" >
-									<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
-									<span class="recruit_RateTxt">20명 / 100명</span>
+									<span class="progressBox"><progress value="80" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
+									<span class="recruit_RateTxt">80명 / 100명</span>
 								</div>											
 							</div>
 						</a>
@@ -239,10 +235,8 @@
 					</li>
 				</ul>
 			</div>
-			
-			
-		<!-- footer 임포트 -->
-		
 		</section>
+		<!-- footer 임포트 -->
+		<c:import url="/WEB-INF/views/layout/bottom.jsp" /> 
 	</body>
 </html>
