@@ -47,7 +47,7 @@ body {
 .nav_menu {
     display: flex;
     list-style: none;
-    padding-left: 0;
+    padding-left: 3vw;
 }
 .nav_menu li {
     padding: 8px 12px;
@@ -64,6 +64,11 @@ body {
 }
 .nav_login li {
     padding: 8px 12px;
+}
+
+.navbar span {
+	color: var(--color1) !important;
+	text-shadow:none !important;
 }
 
 .shadow {

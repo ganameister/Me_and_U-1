@@ -22,9 +22,13 @@ public interface IBKListService {
 	public void updateMyComBKLFinished(int mycombkListNo, String memId); // mybkListFinished 0이면 1로, 1이면 0으로 업데이트
 	
 	public void comBKListInsert(ComBKListVO combklist); // 모두의 버킷리스트 등록
-	public ArrayList<ComBKListVO> comBKListView(); // 모두의 버킷리스트 목록 보여주기
+	public ArrayList<ComBKListVO> comBKListViewRec(); // 모두의 버킷리스트 목록 최신순 보여주기
+	public ArrayList<ComBKListVO> comBKListViewTitle(); // 모두의 버킷리스트 목록 이름순 보여주기
+	public ArrayList<ComBKListVO> comBKListViewCnt(); // 모두의 버킷리스트 목록 조회순 보여주기
 	public ComBKListVO detailViewComBKList(int combkListNo); // 모두의 버킷리스트 상세 페이지
 	public void deletecomBKList(int combkListNo); // 모두의 버킷리스트 삭제
+	public int combkListViewcnt(int combkListNo); // 모두의 버킷리스트 조회수
 	
-	public ArrayList<ComBKListVO> listRecentComBKList(); //최신순
+	public ArrayList<ComBKListVO> listRecentComBKList(); // 메인 페이지 최신순
+	public ArrayList<MyBKListVO> MypagemyBKListView(String memId); // 마이페이지 나의 버킷리스트 목록
 }

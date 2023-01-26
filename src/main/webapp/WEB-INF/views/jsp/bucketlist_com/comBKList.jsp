@@ -50,11 +50,18 @@
 							<input type="button" class="cateBtn" id="categ6" value="음악">
 							<input type="button" class="cateBtn" id="categ7" value="기타">								
 						</div>
-						<select id="sortcomBKList">
-							<option>최신순</option>
-				            <option>인기순</option>
-				            <option>이름순</option>
-						</select>
+						<!-- <select id="sortcomBKList" name="sortcomBKList">
+							<option value="최신순">최신순</option>
+				            <option value="조회순">조회순</option>
+				            <option value="이름순">이름순</option>
+						</select> -->
+						<form id="sortForm" action="" method="get">
+						    <select id="sortcomBKList" name="sortOption">
+						        <option value="최신순" ${param.sortOption == '최신순' ? 'selected' : ''}>최신순</option>
+						        <option value="조회순" ${param.sortOption == '조회순' ? 'selected' : ''}>조회순</option>
+						        <option value="이름순" ${param.sortOption == '이름순' ? 'selected' : ''}>이름순</option>
+						    </select>
+						</form>
 						<button id="registerBtn">등록하기</button >
 					</div>
 					<div id="itemListBox">
@@ -63,8 +70,8 @@
 							    	<li class="itemContainer" value="${com.combkListCtg}">
 							    		<a href="<c:url value='/comBKList/comBkListDetailpage/${com.combkListNo}'/>">
 								    		<table>
-									    		<tr height="240">
-										    		<td><img class="combkListImg" src="<c:url value='/images/${com.combkListImg}' />" width="320" height="240"></td>			               
+									    		<tr height="260">
+										    		<td><img class="combkListImg" src="<c:url value='/images/${com.combkListImg}' />" width="320" height="260"></td>			               
 										    	</tr>
 										    	<tr>
 										    		<th class="tableText">${com.combkListTitle }</th>

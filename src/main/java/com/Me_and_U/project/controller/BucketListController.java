@@ -162,14 +162,22 @@ public class BucketListController {
 	
 	// 모두의 버킷리스트 페이지 열기
 	@RequestMapping("/comBKList")
-	public String comBKList(Model model) {
+	public String comBKList(Model model, @RequestParam(value = "sortOption", defaultValue = "최신순") String sortOption) {
 		
-		ArrayList<ComBKListVO> comBKList = service.comBKListView();
-		model.addAttribute("comBKList", comBKList);
+		ArrayList<ComBKListVO> comBKList = null;
+        if (sortOption.equals("최신순")) {
+            comBKList = service.comBKListViewRec();
+        } else if (sortOption.equals("조회순")) {
+            comBKList = service.comBKListViewCnt();
+        } else if (sortOption.equals("이름순")) {
+            comBKList = service.comBKListViewTitle();
+        }
+        
+        model.addAttribute("comBKList", comBKList);
 		
 		return "jsp/bucketlist_com/comBKList";
 	}
-		
+	
 	// 모두의 버킷리스트 등록 페이지 열기
 	@RequestMapping("/comBKList/comBKListRegister")
 	public String comBKListRegister(HttpSession session) {
@@ -208,6 +216,8 @@ public class BucketListController {
 	public String comBkListDetailpage(@PathVariable String combkListNo, Model model, HttpSession session) {
 		String memId = (String) session.getAttribute("sid");
 		model.addAttribute("memId", memId);
+		
+		service.combkListViewcnt(Integer.parseInt(combkListNo));
 		
 		ComBKListVO combklistDetail = service.detailViewComBKList(Integer.parseInt(combkListNo));
 		model.addAttribute("combklistDetail", combklistDetail);

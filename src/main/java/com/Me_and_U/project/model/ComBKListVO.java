@@ -16,8 +16,15 @@ public class ComBKListVO {
 	private String memId;
 	private int ctgNo;
 	private String combkListCtg;
+	private int combkListView;
 	
 	
+	public int getCombkListView() {
+		return combkListView;
+	}
+	public void setCombkListView(int combkListView) {
+		this.combkListView = combkListView;
+	}
 	public String getCombkListCtg() {
 		return combkListCtg;
 	}

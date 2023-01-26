@@ -24,6 +24,7 @@
 				
 				<!-- 로그인 성공 후 보여줄 메뉴 항목 -->
 				<c:if test="${not empty sessionScope.sid }">
+					<li><span id="sessionID">${sessionScope.sid}님</span></li>
 					<li><a href="<c:url value='/member/logout'/>" id="headerMenuA" class="logOut">로그아웃</a></li>
 					<li><a href="<c:url value='/mypage'/>" id="headerMenuA" class="myPage">마이페이지</a></li>
 				</c:if>
