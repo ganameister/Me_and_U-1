@@ -89,7 +89,7 @@ public class LoginController {
 	}
 	
 	// 아이디 찾기 페이지 열기
-	@RequestMapping("/member/idSerachPage")
+	@RequestMapping("/member/idSearchPage")
 	public String idSerachPage() {
 		return "jsp/memManagement/idSearch";
 	}
@@ -104,7 +104,7 @@ public class LoginController {
 	}
 	
 	// 비밀번호 찾기 페이지 열기
-	@RequestMapping("/member/pwSerachPage")
+	@RequestMapping("/member/pwSearchPage")
 	public String pwSerachPage() {
 		return "jsp/memManagement/identification";
 	}
@@ -112,6 +112,7 @@ public class LoginController {
 	// 비밀번호 변경 페이지 열기
 	@RequestMapping("/member/pwSearch")
 	public String pwSearch() {
+		
 		return "jsp/memManagement/pwSearch";
 	}
 	
@@ -119,5 +120,10 @@ public class LoginController {
 	@RequestMapping("/member/identification")
 	public String identification() {
 		return "jsp/memManagement/identification";
+	}
+	
+	@RequestMapping("/member/pwSearchResult")
+	public String pwSearchResult() {
+		return "jsp/memManagement/pwSearchResult";
 	}
 }

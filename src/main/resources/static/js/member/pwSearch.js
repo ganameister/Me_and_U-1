@@ -4,7 +4,7 @@
 
 
 $(document).ready(function() {
-	var emailAuthCheck = "fail";
+	var emailAuthCheck = "success";
 	const domain = "@";
 	var btnClickCheck = "no";
 	// 인증번호 받기 버튼 클릭시
@@ -87,7 +87,7 @@ $(document).ready(function() {
 		var email = $('#insertEmail').val() + domain + $('#domainText').val();
 		var memName = $('#memName').val();
 		if(emailAuthCheck == "success"){
-			location.href='/member/idSearchResult/'+memName+'/'+email+'';
+			location.href='/member/pwSearchResult';
 		} else if(memName == "") {
 			alert("이름을 입력해주세요.");
 		} else if($('#insertEmail').val() == "") {
@@ -100,7 +100,6 @@ $(document).ready(function() {
 			alert("인증번호를 확인해주세요.");
 		}
 	});
-	
 	
 	
 	

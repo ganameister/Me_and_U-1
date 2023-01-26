@@ -33,7 +33,7 @@ body {
 	list-style:none;
 	height:57px;
 	margin:0 auto;
-	padding-top:100px;
+	padding-top:135px;
 	width:600px;
 }
 
@@ -75,7 +75,7 @@ body {
 	width: 606px;
 	height: 356px;
 	left: 27%;
-	top: 30%;
+	top: 34%;
 	border-radius:15px;
 	padding: 44px 62px 20px 62px;
 }
@@ -83,7 +83,7 @@ body {
 /*  "비밀번호 찾기" 문구 */
 #headH2 {
 	position: absolute;
-	top: 18%;
+	top: 22%;
 	left: 27%;
 	width: 717px;
 	margin: 0 0 21px 0;

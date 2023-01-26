@@ -18,8 +18,8 @@ $(document).ready(function() {
 				},
 				dataType: 'text',
 				success:function(result) {
-					if(result == "no_use") { 
-						location.href="/member/pwSearch";
+					if(result == "no_use") {
+						location.href="/member/pwSearch?memId=" + $('#input_memId').val();
 					} else {
 						alert("등록되지 않은 ID입니다.");
 					}

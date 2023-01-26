@@ -15,8 +15,8 @@
 			<div class="container">
 				<div >
 					<ul class="unl">
-						<li id="listID"><button type="button" onclick="location.href='/member/idSerachPage'"><span>아이디 찾기</span></button>
-						<li id="listPW"><button type="button" onclick="location.href='/member/pwSerachPage'"><span>비밀번호 찾기</span></button>
+						<li id="listID"><button type="button" onclick="location.href='/member/idSearchPage'"><span>아이디 찾기</span></button>
+						<li id="listPW"><button type="button" onclick="location.href='/member/pwSearchPage'"><span>비밀번호 찾기</span></button>
 					</ul>
 				</div>
 				<div id="headH2">
@@ -24,8 +24,8 @@
 				</div>
 				<div class="content">
 					<div class="idListWrap">
-						<span>${memInfo.memName }님의 아이디</span>
-						<input type="text" value="${memInfo.memId}" id="memIdShow" readonly>
+						<span id="memName">${memInfo.memName }님의 아이디</span>
+						<label id="memIdShow">${memInfo.memId}</label>
 					</div>
 				</div>
 				<div class="loginBtnWrap">
