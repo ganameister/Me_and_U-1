@@ -29,7 +29,7 @@
 			<div id="seconddiv">
 				<table >
 					<tr><td>제목 : ${combklistDetail.combkListTitle }</td></tr>
-					<tr><td>카테고리 : ${combklistDetail.combkListCtg }</td></tr>
+					<tr><td>카테고리 : ${combklistDetail.ctgName }</td></tr>
 					<tr><td>한줄 설명 : ${combklistDetail.combkListSubtitle }</td></tr>
 				</table>
 			</div>
