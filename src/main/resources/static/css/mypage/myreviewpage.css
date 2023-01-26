@@ -6,7 +6,8 @@ body{
 	margin:auto;
 }
 #wrap{
-	margin-top: 70px;
+	margin-top: 69px;
+	background-color: var(--color4);
 }
 .sec1{
 	display: flex;
@@ -14,10 +15,13 @@ body{
 	margin-left: 10%;
 	margin-top: 100px;
 	margin-right: 50px;
+	
 }
 .sec1 li{
+font-size: 19px;
 margin: 20px 0px;
 list-style: none;
+font-weight: 400;
 }
 
 #infoedit:hover{
@@ -42,31 +46,22 @@ font-weight: bold;
 .sec2 ol{
 	width: 1000px;
 } 
-.review_board_top {
- 	float: left;
-    margin-right: 7rem;
-    max-width: 1200px; 
+#review_warp {
+    margin: 0;
+    padding: 0;  
+    outline: none;
+    border: none;
+    color: var(--color2);
 }
-
-
-.select_categ {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 400;
-    font-size: x-large;
-    padding-bottom: 15px;
+#review_warp img {
+    display: block;  
+    max-width: 100%;
+    height: auto;
+	object-fit:cover;
+	
 }
-
-.cateBtn {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 100;
-    cursor: pointer;
-    background: var(--color8);
-    color:#ffffff;
-    border-radius: 2px;
-    border-style: none;
-}
-.cateBtn:hover {
-    opacity: 70%;
+#review_warp ol,ul {
+    list-style: none;
 }
 
  .image-list {
@@ -84,37 +79,44 @@ font-weight: bold;
     grid-template-columns: repeat(auto-fit, minmax(275px,1fr));
     
 }
-
+#reviewmemId {
+    font-size: small;
+    font-weight: bold;
+    text-align:top;
+}
 .image-list li {
     background:var(--color7); /*리뷰배경색*/
     color: var(--color2); /*리뷰글씨색*/
-    list-style: none;
+    /* list-style: none; */
 }
 
 
 .review-img {
-	display: block;
-    max-width: 100%;
-    height: auto;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
+	aspect-ratio: 13/9;
+}
+.reviewBox {
+    margin-top: 8vh;   
+    margin-bottom: 100px;
+    margin-left: 7rem;
+    margin-right: 7rem;
 }
 
-
-.DelBtn {
-	float:right;
-	position: relative;
-	top:200px;
-	right: 10px;
-	visibility: hidden;
+.review_container {
+	margin:2rem auto;
+	max-width: calc(100%-80px);
+	
 }
-
-
+.review-Info{
+	background-color: var(--color4);
+}
 /*new reviewBox  ---------------------*/
 .review_underBox {
 	border: 1px solid var(--color4);
 	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;	
+	border-bottom-left-radius: 10px;
+	background-color: white;	
 }
 
 /*heartBox ------------------ */
@@ -123,13 +125,11 @@ font-weight: bold;
 	border-style:none;
 	background:var(--color3);
 }
-#heartbtnImg {
+.heartbtnImg {
     width:15px;
     height:15px;
     margin: 0 0.5rem;
-}
-.heartBtn {
-	background
+   
 }
 
 .heartNo {
@@ -159,4 +159,12 @@ font-weight: bold;
     font-size: small;
     color:#c0c0c0;
     margin: 0 0.5rem;
+}
+.comment::-webkit-scrollbar {
+	width:5px;
+	background-color:var(--color3);
+}
+.comment::-webkit-scrollbar-thumb {
+	width:5px;
+	background-color:var(--color8);
 }

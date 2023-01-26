@@ -12,20 +12,33 @@ body{
 .sec1{
 	display: flex;
 	float: left;
-	margin-left: 21%;
+	margin-left: 10%;
 	margin-top: 100px;
-	margin-right: 3%;
+	margin-right: 10%;
 	font-weight: 400;
 }
 .sec1 li{
+font-size: 19px;
 margin: 20px 0px;
 list-style: none;
+}
+.artnamec{
+	padding:10px;
+	height: 30px;
+}
+.imgdiv{
+	float: right;;
+}
+#artname{
+	display: inline;
+	border: 10px;
+	
 }
 #infoedit:hover{
 cursor:pointer;
 font-weight: bold;
 }
-#myreiew{
+#myreiew:hover{
 cursor:pointer;
 font-weight: bold;	
 }
@@ -52,7 +65,7 @@ font-weight: bold;
 }
 .sec2 .art1, .art2, .art3, .art4{
 	margin: 20px;
-	border: 1px solid black;
+	border-top: 1px solid rgba(128, 128, 128, 0.483);
 }
 .sec2 h4{
 	margin-left:10px;
@@ -64,8 +77,12 @@ font-weight: bold;
 	text-align: center;
 }
 .contentText {
-    margin-left:10px;
-    line-height:40px;
+	padding:10px;
+	line-height:40px;
+    font-weight: 400;
+}
+.contentText2 {
+    line-height:80px;
 }
 .sec2 .art2 img{
 	width: 60px;
@@ -80,8 +97,8 @@ font-weight: bold;
 	margin-bottom: 10px;
 }
 .sec2 .art1 #click_button1{
-	width:30px;
-	height:30px;
+	width:25px;
+	height:25px;
 	float: right;
 }
 .sec2 .art2 #content{
@@ -91,8 +108,8 @@ font-weight: bold;
 	margin-bottom: 10px;
 }
 .sec2 .art2 #click_button2{
-	width:30px;
-	height:30px;
+	width:25px;
+	height:25px;
 	float: right;
 }
 .sec2 .art3 .artdiv{
@@ -100,25 +117,26 @@ font-weight: bold;
     height: 260px;
     overflow-x:auto;
     margin-left:10px;
-    margin-right: 10px;
+    margin-top: 15px;
    
 }
 .sec2 .art3 .artdiv div{
 	display: block;
-	margin-right: 30px;
+	margin-right: 25px;
+	font-weight: 400;
 	
 }
 .sec2 .art3 .artdiv::-webkit-scrollbar {
     width: 10px;
   }
 .sec2 .art3 .artdiv::-webkit-scrollbar-thumb {
-    background-color: #2f3542;
+    background-color: var(--color5);
     border-radius: 10px;
     background-clip: padding-box;
     border: 2px solid transparent;
   }
 .sec2 .art3 .artdiv::-webkit-scrollbar-track {
-    background-color: grey;
+    background-color: #ccd4c7;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
   }
@@ -128,25 +146,26 @@ font-weight: bold;
 	display: flex;
     height: 260px;
     overflow-x:auto;
-     margin-left:10px;
-    margin-right: 10px;
+    margin-left:10px;
+    margin-top: 15px;
 }
 .sec2 .art4 .artdiv div{
 	display: block;
-	margin-right: 30px;
+	margin-right: 25px;
+	font-weight: 400;
 	
 }
 .sec2 .art4 .artdiv::-webkit-scrollbar {
     width: 10px;
   }
 .sec2 .art4 .artdiv::-webkit-scrollbar-thumb {
-    background-color: #2f3542;
+    background-color: var(--color5);
     border-radius: 10px;
     background-clip: padding-box;
     border: 2px solid transparent;
   }
 .sec2 .art4 .artdiv::-webkit-scrollbar-track {
-    background-color: grey;
+    background-color: #ccd4c7;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
   }

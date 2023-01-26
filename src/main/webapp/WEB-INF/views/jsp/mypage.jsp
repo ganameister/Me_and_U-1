@@ -29,8 +29,7 @@
 				<section class="sec2">
 					<!-- 모두의 버킷리스트 -->
 					<article class="art1">
-					<h4>내가 선택한 모두의 버킷리스트</h4>
-						<img src="<c:url value='/images/down-arrow.png' />" id="click_button1">
+						<div class="artnamec"><div id="artname">내가 선택한 모두의 버킷리스트</div><div class="imgdiv"><img src="<c:url value='/images/down-arrow.png' />" id="click_button1"></div></div>
 						<c:forEach var="mycbkl" items="${ mycomBKList }" end="0">
 		    			<div id="content">
 								<img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg">
@@ -43,8 +42,8 @@
 		    			<c:forEach var="mycbkl" items="${ mycomBKList }" begin="1">
 		    			<div id="content">
 								<img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg">
-								<span class="contentText">${mycbkl.combkListTitle } <br>
-                                          ${mycbkl.combkListSubtitle }</span>
+								<span class="contentText">${mycbkl.combkListTitle }<br>
+                               ${mycbkl.combkListSubtitle }</span>
 						</div>
 						</c:forEach>
 	    			</div>
@@ -52,7 +51,7 @@
 					
 					<!-- 나의 버킷리스트 -->
 					<article  class="art2">
-					<div>나의 버킷리스트</div><img src="<c:url value='/images/down-arrow.png' />" id="click_button2">
+					<div class="artnamec"><div id="artname">나의 버킷리스트</div><div class="imgdiv"><img src="<c:url value='/images/down-arrow.png' />" id="click_button2"></div></div>
 					<c:forEach var="mybkl" items="${ myBKList }"  varStatus="status" end="0">
 		    			<div id="content">
 		    				${mybkl.mybkListWrite }<br>
@@ -71,7 +70,7 @@
 					
 					<!-- 진행중인 정기모임 -->
 					<article  class="art3">
-					<h4>진행중인 정기모임</h4>
+					<div class="artnamec"><div id="artname">진행중인 정기모임</div></div>
 						<div class="artdiv">
 							<div >
 								<img src="<c:url value='/asd'/>" id="regImg"><br>
@@ -109,7 +108,7 @@
 					
 					<!-- 진행중인 번개모임 -->
 					<article  class="art4">
-					<h4>진행중인 번개모임</h4>
+					<div class="artnamec"><div id="artname">진행중인 번개모임</div></div>
 					<div class="artdiv">
 						 <div>
 							<img src="<c:url value='/asd'/>" id="temImg"><br>
