@@ -36,6 +36,7 @@
 				
 				<!-- 로그인 성공 후 보여줄 메뉴 항목 -->
 				<c:if test="${not empty sessionScope.sid }">
+					<li><span id="indexID">${sessionScope.sid}님</span></li>
 					<li><a href="<c:url value='/member/logout'/>" id="headerMenuA" class="logOut">로그아웃</a></li>
 					<li><a href="<c:url value='/mypage'/>" id="headerMenuA" class="myPage">마이페이지</a></li>
 				</c:if>
@@ -93,14 +94,14 @@
 								    	<li class="itemContainer" value="${com.combkListCtg}">
 								    		<a href="<c:url value='/comBKList/comBkListDetailpage/${com.combkListNo}'/>">
 									    		<table class="comTable">
-										    		<tr height="240">
-											    		<td><img class="combkListImg" src="<c:url value='/images/${com.combkListImg}' />" width="320" height="240"></td>			               
+										    		<tr height="260">
+											    		<td><img class="combkListImg" src="<c:url value='/images/${com.combkListImg}' />" width="320" height="260"></td>			               
 											    	</tr>
 											    	<tr>
 											    		<th class="tableText">${com.combkListTitle }</th>
 											    	</tr>
 											    	<tr height="46">
-											    		<td class="tableText">${com.combkListSubtitle }</td>
+											    		<td>${com.combkListSubtitle }</td>
 											    	</tr>
 									    		</table>
 									    	</a>
@@ -113,13 +114,171 @@
 				<div class="section section-2">
 					<div class="title">번개모임</div>
 					<div class="content">
-					
+						<div id="itemListBox">
+							<ul>
+								<li class="itemContainer" value="여행">
+								    <a href="#">
+										<table class="comTable">
+											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="260"></td></tr>
+											<tr><th class="tableText">패러글라이딩 타기</th></tr>
+											<tr height="55"><td>패러글라이딩 무서울 거 같은 액티비티 같이 해봐요</td></tr>
+										</table>
+									</a>
+								</li>
+								<li class="itemContainer" value="여행">
+								    <a href="#">
+										<table class="comTable">
+											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/ball.jpg'/>" width="320" height="260"></td></tr>
+											<tr><th class="tableText">축구하실분 급구</th></tr>
+											<tr height="55"><td>너만오면 11명</td></tr>
+										</table>
+									</a>
+								</li>
+								<li class="itemContainer" value="여행">
+								    <a href="#">
+										<table class="comTable">
+											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/사이클1.jpg'/>" width="320" height="260"></td></tr>
+											<tr><th class="tableText">자전거 20KM 같이 타실분</th></tr>
+											<tr height="55"><td>혼자 타면 심심해요 같이 운동해요!</td></tr>
+										</table>
+									</a>
+								</li>
+								<li class="itemContainer" value="여행">
+								    <a href="#">
+										<table class="comTable">
+											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/패러글라이딩타보기.jpg'/>" width="320" height="260"></td></tr>
+											<tr><th class="tableText">패러글라이딩 타보기</th></tr>
+											<tr height="55"><td>패러글라이딩 무서울 거 같은 액티비티 같이 해봐요!</td></tr>
+										</table>
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="section section-3">
 					<div class="title">정기모임</div>
 					<div class="content">
-					
+						<%-- <div class="listView">
+							<ul>
+								<li class="categoryList" value="여행">
+									<a href="#">
+										<div class ="gatherInfo" >
+											<div class="bottom">
+												<input type="button" class="doIt" value="해보기">
+											</div>
+											<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
+											<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
+											<table class="gather_InfoTbl">
+												<tr class="content">
+													<th>모집기간</th>
+													<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
+												</tr>
+												<tr class="content">
+													<th>지역</th>
+													<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
+												</tr>
+												<tr class="content">
+													<th>조회수</th>
+													<td><span class="diff_bar"> | </span>&nbsp;100</td>
+												</tr>
+											</table>
+											<div class="gather_progress" >
+												<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
+												<span class="recruit_RateTxt">20명 / 100명</span>
+											</div>											
+										</div>
+									</a>
+								</li>
+								<li class="categoryList" value="여행">
+									<a href="#">
+										<div class ="gatherInfo" >
+											<div class="bottom">
+												<input type="button" value="해보기">
+											</div>
+											<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
+											<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
+											<table class="gather_InfoTbl">
+												<tr class="content">
+													<th>모집기간</th>
+													<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
+												</tr>
+												<tr class="content">
+													<th>지역</th>
+													<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
+												</tr>
+												<tr class="content">
+													<th>조회수</th>
+													<td><span class="diff_bar"> | </span>&nbsp;100</td>
+												</tr>
+											</table>
+											<div class="gather_progress" >
+												<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
+												<span class="recruit_RateTxt">20명 / 100명</span>
+											</div>											
+										</div>
+									</a>
+								</li>
+								<li class="categoryList" value="여행">
+									<a href="#">
+										<div class ="gatherInfo" >
+											<div class="bottom">
+												<input type="button" value="해보기">
+											</div>
+											<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
+											<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
+											<table class="gather_InfoTbl">
+												<tr class="content">
+													<th>모집기간</th>
+													<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
+												</tr>
+												<tr class="content">
+													<th>지역</th>
+													<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
+												</tr>
+												<tr class="content">
+													<th>조회수</th>
+													<td><span class="diff_bar"> | </span>&nbsp;100</td>
+												</tr>
+											</table>
+											<div class="gather_progress" >
+												<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
+												<span class="recruit_RateTxt">20명 / 100명</span>
+											</div>											
+										</div>
+									</a>
+								</li>
+								<li class="categoryList" value="여행">
+									<a href="#">
+										<div class ="gatherInfo" >
+											<div class="bottom">
+												<input type="button" value="해보기">
+											</div>
+											<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
+											<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
+											<table class="gather_InfoTbl">
+												<tr class="content">
+													<th>모집기간</th>
+													<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
+												</tr>
+												<tr class="content">
+													<th>지역</th>
+													<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
+												</tr>
+												<tr class="content">
+													<th>조회수</th>
+													<td><span class="diff_bar"> | </span>&nbsp;100</td>
+												</tr>
+											</table>
+											<div class="gather_progress" >
+												<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
+												<span class="recruit_RateTxt">20명 / 100명</span>
+											</div>											
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div> --%>
 					</div>
 				</div>
 				<div class="section section-4">

@@ -32,6 +32,12 @@ html, body {
     background-color: rgba( 255, 255, 255, 0 );
 }
 
+#indexID {
+	color: white;
+	font-weight:bold;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
 /** 폴더식 css **/
 .start-screen {
   display: flex;
@@ -136,6 +142,10 @@ html, body {
 .combkListImg {
 	border-top-left-radius:10px;
 	border-top-right-radius:10px;
+}
+
+.tableText {
+	border-bottom:1px dashed black;
 }
 
 /************** SlideShow 시작 **************/

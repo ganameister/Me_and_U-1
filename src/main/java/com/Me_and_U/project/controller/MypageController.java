@@ -26,7 +26,7 @@ public class MypageController {
 	@RequestMapping("/mypage")
 	private String mypage(Model model,HttpSession session) {
 		String memId = (String) session.getAttribute("sid");
-		ArrayList<MyBKListVO> myBKList = BKLservice.myBKListView(memId);
+		ArrayList<MyBKListVO> myBKList = BKLservice.MypagemyBKListView(memId);
 		model.addAttribute("myBKList", myBKList);
 		
 		ArrayList<MyComBKListVO> mycomBKList = BKLservice.mycomBKListView(memId);

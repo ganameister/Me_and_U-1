@@ -62,8 +62,8 @@ public class BKListService implements IBKListService {
 	}
 
 	@Override
-	public ArrayList<ComBKListVO> comBKListView() {
-		return dao.comBKListView();
+	public ArrayList<ComBKListVO> comBKListViewRec() {
+		return dao.comBKListViewRec();
 	}
 
 	@Override
@@ -122,6 +122,26 @@ public class BKListService implements IBKListService {
 	public ArrayList<ComBKListVO> listRecentComBKList() {
 		return dao.listRecentComBKList();
 	}
-	 
+
+	@Override
+	public int combkListViewcnt(int combkListNo) {
+		return dao.combkListViewcnt(combkListNo);
+	}
+
+	@Override
+	public ArrayList<ComBKListVO> comBKListViewTitle() {
+		return dao.comBKListViewTitle();
+	}
+
+	@Override
+	public ArrayList<ComBKListVO> comBKListViewCnt() {
+		return dao.comBKListViewCnt();
+	}
+
+	@Override
+	public ArrayList<MyBKListVO> MypagemyBKListView(String memId) {
+		return dao.MypagemyBKListView(memId);
+	}
+
 
 }

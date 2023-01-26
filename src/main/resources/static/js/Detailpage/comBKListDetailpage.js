@@ -9,7 +9,7 @@
 	    
 	    if(confirm("정말 삭제하시겠습니까?")){
 	    	$.ajax({
-	        	type: "GET",
+	        	type: "get",
 	       		url: "/comBKList/deletecomBKList",
 	       		data: {"combkListNo": combkListNo},
 	       		success: function(data){
@@ -28,13 +28,13 @@
     var combkListNo = $(this).data("combklistno");
     if(confirm("이 버킷리스트를 해보시겠습니까?")){
         $.ajax({
-            type: "GET",
+            type: "get",
             url: "/myBKList/mycomBKListInsertCheck",
             data: {"combkListNo": combkListNo},
             success: function(data){
                 if(data == 0){
                     $.ajax({
-                        type: "GET",
+                        type: "get",
                         url: "/myBKList/mycomBKListInsert",
                         data: {"combkListNo": combkListNo},
                         success: function(data){

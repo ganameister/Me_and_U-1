@@ -81,6 +81,12 @@
 		});
 	});
 	
+	// 최신순, 조회순, 이름순 정렬
+	$("#sortcomBKList").change(function(){
+        $("#sortForm").submit();
+    });
+	
+	
 	//등록폼 진입
 	$('#registerBtn').on('click',function() {
 		window.location.href = "/comBKList/comBKListRegister";
@@ -128,6 +134,7 @@
 			return false;
 		}
 	});
+		
 		
  });
  

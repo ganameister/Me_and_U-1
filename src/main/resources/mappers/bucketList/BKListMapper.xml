@@ -113,15 +113,29 @@
  	
  	<!-- 모두의 버킷리스트 등록 -->
  	<insert id="comBKListInsert" parameterType="com.Me_and_U.project.model.ComBKListVO">
-  		INSERT INTO combklist (memId,combkListNo,combkListTitle,combkListSubtitle,combkListWrite,combkListImg, combkListCtg) 		
-		 VALUES ( #{memId},#{combkListNo}, #{combkListTitle},#{combkListSubtitle},#{combkListWrite}, #{combkListImg},#{combkListCtg})	
+  		INSERT INTO combklist (memId,combkListNo,combkListTitle,combkListSubtitle,combkListWrite,combkListImg, combkListCtg, combkListView) 		
+		 VALUES ( #{memId},#{combkListNo}, #{combkListTitle},#{combkListSubtitle},#{combkListWrite}, #{combkListImg},#{combkListCtg}, 0)	
   	</insert>
   		
-  	<!-- 모두의 버킷리스트 목록 -->
-  	<select id="comBKListView" resultMap="combklistResult">
+  	<!-- 모두의 버킷리스트 목록 최신순 -->
+  	<select id="comBKListViewRec" resultMap="combklistResult">
   		SELECT *
   		FROM combklist 
   		ORDER BY combkListNo DESC
+  	</select>
+  	
+  	<!-- 모두의 버킷리스트 목록 이름순 -->
+  	<select id="comBKListViewTitle" resultMap="combklistResult">
+  		SELECT *
+  		FROM combklist 
+  		ORDER BY combkListTitle ASC
+  	</select>
+  	
+  	<!-- 모두의 버킷리스트 목록 조회순 -->
+  	<select id="comBKListViewCnt" resultMap="combklistResult">
+  		SELECT *
+  		FROM combklist 
+  		ORDER BY combkListView DESC
   	</select>
   	
   	<!-- 모두의 버킷리스트 상세 페이지 -->
@@ -130,6 +144,13 @@
   		FROM combklist
   		WHERE combkListNo = #{combkListNo}
   	</select>
+  	
+  	<!-- 모두의 버킷리스트 상세 페이지 조회수 -->
+  	<update id="combkListViewcnt">
+  		UPDATE combklist 
+  		SET combkListView = combkListView + 1
+  		WHERE combkListNo = #{combkListNo}
+  	</update>
   		
   	<!-- 모두의 버킷리스트 삭제 -->
   	<delete id="deletecomBKList" parameterType="int">
@@ -142,17 +163,17 @@
 	<select id="listRecentComBKList" resultMap="combklistResult">
 		SELECT * 
 		FROM combklist
-		ORDER BY combkListNo DESC LIMIT 0,5
+		ORDER BY combkListNo DESC LIMIT 0,4
 	</select>
   	
   	<!-- 모두의 버킷리스트 구간 끝  -->
   	
   	<!-- 마이페이지 -->
-  	<select id="mypage" parameterType="String" resultMap="mybklistResult">
-        SELECT * 
-        FROM mybklist ,mycombklist
-        where memId=#{memId}
-        ORDER BY mybkListNo ASC
-    </select>
+  	<select id="MypagemyBKListView" resultMap="mybklistResult">
+          SELECT *
+          FROM mybklist 
+          WHERE memId = #{memId} AND mybklistFinished =  0
+          ORDER BY mybkListNo ASC
+	</select>
   	
   </mapper>
