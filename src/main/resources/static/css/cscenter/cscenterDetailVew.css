@@ -91,6 +91,18 @@ body {
 .serviceBtn button:hover {
     opacity: 70%;
 }
+#none {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    font-size:medium;
+    cursor: auto;
+    background: var(--color3);
+    color:#ffffff;
+    border-radius: 2px;
+    border-style: none;
+    height: 40px;
+    width: 80px;
+}
 /* #qna {
     margin-left: -35px;
 }  */

@@ -55,8 +55,8 @@
 																		
 					<ol class="image-list grid-view">
 					
-			 			<c:forEach var="rev" items="${reviewList}"> 		
-			
+			 			<c:forEach var="rev" items="${reviewList}" varStatus = "status"> 		
+						
 						<li class="review_container" value="${rev.reviewCtg}"> 							
 							<div class ="review-Info" >
 								<!--  리뷰이미지  -->
@@ -66,14 +66,38 @@
 								<div class="review_underBox">									
 									<!-- 하트하트 -->
 									<div class="heartbox">							
-									<button class="heartBtn" id="heartBtn" ><img src='<c:url value="/images/heart.png"/>' class="heartbtnImg" ></button>
-								
+									<button class="heartBtn" id="heartBtn" ><img src='<c:url value="/images/heart.png"/>' class="heartbtnImg" ></button>									
 									<span class="heartNo" >${rev.reviewHart }</span>
+									<%-- <c:if test="${sessionScope.sid == rev.memId}">
+				   					 <input type="button" id="deleteReviewBTN" data-reviewListNo= "${rev.reviewNo}" value="삭제">
+									 <input type="button" id="updateReviewBTN" data-reviewListNo= "${rev.reviewNo}" value="수정">		
+									</c:if>	 --%>
+									<c:if test="${sessionScope.sid == rev.memId}">
+									<input="hidden" id=currentReview${status.index} value="${rev.reviewNo}" >
+									<input="hidden" name=currentindex${status.index} value="${rev.reviewNo}" >
+				   					 <input type="button" id="delete" onclick="qnadelete(${status.index});"  value="삭제">
+									 <input type="button" id="update" onclick="qnaupdate();" data-reviewListNo= "${rev.reviewNo}" value="수정">		
+									</c:if>
+									<script type="text/javascript">
+										function qnadelete(index){
+											var answer = confirm("삭제하시겠습니까?");
+											if(answer){
+												/* location.href = "<c:url value='/cscenter/deleteReview/${reviewNo}'/>"; */
+												var url= "/cscenter/deleteReview/"+$('#currentReview'+${index}).val();
+												location.href ="<c:url value='${url}'/>";
+											}
+										}
+										function qnaupdate(){
+												location.href = "<c:url value='/cscenter/reviewUpdateForm/${rev.reviewNo}'/>";			
+										}
+											
+									</script>
 									</div>
 									<div class="review-title"><span class="title">${rev.reviewTitle }</span></div>			
 									<div class="comment"><span>${rev.reviewWrite }</span></div>
 									<div align="right">-<span id="reviewmemId">${rev.memId }</span>-<p id="reviewDate">
-										<fmt:formatDate value='${rev.reviewDate }' pattern="yyyy-MM-dd  hh:mm"/></p></div>							
+										<fmt:formatDate value='${rev.reviewDate }' pattern="yyyy-MM-dd  hh:mm"/></p></div>
+																
 								</div>																
 							</div>
 						</li>

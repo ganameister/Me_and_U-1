@@ -66,27 +66,7 @@ $(document).ready(function(){
 				num=0;
 			}
 		}); 
-/**
-		var num=0;
-		$(".heartBtn").on('click',function(){
-			if(num==0){
-				$('this').attr('src','/images/redheart.png');
-				num =1;
-			}else {
-				$('this').attr('src','/images/heart.png');
-				num=0;
-			}
-		});
-
-
-	 	$('input').click(function(){
-	  if($(this).hasClass("active")){
-	    $(this).removeClass("active");
-	  }else{
-	    $(this).addClass("active");  
-	  }
-	});
-*/	
+	
 	$("#newPost").on('click',function(){
 			window.location.href = "/reviewRegister";
 		});	
@@ -95,5 +75,25 @@ $(document).ready(function(){
 		});	
     
     
-    
+	//삭제
+/*
+	$("#deleteReviewBTN").on("click", function(){
+	    var reviewNo = $(this).data("reviewNo");
+	    
+	    if(confirm("정말 삭제하시겠습니까?")){
+	    	$.ajax({
+	        	type: "GET",
+	       		url: "/cscenter/deleteReview/{reviewNo}",
+	       		data: {"reviewNo": reviewNo},
+	       		success: function(data){
+	          		alert("삭제가 완료되었습니다.");
+	          		location.href="/reviewListView";
+	        	},
+	       		 error: function(error){
+	         		alert("실패");
+	       		 }
+	     	});
+	    }
+	});
+	*/   
 });
