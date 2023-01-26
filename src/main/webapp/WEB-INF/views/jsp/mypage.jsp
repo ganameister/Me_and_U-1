@@ -29,7 +29,7 @@
 				<section class="sec2">
 					<!-- 모두의 버킷리스트 -->
 					<article class="art1">
-						<div class="artnamec"><div id="artname">내가 선택한 모두의 버킷리스트</div><div class="imgdiv"><img src="<c:url value='/images/down-arrow.png' />" id="click_button1"></div></div>
+						<div class="artnamec"><div id="artname">내가 선택한 모두의 버킷리스트</div><div class="imgdiv"><img src="<c:url value='/images/down.png' />" id="click_button1"></div></div>
 						<c:forEach var="mycbkl" items="${ mycomBKList }" end="0">
 		    			<div id="content">
 								<img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg">
@@ -51,7 +51,7 @@
 					
 					<!-- 나의 버킷리스트 -->
 					<article  class="art2">
-					<div class="artnamec"><div id="artname">나의 버킷리스트</div><div class="imgdiv"><img src="<c:url value='/images/down-arrow.png' />" id="click_button2"></div></div>
+					<div class="artnamec"><div id="artname">나의 버킷리스트</div><div class="imgdiv"><img src="<c:url value='/images/down.png' />" id="click_button2"></div></div>
 					<c:forEach var="mybkl" items="${ myBKList }"  varStatus="status" end="0">
 		    			<div id="content">
 		    				${mybkl.mybkListWrite }<br>
@@ -129,6 +129,31 @@
 					</article>
 					
 				</section><!-- 글 목록? -->
+				<section class="sec3">
+				<table style="border: 1px solid;">
+					<tr>
+						<td>이름</td>
+					</tr>
+					<tr>
+						<td>이메일</td>
+					</tr>
+					<tr>
+						<td>생년월일</td>
+					</tr>
+					<tr>
+						<td>성별</td>
+					</tr>
+					<tr>
+						<td>주소</td>
+					</tr>
+					<tr>
+						<td>관심분야1</td>
+					</tr>
+					<tr>
+						<td>가입날짜</td>
+					</tr>
+				</table>
+				</section>
 			</div><!-- main -->
 			<c:import url="/WEB-INF/views/layout/bottom.jsp" /> 
 		</div><!-- wrap -->

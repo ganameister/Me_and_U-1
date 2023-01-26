@@ -16,10 +16,10 @@ $("#button_content2").css("display", "none");
       let num1 = 0;
 	$("#click_button1").click(function () {
 		if(num1 == 0) {
-			$(this).attr("src", "/images/up-arrow.png");
+			$(this).attr("src", "/images/up.png");
 			num1 = 1;
 		}else {
-			$(this).attr("src", "/images/down-arrow.png");
+			$(this).attr("src", "/images/down.png");
 			num1 = 0;
 		}
 	});
@@ -34,10 +34,10 @@ $("#button_content2").css("display", "none");
        let num2 = 0;
 	$("#click_button2").click(function () {
 		if(num2 == 0) {
-			$(this).attr("src", "/images/up-arrow.png");
+			$(this).attr("src", "/images/up.png");
 			num2 = 1;
 		}else {
-			$(this).attr("src", "/images/down-arrow.png");
+			$(this).attr("src", "/images/down.png");
 			num2 = 0;
 		}
 	});
