@@ -17,9 +17,9 @@ section {
 div{
 	border:1px solid red;
 }
-  */
+*/
 .sec {
-	margin-left:5%;
+	margin-left:11%;
 	width:90%;
 	
 }
@@ -29,13 +29,18 @@ div{
 }
 
 .searchCondition{
-	width:500px;
+	width:1000px;
+	margin-left:8%;
 	border-collapse : separate;
 	border-spacing : 0px 15px;
+	border : 1px solid lightgray;
+	border-radius: 8px;
+	
 }
 
 /* 검색창 테이블 */
 .searchCondition th{
+	align : left;
 	width : 100px;
 	font-size: 15px;
 }
@@ -100,7 +105,6 @@ input {
 
 /* 개설된 모임 목록 보여주는 Top */
 .listViewTop{
-    margin : 0 auto;
     height: 30px;
     display : block;
 }
@@ -168,7 +172,7 @@ input {
 
 .listViewTop .newRegister{
 	margin-top : 10px;
-	margin-right : 13.3%;
+	margin-right : 13.8%;
     float : right;
     width :150px;
     cursor : pointer;
@@ -191,20 +195,24 @@ input {
     max-width: 1300px;
 	display:table;
 }
-ul {
+.categoryUl {
 	font-size:0;	/* ul에 비어있는 줄의 간격을 줄일 수 있음 */
+	padding : 0px;	
+	margin : 0px;
+    list-style:none;
 }
 
-ul > li{
+.categoryList{
 	display : inline-block;
 	vertical-align : top;
 }
 
-ul > li > a{
+.categoryList > a{
 	display : block;
+	color : black;
 	text-decoration : none;
 }
-ul > li > a .gatherInfo{
+.categoryList > a .gatherInfo{
 	width : 276px;
 	height : 360px;
 	border: 1px solid lightgray;
@@ -213,7 +221,7 @@ ul > li > a .gatherInfo{
 	overflow : hidden;	/* 요소 외부영역 가리기 */
 }
 
- ul > li > a .preview ::after{	/*  가상요소 삽입 */
+ .categoryList > a .preview ::after{	/*  가상요소 삽입 */
 	content:'';
 	display:block;
 	position:absolute;
@@ -245,12 +253,12 @@ ul > li > a .gatherInfo{
 	font-weight:900;
 }
 
-ul > li > a:hover .bottom	{
+.categoryList > a:hover .bottom	{
 	left : 73%;
 	bottom : 52%;
 }
 
-ul > li > a:hover .preview	{
+.categoryList > a:hover .preview	{
 	filter:brightness(0.5);
 }
 
@@ -345,14 +353,11 @@ ul > li > a:hover .preview	{
 	color : lightgray;
 }
 
-ul{
-	padding : 0px;	
-	margin : 0px;
-    list-style:none;
-}
 .categoryList{
 	float : left;
-	margin : 20px;	
+	margin-left : -20px;
+	margin-right : 57px;
+	margin-bottom : 20px;	
 }
 
 .progressBox{
@@ -369,6 +374,7 @@ progress {
    width: 100%;
    height: 18px;
    border-radius: 6px;
+   margin-top : 4px;
 }
 progress::-webkit-progress-bar {	/* 프로그래스 바 배경 */
     background:#f0f0f0;
