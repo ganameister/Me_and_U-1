@@ -22,7 +22,7 @@ body {
 }
 
 #wrap{
-	margin-top: 70px;
+	margin-top: 69px;
 }
 .sec1{
 	display: flex;
@@ -167,9 +167,7 @@ font-weight: bold;
     height:25px;
     margin: 0 0.5rem;
 }
-.heartBtn {
-	background
-}
+
 
 .heartNo {
 	margin-left:-7px;

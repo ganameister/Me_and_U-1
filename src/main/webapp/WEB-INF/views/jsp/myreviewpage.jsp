@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>내가 쓴 후기</title>
-<link rel="stylesheet" type="text/css" href="<c:url value='/css/review/reviewPlus.css' />">
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/mypage/myreviewpage.css' />">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -29,27 +29,6 @@
 		</section>
 		
 		<section class="sec2">
-			
-			
-				
-
-				<!-- 카테고리 -->
-				<div class ="review_board_top">
-					<div class="select_categ" align="left">Select Category</div>
-					<div class="categoryBtn" id="categ">
-						<input type="button" class="cateBtn" id="categ1" value="전체">
-						<input type="button" class="cateBtn" id="categ2" value="여행">
-						<input type="button" class="cateBtn" id="categ3" value="운동">
-						<input type="button" class="cateBtn" id="categ4" value="게임">
-						<input type="button" class="cateBtn" id="categ5" value="문화">
-						<input type="button" class="cateBtn" id="categ6" value="음악">
-						<input type="button" class="cateBtn" id="categ7" value="기타">								
-					</div>
-				</div>						
-				
-																		
-				
-					
 					 
 <!-- 여기부터 붙여넣기-->
 <!-- review_warp -->
