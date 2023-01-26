@@ -3,17 +3,19 @@
 body{
 	width:1600px;
 	margin: auto;
-	font-weight: 0;
+	
 }
 #wrap{
-	margin-top: 70px;
+	margin-top: 69px;
+	background-color: var(--color4);
 }
 .sec1{
 	display: flex;
 	float: left;
-	margin-left: 10%;
+	margin-left: 21%;
 	margin-top: 100px;
-	margin-right: 15%;
+	margin-right: 3%;
+	font-weight: 400;
 }
 .sec1 li{
 margin: 20px 0px;
@@ -21,9 +23,9 @@ list-style: none;
 }
 #infoedit:hover{
 cursor:pointer;
-color: red;
+font-weight: bold;
 }
-#myreiew:hover{
+#myreiew{
 cursor:pointer;
 font-weight: bold;	
 }
@@ -39,20 +41,31 @@ font-weight: bold;
 }
 
 #combkImg{
-	width: 120px;
-	height: 60px;
+	width: 200px;
+	height: 100px;
+	display: flex;
 }
 #BtnImg{
 	width: 60px;
 	height: 60px;
 	text-align: center;
 }
-
+.sec2 .art1, .art2, .art3, .art4{
+	margin: 20px;
+	border: 1px solid black;
+}
+.sec2 h4{
+	margin-left:10px;
+	margin-right: 10px;
+}
 .sec2 .art1 img{
 	width: 60px;
 	height: 60px;
 	text-align: center;
-	background-color: white;
+}
+.contentText {
+    margin-left:10px;
+    line-height:40px;
 }
 .sec2 .art2 img{
 	width: 60px;
@@ -61,20 +74,23 @@ font-weight: bold;
 }
 .sec2 .art1 #content{
 	display: flex;
+	width: 515px;
+	margin-left:10px;
+	margin-right: 10px;
 	margin-bottom: 10px;
 }
 .sec2 .art1 #click_button1{
-	margin-left:300px;
 	width:30px;
 	height:30px;
 	float: right;
 }
 .sec2 .art2 #content{
 	display: flex;
+	margin-left:10px;
+	margin-right: 10px;
 	margin-bottom: 10px;
 }
 .sec2 .art2 #click_button2{
-	margin-left:420px;
 	width:30px;
 	height:30px;
 	float: right;
@@ -83,7 +99,14 @@ font-weight: bold;
 	display: flex;
     height: 260px;
     overflow-x:auto;
+    margin-left:10px;
+    margin-right: 10px;
    
+}
+.sec2 .art3 .artdiv div{
+	display: block;
+	margin-right: 30px;
+	
 }
 .sec2 .art3 .artdiv::-webkit-scrollbar {
     width: 10px;
@@ -99,16 +122,19 @@ font-weight: bold;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
   }
-.sec2 .art4 .artdiv div{
-	display: block;
-	margin-right: 30px;
-	
-}
+
 
 .sec2 .art4 .artdiv{
 	display: flex;
     height: 260px;
     overflow-x:auto;
+     margin-left:10px;
+    margin-right: 10px;
+}
+.sec2 .art4 .artdiv div{
+	display: block;
+	margin-right: 30px;
+	
 }
 .sec2 .art4 .artdiv::-webkit-scrollbar {
     width: 10px;
@@ -124,11 +150,7 @@ font-weight: bold;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
   }
-.sec2 .art3 .artdiv div{
-	display: block;
-	margin-right: 30px;
-	
-}
+  
 #regImg, #temImg{
 	width: 160px;
 	height: 160px;

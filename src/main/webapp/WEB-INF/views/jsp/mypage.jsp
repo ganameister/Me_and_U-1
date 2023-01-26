@@ -34,8 +34,8 @@
 						<c:forEach var="mycbkl" items="${ mycomBKList }" end="0">
 		    			<div id="content">
 								<img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg">
-								${mycbkl.combkListTitle }<br>
-								${mycbkl.combkListSubtitle }<br>
+								<span class="contentText">${mycbkl.combkListTitle } <br>
+                                          ${mycbkl.combkListSubtitle }</span>
 							
 						</div>
 						</c:forEach>
@@ -43,9 +43,8 @@
 		    			<c:forEach var="mycbkl" items="${ mycomBKList }" begin="1">
 		    			<div id="content">
 								<img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg">
-								${mycbkl.combkListTitle }<br>
-								${mycbkl.combkListSubtitle }<br>
-							
+								<span class="contentText">${mycbkl.combkListTitle } <br>
+                                          ${mycbkl.combkListSubtitle }</span>
 						</div>
 						</c:forEach>
 	    			</div>
@@ -53,7 +52,7 @@
 					
 					<!-- 나의 버킷리스트 -->
 					<article  class="art2">
-					<h4>나의 버킷리스트</h4><img src="<c:url value='/images/down-arrow.png' />" id="click_button2">
+					<div>나의 버킷리스트</div><img src="<c:url value='/images/down-arrow.png' />" id="click_button2">
 					<c:forEach var="mybkl" items="${ myBKList }"  varStatus="status" end="0">
 		    			<div id="content">
 		    				${mybkl.mybkListWrite }<br>
