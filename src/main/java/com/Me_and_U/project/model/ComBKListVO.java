@@ -18,7 +18,16 @@ public class ComBKListVO {
 	private String combkListCtg;
 	private int combkListView;
 	
+	// 조인용 데이터
+	private String ctgName;
 	
+	
+	public String getCtgName() {
+		return ctgName;
+	}
+	public void setCtgName(String ctgName) {
+		this.ctgName = ctgName;
+	}
 	public int getCombkListView() {
 		return combkListView;
 	}

@@ -140,9 +140,9 @@
   	
   	<!-- 모두의 버킷리스트 상세 페이지 -->
   	<select id="detailViewComBKList" parameterType="int" resultType="com.Me_and_U.project.model.ComBKListVO">
-  		SELECT *
-  		FROM combklist
-  		WHERE combkListNo = #{combkListNo}
+  		SELECT c.combkListNo, c.combkListTitle, g.ctgName, c.combkListSubtitle, c.combkListImg, c.combkListWrite, c.memId
+  		FROM combklist c, category g
+  		WHERE c.ctgNo = g.ctgNo AND c.combkListNo = #{combkListNo}
   	</select>
   	
   	<!-- 모두의 버킷리스트 상세 페이지 조회수 -->
