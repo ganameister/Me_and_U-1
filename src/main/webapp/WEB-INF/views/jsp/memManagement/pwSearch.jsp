@@ -16,7 +16,7 @@
 			<div class="container">
 				<div >
 					<ul class="unl">
-						<li id="listID"><button type="button" onclick="location.href='/member/idSerachPage'"><span>아이디 찾기</span></button>
+						<li id="listID"><button type="button" onclick="location.href='/member/idSearchPage'"><span>아이디 찾기</span></button>
 						<li id="listPW"><button type="button"><span>비밀번호 찾기</span></button>
 					</ul>
 				</div>
@@ -59,6 +59,7 @@
 							</div>
 							<div class="nextBtnWrap">
 								<button type="button" class="nextBtn" id="pwNextBtn"><span id="nextBtnText">다음</span></button>
+								<input type="hidden">${memId }
 							</div>
 						</div>
 					</div>

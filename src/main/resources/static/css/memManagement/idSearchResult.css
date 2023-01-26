@@ -4,9 +4,9 @@ html {
 }
 
 /* 상단 바 */
-header {
-	height: 72px;
-}
+/* header { */
+/* 	height: 72px; */
+/* } */
 
 /* 바디 */
 body {
@@ -18,8 +18,8 @@ body {
 /* "아아디 찾기" 문구 */
 #headH2 {
 	position: absolute;
-	top: 18%;
-	left: 30%;
+	top: 24%;
+	left: 27%;
 	width: 717px;
 	margin: 0 0 21px 0;
 	border-bottom: 1px solid #e5e5e5;
@@ -31,7 +31,7 @@ body {
 	border: none;
 	width: 30%;
 	font-size: 23px;
-	margin-left: 80px;
+	margin-left: 60px;
 }
 
 /* 전체 박스 */
@@ -41,19 +41,20 @@ body {
 }
 
 .container {
-	
+	position: relative;
+	height: 100%;
 }
 
 /* 아이디 표시 전체 박스 */
 .content {
 	position: absolute;
-	top: 30%;
-	left: 30%;
+	top: 36%;
+	left: 27%;
 	border: 1px solid #e5e5e5;
 	border-radius: 15px;
-	width: 632px;
+	width: 637px;
 	height:156px;
-	padding: 20px 30px 20px 62px;
+	padding: 20px 62px 20px 25px;
 	text-align: center;
 }
 
@@ -70,6 +71,7 @@ body {
 	margin:0 auto;
 	padding-top:28px;
 	width:600px;
+	padding-top:135px;
 }
 
 /* 상단 찾기 세부 영역 */
@@ -102,7 +104,7 @@ body {
 .loginBtnWrap {
 	position: absolute;
 	left: 46%;
-	top: 56%;
+	top: 62%;
 }
 
 /* 하단 로그인 버튼 */
@@ -117,7 +119,10 @@ body {
 	box-shadow: -1px 2px 7px 1px #848484;
 }
 
-
+/* 회원 이름 */
+#memName {
+	margin-right: 80px;
+}
 
 
 

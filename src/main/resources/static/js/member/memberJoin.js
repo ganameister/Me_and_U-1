@@ -5,7 +5,7 @@
 $(document).ready(function() {
 	var idCheckBtnClick = "noCheck";
 	var idSave = "";
-	var idReg = /^(?=.*[\d])[A-za-z]{1}[A-za-z0-9]{4,15}$/;
+	const idReg = /^(?=.*[\d])[A-za-z]{1}[A-za-z0-9]{4,15}$/;
 	// ID중복확인 버튼 클릭시
 	$('#idCheckBtn').on('click', function(){
 		event.preventDefault();
