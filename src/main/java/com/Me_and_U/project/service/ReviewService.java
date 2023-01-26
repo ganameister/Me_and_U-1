@@ -33,7 +33,9 @@ public class ReviewService implements IReviewService {
 
 	@Override
 	public void deleteReview(int reviewNo) {
+		
 		dao.deleteReview(reviewNo);
+		
 	}
 
 	

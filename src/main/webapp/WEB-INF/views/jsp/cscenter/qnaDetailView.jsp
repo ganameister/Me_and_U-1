@@ -62,9 +62,15 @@
 						<div class="serviceBtn">
 							<button id="qna">QNA</button>
 							<button id="faq">FAQ</button>
-							<button id="notice">Notice</button>							
-							<button id="update" onclick="qnaupdate();">QNA 수정</button>
-							<button id="delete" onclick="qnadelete();">QNA 삭제</button>							
+							<button id="notice">Notice</button>
+							<c:if test="${sessionScope.sid == qna.memId}">
+				   			<button id="update" onclick="qnaupdate();">QNA 수정</button>
+							<button id="delete" onclick="qnadelete();">QNA 삭제</button>	 	
+							</c:if>								
+							<c:if test="${sessionScope.sid != qna.memId}">
+							<button id="none" ></button>
+							<button id="none" ></button>
+							</c:if>								
 						</div>
 					</div>
 					<!-- Table -->
