@@ -42,8 +42,11 @@ $("#button_content2").css("display", "none");
 		}
 	});
 	
-	$("#infoedit").click(function() {
+	$("#myp").click(function() {
             location.href="/mypage";
+    });
+	$("#infoedit").click(function() {
+            location.href="/";
     });
     $("#myreiew").click(function() {
             location.href="/myreviewpage";

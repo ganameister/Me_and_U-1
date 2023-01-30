@@ -3,19 +3,19 @@
 body{
 	width:1600px;
 	margin: auto;
-	
 }
 #wrap{
 	margin-top: 69px;
-	background-color: var(--color4);
+	background-color: white;
 }
 .sec1{
 	display: flex;
 	float: left;
-	margin-left: 10%;
+	margin-left: 5%;
 	margin-top: 100px;
-	margin-right: 10%;
+	margin-right: 5%;
 	font-weight: 400;
+	
 }
 .sec1 li{
 font-size: 19px;
@@ -34,6 +34,12 @@ list-style: none;
 	border: 10px;
 	
 }
+
+#myp{
+	cursor:pointer;
+font-weight: bold;
+border-bottom: 3px solid;
+}
 #infoedit:hover{
 cursor:pointer;
 font-weight: bold;
@@ -48,17 +54,20 @@ cursor:pointer;
 font-weight: bold;	
 }
 .sec2{
-	display: inline-block;
-	margin-top: 30px;
-	width: 600px;
+	display:inline-block;
+	width:1288.8px;
+	background-color: var(--color4);
+	border-left: 1px solid;
+	margin-bottom: -5px;
 }
-.sec3{
-	display: flex;
-	float:right;
-	font-weight: 400;
-	margin-left: 10%;
-	margin-top: 100px;
-	margin-right: 10%;
+
+.sebox{
+	width: 900px;
+	float: left;
+}
+.thbox{
+	float: right;
+	padding: 60px;
 }
 #combkImg{
 	width: 200px;
@@ -71,12 +80,19 @@ font-weight: bold;
 	text-align: center;
 }
 .sec2 .art1, .art2, .art3, .art4{
-	margin: 20px;
+	margin-left:320px;
+	margin-right: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
 	border-top: 1px solid rgba(128, 128, 128, 0.483);
 }
 .sec2 h4{
 	margin-left:10px;
 	margin-right: 10px;
+}
+.sec2 .art1{
+	margin-top: 30px;
 }
 .sec2 .art1 img{
 	width: 60px;

@@ -19,6 +19,7 @@
 				<section class="sec1">
 					<nav>
 						<ul>
+							<li id="myp">마이페이지</li>
 							<li id="infoedit">개인정보수정</li>
 							<li id="myreiew">내가 쓴 후기</li>
 							<li id="selectreg">찜한 정기모임</li>
@@ -27,6 +28,7 @@
 				</section><!-- 좌측 안내바? -->
 				
 				<section class="sec2">
+				<div class="sebox">
 					<!-- 모두의 버킷리스트 -->
 					<article class="art1">
 						<div class="artnamec"><div id="artname">내가 선택한 모두의 버킷리스트</div><div class="imgdiv"><img src="<c:url value='/images/down.png' />" id="click_button1"></div></div>
@@ -127,10 +129,58 @@
 						</div>
 					</div>
 					</article>
-					
+					</div>
+					<div class="thbox">
+						<table style="border: 1px solid;">
+						<tr>
+						<td>이름</td>
+					</tr>
+					<tr>
+						<td>이메일</td>
+					</tr>
+					<tr>
+						<td>생년월일</td>
+					</tr>
+					<tr>
+						<td>성별</td>
+					</tr>
+					<tr>
+						<td>주소</td>
+					</tr>
+					<tr>
+						<td>관심분야1</td>
+					</tr>
+					<tr>
+						<td>가입날짜</td>
+					</tr>
+						<%-- <tr>
+							<td>${memVO.memId}</td>
+						</tr>
+						<tr>
+							<td>${memVO.memEmail}</td>
+						</tr>
+						<tr>
+							<td>${memVO.memBirth}생년월일</td>
+						</tr>
+						 <tr>
+							<td>${memVO.Gender}성별</td>
+						</tr> 
+						<tr>
+							<td>${memVO.memAddress1}${memVO.memAddress2}주소</td>
+						</tr>
+						 <tr>
+							<td>${memVO.memJoy1}관심분야1</td>
+						</tr> 
+						<tr>
+							<td>${memVO.memJoinDate}</td>
+						</tr> --%>
+
+						</table>
+					</div>
 				</section><!-- 글 목록? -->
-				<section class="sec3">
-				<table style="border: 1px solid;">
+				<!-- <section class="sec3">
+				<div>
+					<table style="border: 1px solid;">
 					<tr>
 						<td>이름</td>
 					</tr>
@@ -152,8 +202,9 @@
 					<tr>
 						<td>가입날짜</td>
 					</tr>
-				</table>
-				</section>
+					</table>
+					</div>
+				</section> -->
 			</div><!-- main -->
 			<c:import url="/WEB-INF/views/layout/bottom.jsp" /> 
 		</div><!-- wrap -->
