@@ -21,6 +21,7 @@
 		<section class="sec1">
 					<nav>
 						<ul>
+							<li id="myp">마이페이지</li>
 							<li id="infoedit">개인정보수정</li>
 							<li id="myreiew">내가 쓴 후기</li>
 							<li id="selectreg">찜한 정기모임</li>

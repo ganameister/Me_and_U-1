@@ -7,14 +7,15 @@ body{
 }
 #wrap{
 	margin-top: 69px;
-	background-color: var(--color4);
+	background-color: white;
 }
 .sec1{
 	display: flex;
 	float: left;
-	margin-left: 10%;
+	margin-left: 5%;
 	margin-top: 100px;
-	margin-right: 50px;
+	margin-right: 5%;
+	font-weight: 400;
 	
 }
 .sec1 li{
@@ -23,7 +24,10 @@ margin: 20px 0px;
 list-style: none;
 font-weight: 400;
 }
-
+#myp:hover{
+	cursor:pointer;
+font-weight: bold;
+}
 #infoedit:hover{
 cursor:pointer;
 font-weight: bold;	
@@ -31,18 +35,20 @@ font-weight: bold;
 #myreiew{
 cursor:pointer;
 font-weight: bold;
+border-bottom: 3px solid;
 }
 
 #selectreg:hover{
 cursor:pointer;
 font-weight: bold;	
 }
- .sec2{
-	display: inline-block;
-	margin-top: 30px;
-	width: 600px;
-}
 
+.sec2{
+	display:inline-block;
+	width:1288.8px;
+	background-color: var(--color4);
+	border-left: 1px solid;
+}
 .sec2 ol{
 	width: 1000px;
 } 
@@ -92,9 +98,13 @@ font-weight: bold;
 
 
 .review-img {
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
-	aspect-ratio: 13/9;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    aspect-ratio: 13/9;
+    min-width:300px;/상단박스크기고정 수정1**/
+    min-width:300px;/상단박스크기고정/
+    max-height:250px;
+    min-height:250px;/상단박스크기고정*/
 }
 .reviewBox {
     margin-top: 8vh;   

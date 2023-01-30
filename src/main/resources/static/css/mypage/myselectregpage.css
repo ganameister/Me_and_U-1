@@ -4,22 +4,31 @@ body{
 	width:100%;
     max-width:1600px; 
 	margin:auto;
+	
 }
 #wrap{
 	margin-top: 70px;
+	font-weight: 400;
 }
 .sec1{
 	display: flex;
 	float: left;
-	margin-left: 10%;
+	margin-left: 5%;
 	margin-top: 100px;
-	margin-right: 50px;
+	margin-right: 5%;
+	font-weight: 400;
+	
 }
 .sec1 li{
 margin: 20px 0px;
+font-size: 19px;
 list-style: none;
 }
 
+#myp:hover{
+cursor:pointer;
+font-weight: bold;	
+}
 #infoedit:hover{
 cursor:pointer;
 font-weight: bold;	
@@ -32,12 +41,14 @@ font-weight: bold;
 #selectreg{
 font-weight: bold;	
 cursor:pointer;
+border-bottom: 3px solid;
 }
 
 .sec2{
-	display: inline-block;
-	margin-top: 30px;
-	width: 600px;
+	display:inline-block;
+	width:1288.8px;
+	background-color: var(--color4);
+	border-left: 1px solid;
 }
 .sec2 #review-box{
 	margin-top: 20px;
@@ -59,7 +70,7 @@ cursor:pointer;
 .select_categ {
     font-family: 'Dancing Script', cursive;
     font-weight: 400;
-    font-size: x-large;
+    
     padding-bottom: 15px;
 }
 
