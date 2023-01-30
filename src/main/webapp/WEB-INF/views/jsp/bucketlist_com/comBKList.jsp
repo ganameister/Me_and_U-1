@@ -42,7 +42,7 @@
 					<div id="categoryBox">
 						<!-- 카테고리 -->
 						<div class="categoryBtn" id="categ">
-							<input type="button" class="cateBtn" id="categ1" value="전체">
+							<input type="button" class="cateBtn activeCTG" id="categ1" value="전체">
 							<input type="button" class="cateBtn" id="categ2" value="여행/아웃도어">
 							<input type="button" class="cateBtn" id="categ3" value="운동/스포츠">
 							<input type="button" class="cateBtn" id="categ4" value="게임/오락">
@@ -50,11 +50,6 @@
 							<input type="button" class="cateBtn" id="categ6" value="음악/악기">
 							<input type="button" class="cateBtn" id="categ7" value="기타">								
 						</div>
-						<!-- <select id="sortcomBKList" name="sortcomBKList">
-							<option value="최신순">최신순</option>
-				            <option value="조회순">조회순</option>
-				            <option value="이름순">이름순</option>
-						</select> -->
 						<form id="sortForm" action="" method="get">
 						    <select id="sortcomBKList" name="sortOption">
 						        <option value="최신순" ${param.sortOption == '최신순' ? 'selected' : ''}>최신순</option>
@@ -90,7 +85,15 @@
 					</div>
 				</div>
 			</section>
-			
+			<section>
+				<div class="page">
+				    <c:forEach begin="1" end="${pageNum}" var="num">
+					    <span>
+					    	<a href="/comBKList/${num}"><button id="pageBtn">${num }</button></a>
+						</span>
+					</c:forEach>
+				</div>
+			</section>
 		</div>
 		<!--  bottom --> 
 		<c:import url="/WEB-INF/views/layout/bottom.jsp" />

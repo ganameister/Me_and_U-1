@@ -46,9 +46,9 @@
 		<c:import url="/WEB-INF/views/layout/top.jsp" /> 
 		<div id="wrap">
 			<section name="input_gatherInfo">
-				<h4>모두의 버킷리스트 등록</h4>
+				<h2>모두의 버킷리스트 등록</h2>
 				<hr>
-				<h5>정보</h5>
+				<h3>정보</h3>
 				<form id="regGather_frm" class="regGather_frm" method="post" action="<c:url value='/comBKList/comBKListInsert'/>" enctype="multipart/form-data">
 					<table id="gatherInfo_tbl" class="gatherInfo_tbl">
 						<tr>
@@ -92,7 +92,7 @@
 						
 					</table>
 					<script>imgSize("img");</script>
-					<h5>버킷리스트 상세 설명</h5>
+					<h4>버킷리스트 상세 설명</h4>
 					<textarea id="summernote" name="combkListWrite"></textarea>
 					<br>
 					<input type="submit" id="info_Input" class="info_Input" value="등록하기">

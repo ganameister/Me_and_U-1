@@ -125,11 +125,40 @@ $(document).ready(function(){
 		if($(document).scrollTop() >= $('#slideShowBox').height())
 		{	
 			$(".Mainnavbar").attr("class","navbar");
+			$(".moveToTopIndex").css('display','block');
+			$(".actionIndex").css('display','block');
 		}
 		else
 		{
 			$(".navbar").attr("class","Mainnavbar");
+			$(".moveToTopIndex").css('display','none');
+			$(".actionIndex").css('display','none');
 		}
 	});
+	
+	$("#qna").on('click',function(){
+			window.location.href = "/qnaListView";
+		});
+ 	$("#btn2").on('click',function(){
+			window.location.href = "/qnaListView";
+		});
+	$("#faq").on('click',function(){
+			window.location.href = "/faqListView";
+		});
+	$("#btn3").on('click',function(){
+			window.location.href = "/faqListView";
+		});
+	$("#faq").on('click',function(){
+			window.location.href = "/faqListView";
+		});
+	$("#btn4").on('click',function(){
+			window.location.href = "/noticeListView";
+		});
+	$("#notice").on('click',function(){
+			window.location.href = "/noticeListView";
+		});
+	$("#btn5").on('click',function(){
+			window.location.href = "/contactListView";
+		});	
  });
 

@@ -158,6 +158,23 @@
   		DELETE FROM combklist WHERE combkListNo = #{combkListNo};
   	</delete>
   	
+  	<!-- 모두의 버킷리스트 게시물 개수 조회 -->
+  	<select id="combkListNoCount" resultType="int">
+  		SELECT count(combkListNo)
+  		FROM combklist
+  	</select>
+  	
+  	<!-- 모두의 버킷리스트 페이징 처리 -->
+  	<select id="listPage" parameterType="hashmap" resultType="com.Me_and_U.project.model.ComBKListVO">
+  		SELECT *
+  		FROM combklist
+  		ORDER BY combkListNo DESC
+  		LIMIT #{displayPost}, #{postNum}
+  	</select>
+  	
+  	
+  	<!-- 모두의 버킷리스트 구간 끝  -->
+  	
   	<!-- Main 페이지 -->
 	<!-- 최신순 3개 출력 -->
 	<select id="listRecentComBKList" resultMap="combklistResult">
@@ -165,8 +182,6 @@
 		FROM combklist
 		ORDER BY combkListNo DESC LIMIT 0,4
 	</select>
-  	
-  	<!-- 모두의 버킷리스트 구간 끝  -->
   	
   	<!-- 마이페이지 -->
   	<select id="MypagemyBKListView" resultMap="mybklistResult">

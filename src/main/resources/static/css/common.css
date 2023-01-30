@@ -109,11 +109,93 @@ body {
 	margin:13px 0px 0px 10px;
 }
 
-#moveToTop {
-	margin:8px 15px 0px 380px;
-	cursor:pointer;
-}
+
 /* 
 -------------------------------------- */
 
+.moveToTop {
+	cursor:pointer;
+	position:fixed;
+	right:2.5vw;
+	width:5vw;
+	bottom:5vh;
+}
 
+.moveToTop span {
+	position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* action button
+-------------------------------------- */
+
+.action{
+    position: fixed;
+    bottom: 11vh;    
+    right:2.5vw;
+    width:5vw;
+    opacity: 0.8;
+    border-radius:50%;
+    cursor:pointer;
+  }
+  .action span {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #274c5e;
+    font-size: 2em;
+    transition: 0.3s ease-in-out;
+  }
+  .action.active span{
+    transform: rotate(135deg);
+  }
+  .action ul{
+    position: absolute;
+    bottom: 70px;
+    background:var(--color8);
+    min-width: 100px;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  .action.active ul{
+    
+    bottom: 30px;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+  }
+  .action ul li{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    font-size:small;
+    color:#646464;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 2px;
+    transition: 0.3s;
+  }
+  .action ul li:hover{
+    font-weight: 100px;  
+  }
+  
+  
+  .action ul li img{
+    height: 25px;
+    margin-right: 10px;
+    opacity: 0.5;
+  }
+  .action ul li:hover img{
+    
+    opacity: 0.8;
+  }

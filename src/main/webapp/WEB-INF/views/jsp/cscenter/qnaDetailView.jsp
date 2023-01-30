@@ -105,18 +105,6 @@
 					<!-- Table -->
 				</section>
 				
-				<!-- board button Box -->
-				<div class="action" onclick="actionToggle();">
-					<span id="btnPl"><img src="<c:url value='/images/free-icon-add-circularss.png'/>" ></span>
-					<ul>
-						<li id="btn1" type="button" onClick="openchatbot()"><img src="<c:url value='/images/free-icon-chatbot-2068998.png'/>">Chat Bot</li>
-						<li id="btn2" type="button"><img src="<c:url value='/images/question.png'/>">QNA</li>
-						<li id="btn3" type="button"><img src="<c:url value='/images/faq.png'/>">FAQ</li>
-						<li id="btn4" type="button"><img src="<c:url value='/images/free-icon-notification-bell-7322162.png'/>">Notice</li>
-						<li id="btn5" type="button"><img src="<c:url value='/images/free-icon-paper-plane-149446.png'/>">Contact us</li>
-					</ul>
-				</div>			
-				<!--// button -->
 			</div>
 			<!--// service_warp -->
 

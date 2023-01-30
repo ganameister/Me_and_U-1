@@ -28,9 +28,9 @@
 			</div>
 			<div id="seconddiv">
 				<table >
-					<tr><td>제목 : ${combklistDetail.combkListTitle }</td></tr>
-					<tr><td>카테고리 : ${combklistDetail.ctgName }</td></tr>
-					<tr><td>한줄 설명 : ${combklistDetail.combkListSubtitle }</td></tr>
+					<tr><td>제목 : ${combklistDetail.combkListTitle }</td><td class="hideTD"></td></tr>
+					<tr><td>카테고리 : ${combklistDetail.ctgName }</td><td class="hideTD"></td></tr>
+					<tr><td class="subText" colspan="2">한줄 설명 : ${combklistDetail.combkListSubtitle }</td></tr>
 				</table>
 			</div>
 		</div>
