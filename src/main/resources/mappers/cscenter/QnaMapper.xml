@@ -43,32 +43,15 @@
 		 WHERE qnaNo=#{qnaNo}					
 		</update>
 		
-		<!--  
-		<insert id="insertQna" parameterType="com.Me_and_U.project.model.QnaVO" >
-		 INSERT INTO qna (qnaNo,qnaTitle,qnaWrite ) 		
-		 VALUES ( #{qnaNo}, #{qnaTitle},#{qnaWrite})					
-		</insert> --> 
 		
 		
-		<!-- 등록 parameterType="hashmap"-->  
+		<!-- 등록 -->  
 		<insert id="insertQna" parameterType="com.Me_and_U.project.model.QnaVO" >
   		INSERT INTO qna (memId,qnaNo,qnaTitle,qnaWrite ) 		
 		 VALUES (#{memId}, #{qnaNo}, #{qnaTitle},#{qnaWrite})	
   		</insert>
 		
-		<!-- <update id="updateReview" parameterType="hashmap">
- 		UPDATE review
-		 SET reviewTitle=#{reviewTitle},reviewWrite=#{reviewWrite},reviewImg=#{reviewImg},reviewCtg=#{reviewCtg}   		
-		 WHERE reviewNo=#{reviewNo}	
- 		</update> -->
-		
-		<!-- 회원정보 
-		<select id="getMemberInfo" parameterType="string" 
-  								resultType="com.Me_and_U.project.model.MemberVO">
-  		 SELECT memId
-  		 FROM member
-  		 WHERE memId=#{memId}
-  		</select>-->
+	
 			
 	</mapper>
 

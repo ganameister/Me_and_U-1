@@ -40,23 +40,24 @@
 		SELECT * 
 		FROM review 
 		where memId=#{memId}
-		</select>	
-		
+		</select>			
 		<!-- 등록 -->  
 		<insert id="insertReview" parameterType="com.Me_and_U.project.model.ReviewVO">
   		INSERT INTO review (memId,reviewNo,reviewTitle,reviewWrite,reviewImg,reviewCtg ) 		
 		 VALUES ( #{memId},#{reviewNo}, #{reviewTitle},#{reviewWrite},#{reviewImg},#{reviewCtg})	
-  		</insert>
-		
+  		</insert>		 
+		<!-- 수정 -->  
+		<update id="updateReview" parameterType="com.Me_and_U.project.model.ReviewVO" >
+		 UPDATE review
+		 SET reviewTitle=#{reviewTitle},reviewWrite=#{reviewWrite},reviewImg=#{reviewImg},reviewCtg=#{reviewCtg}   		
+		 WHERE reviewNo=#{reviewNo}					
+		</update>
 		<!-- 삭제 -->  
 	    <delete id="deleteReview" parameterType="int"  >
 	  	DELETE 
 	  	FROM review 
 	  	WHERE reviewNo=#{reviewNo}
-	    </delete> 
-		
-		
-		
+	    </delete> 	
 		<!-- 상세 -->
 		<select id="detailViewReview" parameterType="int" 
 		  							resultType="com.Me_and_U.project.model.ReviewVO" >
@@ -65,25 +66,35 @@
 		WHERE reviewNo=#{reviewNo}
 		</select>
 		
-		 
-	    
-		<!-- 수정 -->  
-		<update id="updateReview" parameterType="com.Me_and_U.project.model.ReviewVO" >
-		 UPDATE review
-		 SET reviewTitle=#{reviewTitle},reviewWrite=#{reviewWrite},reviewImg=#{reviewImg},reviewCtg=#{reviewCtg}   		
-		 WHERE reviewNo=#{reviewNo}					
-		</update>
-		
-		
-
-		
-		<!-- <update id="updateReview" parameterType="hashmap">
- 		UPDATE review
-		 SET reviewTitle=#{reviewTitle},reviewWrite=#{reviewWrite},reviewImg=#{reviewImg},reviewCtg=#{reviewCtg}   		
-		 WHERE reviewNo=#{reviewNo}	
- 		</update> -->
-		
-		
+		<!-- 검색 결과 보기  -->
+  		<select id="reviewSearch" parameterType="hashmap"  resultMap="reviewResult">
+  		SELECT *
+  		FROM review 
+  		WHERE
+	  		<choose>
+		  		<when test="type != null and type.equals('reviewTitle')">
+		  			reviewTitle Like CONCAT('%', #{keyword}, '%') 
+		  		</when>
+		  		<when test="type != null and type.equals('reviewWrite')">
+		  			reviewWrite Like CONCAT('%', #{keyword}, '%')
+		  		</when>
+	  		</choose> 		   		
+  		</select>
+  		
+  		
+  		
+  		
+  		
+  		
+  		<!-- <select id="reviewSearch" parameterType="string" resultMap="reviewResult">
+  		SELECT *
+  		FROM review 
+  		WHERE
+  		reviewTitle Like CONCAT('%', #{keyword}, '%') 
+  		OR reviewWrite Like CONCAT('%', #{keyword}, '%')   		
+  		</select> -->
+  
+  		
 		
 			
 	</mapper>

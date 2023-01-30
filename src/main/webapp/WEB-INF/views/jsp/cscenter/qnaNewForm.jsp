@@ -12,7 +12,12 @@
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterQnaInsert.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
+		<!-- 서머노트 js 및 css 추가 -->
+		<script src="<c:url value='/js/summernote/summernote-lite.js' /> "></script>
+		<script src="<c:url value='/js/summernote/lang/summernote-ko-KR.js' /> "></script>
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/summernote/summernote-lite.css' />">
 		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
+		<script src="<c:url value='/js/cscenter/qnaNewForm.js'/>"></script>
 		<script type="text/javascript">
 			function actionToggle(){
 				var action=document.querySelector('.action');
@@ -62,17 +67,20 @@
 								</tr>														
 								<tr class="line" >
 									<td class="Line"width="10px">Title.</td><td colspan="9">
-										<input type="text"id="qnaTitle" name="qnaTitle"></td></tr>
+										<input type="text"id="qnaTitle" name="qnaTitle" class="qnaTitle"></td></tr>
 								<tr class="line">
-									<td class="Line">Write.</td><td colspan="9">
-										<textarea id="qnaWrite" name="qnaWrite"> </textarea>
+									<td class="Line">Write.</td><td colspan="9" >
+										<textarea id="summernote" name="qnaWrite"class="qnaWrite"> </textarea>
 										</td></tr>
 								<tr class="BottomLine">
 									<th colspan="6" class="BottomLine"></th>
 								</tr>
 								<tr aling="center" class="insertQna">
-									<td colspan="5"><input type="submit" value="등록"> 
-									<input type="reset" value="취소"></td></tr>
+									<td colspan="5">
+									<input type="submit" value="등록" class="qnaSubmit"> 
+									<input type="reset" value="취소">
+									</td>
+								</tr>
 							</table>
 						</form>
 					</div>

@@ -1,6 +1,7 @@
 package com.Me_and_U.project.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.Me_and_U.project.model.ReviewVO;
 
@@ -12,4 +13,5 @@ public interface IReviewService {
 	public void updateReview(ReviewVO review); //수정
 	public void deleteReview(int reviewNo); 	//삭제
 	public void insertReview(ReviewVO review); //등록
+	public ArrayList<ReviewVO> reviewSearch(HashMap<String, Object> map);
 }

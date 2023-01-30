@@ -1,6 +1,7 @@
 package com.Me_and_U.project.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -28,6 +29,7 @@ public class ReviewService implements IReviewService {
 	
 	@Override
 	public void updateReview(ReviewVO review) {
+		//수정
 		dao.updateReview(review);
 	}
 
@@ -53,6 +55,12 @@ public class ReviewService implements IReviewService {
 	public ArrayList<ReviewVO> reviewMypage(String memId) {
 		
 		return dao.reviewMypage(memId);
+	}
+
+	@Override
+	public ArrayList<ReviewVO> reviewSearch(HashMap<String, Object> map){
+		
+		return dao.reviewSearch(map);
 	}
 
 	
