@@ -127,7 +127,7 @@ body {
 	max-width:1000px;
 	font-size: large;		
 }
-#qnaWrite {
+.qnaWrite {
 	border: 1px solid var(--color5);
 	width:100%;
 	max-width:1000px;
@@ -142,27 +142,27 @@ body {
 	width:100%;
 	max-width:1000px;		
 }
-#qnaTitle:focus {	
+.qnaTitle:focus {	
 	outline:none;
 	border-bottom:1px solid var(--color8);
 	width:100%;
 	max-width:1000px;		
 }
-#qnaWrite:focus {	
+.qnaWrite:focus {	
 	outline:none;
 	border: 1px solid var(--color8);
 	width:100%;
 	max-width:1000px;
 	height: 200px;		
 }
-#qnaWrite::-webkit-scrollbar {
+.qnaWrite::-webkit-scrollbar {
 	width:5px;
 	background-color:var(--color3);
 }
-#qnaWrite::-webkit-scrollbar-thumb {
+.qnaWrite::-webkit-scrollbar-thumb {
 	background-color:var(--color5);
 }
-#qnaWrite::-webkit-scrollbar-track {
+.qnaWrite::-webkit-scrollbar-track {
 	background-color:var(--color4);
 }
 /* #qna {

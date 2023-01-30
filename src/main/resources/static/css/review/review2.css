@@ -29,8 +29,14 @@
 	object-fit:cover;
 	
 }
+/**************************************************최종수정 1 */
 .review-img {
 	aspect-ratio: 13/9; /*이미지 사이즈 맞춤  */
+	max-width:300px;
+	min-width:300px;/*상단박스크기고정*/
+	max-height:250px;
+	min-height:250px;/*상단박스크기고정*/
+
 }
 
 #review_warp ol,ul {
@@ -124,10 +130,15 @@ body {
    
     
 }
-
+/**************************************************최종수정 1 */
 .review_container {
-	margin:2rem auto;
-	max-width: calc(100%-80px);
+	 margin:2rem auto; 
+	
+	/* widht:300px;
+	height:150px; */
+	max-width:300px;
+	min-width:300px;	
+	/* max-width:calc(100%-80px); */
 }
 
 /* IMAGE LIST
@@ -286,7 +297,7 @@ body {
 }
 
 /*삭제 버튼  */
-#delete {
+#deleteReviewBTN {
 	font-family: 'Noto Sans KR', sans-serif;
     font-weight: 300;
     font-size:13px;
@@ -301,7 +312,7 @@ body {
     margin-top:5px;
     margin-right:10px;
 }
-#update {
+#updateReviewBTN {
 	font-family: 'Noto Sans KR', sans-serif;
     font-weight: 300;
     font-size:13px;
@@ -316,7 +327,7 @@ body {
     margin-top:5px;
     margin-right:5px;
 }
-#delete:hover,#update:hover {
+#deleteReviewBTN:hover,#updateReviewBTN:hover {
 	border-style: none;
 	background: var(--color5);
 	font-size:15px;

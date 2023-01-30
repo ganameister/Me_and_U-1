@@ -20,40 +20,6 @@ $(document).ready(function(){
 		});
 	});
 	
-	//업로드한 이미지로 이미지 변경하기
-	$('#uploadFileOrigin').on('change', function(e1){
-		//파일 데이터 가져오기
- 		var file = e1.target.files[0];
- 		console.log(file);
- 		var reader = new FileReader();
- 		reader.onload =function(e2){
-			$('#preview').attr('src', e2.target.result);
-		}
-		reader.readAsDataURL(file);
-		
-		/*
-		// 파일명 추출
- 		var fileName = $('#imgUpload').val().split("\\").pop(); // 파일명만 추출
- 		console.log(fileName);
- 		
- 		$.ajax({
- 			type:"post",
- 			url:"imgPull",
- 			enctype:"multipart/form-data",
- 			processData:false,
- 			contentType:false, 			
- 			data: form,
- 			//data: formData,
- 			success:function(result){
- 				$('#preview').attr("src",'/upload/'+fileName);
- 			},
- 			error:function(){
- 				alert("실패");
- 			}
- 		}); // ajax 종료  */	  
- 		
-	}); //이미지 클릭 이벤트 종료
-
 	
 		var num=0;
 		$(".heartbtnImg").on('click',function(){
@@ -70,30 +36,126 @@ $(document).ready(function(){
 	$("#newPost").on('click',function(){
 			window.location.href = "/reviewRegister";
 		});	
-    $("#resetBtn").on('click',function(){
-			window.location.href = "/reviewListView";
-		});	
+   
     
     
 	//삭제
-/*
-	$("#deleteReviewBTN").on("click", function(){
-	    var reviewNo = $(this).data("reviewNo");
-	    
-	    if(confirm("정말 삭제하시겠습니까?")){
-	    	$.ajax({
-	        	type: "GET",
-	       		url: "/cscenter/deleteReview/{reviewNo}",
-	       		data: {"reviewNo": reviewNo},
-	       		success: function(data){
-	          		alert("삭제가 완료되었습니다.");
-	          		location.href="/reviewListView";
-	        	},
-	       		 error: function(error){
-	         		alert("실패");
-	       		 }
-	     	});
-	    }
-	});
-	*/   
+ 	$(".deleteReviewBTN").on("click", function(){
+        var reviewNo = $(this).val();
+
+        if(confirm("정말 삭제하시겠습니까?")){
+            $.ajax({
+                type: "post",
+                   url: "/deleteReview",
+                   data: {"reviewNo": reviewNo},
+                   success: function(data){
+                      alert("삭제가 완료되었습니다.");
+                      location.href="/reviewListView";
+                },
+                    error: function(error){
+                     alert("실패");
+                    }
+             });
+        }
+    });	
+    
+    
+    $('#searchForm').on('submit', function(){ 	
+    
+ 		event.preventDefault();
+ 		
+ 		var formData = $(this).serialize();	
+ 			
+	    $.ajax({
+	      type:"post",
+	      url:"reviewSearch",
+	      data: formData,
+ 		  success:function(result){
+ 				$('#searchResultBox').html(result);
+ 		  },
+	      error:function(){
+	        alert("검색어를 입력해주세요.");
+	      }
+	    }); 	
+  	});
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ /*   $('#enter').on('click', function(){ 	
+ 		event.preventDefault();
+ 			
+	    $.ajax({
+	      type:"get",
+	      url:"/showSearchResult",
+	      data: {"keyword":$('#searchReview').val()},
+	      dataType: "text",
+	      success:function(result){ 
+	        $('#reviewContainer').html(result);
+	      },
+	      error:function(){
+	        alert("검색어를 입력해주세요.");
+	      }
+	    }); 	
+  	});
+    
+    
+ */   
+    
+    
+    
+    
+    
+    
+    
+ /*   
+    //수정
+	$(".updateReviewBTN").on("click", function(){
+       var reviewNo = $(this).val();
+       if(confirm("정말 수정하시겠습니까?"+reviewNo)){
+         $.ajax({
+		        type: "post",					        
+		       	url: "/jsp/review/reviewUpdateForm/{reviewNo}",
+		       	data: {"reviewNo": reviewNo},		       				
+		       	success: 
+				       	function(data){            
+				        	location.href="/jsp/review/reviewUpdateForm";    
+				    	},
+				        error: function(error){
+				         alert("실패");
+				        }
+     	});     }      
+    });		
+*/	
+	
+	/**	
+ $(document).ready(function(){
+ 	$("#update").on('click',function(){
+			location.href = "/cscenter/qnaUpdateForm/${qna.qnaNo}";
+		});
+	
+
+	
+	$("#delete").on('click',function(){
+			var answer = confirm("삭제하시겠습니까?");
+			if(answer){
+				location.href = "<c:url value='/cscenter/deleteQna/${qna.qnaNo}'/>";
+			}
+		});
+		onclick="reviewUpdate();"
+		<script type="text/javascript">
+		function reviewUpdate(){
+				location.href = "<c:url value='/review/reviewUpdateForm/${rev.reviewNo}'/>";			
+		}		
+		</script>
+*/
+	
+	
+	   
 });

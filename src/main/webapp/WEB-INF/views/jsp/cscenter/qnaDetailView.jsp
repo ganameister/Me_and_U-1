@@ -14,7 +14,6 @@
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterDetailVew.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
-		<script src="<c:url value='/js/cscenter/cscenterDetail_qna.js'/>"></script>
 		<script type="text/javascript">
 		function actionToggle(){
 			var action=document.querySelector('.action');

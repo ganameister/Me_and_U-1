@@ -12,7 +12,7 @@ body{
 
 .review-top {
 	margin-top: 60px;     
-    margin-left:250px;
+     margin-left:250px;
 }
 
 .subTitle {
@@ -69,10 +69,13 @@ select::-ms-expand {
   border-spacing : 10px 15px;
   width: 1100px;
 }
-
+/* title.write. */
 #gatherInfo_tbl th{
-  font-size : 13px;
-  width : 150px;
+  font-size:medium;
+  width : 60px;
+  text-align : left;
+  margin-left:30px;
+  margin-top:10px;
 }
 
 #gatherInfo_tbl .gatherInfo_input {
@@ -80,41 +83,94 @@ select::-ms-expand {
   width : 150px;
   height : 30px;
   vertical-align: middle;
-  text-align : center;
-  border-radius : 5px;
+  text-align : left;
+ 
   font-family: 'Noto Sans KR', sans-serif;
+  font-size:medium;
 }
-#gatherInfo_tbl .gatherInfo_inputLong {
+
+.gatherInfo_inputLong{
   left : 100px;
-  width : 500px;
+  width : 600px;
   height : 30px;
   vertical-align: middle;
-  text-align : center;
-  border-radius : 5px;
+  text-align : left;
+  border-style :none;
+	border-bottom:1px solid var(--color5);
   font-family: 'Noto Sans KR', sans-serif;
+  font-size:medium;
 }
+
+#gatherInfo_tbl .gatherInfo_inputLong2 {
+  left : 100px; 
+  width : 600px;
+  height : 220px;
+  vertical-align: middle;
+  text-align : left;
+  border: 1px solid var(--color5);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:medium;
+  overflow-y:scroll;
+	text-align:top;
+}
+
+.gatherInfo_inputLong:focus {	
+	outline:none;
+	border-bottom:1px solid var(--color8);
+}
+#gatherInfo_tbl .gatherInfo_inputLong2:focus {	
+	outline:none;
+	border: 1px solid var(--color8);	
+}
+#gatherInfo_tbl .gatherInfo_inputLong2::-webkit-scrollbar {
+	width:5px;
+	background-color:var(--color3);
+}
+#gatherInfo_tbl .gatherInfo_inputLong2::-webkit-scrollbar-thumb {
+	background-color:var(--color5);
+}
+#gatherInfo_tbl .gatherInfo_inputLong2::-webkit-scrollbar-track {
+	background-color:var(--color4);
+}
+/*select 박스  */
+.reviewCt{	
+	border-style :none;
+	border-bottom:1px solid var(--color5);
+	border-radius:0;
+	margin-left:5px;
+	width: 100px;
+}
+
+.reviewCt:focus {	
+	outline:none;
+	border-bottom:1px solid var(--color8);
+}
+
+
+
 
 #gatherInfo_tbl #recruit {
   width : 502px;
   font-weight : bold;
   background-color :#E2E2E2;
-  font-size: 14px;
+  font-size:medium;
 }
 
 #gatherInfo_tbl .gatherInfo_inputTime {
   left : 100px;
-  width : 233px;
+  width : 200px;
   height : 30px;
   text-align : center;
-  border-radius : 5px;
+ 
   font-family: 'Noto Sans KR', sans-serif;
 }
+
 
 /* 파일 div css 넣기 */
 .filebox label {
   width : 330px;
   display: inline-block;
-  padding: .5em .75em;
+  padding: .5em .75em; 
   color: #999;
   background-color: #fdfdfd;
   font-weight : bold;
@@ -137,6 +193,17 @@ select::-ms-expand {
   border: 0;
   
 }
+/* 
+div{
+	border: 1px solid red;
+}
+td {
+		border: 1px solid green;	
+}
+th {
+			border: 1px solid pink;	
+}*/
+
 
 /* 등록 취소 버튼 */
 .boxBtn {
@@ -151,7 +218,7 @@ select::-ms-expand {
     font-size:medium;
     background: var(--color3);
     color: grey;
-     height: 40px;
+    height: 40px;
     width: 80px;
     border-radius: 2px;
     border: 1px solid var(--color5);   
@@ -172,14 +239,13 @@ select::-ms-expand {
     font-size:medium;
     background: var(--color3);
     color: grey;
-     height: 40px;
+    height: 40px;
     width: 80px;
     border-radius: 2px;
     border: 1px solid var(--color5);   
-   /*  border-style: none;  */
+   /*  border-style: none;   */
 }
 #line {
 	font-family: 'Noto Sans KR', sans-serif;
     font-weight: 300;
-    font-size:medium;
 }
