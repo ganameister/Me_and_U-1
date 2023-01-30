@@ -57,7 +57,7 @@ public class BucketListController {
 			ArrayList<MyBKListVO> myBKList = service.myBKListView(memId);
 			model.addAttribute("myBKList", myBKList);
 
-			return "jsp/bucketlist_my/myBKList";
+			return "redirect:/myBKList";
 		} else {
 			return "redirect:/login";
 		}
@@ -161,19 +161,41 @@ public class BucketListController {
 	/** ========== 모두의 버킷리스트 page 시작 ========== **/
 	
 	// 모두의 버킷리스트 페이지 열기
-	@RequestMapping("/comBKList")
-	public String comBKList(Model model, @RequestParam(value = "sortOption", defaultValue = "최신순") String sortOption) {
+	@RequestMapping("/comBKList/{num}")
+	public String comBKList(Model model, @RequestParam(value = "sortOption", defaultValue = "최신순") String sortOption, @PathVariable int num) {
 		
-		ArrayList<ComBKListVO> comBKList = null;
-        if (sortOption.equals("최신순")) {
-            comBKList = service.comBKListViewRec();
-        } else if (sortOption.equals("조회순")) {
-            comBKList = service.comBKListViewCnt();
-        } else if (sortOption.equals("이름순")) {
-            comBKList = service.comBKListViewTitle();
-        }
-        
-        model.addAttribute("comBKList", comBKList);
+		int count = service.combkListNoCount();
+		int range = 1; // 페이지 범위 1:1~5, 2:6~10
+		int pageSize = 5; // 한 페이지 범위에 보여질 페이지 개수
+		
+		// 한 페이지에 출력할 게시물 개수
+		int postNum = 8;
+		
+		// 페이징 번호
+		int pageNum = (int) Math.ceil((double) count / postNum);
+		
+		// 출력할 게시물
+		int displayPost = (num - 1) * postNum;
+		
+		ArrayList<ComBKListVO> sortedComBKList = null;
+
+		if (sortOption.equals("최신순")) {
+		    sortedComBKList = service.comBKListViewRec();
+		} else if (sortOption.equals("조회순")) {
+		    sortedComBKList = service.comBKListViewCnt();
+		} else if (sortOption.equals("이름순")) {
+		    sortedComBKList = service.comBKListViewTitle();
+		}
+
+		ArrayList<ComBKListVO> comBKList = new ArrayList<>();
+		for (int i = displayPost; i < displayPost + postNum && i < sortedComBKList.size(); i++) {
+		    comBKList.add(sortedComBKList.get(i));
+		}
+		
+		
+		model.addAttribute("pageNum", pageNum);
+		model.addAttribute("comBKList", comBKList);
+		model.addAttribute("sortOption", sortOption);
 		
 		return "jsp/bucketlist_com/comBKList";
 	}
@@ -208,7 +230,7 @@ public class BucketListController {
 			
 			service.comBKListInsert(combklist);		
 			
-			return "redirect:/comBKList";
+			return "redirect:/comBKList/1";
 		}
 
 	// 모두의 버킷리스트 상세 페이지 열기 (글 주인에게만 삭제버튼 보임)
@@ -231,7 +253,7 @@ public class BucketListController {
 		
 		service.deletecomBKList(combkListNo);	
 		
-		return "redirect:/comBKList";
+		return "redirect:/comBKList/1";
 	}
 	
 	/** ========== 모두의 버킷리스트 page 끝 ========== **/

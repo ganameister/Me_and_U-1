@@ -72,6 +72,8 @@
 	$cateBtn.each(function(index) {
 		var search = ["", "1", "2", "3", "4", "5","6"];
 		$('#categ' + (index+1)).on('click', function() {
+			$cateBtn.removeClass("activeCTG");
+       		$(this).addClass("activeCTG");
 			if(search[index] == "") {
 				$(".itemContainer").show();
 			} else {

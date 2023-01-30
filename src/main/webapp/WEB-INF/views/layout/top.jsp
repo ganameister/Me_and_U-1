@@ -8,7 +8,7 @@
 			</div>
 			<ul class="nav_menu">
 				<li><a href="<c:url value='/myBKList'/>">나의 버킷리스트</a></li>
-				<li><a href="<c:url value='/comBKList'/>">모두의 버킷리스트</a></li>
+				<li><a href="<c:url value='/comBKList/1'/>">모두의 버킷리스트</a></li>
 				<li><a href="">버킷리스트 모임</a></li>
 				<li><a href="">번개 모임</a></li>
 				<li><a href="<c:url value='/regGatherListView'/>">정기 모임</a></li>

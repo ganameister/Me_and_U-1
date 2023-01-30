@@ -143,5 +143,20 @@ public class BKListService implements IBKListService {
 		return dao.MypagemyBKListView(memId);
 	}
 
+	@Override
+	public int combkListNoCount() {
+		return dao.combkListNoCount();
+	}
+
+	@Override
+	public ArrayList<ComBKListVO> listPage(int displayPost, int postNum) {
+		HashMap<String, Integer> data = new HashMap<String, Integer>();
+		
+		data.put("displayPost", displayPost);
+		data.put("postNum", postNum);
+		
+		return dao.listPage(displayPost, postNum);
+	}
+
 
 }

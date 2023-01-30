@@ -12,7 +12,16 @@
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/index.css' />">
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/review/reviewPlus.css' />">
-		<script src="<c:url value='/js/index.js' />"></script>			
+		<script src="<c:url value='/js/index.js' />"></script>
+		<script type="text/javascript">
+			function actionIndexToggle(){
+				var action=document.querySelector('.actionIndex');
+				action.classList.toggle('active')
+			}
+			function openchatbot() {
+				var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
+			}
+		</script>	
 	</head>
 	<body>
 		<header>
@@ -20,7 +29,7 @@
 				<a href="/" class="top"><img src="<c:url value='/images/me_and_u2.png'/>" id="logo" width="100" height="40"></a>
 				<ul class="nav_menu">
 					<li><a href="<c:url value='/myBKList'/>">나의 버킷리스트</a></li>
-					<li><a href="<c:url value='/comBKList'/>">모두의 버킷리스트</a></li>
+					<li><a href="<c:url value='/comBKList/${1 }'/>">모두의 버킷리스트</a></li>
 					<li><a href="">버킷리스트 모임</a></li>
 					<li><a href="">번개 모임</a></li>
 					<li><a href="<c:url value='/regGatherListView'/>">정기 모임</a></li>
@@ -359,5 +368,21 @@
 		</div>
 		<!--  bottom --> 
 		<c:import url="/WEB-INF/views/layout/bottom.jsp" /> 
+		<!-- board button Box -->
+		<div class="actionIndex" onclick="actionIndexToggle();">
+			<span id="btnPl"><img src="<c:url value='/images/free-icon-add-circularss.png'/>" ></span>
+			<ul>
+				<li id="btn1" type="button" onclick="openchatbot();"><img src="<c:url value='/images/free-icon-chatbot-2068998.png'/>">Chat Bot</li>
+				<li id="btn2" type="button"><img src="<c:url value='/images/question.png'/>">QNA</li>
+				<li id="btn3" type="button"><img src="<c:url value='/images/faq.png'/>">FAQ</li>
+				<li id="btn4" type="button"><img src="<c:url value='/images/free-icon-notification-bell-7322162.png'/>">Notice</li>
+				<li id="btn5" type="button"><img src="<c:url value='/images/free-icon-paper-plane-149446.png'/>">Contact us</li>
+			</ul>
+		</div>
+		<div class="moveToTopIndex">
+			<span>
+				<img src="<c:url value='/images/arrowup.png'/>" id="moveToTop" width="36" height="36">
+			</span>
+		</div>
 	</body>
 </html>
