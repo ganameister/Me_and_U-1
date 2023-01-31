@@ -158,7 +158,12 @@ html, body {
 }
 
 .tableText {
+	padding:6px;
 	border-bottom:1px dashed black;
+}
+
+.tableTextView {
+	padding:6px;
 }
 
 .moveToTop {

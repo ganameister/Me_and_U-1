@@ -22,7 +22,7 @@ body {
 #slideShow {	
 	width:1600px; 	/* 83.3vw */
 	position: relative;
-	height: 370px;
+	height: 360px;
 	text-align:center;
 }
 
@@ -34,26 +34,26 @@ body {
 
 #prevButton {
 	position: absolute;
-	top: 120px;
+	top: 130px;
 	left: 4%;
-	opacity: 0.5;
+	opacity: 0.2;
 	cursor: pointer;
 }
 
 #nextButton {
 	position: absolute;
-	top: 120px;
+	top: 130px;
 	right: 4%;
-	opacity: 0.5;
+	opacity: 0.2;
 	cursor: pointer;
 }
 
 #prevButton:hover {
-	opacity: 0.9;
+	opacity: 0.5;
 }
 
 #nextButton:hover {
-	opacity: 0.9;
+	opacity: 0.5;
 }
 
 /* 슬라이드 텍스트 */
@@ -62,7 +62,7 @@ body {
 	color:white;
 	z-index: 10;
 	opacity:0.8;
-	top:145px;
+	top:155px;
 	margin-left:710px;
 	font-size:25px;
 	text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
@@ -79,28 +79,15 @@ body {
 #slidePanel {
 	position: relative;
 	width: 4800px;	/* 498vw */
-	height: 330px;
+	height: 360px;
 }
 
 .slideImage {
 	float: left;
 	width: 1600px;	/* 83.3vw */
-	height: 330px;
+	height: 360px;
 }
 
-/* 컨트롤 버튼 */
-#controlButtonBox {
-	margin: 0 auto;
-	text-align:center;
-}
-
-#controlButtonBox img {
-	margin: 12px;
-}
-
-.controlButton:hover {
-	cursor:pointer;
-}
 /************** SlideShow 끝 **************/
 
 

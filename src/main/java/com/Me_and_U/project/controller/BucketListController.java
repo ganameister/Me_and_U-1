@@ -3,6 +3,7 @@ package com.Me_and_U.project.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -19,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.Me_and_U.project.model.ComBKListVO;
 import com.Me_and_U.project.model.MyBKListVO;
 import com.Me_and_U.project.model.MyComBKListVO;
+import com.Me_and_U.project.model.ReviewVO;
 import com.Me_and_U.project.service.BKListService;
 
 @Controller
@@ -165,8 +167,6 @@ public class BucketListController {
 	public String comBKList(Model model, @RequestParam(value = "sortOption", defaultValue = "최신순") String sortOption, @PathVariable int num) {
 		
 		int count = service.combkListNoCount();
-		int range = 1; // 페이지 범위 1:1~5, 2:6~10
-		int pageSize = 5; // 한 페이지 범위에 보여질 페이지 개수
 		
 		// 한 페이지에 출력할 게시물 개수
 		int postNum = 8;
@@ -192,10 +192,10 @@ public class BucketListController {
 		    comBKList.add(sortedComBKList.get(i));
 		}
 		
-		
 		model.addAttribute("pageNum", pageNum);
 		model.addAttribute("comBKList", comBKList);
 		model.addAttribute("sortOption", sortOption);
+		model.addAttribute("currentPage", num); // prev next 용
 		
 		return "jsp/bucketlist_com/comBKList";
 	}
@@ -252,6 +252,15 @@ public class BucketListController {
 	public String deletecomBKList(int combkListNo) { 
 		
 		service.deletecomBKList(combkListNo);	
+		
+		return "redirect:/comBKList/1";
+	}
+	
+	// 모두의 버킷리스트 검색
+	@RequestMapping("/comBKList/Search")
+	public String comBKListSearch(@RequestParam HashMap<String, Object> param,Model model) {
+		ArrayList<ComBKListVO> comBKList = service.comBKListSearch(param);
+		model.addAttribute("comBKList", comBKList);
 		
 		return "redirect:/comBKList/1";
 	}

@@ -134,30 +134,38 @@ $(document).ready(function(){
 			$(".moveToTopIndex").css('display','none');
 			$(".actionIndex").css('display','none');
 		}
+		
 	});
+	
+	// moveToTop 이미지 클릭 시 top으로 이동
+	$('.moveToTopIndex').on('click', function(){
+		// html만 선택해도 됨
+		$('html, body').animate({scrollTop:0}, 500); // 0.5초 동안 top:0 위치로 스크롤 이동
+	});
+	
 	
 	$("#qna").on('click',function(){
 			window.location.href = "/qnaListView";
 		});
- 	$("#btn2").on('click',function(){
+ 	$("#btn22").on('click',function(){
 			window.location.href = "/qnaListView";
 		});
 	$("#faq").on('click',function(){
 			window.location.href = "/faqListView";
 		});
-	$("#btn3").on('click',function(){
+	$("#btn33").on('click',function(){
 			window.location.href = "/faqListView";
 		});
 	$("#faq").on('click',function(){
 			window.location.href = "/faqListView";
 		});
-	$("#btn4").on('click',function(){
+	$("#btn44").on('click',function(){
 			window.location.href = "/noticeListView";
 		});
 	$("#notice").on('click',function(){
 			window.location.href = "/noticeListView";
 		});
-	$("#btn5").on('click',function(){
+	$("#btn55").on('click',function(){
 			window.location.href = "/contactListView";
 		});	
  });

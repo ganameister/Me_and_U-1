@@ -1,6 +1,7 @@
 package com.Me_and_U.project.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.Me_and_U.project.model.ComBKListVO;
 import com.Me_and_U.project.model.MyBKListVO;
@@ -30,6 +31,7 @@ public interface IBKListService {
 	public int combkListViewcnt(int combkListNo); // 모두의 버킷리스트 조회수
 	public int combkListNoCount(); // 모두의 버킷리스트 게시물 개수 조회
 	public ArrayList<ComBKListVO> listPage(int displayPost, int postNum); // 모두의 버킷리스트 페이징 처리
+	public ArrayList<ComBKListVO> comBKListSearch(HashMap<String, Object> map); // 모두의 버킷리스트 검색
 	
 	public ArrayList<ComBKListVO> listRecentComBKList(); // 메인 페이지 최신순
 	public ArrayList<MyBKListVO> MypagemyBKListView(String memId); // 마이페이지 나의 버킷리스트 목록

@@ -18,8 +18,8 @@
 			<section>
 				<div id="slideShow">
 					<div id="prevNextButtonBox">
-						<img id="prevButton" src="<c:url value='/images/prevButton.png'/>">
-						<img id="nextButton" src="<c:url value='/images/nextButton.png'/>">
+						<img id="prevButton" class="prevNextButton" src="<c:url value='/images/prevButton.png'/>">
+						<img id="nextButton" class="prevNextButton" src="<c:url value='/images/nextButton.png'/>">
 					</div>
 					<div id="slideText">
 						<b>나의 버킷리스트</b>
@@ -29,11 +29,6 @@
 							<img src="<c:url value='/images/배낭여행.jpg'/>" class="slideImage">
 							<img src="<c:url value='/images/런던브릿지1.jpg'/>" class="slideImage">
 							<img src="<c:url value='/images/사이클1.jpg'/>" class="slideImage">
-						</div>
-						<div id="controlButtonBox">
-							<img src="<c:url value='/images/controlButton2.png'/>" class="controlButton">
-							<img src="<c:url value='/images/controlButton1.png'/>" class="controlButton">
-							<img src="<c:url value='/images/controlButton1.png'/>" class="controlButton">
 						</div>
 					</div>
 				</div>
