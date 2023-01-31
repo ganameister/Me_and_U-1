@@ -19,7 +19,7 @@
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/review/reviewRegister.css' />">
 		<script src="<c:url value='/js/jquery-3.6.1.min.js' />"></script>
-		<script src="<c:url value='/js/review/reviewRegister.js' />"></script>		
+		<script src="<c:url value='/js/review/reviewUpdateForm.js' />"></script>		
 		<script>
 			 function imgSize(which){
 		   		var width = eval("document."+which+".width");
@@ -61,8 +61,10 @@
 				
 				
 				<div name="input_gatherInfo" id="input_gatherInfo"><hr id="line">
-					<!-- inputUpdate  -->
-					<form id="regGather_frm" class="regGather_frm" method="post" action="<c:url value='/updateReview'/>" enctype="multipart/form-data">
+					
+					
+					<!-- form  Update-->
+					<form id="regGather_frm" class="regGather_frm" method="post" action="<c:url value='/jsp/review/reviewUpdateForm'/>" enctype="multipart/form-data">
 						<table id="gatherInfo_tbl" class="gatherInfo_tbl">
 							<tr>								
 								<td rowspan="8"><img id="preview" src="<c:url value='/images/${review.reviewImg }'/>"  width="350" height="350"></td>
@@ -109,7 +111,7 @@
 						</div>						
 						<hr id="line">						
 					</form>
-					
+					<!-- /form -->
 					<br>
 				</div>
 				<br>

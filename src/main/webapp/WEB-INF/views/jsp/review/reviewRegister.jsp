@@ -92,6 +92,7 @@
 								<td colspan="3" rowspan="3">
 									<textarea id="summernote" name="reviewWrite"class="gatherInfo_inputLong2"> </textarea>
 									<!-- <input type="text" class="gatherInfo_inputLong2" placeholder="한줄평 입력" name="reviewWrite" id="reviewWrite"> -->
+									<%-- <input type="hidden" name="reviewNo" value="${review.reviewNo}"> --%>
 								</td>
 							</tr>
 							

@@ -21,18 +21,18 @@ $(document).ready(function(){
 	});
 	
 	
-		var num=0;
-		$(".heartbtnImg").on('click',function(){
-			
-			if(num==0){
-				$(this).attr('src','/images/redheart.png');
-				num=1;
-			}else {
-				$(this).attr('src','/images/heart.png');
-				num=0;
-			}
-		}); 
-	
+	var num=0;
+	$(".heartbtnImg").on('click',function(){
+		
+		if(num==0){
+			$(this).attr('src','/images/redheart.png');
+			num=1;
+		}else {
+			$(this).attr('src','/images/heart.png');
+			num=0;
+		}
+	}); 
+
 	$("#newPost").on('click',function(){
 			window.location.href = "/reviewRegister";
 		});	
@@ -74,7 +74,7 @@ $(document).ready(function(){
  				$('#searchResultBox').html(result);
  		  },
 	      error:function(){
-	        alert("검색어를 입력해주세요.");
+	        alert("검색 내용을 선택해주세요.");
 	      }
 	    }); 	
   	});

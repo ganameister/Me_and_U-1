@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.UUID;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -114,51 +112,44 @@ public class ReviewController {
 		return "jsp/review/reviewSearchResult";
 	}
 	
-	
-	
+	//수정	
 	@RequestMapping("/jsp/review/reviewUpdateForm/{reviewNo}")
 	public String reviewUpdateForm(@PathVariable String reviewNo,
-									
+						//			@RequestParam("uploadFileOrigin") MultipartFile file,
+						//			HttpServletRequest request,
 									Model model)throws  IOException {
-
 		ReviewVO review = service.detailViewReview(Integer.parseInt(reviewNo));
 		
-		
-		
-		
-		
-		
-		model.addAttribute("review", review);
-						
+		System.out.println(review.getReviewNo());
+		System.out.println(review.getReviewImg());
+		//새로운 파일이 등록되었는지 확인
+//      if(file.getOriginalFilename() != null && file.getOriginalFilename() !="") {
+//          //if(file.getOriginalFilename() != null && !file.getOriginalFilename().equals(""))
+//          //기존 파일을 삭제
+//          String uploadPath = "C:/springWorkspace/me_and_u_images/";
+//          new File(uploadPath + request.getParameter("reviewImg")).delete();
+//
+//          //새로 파일을 등록
+//          String originalFileName = file.getOriginalFilename();
+//          File sendFile = new File(uploadPath + originalFileName);
+//          file.transferTo(sendFile);
+//          review.setReviewImg(originalFileName);
+//
+//      }else { 
+//          //새로운 파일이 등록안되었으면
+//          //기존 이미지를 그대로 사용
+//          review.setReviewImg(request.getParameter("reviewImg"));
+//      }							
+		model.addAttribute("review", review);				
 		return "jsp/review/reviewUpdateForm";
 	}
 	
 	// 수정값 update
-	@RequestMapping("/updateReview")
-	public String updateReview(ReviewVO review,
-								@RequestParam("uploadFileOrigin") MultipartFile file,
-								HttpServletRequest request
-								)throws  IOException {
-		System.out.println("수정값 컨트롤러");//작동
-		//새로운 파일이 등록되었는지 확인
-        if(file.getOriginalFilename() != null && file.getOriginalFilename() !="") {
-            //if(file.getOriginalFilename() != null && !file.getOriginalFilename().equals(""))
-            //기존 파일을 삭제
-            String uploadPath = "C:/springWorkspace/me_and_u_images/";
-            new File(uploadPath + request.getParameter("reviewImg")).delete();
-
-            //새로 파일을 등록
-            String originalFileName = file.getOriginalFilename();
-            File sendFile = new File(uploadPath + originalFileName);
-            file.transferTo(sendFile);
-            review.setReviewImg(originalFileName);
-
-        }else { 
-            //새로운 파일이 등록안되었으면
-            //기존 이미지를 그대로 사용
-            review.setReviewImg(request.getParameter("reviewImg"));
-        }
+	@RequestMapping("/jsp/review/reviewUpdateForm")
+	public String updateReview(ReviewVO review) {
 		
+		System.out.println("수정값 update컨트롤러");//작동
+		System.out.println(review.getReviewNo());	
 		
 		service.updateReview(review);
 		return "redirect:/reviewListView";

@@ -55,13 +55,13 @@
 					
 					<!-- 검색 -->
 					<form id="searchForm" >
-						<select id="type" name="type">
-							<option value="">검색 조건선택</option>
+						<select id="type" name="type" class="selectbox">
+							<option value="">검색 선택</option>
 							<option value="reviewTitle">글 제목</option>
 							<option value="reviewWrite">글 내용</option>
 						</select>
-						<input type="text" name="keyword" >
-						<input type="submit" value="Enter">					
+						<input type="text" name="keyword" class="inputBtn" placeholder="검색 내용을 입력해주세요.">
+						<input type="submit" value="Enter"class="enterBtn">					
 					</form>	
 																								
 					<ol class="image-list grid-view" id="searchResultBox">
