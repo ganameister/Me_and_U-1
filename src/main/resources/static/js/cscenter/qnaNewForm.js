@@ -1,5 +1,5 @@
 /**
- * cscenter.js
+ * qnaNewForm.js
  */
  
  $(document).ready(function(){

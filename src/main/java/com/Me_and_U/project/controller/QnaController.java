@@ -79,6 +79,7 @@ public class QnaController {
 		}
 	}
 	
+	
 	@RequestMapping("jsp/cscenter/qnaNewForm")
 	public String insertQna(QnaVO qna,HttpSession session) {
 		String memId = (String) session.getAttribute("sid");
@@ -87,7 +88,11 @@ public class QnaController {
 		return "redirect:/qnaListView";
 	}		
 	
-	
+	@RequestMapping("/contactListView")
+	public String contactListView(Model model) {
+				
+		return "jsp/cscenter/contactListView";
+	}
 	
 }
 

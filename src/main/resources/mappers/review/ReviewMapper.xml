@@ -68,9 +68,9 @@
 		
 		<!-- 검색 결과 보기  -->
   		<select id="reviewSearch" parameterType="hashmap"  resultMap="reviewResult">
-  		SELECT *
-  		FROM review 
-  		WHERE
+  		SELECT * 
+		FROM review 
+		WHERE 
 	  		<choose>
 		  		<when test="type != null and type.equals('reviewTitle')">
 		  			reviewTitle Like CONCAT('%', #{keyword}, '%') 
