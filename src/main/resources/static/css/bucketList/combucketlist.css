@@ -58,46 +58,21 @@ th,td {
 #categoryBox select {
 	margin-left:20px;
 	margin-top:30px;
-	border-radius:3px;
-	color: var(--color5);
-	background: var(--color4);
+	border-radius:5px;
+	color: var(--color4);
+	background: var(--color5);
 	width:67px;
 	height:35px;
 	font-weight:bold;
 	font-family: 'Noto Sans KR', sans-serif;
-	border:1px solid var(--color5);
-}
-
-#categoryBox select:hover {
-	color: var(--color4);
-	background: var(--color5);
 	border:1px solid var(--color4);
 }
 
-#registerBtn {
-	float:right;
-	margin-top:27px;
-	margin-right:77px;
-	color: var(--color5);
-	background: var(--color4);
-	border-radius:3px;
-	font-size:17px;
-	font-weight:bold;
-	width:100px;
-    height:35px;
-    border-radius: 2px;
-    border-style: none;
-    cursor: pointer;
-    font-family: 'Noto Sans KR', sans-serif;
-    border:1px solid var(--color5);
+#categoryBox select:focus {
+	outline:none;
 }
 
-#registerBtn:hover {
-	color: var(--color4);
-	background: var(--color5);
-	border:1px solid var(--color4);
-}
-
+/* 카테고리 버튼 */
 .categoryBtn {
 	float:left;
 	margin-left:67px;
@@ -113,7 +88,7 @@ th,td {
     height:35px;
     cursor: pointer;
     background: var(--color4);
-    border-radius: 5px;
+    border-radius: 3px;
     border-style: none;
     border:1px solid var(--color5);
 }
@@ -127,6 +102,78 @@ th,td {
 #sortForm {
 	width:200px;
 	display:inline-block;
+}
+
+/* 등록 버튼 */
+#registerBtn {
+	float:right;
+	margin-top:27px;
+	margin-right:77px;
+	color: var(--color4);
+	background: var(--color5);
+	border-radius:3px;
+	font-size:17px;
+	font-weight:bold;
+	width:100px;
+    height:35px;
+    border-style: none;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+    border:1px solid var(--color5);
+}
+
+#registerBtn:hover {
+	color: var(--color5);
+	background: var(--color4);
+	border:1px solid var(--color5);
+}
+
+/* 검색 박스 */
+#searchForm {
+	width:1600px;
+	height:25px;
+	padding-top:40px;
+	margin-left:67px;
+}
+
+#searchtype {
+	height:30px;
+	padding-top:4px;
+	border-radius:3px;
+}
+
+#searchtype:focus {
+	outline:none;
+}
+
+#searchText {
+	width:300px;
+	height:24px;
+	padding-top:4px;
+	margin-left:2px;
+	border-radius:3px;
+	border:0.1px solid grey;
+}
+
+#searchText:focus {
+	outline:0.1px solid black;
+}
+
+#searchBtn {
+	height:31px;
+	color: var(--color4);
+	background: var(--color5);
+	border:1px solid var(--color5);
+	border-radius:5px;
+	font-size:16px;
+	font-weight:bold;
+	margin-left:3px;
+}
+
+#searchBtn:hover {
+	color: var(--color5);
+	background: var(--color4);
+	border:1px solid var(--color5);
 }
 
 /* 리스트 박스 */
@@ -155,16 +202,25 @@ th,td {
 	padding-bottom:35px;
 }
 
-#pageBtn {
-	background-color:white;
-	border:1px solid grey;
+.pageBTN {
+	background-color:var(--color5);
+	border:1px solid var(--color4);
 	border-radius:3px;
-	width:32px;
+	color:var(--color4);
+	width:70px;
 	height:32px;
-	font-size:16px;
+	font-size:14px;
 	font-weight:bold;
 	cursor:pointer;
 	margin:5px;
+	font-family: 'Noto Sans KR', sans-serif;
+	padding-bottom:2.5px;
+}
+
+.pageBTN:hover {
+	background-color:var(--color4);
+	color:var(--color5);
+	border:1px solid var(--color5);
 }
 
 
@@ -173,7 +229,7 @@ th,td {
 #slideShow {	
 	width:1600px; 
 	position: relative;
-	height: 370px;
+	height: 360px;
 	text-align:center;
 }
 
@@ -185,26 +241,26 @@ th,td {
 
 #prevButton {
 	position: absolute;
-	top: 120px;
+	top: 130px;
 	left: 4%;
-	opacity: 0.5;
+	opacity: 0.2;
 	cursor: pointer;
 }
 
 #nextButton {
 	position: absolute;
-	top: 120px;
+	top: 130px;
 	right: 4%;
-	opacity: 0.5;
+	opacity: 0.2;
 	cursor: pointer;
 }
 
 #prevButton:hover {
-	opacity: 0.9;
+	opacity: 0.5;
 }
 
 #nextButton:hover {
-	opacity: 0.9;
+	opacity: 0.5;
 }
 
 /* 슬라이드 텍스트 */
@@ -230,27 +286,13 @@ th,td {
 #slidePanel {
 	position: relative;
 	width: 4800px;
-	height: 330px;
+	height: 360px;
 }
 
 .slideImage {
 	float: left;
 	width: 1600px;
-	height: 330px;
-}
-
-/* 컨트롤 버튼 */
-#controlButtonBox {
-	margin: 0 auto;
-	text-align:center;
-}
-
-#controlButtonBox img {
-	margin: 12px;
-}
-
-.controlButton:hover {
-	cursor:pointer;
+	height: 360px;
 }
 /************** SlideShow 끝 **************/
 

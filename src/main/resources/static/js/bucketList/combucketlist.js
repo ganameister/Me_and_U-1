@@ -17,6 +17,25 @@
 		$('#slidePanel').animate({'left': moveLeft}, 'slow');
 	}
 	
+	//슬라이드 자동 랜덤 슬라이드
+	let loopInterval = setInterval(() => {
+   		var randomNum = Math.floor(Math.random() * 3);
+   		moveSlide(randomNum);
+	}, 4000);
+	
+	// 슬라이드에 마우스가 올라간 경우 루프 멈추기
+	$('.prevNextButton').on("mouseover", () => {
+	  clearInterval(loopInterval);
+	});
+
+	// 슬라이드에서 마우스가 나온 경우 루프 재시작하기
+	$('.prevNextButton').on("mouseout", () => {
+	  	loopInterval = setInterval(() => {
+   			var randomNum = Math.floor(Math.random() * 3);
+   			moveSlide(randomNum);
+		}, 4000);
+	});
+	
 	// prev 버튼 클릭하면 앞으로 이동
 	$('#prevButton').on('click', function(){
 		if(movedIndex !=0)  // 첫 번째가 아니면
@@ -136,6 +155,25 @@
 			return false;
 		}
 	});
+	
+	//검색
+	$('#searchForm').on('submit', function(){ 	
+ 		event.preventDefault();
+ 		
+ 		var formData = $(this).serialize();	
+ 			
+	    $.ajax({
+	    	type:"post",
+	      	url:"/comBKList/Search",
+	     	data: formData,
+ 		 	success:function(result){
+ 				$('#searchResultBox').html(result);
+ 		 	},
+	      	error:function(){
+	        	alert("검색어를 입력해주세요.");
+	      	}
+	    }); 	
+  	});
 		
 		
  });

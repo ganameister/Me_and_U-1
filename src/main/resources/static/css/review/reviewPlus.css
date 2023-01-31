@@ -58,6 +58,7 @@ font-weight: bold;
 	width: 1000px;
 } 
 #review_warp {
+	width:1600px;
     margin: 0;
     padding: 0;  
     outline: none;
@@ -73,7 +74,10 @@ font-weight: bold;
 }
 .review-img {
 	aspect-ratio: 13/9; /*이미지 사이즈 맞춤  */
+	max-width:300px;
 	min-width:300px;/*하단박스크기고정*/
+	max-height:250px;
+	min-height:250px;/*상단박스크기고정*/
 }
 
 #review_warp ol,ul {
@@ -82,16 +86,6 @@ font-weight: bold;
 
 #review_warp {
     color: var(--color2);/*리뷰글씨색*/                                        
-}
-
-
-
-#review_warp {
-    margin: 0;
-    padding: 0;  
-    outline: none;
-    border: none;
-    
 }
 
 

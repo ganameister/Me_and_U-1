@@ -158,5 +158,10 @@ public class BKListService implements IBKListService {
 		return dao.listPage(displayPost, postNum);
 	}
 
+	@Override
+	public ArrayList<ComBKListVO> comBKListSearch(HashMap<String, Object> map) {
+		return dao.comBKListSearch(map);
+	}
+
 
 }

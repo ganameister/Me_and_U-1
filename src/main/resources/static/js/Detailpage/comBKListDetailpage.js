@@ -14,7 +14,7 @@
 	       		data: {"combkListNo": combkListNo},
 	       		success: function(data){
 	          		alert("삭제가 완료되었습니다.");
-	          		location.href="/comBKList";
+	          		location.href="/comBKList/1";
 	        	},
 	       		 error: function(error){
 	         		alert("실패");

@@ -103,14 +103,17 @@
 								    	<li class="itemContainer" value="${com.combkListCtg}">
 								    		<a href="<c:url value='/comBKList/comBkListDetailpage/${com.combkListNo}'/>">
 									    		<table class="comTable">
-										    		<tr height="260">
-											    		<td><img class="combkListImg" src="<c:url value='/images/${com.combkListImg}' />" width="320" height="260"></td>			               
+										    		<tr height="290">
+											    		<td><img class="combkListImg" src="<c:url value='/images/${com.combkListImg}' />" width="320" height="290"></td>			               
 											    	</tr>
 											    	<tr>
 											    		<th class="tableText">${com.combkListTitle }</th>
 											    	</tr>
 											    	<tr height="46">
-											    		<td>${com.combkListSubtitle }</td>
+											    		<td class="tableText">${com.combkListSubtitle }</td>
+											    	</tr>
+											    	<tr>
+											    		<td class="tableTextView">조회수 : ${com.combkListView }</td>
 											    	</tr>
 									    		</table>
 									    	</a>
@@ -372,11 +375,11 @@
 		<div class="actionIndex" onclick="actionIndexToggle();">
 			<span id="btnPl"><img src="<c:url value='/images/free-icon-add-circularss.png'/>" ></span>
 			<ul>
-				<li id="btn1" type="button" onclick="openchatbot();"><img src="<c:url value='/images/free-icon-chatbot-2068998.png'/>">Chat Bot</li>
-				<li id="btn2" type="button"><img src="<c:url value='/images/question.png'/>">QNA</li>
-				<li id="btn3" type="button"><img src="<c:url value='/images/faq.png'/>">FAQ</li>
-				<li id="btn4" type="button"><img src="<c:url value='/images/free-icon-notification-bell-7322162.png'/>">Notice</li>
-				<li id="btn5" type="button"><img src="<c:url value='/images/free-icon-paper-plane-149446.png'/>">Contact us</li>
+				<li id="btn11" type="button" onclick="openchatbot();"><img src="<c:url value='/images/free-icon-chatbot-2068998.png'/>">Chat Bot</li>
+				<li id="btn22" type="button"><img src="<c:url value='/images/question.png'/>">QNA</li>
+				<li id="btn33" type="button"><img src="<c:url value='/images/faq.png'/>">FAQ</li>
+				<li id="btn44" type="button"><img src="<c:url value='/images/free-icon-notification-bell-7322162.png'/>">Notice</li>
+				<li id="btn55" type="button"><img src="<c:url value='/images/free-icon-paper-plane-149446.png'/>">Contact us</li>
 			</ul>
 		</div>
 		<div class="moveToTopIndex">

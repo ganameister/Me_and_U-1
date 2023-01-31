@@ -18,8 +18,8 @@
 			<section>
 				<div id="slideShow">
 					<div id="prevNextButtonBox">
-						<img id="prevButton" src="<c:url value='/images/prevButton.png'/>">
-						<img id="nextButton" src="<c:url value='/images/nextButton.png'/>">
+						<img id="prevButton" class="prevNextButton" src="<c:url value='/images/prevButton.png'/>">
+						<img id="nextButton" class="prevNextButton" src="<c:url value='/images/nextButton.png'/>">
 					</div>
 					<div id="slideText">
 					</div>
@@ -28,11 +28,6 @@
 							<img src="<c:url value='/images/배낭여행.jpg'/>" class="slideImage">
 							<img src="<c:url value='/images/런던브릿지1.jpg'/>" class="slideImage">
 							<img src="<c:url value='/images/사이클1.jpg'/>" class="slideImage">
-						</div>
-						<div id="controlButtonBox">
-							<img src="<c:url value='/images/controlButton2.png'/>" class="controlButton">
-							<img src="<c:url value='/images/controlButton1.png'/>" class="controlButton">
-							<img src="<c:url value='/images/controlButton1.png'/>" class="controlButton">
 						</div>
 					</div>
 				</div>
@@ -59,8 +54,18 @@
 						</form>
 						<button id="registerBtn">등록하기</button >
 					</div>
+					<!-- 검색 -->
+					<!-- <form id="searchForm" >
+						<select id="searchtype" name="searchtype">
+							<option value="">검색 조건선택</option>
+							<option value="combkListTitle">글 제목</option>
+							<option value="combkListWrite">글 내용</option>
+						</select>
+						<input type="text" name="keyword" id="searchText">
+						<input type="submit" value="검색하기" id="searchBtn">					
+					</form> -->
 					<div id="itemListBox">
-						<ul>
+						<ul id="searchResultBox">
 							<c:forEach var="com" items="${comBKList }">
 							    	<li class="itemContainer" value="${com.ctgNo}">
 							    		<a href="<c:url value='/comBKList/comBkListDetailpage/${com.combkListNo}'/>">
@@ -86,13 +91,26 @@
 				</div>
 			</section>
 			<section>
-				<div class="page">
+				<!-- 페이지 숫자 버튼 시작 -->
+				<%-- <div class="page">
 				    <c:forEach begin="1" end="${pageNum}" var="num">
 					    <span>
-					    	<a href="/comBKList/${num}"><button id="pageBtn">${num }</button></a>
+					    	<a href="/comBKList/${num}?sortOption=${sortOption}"><button class="pageBTN">${num }</button></a>
 						</span>
 					</c:forEach>
+				</div> --%>
+				<!-- 페이지 숫자 버튼 끝 -->
+				
+				<!-- prev next 버튼 시작 -->
+				<div class="page">
+				    <c:if test="${currentPage > 1}">
+   						<a href="/comBKList/${currentPage - 1}?sortOption=${sortOption}"><button id="previousBtn" class="pageBTN"> < Prev </button></a>
+ 					</c:if>
+ 					<c:if test="${currentPage < pageNum}">
+						<a href="/comBKList/${currentPage + 1}?sortOption=${sortOption}"><button id="nextBtn" class="pageBTN"> Next > </button></a>
+					</c:if>
 				</div>
+				<!-- prev next 버튼 끝 -->
 			</section>
 		</div>
 		<!--  bottom --> 
