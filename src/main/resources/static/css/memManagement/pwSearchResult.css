@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	width: 1600px;
+	margin: 0 auto;
+}
+
+.wrap {
+	height: 100%;
+	margin: 0 0 -72px;
+}
+
+.container {
+	height: 100%;
+	position: relative;
+}
+
+/* 전체 박스 */
+.pwChangeWrap {
+	position: absolute;
+	width: 606px;
+	height: 226px;
+	top: 35%;
+	left: 27%;
+	border: 1px solid #e5e5e5;
+	border-radius:15px;
+	padding: 44px 62px 20px 62px;
+}
+
+/* "비밀번호 변경" 문구 */
+#headH2{
+	position: absolute;
+	top: 22%;
+	left: 27%;
+	width: 717px;
+	margin: 0 0 21px 0;
+	border-bottom: 1px solid #e5e5e5;
+	padding-left: 7px;
+}
+
+/* 내부 한 줄 속성 */
+.lineWrap {
+	margin: 10px 0 10px 0;
+	font-size: 22px;
+}
+
+/* 비밀번호 입력 텍스트 */
+.pwComare {
+	margin: 0 0 0 48px;
+	width: 272px;
+	height: 13px;
+	font-size: 21px;
+	border-radius: 15px;
+	border: 1px solid #848484;
+	padding:10px 0px 10px 15px;
+}
+
+/* 비밀번호 재입력 텍스트 */
+#insertMemPWCheck {
+	margin: -5px 0 0 -3px;
+
+}
+
+/* 비밀번호 변경 버튼 */
+#pwChangeBtn {
+	width: 120px;
+	height: 35px;
+	background-color: var(--color4);
+	border-radius:15px;
+	border: 1px solid #A4A4A4;
+}
+
+/* 비밀번호 변경 div */
+#changeBtnWrap {
+	margin-left: 14px;
+	float: left;
+	margin-top: 21px;
+}
+
+/* 비밀번호 재입력 div */
+#pwInput {
+	float: left;
+	margin-top: 21px;
+}
+
+/* 비밀번호 번경 텍스트 */
+#changeText {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/* 비밀번호 정규식 문구 div */
+#regWarn {
+	margin-left: 185px;
+}
+
+/* 비밀전호 정규식 문구 */
+#pwReg {
+	font-size: 15px;
+}
+
+#test {
+	margin-top: -20px;
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

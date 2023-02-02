@@ -30,9 +30,9 @@
 								<label>Password</label>
 							</div>
 							<div class="inMemberJoin">
-								<a href="<c:url value='/member/idSearchPage' />"><span>아이디 찾기</span></a>
+								<a href="<c:url value='/member/idSearchEmailAuth' />"><span>아이디 찾기</span></a>
 								<span>|</span>
-								<a href="<c:url value='/member/pwSearchPage' />"><span>비밀번호 찾기</span></a>
+								<a href="<c:url value='/member/pwSearchIdAuth' />"><span>비밀번호 찾기</span></a>
 								<span>|</span>
 								<a href="<c:url value='/memberJoin' />" ><span>회원가입</span></a>
 							</div>

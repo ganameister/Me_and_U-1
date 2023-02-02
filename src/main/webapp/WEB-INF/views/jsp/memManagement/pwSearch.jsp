@@ -16,7 +16,7 @@
 			<div class="container">
 				<div >
 					<ul class="unl">
-						<li id="listID"><button type="button" onclick="location.href='/member/idSearchPage'"><span>아이디 찾기</span></button>
+						<li id="listID"><button type="button" onclick="location.href='/member/idSearchEmailAuth'"><span>아이디 찾기</span></button>
 						<li id="listPW"><button type="button"><span>비밀번호 찾기</span></button>
 					</ul>
 				</div>

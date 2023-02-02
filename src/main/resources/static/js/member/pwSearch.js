@@ -4,9 +4,17 @@
 
 
 $(document).ready(function() {
-	var emailAuthCheck = "success";
+	
+	const urlParams = new URL(location.href).searchParams;
+	
+	const memId = urlParams.get('memId');
+	
+	console.log(memId);
+	
+	var emailAuthCheck = "fail";
 	const domain = "@";
 	var btnClickCheck = "no";
+	
 	// 인증번호 받기 버튼 클릭시
 	$('#mailCheckBtn').on('click', function() {
 		// 입력한 메일 값 가져옴
@@ -21,8 +29,9 @@ $(document).ready(function() {
 		} else {
 			$.ajax({
 				type:'post',
-				url: "/member/nameCheck",
-				data: {"memName": $('#memName').val(),
+				url: "/member/pwSearchInfoCheck",
+				data: {"memId" : memId,
+					  "memName": $('#memName').val(),
 					  "memEmail" : email
 				},
 				dataType: 'text',
@@ -41,12 +50,35 @@ $(document).ready(function() {
 							}
 						});	// if문 ajax 종료
 					} else {
-						alert("이름 또는 이메일 주소가 다릅니다");
+						alert("회원정보가 일치하지 않습니다.");
 					}
 				}
 			});	// ajax 종료
 		}
 	});	// 버튼 이벤트 종료
+	
+	/*
+	$('#mailCheckBtn').on('click', function() {
+		var email = $('#insertEmail').val() + domain + $('#domainText').val();
+		// 값 확인
+		console.log("완성된 이메일 : " + email);
+		// 인증번호
+		const checkInput = $('#mailCheckInput');
+		
+		$.ajax({
+				type:'post',
+				url: "/emailCheck",
+				data: {"email": email
+				},
+				success:function(data){
+					console.log("data : " + data);
+					checkInput.attr("disabled", false);
+					code = data;
+					alert("인증번호가 전송되었습니다.");
+				}
+			});	// if문 ajax 종료
+		});
+	*/
 	
 	// 인증번호 비교
 	// blur -> focus가 되는 경우
@@ -84,10 +116,10 @@ $(document).ready(function() {
 	
 	// pw찾기에서 다음버튼 누를 시 
 	$('#pwNextBtn').on("click", function() {
-		var email = $('#insertEmail').val() + domain + $('#domainText').val();
+		var memEmail = $('#insertEmail').val() + domain + $('#domainText').val();
 		var memName = $('#memName').val();
 		if(emailAuthCheck == "success"){
-			location.href='/member/pwSearchResult';
+			location.href='/member/pwSearchResultPage?memId='+ memId;
 		} else if(memName == "") {
 			alert("이름을 입력해주세요.");
 		} else if($('#insertEmail').val() == "") {

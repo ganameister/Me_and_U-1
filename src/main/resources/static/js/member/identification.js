@@ -3,6 +3,8 @@
  */
 
 $(document).ready(function() {
+
+	
 	// ID 중복 확인
 	$('.next_btn').on('click', function() {
 		event.preventDefault();
@@ -19,7 +21,7 @@ $(document).ready(function() {
 				dataType: 'text',
 				success:function(result) {
 					if(result == "no_use") {
-						location.href="/member/pwSearch?memId=" + $('#input_memId').val();
+						location.href="/member/pwSearchEmailAuth?memId=" + $('#input_memId').val();
 					} else {
 						alert("등록되지 않은 ID입니다.");
 					}

@@ -88,8 +88,12 @@
 						<tr><td id="interestInfo"><span>관심정보</span></td></tr>
 						<tr><th>관심분야1</th></tr>
 						<tr><th class="insertTxtTD"><select name = "memJoy1" class="insertMemInfo">
-							<option>여행
-							<option>뮤지컬/공연/콘서트
+							<option>여행/아웃도어
+							<option>운동/스포츠
+							<option>게임/오락
+							<option>문화/공연/축제
+							<option>음악/악기
+							<option>기타
 						</select></th></tr>
 						
 						<tr><th>관심분야2</th></tr>

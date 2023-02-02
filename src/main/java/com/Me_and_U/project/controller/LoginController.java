@@ -88,8 +88,8 @@ public class LoginController {
 		return result;
 	}
 	
-	// 아이디 찾기 페이지 열기
-	@RequestMapping("/member/idSearchPage")
+	// 아이디 찾기 이메일 인증 페이지 열기
+	@RequestMapping("/member/idSearchEmailAuth")
 	public String idSerachPage() {
 		return "jsp/memManagement/idSearch";
 	}
@@ -103,27 +103,35 @@ public class LoginController {
 		return "jsp/memManagement/idSearchResult";
 	}
 	
-	// 비밀번호 찾기 페이지 열기
-	@RequestMapping("/member/pwSearchPage")
+	// 비밀번호 찾기 아이디 인증 페이지 열기
+	@RequestMapping("/member/pwSearchIdAuth")
 	public String pwSerachPage() {
 		return "jsp/memManagement/identification";
 	}
 	
-	// 비밀번호 변경 페이지 열기
-	@RequestMapping("/member/pwSearch")
+	// 비밀번호 변경 이메일 인증 페이지 열기
+	@RequestMapping("/member/pwSearchEmailAuth")
 	public String pwSearch() {
 		
 		return "jsp/memManagement/pwSearch";
 	}
 	
-	// 인증방법선택 페이지 열기
-	@RequestMapping("/member/identification")
-	public String identification() {
-		return "jsp/memManagement/identification";
-	}
-	
-	@RequestMapping("/member/pwSearchResult")
+	// 비밀번호 찾기 결과 페이지 열기
+	@RequestMapping("/member/pwSearchResultPage")
 	public String pwSearchResult() {
 		return "jsp/memManagement/pwSearchResult";
+	}
+	
+	// 비밀번호 찾기 결과 - 비밀번호 변경 불러오기
+	@RequestMapping("/member/pwChange")
+	public String pwChage(@RequestParam("memId") String memId,
+						@RequestParam("memPw") String memPw) {
+		
+		System.out.println(memId + " " + memPw);
+		MemberVO vo = new MemberVO();
+		vo.setMemId(memId);
+		vo.setMemPw(memPw);
+		memberservice.pwChage(vo);
+		return "jsp/memManagement/login";
 	}
 }

@@ -46,11 +46,20 @@
 			SELECT memId FROM member WHERE memId=#{memId}
 		</select>
 		
-		<!-- 이름, 이메일 체크 -->
+		<!-- 아이디 찾기 이름, 이메일 체크 -->
 		<select id="memInfoSearchNameCheck" parameterType="string" resultType="string">
 			SELECT memName FROM member WHERE memName=#{memName} AND memEmail=#{memEmail}
 		</select>
 	
+		<!-- 비밀번호 찾기 아이디, 이름, 이메일 체크 -->
+		<select id="memPwSearchInfoCheck" parameterType="string" resultType="string">
+			SELECT memId FROM member WHERE memId=#{memId} AND memName=#{memName} AND memEmail=#{memEmail}
+		</select>
+		
+		<!-- 비빌먼호 변경 -->
+		<update id="pwChage" parameterType="string">
+			UPDATE member SET memPw=#{memPw} WHERE memId=#{memId}
+		</update>
 	</mapper>
 
 

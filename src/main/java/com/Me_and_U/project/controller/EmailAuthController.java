@@ -36,4 +36,18 @@ public class EmailAuthController {
 		}
 		return result;
 	}
+	
+	// 아이디, 이름, 이메일 주소 정보 확인
+	@ResponseBody
+	@RequestMapping("/member/pwSearchInfoCheck")
+	public String pwSearchInfoCheck(@RequestParam("memId") String memId,
+									@RequestParam("memName") String memName,
+									@RequestParam("memEmail") String memEmail) {
+		String no_result = memberService.memPwSearchInfoCheck(memId, memName, memEmail);
+		String result="no_data";
+		if(no_result != null) {
+			result="data";
+		}
+		return result;
+	}
 }
