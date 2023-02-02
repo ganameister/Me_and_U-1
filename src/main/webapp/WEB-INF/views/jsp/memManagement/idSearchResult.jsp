@@ -16,7 +16,7 @@
 				<div >
 					<ul class="unl">
 						<li id="listID"><button type="button" onclick="location.href='/member/idSearchPage'"><span>아이디 찾기</span></button>
-						<li id="listPW"><button type="button" onclick="location.href='/member/pwSearchPage'"><span>비밀번호 찾기</span></button>
+						<li id="listPW"><button type="button" onclick="location.href='/member/pwSearchIdAuth'"><span>비밀번호 찾기</span></button>
 					</ul>
 				</div>
 				<div id="headH2">
@@ -29,7 +29,7 @@
 					</div>
 				</div>
 				<div class="loginBtnWrap">
-					<button type="button" id="loginBtn"><span>로그인</span></button>
+					<button type="button" id="loginBtn" onclick='location.href="/login"'><span>로그인</span></button>
 				</div>
 			</div>
 		</div>

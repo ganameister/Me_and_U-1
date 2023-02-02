@@ -157,7 +157,7 @@ $(document).ready(function() {
 		// 비밀번호 정규식 검사
 		} else if(!reg.test(pwd1) ||
 				  !reg.test(pwd2)) {
-			alert("비밀번호는 숫자, 영문, 특수문자 조합으로 8~18자리를 사용해야 합니다.");
+			alert("비밀번호는 숫자, 영문, 특수문자 조합으로 8~18자리를 입력해 주세요.");
 			// 포커스 이동
 			if(!reg.test(pwd1)) {
 				$('#insertMemPW').focus();

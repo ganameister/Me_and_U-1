@@ -64,4 +64,21 @@ public class MemberService implements IMemberService {
 		return dao.memIdInfo(memName, memEmail);
 	}
 
+	@Override
+	public void pwChage(MemberVO vo) {
+		// 입력한 비밀번호를 암호화해서 저장
+		// vo에서 비밀번호 가져와서 암호화한 후
+		String encodedPassword = passwordEncoder.encode(vo.getMemPw());
+		
+		// 암호화된 비밀번호로 vo에 저장한 후 vo를 mapper에 보내서 db에 저장
+		vo.setMemPw(encodedPassword); 
+		dao.pwChage(vo);
+	}
+
+	@Override
+	public String memPwSearchInfoCheck(String memId, String memName, String memEmail) {
+		// TODO Auto-generated method stub
+		return dao.memPwSearchInfoCheck(memId, memName, memEmail);
+	}
+
 }
