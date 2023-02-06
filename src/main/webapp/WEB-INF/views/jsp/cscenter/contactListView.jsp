@@ -56,7 +56,7 @@
 							</tr>
 							<tr class="TitleLine">
 								<th class="boldTitleLine"></th>								
-								<td class="underTable">서울시 강남구 역삼동 Me&U</td>
+								<td class="underTable">서울시 강남구 역삼동 ME&U</td>
 							</tr>
 							<tr class="TitleLine">
 								<th class="boldTitleLine"><img src="<c:url value='/images/free-icon-telephone-159832.png'/>"></th>								
@@ -72,7 +72,7 @@
 							</tr>
 							<tr class="TitleLine">
 								<th class="boldTitleLine"></th>								
-								<td class="underTable">Me&U@meanandu.com</td>
+								<td class="underTable">ME&U@meandu.com</td>
 							</tr>
 							<tr class="TitleLine">
 								<th class="boldTitleLine"><img src="<c:url value='/images/free-icon-earth-globe-tool-45069.png'/>"></th>								
