@@ -64,7 +64,8 @@
 					
 					
 					<!-- form  Update-->
-					<form id="regGather_frm" class="regGather_frm" method="post" action="<c:url value='/jsp/review/reviewUpdateForm'/>" enctype="multipart/form-data">
+					<form id="regGather_frm" class="regGather_frm" method="post" action="<c:url value='/jsp/review/reviewUpdateForm' />" enctype="multipart/form-data">
+						<input type="hidden" name="reviewNo" value="${review.reviewNo }">
 						<table id="gatherInfo_tbl" class="gatherInfo_tbl">
 							<tr>								
 								<td rowspan="8"><img id="preview" src="<c:url value='/images/${review.reviewImg }'/>"  width="350" height="350"></td>

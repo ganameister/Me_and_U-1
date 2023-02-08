@@ -80,7 +80,8 @@
 									<span class="heartNo" >${rev.reviewHart }</span>
 									 <c:if test="${sessionScope.sid == rev.memId}">
                                         <button id="deleteReviewBTN" class="deleteReviewBTN" value="${rev.reviewNo}">삭제</button>
-                                        <a href="<c:url value='/jsp/review/reviewUpdateForm/${rev.reviewNo}'/>">
+                                       <!-- 수정 -->
+                                        <a href="<c:url value='/jsp/review/reviewUpdateForm/${rev.reviewNo}'/>">                                     
                                         <button id="updateReviewBTN" class="updateReviewBTN" value="${rev.reviewNo}" >수정</button></a>
                                         <%-- <input type="button" id="updateReviewBTN" data-reviewListNo= "${rev.reviewNo}" value="수정"> --%>
                                     </c:if>									 
