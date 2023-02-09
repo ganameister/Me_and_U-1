@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+body{
+	width:1600px;
+	margin: auto;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+#wrap{
+	margin-top: 69px;
+	font-weight: 400;
+}
+
+.sec1{
+	display: flex;
+	float: left;
+	margin-left: 5%;
+	margin-top: 100px;
+	margin-right: 5%;
+	
+	
+}
+.sec1 li{
+font-size: 19px;
+margin: 20px 0px;
+list-style: none;
+}
+#myp:hover{
+cursor:pointer;
+font-weight: bold;
+}
+#infoedit{
+cursor:pointer;
+font-weight: bold;
+border-bottom: 3px solid;
+}
+#myreiew:hover{
+cursor:pointer;
+font-weight: bold;	
+}
+
+#selectreg:hover{
+cursor:pointer;
+font-weight: bold;	
+}
+
+
+.sec2{
+	display:inline-block;
+	width:1288.8px;
+	background-color: var(--color4);
+	border-left: 1px solid;
+}
+.h3{
+	border-bottom: 1px solid rgba(128, 128, 128, 0.483);
+	}
+#art1{
+	margin-left:300px;
+	width: 500px;
+	margin-bottom: 30px;
+}
+#MemName{
+	width:300px; 
+}
+
+#addressSrchBtn {
+	width:auto;
+	height:auto;
+	padding:6px;
+	font-size:15px;
+	margin-left:2px;
+	background:white;
+	border-radius:8px;
+	border-color:white;
+}
+
+#domainText {
+	width:150px;
+}
+#domainList{
+	width:130px;
+}
+.hyphen {
+	font-size:18px;
+	font-weight:bold;
+}
+#insertEmail {
+	width:122px;
+}
+.insertMemInfo {
+	height:30px;
+	font-size:17px;
+	border-radius:8px;
+	border-color:white;
+}
+#interestInfo {
+	font-size:32px;
+	font-weight:bold;
+	padding:40px 0 10px;
+}
+#sample6_postcode {
+	width:105px;
+	font-size:14px;
+	padding:5px 0px 5px 15px;
+	margin-bottom:6px;
+}
+#sample6_address {
+	width:500px;
+	padding:10px 0px 10px 15px;
+	height:23px;
+	margin-bottom:6px;
+}
+#sample6_detailAddress {
+	padding:10px 0px 10px 15px;
+	height:23px;
+	width:260px;
+}
+.phNum {
+	height:30px;
+	font-size:17px;
+	border-radius:8px;
+	border-color:white;
+}
+#d1{
+	margin-bottom: 10px;
+}
+.info{
+	font-size: 21px;
+}
+
+#EditBtn,#CancelBtn{
+	width: 530px;
+    height: auto;
+    padding: 6px;
+    font-size: 15px;
+    margin-left: 2px;
+    background: white;
+    border-radius: 8px;
+    border-color: white;
+    margin-bottom: 10px;
+    }

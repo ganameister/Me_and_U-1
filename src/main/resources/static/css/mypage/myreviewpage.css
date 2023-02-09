@@ -5,6 +5,9 @@ body{
     max-width:1600px; 
 	margin:auto;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 #wrap{
 	margin-top: 69px;
 	background-color: white;

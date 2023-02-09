@@ -25,7 +25,7 @@
 							<li id="selectreg">찜한 정기모임</li>
 						</ul>
 					</nav>
-				</section><!-- 좌측 안내바? -->
+				</section><!-- 마이페이지 목록 -->
 				
 				<section class="sec2">
 				<div class="sebox">

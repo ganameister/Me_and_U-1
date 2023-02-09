@@ -46,7 +46,7 @@ $("#button_content2").css("display", "none");
             location.href="/mypage";
     });
 	$("#infoedit").click(function() {
-            location.href="/";
+            location.href="/myinfoeditpage";
     });
     $("#myreiew").click(function() {
             location.href="/myreviewpage";
