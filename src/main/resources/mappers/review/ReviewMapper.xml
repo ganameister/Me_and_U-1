@@ -81,20 +81,5 @@
 	  		</choose> 		   		
   		</select>
   		
-  		
-  		
-  		
-  		
-  		
-  		<!-- <select id="reviewSearch" parameterType="string" resultMap="reviewResult">
-  		SELECT *
-  		FROM review 
-  		WHERE
-  		reviewTitle Like CONCAT('%', #{keyword}, '%') 
-  		OR reviewWrite Like CONCAT('%', #{keyword}, '%')   		
-  		</select> -->
-  
-  		
-		
 			
 	</mapper>

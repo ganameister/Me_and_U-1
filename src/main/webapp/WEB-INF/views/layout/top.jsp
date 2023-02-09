@@ -14,6 +14,10 @@
 				<li><a href="<c:url value='/regGatherListView'/>">정기 모임</a></li>
 				<li><a href="<c:url value='/reviewListView'/>">후기</a></li>
 				<li><a href="<c:url value='/noticeListView'/>">고객센터</a></li>
+				<!-- 관리자페이지  -->								
+			   	<li><c:if test="${ sessionScope.sid eq 'admin1'}">			    
+				<a href="<c:url value='/admin'/>" >관리자페이지</a>				
+				</c:if></li>
 			</ul>	
 			<ul class="nav_login">
 				<!-- 로그인 하기 전에 보여줄 메뉴 항목 -->

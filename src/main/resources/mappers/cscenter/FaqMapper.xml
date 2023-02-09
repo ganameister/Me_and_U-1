@@ -29,6 +29,28 @@
 		WHERE faqNo=#{faqNo}
 		</select>	
 		
+		<!-- 삭제 -->  
+	    <delete id="deletefaq" parameterType="int"  >
+	  	DELETE 
+	  	FROM faq 
+	  	WHERE faqNo=#{faqNo}
+	    </delete>  
+	    
+		<!-- 수정 -->  
+		<update id="updatefaq" parameterType="com.Me_and_U.project.model.FaqVO" >
+		 UPDATE faq
+		 SET faqTitle=#{faqTitle},faqWrite=#{faqWrite}  		
+		 WHERE faqNo=#{faqNo}					
+		</update>
+		
+		
+		
+		<!-- 등록 -->  
+		<insert id="insertfaq" parameterType="com.Me_and_U.project.model.FaqVO" >
+  		INSERT INTO faq (memId,faqNo,faqTitle,faqWrite ) 		
+		 VALUES (#{memId}, #{faqNo}, #{faqTitle},#{faqWrite})	
+  		</insert>
+		
 		
 	</mapper>
 

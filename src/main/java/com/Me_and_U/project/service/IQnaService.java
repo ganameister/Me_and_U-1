@@ -13,6 +13,5 @@ public interface IQnaService {
 	public QnaVO detailViewQna(int qnaNo);
 	public void insertQna(QnaVO qna); 
 	public MemberVO getMemberInfo(String memId);     //memId 불러오기 
-	//public void updateQna(QnaVO qna, String memId);               //수정
 	
 }

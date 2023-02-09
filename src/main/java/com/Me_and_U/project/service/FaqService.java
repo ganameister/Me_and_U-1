@@ -25,6 +25,24 @@ public class FaqService implements IFaqService {
 		return dao.detailViewFaq(faqNo);
 	}
 
+	@Override
+	public void updatefaq(FaqVO faq) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deletefaq(int faqNo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertfaq(FaqVO faq) {
+		dao.insertfaq(faq);
+		
+	}
+
 	
 
 }
