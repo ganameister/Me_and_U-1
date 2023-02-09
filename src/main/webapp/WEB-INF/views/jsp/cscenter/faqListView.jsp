@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>QNA</title>
+		<title>FAQ</title>
 		<!-- Header -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,9 +42,10 @@
 						<div class="subboardTitle">SERVICE</div>
 						<div class="boardTitle">FaQBoard</div>
 						<div class="underboardTitle">자주묻는질문</div>
-						<div class="chatBot"><button onClick="openchatbot()" id="chatBot">Chat Bot</button></div>
+						<div class="chatBot"><button onClick="openchatbot()" id="chatBot">Chat Bot</button></div>										
 					</div>
-
+						
+				
 					<!-- 카테고리 -->
 					<div class ="service_board_top">
 						<div class="service-midTitle">Select Category</div>

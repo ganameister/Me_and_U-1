@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* 제목
+-------------------------------------- */
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+body { 
+    width:100%;
+    max-width:1600px; /* 상단nav 고정으로 반응형으로 다시 고침*/
+	margin:auto;
+}
+.service {
+    margin-top: 120px;    
+    margin-bottom: 100px;
+     margin-left: 7rem;
+    margin-right: 7rem;
+   
+}
+.subboardTitle {
+    color: var(--color5);
+    font-size: 25px;
+}
+.boardTitle {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: 50px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.underboardTitle {
+    color:#606060;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+#service_warp {
+    margin: 0;
+    padding: 0;  
+    outline: none;
+    border: none;
+    text-align: center;
+}
+
+/* middlebuttom */
+#adminBtn button {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    font-size:medium;
+    cursor: pointer;
+    background: var(--color5);
+    color:#ffffff;
+    border-radius: 2px;
+    border-style: none;
+    height: 40px;
+    width: 120px;
+}
+#adminBtn button:hover {
+    opacity: 70%;
+}
+
+/*  table 
+-------------------------------------- */
+
+#service-board {    
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.cstable {
+    font-weight: 100;
+    font-size: large;
+    border-collapse: collapse;
+    color: grey;
+    width: 100%;
+}
+.cstable a {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 100;
+    font-size: large;
+    color: black;
+    text-decoration:none;
+}
+.cstable a:hover {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 100;
+
+	font-size: large;
+    color: #000000;
+    text-decoration:none;
+}
+.cstable td {
+    padding: 10px;
+}
+ 
+#boardlist_title {
+    width: 70%;
+    text-align: left;
+}
+
+.line {
+    cursor:pointer;
+    border-top:1px solid var(--color4);
+}
+.line:hover {
+    background:var(--color8);
+}
+.BottomLine {
+    border-bottom:3px solid var(--color5); 
+}
+
+.TopLine {
+    border-top:3px solid var(--color5); 
+}
+
+.TitleLine {
+    border-bottom:2px solid var(--color4); 
+}
+
