@@ -156,27 +156,24 @@
 		}
 	});
 	
-	//검색
-	$('#searchForm').on('submit', function(){ 	
- 		event.preventDefault();
- 		
- 		var formData = $(this).serialize();	
- 			
-	    $.ajax({
-	    	type:"post",
-	      	url:"/comBKList/Search",
-	     	data: formData,
- 		 	success:function(result){
- 				$('#searchResultBox').html(result);
- 		 	},
-	      	error:function(){
-	        	alert("검색어를 입력해주세요.");
-	      	}
-	    }); 	
-  	});
-		
-		
+	// 검색 조건 공백 시
+	$('.searchBtn').on('click',function() {
+	
+		// 검색 조건이 선택을 안했을 때
+		if($('.type').val() == "notchoice") {
+			alert("검색 조건을 선택하세요");
+			$('.type').focus();
+			return false;
+		// 검색어가 공백일 때
+		} else if($('.searchText').val() == "") {
+			alert("검색어를 입력하세요");
+			$('.searchText').focus();
+			return false;
+		}
+	});
+	
  });
+ 
  
  
 

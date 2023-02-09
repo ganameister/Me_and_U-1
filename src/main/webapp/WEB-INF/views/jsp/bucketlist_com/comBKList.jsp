@@ -45,25 +45,27 @@
 							<input type="button" class="cateBtn" id="categ6" value="음악/악기">
 							<input type="button" class="cateBtn" id="categ7" value="기타">								
 						</div>
-						<form id="sortForm" action="" method="get">
-						    <select id="sortcomBKList" name="sortOption">
-						        <option value="최신순" ${param.sortOption == '최신순' ? 'selected' : ''}>최신순</option>
-						        <option value="조회순" ${param.sortOption == '조회순' ? 'selected' : ''}>조회순</option>
-						        <option value="이름순" ${param.sortOption == '이름순' ? 'selected' : ''}>이름순</option>
-						    </select>
-						</form>
 						<button id="registerBtn">등록하기</button >
 					</div>
-					<!-- 검색 -->
-					<!-- <form id="searchForm" >
-						<select id="searchtype" name="searchtype">
-							<option value="">검색 조건선택</option>
-							<option value="combkListTitle">글 제목</option>
-							<option value="combkListWrite">글 내용</option>
-						</select>
-						<input type="text" name="keyword" id="searchText">
-						<input type="submit" value="검색하기" id="searchBtn">					
-					</form> -->
+					<div id="SortSearchBox">
+						<form id="sortForm" action="" method="get">
+							<select id="sortcomBKList" name="sortOption">
+								<option value="최신순" ${param.sortOption == '최신순' ? 'selected' : ''}>최신순</option>
+							    <option value="조회순" ${param.sortOption == '조회순' ? 'selected' : ''}>조회순</option>
+							    <option value="이름순" ${param.sortOption == '이름순' ? 'selected' : ''}>이름순</option>
+							</select>
+							    
+							<select id="type" name="type" class="type">
+								<option value="notchoice" <c:if test="${type eq 'notchoice'}">selected</c:if>>검색 조건 선택</option>
+								<option value="combkListTitle" <c:if test="${type eq 'combkListTitle'}">selected</c:if>>제목</option>
+								<option value="combkListSubtitle" <c:if test="${type eq 'combkListSubtitle'}">selected</c:if>>한줄 설명</option>
+								<option value="combkListWrite" <c:if test="${type eq 'combkListWrite'}">selected</c:if>>내용</option>
+							</select>
+							<input type="text" name="keyword" id="searchText" class="searchText" placeholder="검색 내용을 입력해주세요." value="${keyword }">
+							<input type="submit" value="Enter" id="searchBtn" class="searchBtn">
+						</form>
+						<a href="<c:url value='/comBKList/1'/>"><button id="AllListBtn">전체 보기</button></a>
+					</div>
 					<div id="itemListBox">
 						<ul id="searchResultBox">
 							<c:forEach var="com" items="${comBKList }">
@@ -91,26 +93,14 @@
 				</div>
 			</section>
 			<section>
-				<!-- 페이지 숫자 버튼 시작 -->
-				<%-- <div class="page">
-				    <c:forEach begin="1" end="${pageNum}" var="num">
-					    <span>
-					    	<a href="/comBKList/${num}?sortOption=${sortOption}"><button class="pageBTN">${num }</button></a>
-						</span>
-					</c:forEach>
-				</div> --%>
-				<!-- 페이지 숫자 버튼 끝 -->
-				
-				<!-- prev next 버튼 시작 -->
 				<div class="page">
-				    <c:if test="${currentPage > 1}">
-   						<a href="/comBKList/${currentPage - 1}?sortOption=${sortOption}"><button id="previousBtn" class="pageBTN"> < Prev </button></a>
- 					</c:if>
- 					<c:if test="${currentPage < pageNum}">
-						<a href="/comBKList/${currentPage + 1}?sortOption=${sortOption}"><button id="nextBtn" class="pageBTN"> Next > </button></a>
+					<c:if test="${currentPage > 1}">
+	   					<a href="/comBKList/${currentPage - 1}?sortOption=${sortOption}"><button id="previousBtn" class="pageBTN"> < Prev </button></a>
+	 				</c:if>
+	 				<c:if test="${currentPage < pageNum || displayPostSize > 8}">
+					    <a href="/comBKList/${currentPage + 1}?sortOption=${sortOption}"><button id="nextBtn" class="pageBTN"> Next > </button></a>
 					</c:if>
 				</div>
-				<!-- prev next 버튼 끝 -->
 			</section>
 		</div>
 		<!--  bottom --> 
