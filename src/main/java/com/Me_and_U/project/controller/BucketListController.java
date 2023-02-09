@@ -162,41 +162,59 @@ public class BucketListController {
 	
 	/** ========== 모두의 버킷리스트 page 시작 ========== **/
 	
-	// 모두의 버킷리스트 페이지 열기
+	// 모두의 버킷리스트 페이지 열기, 검색, 정렬
 	@RequestMapping("/comBKList/{num}")
-	public String comBKList(Model model, @RequestParam(value = "sortOption", defaultValue = "최신순") String sortOption, @PathVariable int num) {
-		
+	public String comBKList(Model model, @RequestParam(value = "sortOption", defaultValue = "최신순") String sortOption,
+										 @RequestParam(value = "keyword", required = false) String keyword, 
+										 @RequestParam(value = "type", defaultValue = "notchoice") String type, 
+										 @PathVariable int num) {
+
+		// 게시글 개수 count
 		int count = service.combkListNoCount();
-		
+
 		// 한 페이지에 출력할 게시물 개수
 		int postNum = 8;
-		
+
 		// 페이징 번호
 		int pageNum = (int) Math.ceil((double) count / postNum);
-		
+
 		// 출력할 게시물
 		int displayPost = (num - 1) * postNum;
-		
+
 		ArrayList<ComBKListVO> sortedComBKList = null;
-
-		if (sortOption.equals("최신순")) {
-		    sortedComBKList = service.comBKListViewRec();
-		} else if (sortOption.equals("조회순")) {
-		    sortedComBKList = service.comBKListViewCnt();
-		} else if (sortOption.equals("이름순")) {
-		    sortedComBKList = service.comBKListViewTitle();
-		}
-
 		ArrayList<ComBKListVO> comBKList = new ArrayList<>();
+		
+		if(keyword == null || keyword == "" || type == "notchoice") {
+			if (sortOption.equals("최신순")) {
+		        sortedComBKList = service.comBKListViewRec();
+		    } else if (sortOption.equals("조회순")) {
+		        sortedComBKList = service.comBKListViewCnt();
+		    } else if (sortOption.equals("이름순")) {
+		        sortedComBKList = service.comBKListViewTitle();
+		    }
+		} else if (keyword != null && type != "notchoice") {
+			if (type.equals("combkListTitle")) {
+				sortedComBKList = service.comBKListSearchTitle(keyword, sortOption);
+			  } else if (type.equals("combkListSubtitle")) {
+				sortedComBKList = service.comBKListSearchSubtitle(keyword, sortOption);
+			  } else if (type.equals("combkListWrite")) {
+				sortedComBKList = service.comBKListSearchWrite(keyword, sortOption);
+			  }
+	    }
+		
+		int displayPostSize = sortedComBKList.size();
+		
 		for (int i = displayPost; i < displayPost + postNum && i < sortedComBKList.size(); i++) {
-		    comBKList.add(sortedComBKList.get(i));
-		}
+	        comBKList.add(sortedComBKList.get(i));
+	    }
 		
 		model.addAttribute("pageNum", pageNum);
 		model.addAttribute("comBKList", comBKList);
 		model.addAttribute("sortOption", sortOption);
-		model.addAttribute("currentPage", num); // prev next 용
-		
+		model.addAttribute("displayPostSize", displayPostSize);
+		model.addAttribute("type", type);
+		model.addAttribute("keyword", keyword);
+
 		return "jsp/bucketlist_com/comBKList";
 	}
 	
@@ -252,15 +270,6 @@ public class BucketListController {
 	public String deletecomBKList(int combkListNo) { 
 		
 		service.deletecomBKList(combkListNo);	
-		
-		return "redirect:/comBKList/1";
-	}
-	
-	// 모두의 버킷리스트 검색
-	@RequestMapping("/comBKList/Search")
-	public String comBKListSearch(@RequestParam HashMap<String, Object> param,Model model) {
-		ArrayList<ComBKListVO> comBKList = service.comBKListSearch(param);
-		model.addAttribute("comBKList", comBKList);
 		
 		return "redirect:/comBKList/1";
 	}

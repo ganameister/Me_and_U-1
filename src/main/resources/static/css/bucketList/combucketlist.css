@@ -52,25 +52,9 @@ th,td {
 }
 
 #categoryBox {
-	height:50px;
+	height:90px;
 }
 
-#categoryBox select {
-	margin-left:20px;
-	margin-top:30px;
-	border-radius:5px;
-	color: var(--color4);
-	background: var(--color5);
-	width:67px;
-	height:35px;
-	font-weight:bold;
-	font-family: 'Noto Sans KR', sans-serif;
-	border:1px solid var(--color4);
-}
-
-#categoryBox select:focus {
-	outline:none;
-}
 
 /* 카테고리 버튼 */
 .categoryBtn {
@@ -100,7 +84,6 @@ th,td {
 }
 
 #sortForm {
-	width:200px;
 	display:inline-block;
 }
 
@@ -128,53 +111,102 @@ th,td {
 	border:1px solid var(--color5);
 }
 
-/* 검색 박스 */
-#searchForm {
+/* 검색 및 정렬 박스 */
+#SortSearchBox {
 	width:1600px;
-	height:25px;
-	padding-top:40px;
-	margin-left:67px;
+	height:50px;
+	float:left;
+	margin-left:65px;
 }
 
-#searchtype {
-	height:30px;
-	padding-top:4px;
+#sortcomBKList {
 	border-radius:3px;
+	width:67px;
+	height:36px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size:medium;
+	font-weight:300;
+	border:1px solid var(--color5);
+	vertical-align: middle;
+	margin-right:1px;
 }
 
-#searchtype:focus {
+#sortcomBKList:focus {
 	outline:none;
 }
 
+#type {
+	font-family: 'Noto Sans KR', sans-serif;
+	width:122px;
+	height:36px;
+	font-weight: 300;
+    font-size:medium;
+	border-radius:3px;
+	border:1px solid var(--color5);
+	vertical-align: middle;
+}
+
+#type:focus {
+	outline:none;
+}
+
+#type:hover {
+	cursor:pointer;
+}
+
 #searchText {
-	width:300px;
-	height:24px;
-	padding-top:4px;
+	font-family: 'Noto Sans KR', sans-serif;
+	width:350px;
+	height:32px;
+	font-size:14px;
 	margin-left:2px;
 	border-radius:3px;
-	border:0.1px solid grey;
+	border:1px solid var(--color5);
+	vertical-align: middle;
 }
 
 #searchText:focus {
-	outline:0.1px solid black;
+	outline:none;
 }
 
 #searchBtn {
-	height:31px;
-	color: var(--color4);
-	background: var(--color5);
-	border:1px solid var(--color5);
-	border-radius:5px;
-	font-size:16px;
-	font-weight:bold;
-	margin-left:3px;
-}
-
-#searchBtn:hover {
+	font-family: 'Noto Sans KR', sans-serif;
+	height:36px;
+	width:60px;
 	color: var(--color5);
 	background: var(--color4);
 	border:1px solid var(--color5);
+	border-radius:3px;
+	margin-left:3px;
+	margin-right:2px;
+	vertical-align: middle;
 }
+
+#searchBtn:hover {
+	color: var(--color4);
+	background: var(--color5);
+	border:1px solid var(--color5);
+	cursor:pointer;
+}
+
+#AllListBtn {
+	height:36px;
+	font-family: 'Noto Sans KR', sans-serif;
+	color: var(--color5);
+	background: var(--color4);
+	border:1px solid var(--color5);
+	border-radius:3px;
+	font-weight:bold;
+	vertical-align: middle;
+}
+
+#AllListBtn:hover {
+	color: var(--color4);
+	background: var(--color5);
+	border:1px solid var(--color5);
+	cursor:pointer;
+}
+
 
 /* 리스트 박스 */
 #itemListBox ul {

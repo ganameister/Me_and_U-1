@@ -172,22 +172,65 @@
   		LIMIT #{displayPost}, #{postNum}
   	</select>
   	
-  	<!-- 모두의 버킷리스트 검색 -->
-  	<select id="comBKListSearch" parameterType="hashmap"  resultMap="combklistResult">
+  	<!-- 모두의 버킷리스트 검색 제목 -->
+  	<select id="comBKListSearchTitle" parameterType="string" resultMap="combklistResult">
   		SELECT *
   		FROM combklist 
-  		WHERE
-	  		<choose>
-		  		<when test="searchtype != null and searchtype.equals('combkListTitle')">
-		  			combkListTitle Like CONCAT('%', #{keyword}, '%') 
-		  		</when>
-		  		<when test="searchtype != null and searchtype.equals('combkListWrite')">
-		  			combkListWrite Like CONCAT('%', #{keyword}, '%')
-		  		</when>
-	  		</choose> 		   		
+  		WHERE combkListTitle Like CONCAT('%', #{keyword}, '%') 
+  		ORDER BY 
+  			<choose>
+  				<when test="sortOption == '최신순'">
+  					combkListNo DESC
+  				</when>
+  				<when test="sortOption == '이름순'">
+  					combkListTitle ASC
+  				</when>
+  				<when test="sortOption == '조회순'">
+  					combkListView DESC
+  				</when>
+  			</choose>
+  	</select>
+  	
+  	<!-- 모두의 버킷리스트 검색 한줄 설명 -->
+  	<select id="comBKListSearchSubtitle" parameterType="string" resultMap="combklistResult">
+  		SELECT *
+  		FROM combklist 
+  		WHERE combkListSubtitle Like CONCAT('%', #{keyword}, '%') 
+  		ORDER BY 
+  			<choose>
+  				<when test="sortOption == '최신순'">
+  					combkListNo DESC
+  				</when>
+  				<when test="sortOption == '이름순'">
+  					combkListTitle ASC
+  				</when>
+  				<when test="sortOption == '조회순'">
+  					combkListView DESC
+  				</when>
+  			</choose>
+  	</select>
+  	
+  	<!-- 모두의 버킷리스트 검색 내용 -->
+  	<select id="comBKListSearchWrite" parameterType="string" resultMap="combklistResult">
+  		SELECT *
+  		FROM combklist 
+  		WHERE combkListWrite Like CONCAT('%', #{keyword}, '%')
+  		ORDER BY 
+  			<choose>
+  				<when test="sortOption == '최신순'">
+  					combkListNo DESC
+  				</when>
+  				<when test="sortOption == '이름순'">
+  					combkListTitle ASC
+  				</when>
+  				<when test="sortOption == '조회순'">
+  					combkListView DESC
+  				</when>
+  			</choose>
   	</select>
   	
   	<!-- 모두의 버킷리스트 구간 끝  -->
+  	
   	
   	<!-- Main 페이지 -->
 	<!-- 최신순 3개 출력 -->

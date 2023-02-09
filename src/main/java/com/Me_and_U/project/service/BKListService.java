@@ -159,9 +159,30 @@ public class BKListService implements IBKListService {
 	}
 
 	@Override
-	public ArrayList<ComBKListVO> comBKListSearch(HashMap<String, Object> map) {
-		return dao.comBKListSearch(map);
+	public ArrayList<ComBKListVO> comBKListSearchTitle(String keyword, String sortOption) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("keyword", keyword);
+		map.put("sortOption", sortOption);
+		
+		return dao.comBKListSearchTitle(map);
 	}
 
+	@Override
+	public ArrayList<ComBKListVO> comBKListSearchWrite(String keyword, String sortOption) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("keyword", keyword);
+		map.put("sortOption", sortOption);
+		
+		return dao.comBKListSearchWrite(map);
+	}
+	
+	@Override
+	public ArrayList<ComBKListVO> comBKListSearchSubtitle(String keyword, String sortOption) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("keyword", keyword);
+		map.put("sortOption", sortOption);
+
+		return dao.comBKListSearchSubtitle(map);
+	}
 
 }
