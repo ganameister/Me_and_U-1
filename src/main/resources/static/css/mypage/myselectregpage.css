@@ -6,6 +6,9 @@ body{
 	margin:auto;
 	
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 #wrap{
 	margin-top: 70px;
 	font-weight: 400;

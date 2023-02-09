@@ -1,5 +1,5 @@
 /**
- * mypage.js
+ * myreviewpage.js
  */
  
  $(document).ready(function(){
@@ -21,7 +21,7 @@
             location.href="/mypage";
     });
 	$("#infoedit").click(function() {
-            location.href="/";
+            location.href="/myinfoeditpage";
     });
     $("#myreiew").click(function() {
             location.href="/myreviewpage";
