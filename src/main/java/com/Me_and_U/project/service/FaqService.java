@@ -27,13 +27,13 @@ public class FaqService implements IFaqService {
 
 	@Override
 	public void updatefaq(FaqVO faq) {
-		// TODO Auto-generated method stub
+		dao.updatefaq(faq);
 		
 	}
 
 	@Override
 	public void deletefaq(int faqNo) {
-		// TODO Auto-generated method stub
+		dao.deletefaq(faqNo);
 		
 	}
 

@@ -18,5 +18,9 @@
 			return false;
 		}
 	});
+	
+	 $("#resetBtn").on('click',function(){
+			window.location.href = "/qnaListView";
+		});	
 		
 });

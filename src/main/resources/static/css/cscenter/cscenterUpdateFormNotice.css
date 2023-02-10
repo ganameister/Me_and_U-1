@@ -1,0 +1,296 @@
+@charset "UTF-8";
+/* 제목
+-------------------------------------- */
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+body { 
+    width:100%;
+    max-width:1600px; /* 상단nav 고정으로 반응형으로 다시 고침*/
+	margin:auto;
+}
+.service {
+    margin-top: 120px;     
+    margin-bottom: 100px;
+     margin-left: 7rem;
+    margin-right: 7rem;
+ 
+}
+.subboardTitle {
+    color: var(--color5);
+    font-size: 25px;
+}
+.boardTitle {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: 50px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.underboardTitle {
+    color:#606060;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+
+/* 카테고리
+-------------------------------------- */
+.service_board_top {
+    padding-top: 20px;
+    padding-bottom: 10px;    
+    float: left;
+} 
+.service-midTitle {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+    font-size: xx-large;
+    padding-bottom: 15px;
+    margin-left:-74px;
+}
+
+#service_warp {
+    margin: 0;
+    padding: 0;  
+    outline: none;
+    border: none;
+    text-align: center;
+}
+#service-top {
+    padding-bottom: 10px;
+}
+/* chatBotbutton */
+.chatBot button {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:20px;
+    cursor: pointer;
+    background-color:var(--color5);
+    color:#ffffff;
+    border-radius: 2px;
+    border-style: none;
+    height: 50px;
+    width: 150px;
+    margin-top:10px;
+}
+.chatBot button:hover {
+    opacity: 70%;
+}
+/* middlebuttom */
+.serviceBtn button {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    font-size:medium;
+    cursor: pointer;
+    background: var(--color5);
+    color:#ffffff;
+    border-radius: 2px;
+    border-style: none;
+    height: 40px;
+    width: 80px;
+}
+.serviceBtn button:hover {
+    opacity: 70%;
+}
+/* 수정 취소 버튼 */
+
+.updatenotice input {
+	font-family: 'Noto Sans KR', sans-serif;
+     font-weight: 300;
+    font-size:medium;
+    background: var(--color3);
+    color: grey;
+     height: 40px;
+    width: 80px;
+    border-radius: 2px;
+    border: 1px solid var(--color5);   
+   /*  border-style: none;  */ 
+}
+.updatenotice input:hover {
+    background: var(--color5);
+    color:#ffffff;
+    border-radius: 2px;
+    border-style: none;
+}
+
+/* input text */
+
+#noticeNo {
+	border-style :none;
+	border-bottom:1px solid var(--color5);
+	width:100%;
+	max-width:1000px;		
+}
+#noticeTitle {
+	border-style :none;
+	border-bottom:1px solid var(--color5);
+	width:100%;
+	max-width:1000px;
+	font-size: large;		
+}
+.noticeWrite {
+	border: 1px solid var(--color5);
+	width:100%;
+	max-width:1000px;
+	height: 200px;
+	overflow-y:scroll;
+	text-align:top;
+	font-size: large;		
+}
+#noticeNo:focus {	
+	outline:none;
+	border-bottom:1px solid var(--color8);
+	width:100%;
+	max-width:1000px;		
+}
+.noticeTitle:focus {	
+	outline:none;
+	border-bottom:1px solid var(--color8);
+	width:100%;
+	max-width:1000px;		
+}
+.noticeWrite:focus {	
+	outline:none;
+	border: 1px solid var(--color8);
+	width:100%;
+	max-width:1000px;
+	height: 200px;		
+}
+.noticeWrite::-webkit-scrollbar {
+	width:5px;
+	background-color:var(--color3);
+}
+.noticeWrite::-webkit-scrollbar-thumb {
+	background-color:var(--color5);
+}
+.noticeWrite::-webkit-scrollbar-track {
+	background-color:var(--color4);
+}
+/* #notice {
+    margin-left: -35px;
+}  */
+/*  table 
+-------------------------------------- */
+
+#service-board {    
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.cstable {
+    font-weight: 100;
+    font-size: large;
+    border-collapse: collapse;
+    color: grey;
+    width: 100%;
+}
+.cstable a {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 100;
+   font-size: large;
+    color: grey;
+    text-decoration:none;
+}
+.cstable a:hover {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 100;
+    font-size: large;
+    color: #000000;
+    text-decoration:none;
+}
+.cstable td {
+    padding: 10px;
+}
+#boardlist_title {
+    width: 70%;
+    text-align: left;
+}
+
+.line {
+    cursor:pointer;
+    border-top:1px solid var(--color4);
+}
+
+.BottomLine {
+    border-bottom:3px solid var(--color5); 
+}
+
+.TopLine {
+    border-top:3px solid var(--color5); 
+}
+
+.TitleLine {
+    border-bottom:2px solid var(--color4); 
+}
+/* 
+-------------------------------------- */
+/* action button
+-------------------------------------- */
+
+.action{
+    position: fixed;
+    bottom: 220px;    
+    right:100px;
+    width: 80px;
+    height: 50px;
+    opacity: 0.8;
+    border-radius:50%;
+    cursor:pointer;
+    
+  }
+  .action span {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #274c5e;
+    font-size: 2em;
+    transition: 0.3s ease-in-out;
+  }
+  .action.active span{
+    transform: rotate(135deg);
+  }
+  .action ul{
+    position: absolute;
+    bottom: 70px;
+    background:var(--color8);
+    min-width: 100px;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  .action.active ul{
+    
+    bottom: 30px;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+  }
+  .action ul li{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    font-size:small;
+    color:#646464;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 2px;
+    transition: 0.3s;
+  }
+  .action ul li:hover{
+    font-weight: 100px;  
+  }
+  
+  
+  .action ul li img{
+    height: 25px;
+    margin-right: 10px;
+    opacity: 0.5;
+  }
+  .action ul li:hover img{
+    
+    opacity: 0.8;
+  }
+  

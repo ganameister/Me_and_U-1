@@ -80,6 +80,7 @@
 		  		</when>
 	  		</choose> 		   		
   		</select>
-  		
+  		<!-- 하트 클릭수출력  reviewHart -->
+  		<!-- 하트 클릭번호 이미지 출력 reviewCount -->
 			
 	</mapper>

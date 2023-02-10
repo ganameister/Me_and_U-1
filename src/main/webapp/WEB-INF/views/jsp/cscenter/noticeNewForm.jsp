@@ -5,19 +5,19 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>QNA등록</title>
+		<title>Notice등록</title>
 		<!-- Header -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterQnaInsert.css' />">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterInsertNotice.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<!-- 서머노트 js 및 css 추가 -->
 		<script src="<c:url value='/js/summernote/summernote-lite.js' /> "></script>
 		<script src="<c:url value='/js/summernote/lang/summernote-ko-KR.js' /> "></script>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/summernote/summernote-lite.css' />">
 		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
-		<script src="<c:url value='/js/cscenter/qnaNewForm.js'/>"></script>
+		<script src="<c:url value='/js/cscenter/admin.js'/>"></script>
 		<script type="text/javascript">
 			function actionToggle(){
 				var action=document.querySelector('.action');
@@ -26,8 +26,9 @@
 			function openchatbot() {
 				var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
 			}
+			
 		</script>
-		<!--//Head  -->	
+		<!--//Head  -->		
 		</head>	
 	<body>
 		<!-- wrap -->
@@ -43,41 +44,33 @@
 				
 					<!-- 제목 -->
 					<div class="service-top">
-						<div class="subboardTitle">SERVICE</div>
-						<div class="boardTitle">QnABoard</div>
-						<div class="underboardTitle">질문답변</div>
-						<div class="chatBot"><button onClick="openchatbot()" id="chatBot">Chat Bot</button></div>
+						
+						<div class="boardTitle">noticeBoard</div>
+						
 					</div>
 
 					<!-- 카테고리 -->
-					<div class ="service_board_top">
-						<div class="service-midTitle">Select Category</div>
-						<div class="serviceBtn">
-							<button id="qna">QNA</button>
-							<button id="faq">FAQ</button>
-							<button id="notice">Notice</button>
-						</div>
-					</div>
+					
 					<!-- Table -->
 					<div class ="service-board">
-						<form method="post" action="<c:url value='jsp/cscenter/qnaNewForm'/>">
+						<form method="post" action="<c:url value='jsp/cscenter/noticeNewForm'/>">
 							<table class="cstable">
 								<tr class="TopLine">
-									<td colspan="10" class="boldTopLine">QNA 등록</td>
+									<td colspan="10" class="boldTopLine">Notice 등록</td>
 								</tr>														
 								<tr class="line" >
 									<td class="Line"width="10px">Title.</td><td colspan="9">
-										<input type="text"id="qnaTitle" name="qnaTitle" class="qnaTitle"></td></tr>
+										<input type="text"id="noticeTitle" name="noticeTitle" class="noticeTitle"></td></tr>
 								<tr class="line">
 									<td class="Line">Write.</td><td colspan="9" >
-										<textarea id="summernote" name="qnaWrite"class="qnaWrite"> </textarea>
+										<textarea id="summernote" name="noticeWrite"class="noticeWrite"> </textarea>
 										</td></tr>
 								<tr class="BottomLine">
 									<th colspan="6" class="BottomLine"></th>
 								</tr>
-								<tr aling="center" class="insertQna">
+								<tr aling="center" class="insertnotice">
 									<td colspan="5">
-									<input type="submit" value="등록" class="qnaSubmit"> 
+									<input type="submit" value="등록" class="noticeSubmit"> 
 									<input type="reset" value="취소" id="resetBtn">
 									</td>
 								</tr>
