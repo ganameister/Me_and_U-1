@@ -109,6 +109,15 @@ body {
 	padding:16px 0px;
 }
 
+/* 관심분야 선택 텍스트 */
+#memJoy1Text{
+	width: 170px;
+	height:30px;
+	font-size:17px;
+	border-radius:8px;
+	border-color:white;
+	margin-right: 3px;
+}
 
 /* 회원가입 메일 입력 텍스트 */
 #insertEmail {
@@ -130,6 +139,13 @@ body {
 	padding:40px 0 10px;
 }
 
+#interestSelect {
+	width: 170px;
+}
+
+#interestInsert {
+	width: 170px;
+}
 /* 아이디 중복 확인 버튼 */
 #idCheckBtn {
 	font-size:16px;
@@ -142,7 +158,7 @@ body {
 	background-color:white;
 	font-weight:bold;
 	vertical-align:middle;
-	margin-bottom:-2px;
+	margin-bottom: 2px;
 	border-color:white;
 }
 

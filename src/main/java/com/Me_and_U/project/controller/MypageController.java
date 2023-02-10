@@ -63,10 +63,7 @@ public class MypageController {
 	private String myselectregpage() {
 		return "jsp/myselectregpage";
 	}
-	@RequestMapping("/myinfoeditpage")
-	private String myinfoeditpage() {
-		return "jsp/myinfoeditpage";
-	}
+	
 	// 회원가입 완료시
 	@RequestMapping("/member/update")
 	public String Update(MemberVO vo, @RequestParam("memHp1") String memHp1,
@@ -81,7 +78,7 @@ public class MypageController {
 		vo.setMemBirth(memBirth1 + "-" + memBirth2 + "-" + memBirth3);
 		vo.setMemEmail(memEmail + "@" + memDomain);
 		
-	//	Memservice.updateMember(vo);
+		//Memservice.updateMember(vo);
 		return "jsp/mypage";
 	}
 }
