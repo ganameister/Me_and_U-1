@@ -40,10 +40,11 @@
 						
 						
 						<!-- 이메일 -->
-						<tr><th>이메일</th></tr>
+						<tr><th>*이메일</th></tr>
 						<tr><td class="insertTxtTD"><input type="text" id="insertEmail" class="insertMemInfo" name="memEmail">  <span class="hyphen">@</span>
 												  <input type="text" id="domainText" class="insertMemInfo" name="memDomain">
-							<select name="domainList" id="domainList" class="insertMemInfo">							<!-- 이메일(도메인) 선택 -->
+							<select name="domainList" id="domainList" class="insertMemInfo">
+							<!-- 이메일(도메인) 선택 -->
 							<option value="directInput" selected>직접입력</option>
 							<option value="naver.com">naver.com</option>
 							<option value="gmail.com">gmail.com</option>
@@ -58,15 +59,15 @@
 						
 						
 						<!-- 생년월일 -->
-						<tr><th>생년월일</th></tr>
+						<tr><th>*생년월일</th></tr>
 						<tr><td class="insertTxtTD"><select id="birth_year" class="insertMemInfo" name="memBirth1">
-													  <option>출생년도</option>
+													  <option value="출생년도">출생년도</option>
 												  </select>
 												  <select id="birth_month" class="insertMemInfo" name="memBirth2">
-													  <option>월</option>
+													  <option value="월">월</option>
 												  </select>
 												  <select id="birth_day" class="insertMemInfo" name="memBirth3">
-													  <option>일</option>
+													  <option value="일">일</option>
 												  </select>
 												  <img id="calenderImg" src="<c:url value='/images/calendar.png' />"></td></tr>
 						
@@ -87,17 +88,20 @@
 						
 						<tr><td id="interestInfo"><span>관심정보</span></td></tr>
 						<tr><th>관심분야1</th></tr>
-						<tr><th class="insertTxtTD"><select name = "memJoy1" class="insertMemInfo">
-							<option>여행/아웃도어
-							<option>운동/스포츠
-							<option>게임/오락
-							<option>문화/공연/축제
-							<option>음악/악기
-							<option>기타
+						<tr><th class="insertTxtTD">
+							<input type="text" name = "memJoy1" id="memJoy1Text" readonly>
+							<select class="insertMemInfo" id="interestSelect">
+							<option value="default" selected>관심분야 선택
+							<option value="여행/아웃도어">여행/아웃도어
+							<option value="운동/스포츠">운동/스포츠
+							<option value="게임/오락">게임/오락
+							<option value="문화/공연/축제">문화/공연/축제
+							<option value="음악/악기">음악/악기
+							<option value="기타">기타
 						</select></th></tr>
 						
 						<tr><th>관심분야2</th></tr>
-						<tr><th class="insertTxtTD"><input type="text" placeholder="상세 관심분야 입력" name="memJoy2" class="insertMemInfo"></th></tr>
+						<tr><th class="insertTxtTD"><input type="text" placeholder="상세 관심분야 입력" name="memJoy2" class="insertMemInfo" id="interestInsert"></th></tr>
 						<tr><td><input type="hidden" name="memJoinDate" value='<fmt:formatDate value="${prd.prdDate }" pattern="yyyy-MM-dd"/>'></td></tr>
 					</table>									<!-- 회원가입정보 입력 테이블 끝 -->
 					

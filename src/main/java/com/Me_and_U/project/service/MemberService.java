@@ -81,4 +81,25 @@ public class MemberService implements IMemberService {
 		return dao.memPwSearchInfoCheck(memId, memName, memEmail);
 	}
 
+	@Override
+	public void memInfoChange(MemberVO vo) {
+		// TODO Auto-generated method stub
+		dao.memInfoChange(vo);
+	}
+
+	@Override
+	public MemberVO getMemInfo(String memId) {
+		// TODO Auto-generated method stub
+		return dao.getMemInfo(memId);
+	}
+
+	@Override
+	public void MyInfoPwChange(MemberVO vo) {
+		String encodedPassword = passwordEncoder.encode(vo.getMemPw());
+		
+		// 암호화된 비밀번호로 vo에 저장한 후 vo를 mapper에 보내서 db에 저장
+		vo.setMemPw(encodedPassword); 
+		dao.MyInfoPwChange(vo);
+	}
+
 }
