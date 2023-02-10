@@ -34,7 +34,19 @@
 				  #{memJoy1}, #{memJoy2})
 		
 		</insert>
-	
+		
+		<!-- 회원 정보 가져오기 -->
+		<select id="getMemInfo" parameterType="string" resultMap="memResult">
+			SELECT * FROM member WHERE memId=#{memId}
+		</select>
+			
+		
+		<!-- 회원 정보 변경 -->
+		<update id="memInfoChange">
+			UPDATE member SET memName= #{memName}, memEmail= #{memEmail}, memHP= #{memHP}, memZipcode= #{memZipcode},
+							  memAddress1= #{memAddress1}, memAddress2 =#{memAddress2}, memJoy1= #{memJoy1}, memJoy2= #{memJoy2}
+			WHERE memId=#{memId}
+		</update>
 	
 		<!--  암호화한 후 로그인 확인-->
 	  	<select id="loginCheck" parameterType="string" resultType="string">
@@ -56,10 +68,17 @@
 			SELECT memId FROM member WHERE memId=#{memId} AND memName=#{memName} AND memEmail=#{memEmail}
 		</select>
 		
-		<!-- 비빌먼호 변경 -->
-		<update id="pwChage" parameterType="string">
+		<!-- 비밀번호 찾기 변경 -->
+		<update id="pwChage">
 			UPDATE member SET memPw=#{memPw} WHERE memId=#{memId}
 		</update>
+		
+		<!-- 마이페이지 비밀번호 변경 -->
+		<update id="MyInfoPwChange">
+			UPDATE member SET memPw=#{memPw} WHERE memId=#{memId}
+		</update>
+		
+		
 	</mapper>
 
 
