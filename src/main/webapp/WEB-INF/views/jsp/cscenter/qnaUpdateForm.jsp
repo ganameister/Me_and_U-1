@@ -82,7 +82,7 @@
 								<tr aling="center" class="updateQna">
 									<td colspan="5">
 									<input type="submit" value="수정"class="qnaSubmit"> 
-									<input type="reset" value="취소">
+									<input type="reset" value="취소" id="resetBtn">
 									</td></tr>
 							</table>
 						</form>

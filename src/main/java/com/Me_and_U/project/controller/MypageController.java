@@ -81,7 +81,7 @@ public class MypageController {
 		vo.setMemBirth(memBirth1 + "-" + memBirth2 + "-" + memBirth3);
 		vo.setMemEmail(memEmail + "@" + memDomain);
 		
-		Memservice.updateMember(vo);
+	//	Memservice.updateMember(vo);
 		return "jsp/mypage";
 	}
 }

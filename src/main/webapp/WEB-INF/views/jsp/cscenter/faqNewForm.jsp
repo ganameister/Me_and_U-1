@@ -5,12 +5,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>review</title>
+		<title>FAQ등록</title>
 		<!-- Header -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterinsert.css' />">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterInsertFaq.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<!-- 서머노트 js 및 css 추가 -->
 		<script src="<c:url value='/js/summernote/summernote-lite.js' /> "></script>
@@ -18,7 +18,17 @@
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/summernote/summernote-lite.css' />">
 		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
 		<script src="<c:url value='/js/cscenter/faqNewForm.js'/>"></script>
-		
+		<script src="<c:url value='/js/cscenter/admin.js'/>"></script>
+		<script type="text/javascript">
+			function actionToggle(){
+				var action=document.querySelector('.action');
+				action.classList.toggle('active')
+			}
+			function openchatbot() {
+				var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
+			}
+			
+		</script>
 		<!--//Head  -->	
 		</head>	
 	<body>
@@ -62,7 +72,7 @@
 								<tr aling="center" class="insertfaq">
 									<td colspan="5">
 									<input type="submit" value="등록" class="faqSubmit"> 
-									<input type="reset" value="취소">
+									<input type="reset" value="취소" id="resetBtn">
 									</td>
 								</tr>
 							</table>

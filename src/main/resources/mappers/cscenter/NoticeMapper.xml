@@ -29,7 +29,27 @@
 		WHERE noticeNo=#{noticeNo}
 		</select>	
 		
+		<!-- 삭제-->  
+		<delete id="deletenotice" parameterType="int"  >
+		DELETE 
+		FROM notice 
+		WHERE noticeNo=#{noticeNo}
+		</delete>  
 		
+		<!-- 수정-->  
+		<update id="updatenotice" parameterType="com.Me_and_U.project.model.NoticeVO" >
+		UPDATE notice
+		SET noticeTitle=#{noticeTitle},noticeWrite=#{noticeWrite}  
+		WHERE noticeNo=#{noticeNo}
+		</update>
+		
+		
+		
+		<!-- 등록-->  
+		<insert id="insertnotice" parameterType="com.Me_and_U.project.model.NoticeVO" >
+		  INSERT INTO notice (memId,noticeNo,noticeTitle,noticeWrite ) 
+		VALUES (#{memId}, #{noticeNo}, #{noticeTitle},#{noticeWrite})
+		</insert>
 	</mapper>
 
 

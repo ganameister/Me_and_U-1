@@ -15,24 +15,14 @@
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<script src="<c:url value='/js/cscenter/admin.js'/>"></script>
 		<script type="text/javascript">
-		function faqdelete(){
-			var answer = confirm("삭제하시겠습니까?");
-			if(answer){
-				location.href = "<c:url value='/cscenter/deletefaq/${faq.faqNo}'/>";
+			function actionToggle(){
+				var action=document.querySelector('.action');
+				action.classList.toggle('active')
 			}
-		}
-		function faqupdate(){
-			location.href = "<c:url value='/cscenter/faqUpdateForm/${faq.faqNo}'/>";			
-		}
-		function noticedelete(){
-			var answer = confirm("삭제하시겠습니까?");
-			if(answer){
-				location.href = "<c:url value='/cscenter/deletenotice/${notice.noticeNo}'/>";
+			function openchatbot() {
+				var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
 			}
-		}
-		function faqupdate(){
-			location.href = "<c:url value='/cscenter/noticeUpdateForm/${notice.noticeNo}'/>";			
-		}
+			
 		</script>
 		
 		
@@ -55,9 +45,7 @@
 				<br>	
 					<h3>FAQ</h3>
 					<div id="adminBtn">
-					<button id="faqInput">FAQ 등록</button>
-					<button id="update" onclick="faqupdate();">FAQ 수정</button>
-					<button id="delete" onclick="faqdelete();">FAQ 삭제</button><br><br>
+					<button id="faqInput">FAQ 등록</button><br><br>
 					</div>	
 					<!-- Table -->
 					<div class ="service-board">
@@ -89,9 +77,7 @@
 					
 					<h3>NOTICE</h3>
 					<div id="adminBtn">
-					<button id="noticeInput" >NOTICE 등록</button>
-					<button id="update" onclick="noticeupdate();">NOTICE 수정</button>
-					<button id="delete" onclick="noticedelete();">NOTICE 삭제</button><br><br>
+					<button id="noticeInput" >NOTICE 등록</button><br><br>
 					</div>
 					<!-- Table -->
 					<div class ="service-board">
@@ -127,7 +113,7 @@
 
 			<!-- Bottom -->
 			<!-- footer -->
-		
+			<c:import url="/WEB-INF/views/layout/bottom.jsp" /> 
 			<!-- //footer -->
 			<!-- //Bottom -->
 		</div>

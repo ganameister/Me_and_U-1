@@ -8,5 +8,8 @@ import com.Me_and_U.project.model.QnaVO;
 
 public interface INoticeService {
 	public ArrayList<NoticeVO> listAllNotice(); 	
-	public NoticeVO detailViewNotice(int noticeNo); 
+	public NoticeVO detailViewNotice(int noticeNo);
+	public void updatenotice(NoticeVO notice); 
+	public void deletenotice(int noticeNo); 	
+	public void insertnotice(NoticeVO notice);
 }

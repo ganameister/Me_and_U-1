@@ -11,7 +11,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterDetailVew2.css' />">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/cscenter/cscenterDetailVew.css' />">
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<script src="<c:url value='/js/cscenter/cscenter.js'/>"></script>
 		<script type="text/javascript">
@@ -21,6 +21,15 @@
 		}
 		function openchatbot() {
 			var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
+		}
+		function faqdelete(){
+			var answer = confirm("삭제하시겠습니까?");
+			if(answer){
+				location.href = "<c:url value='/cscenter/deletefaq/${faq.faqNo}'/>";
+			}
+		}
+		function faqupdate(){
+			location.href = "<c:url value='/cscenter/faqUpdateForm/${faq.faqNo}'/>";			
 		}
 		</script>
 		<!--//Head  -->	
@@ -52,6 +61,14 @@
 							<button id="qna">QNA</button>
 							<button id="faq">FAQ</button>
 							<button id="notice">Notice</button>
+							<c:if test="${ sessionScope.sid eq 'admin1'}">				   			
+							<button id="update" onclick="faqupdate();">FAQ 수정</button>
+							<button id="delete" onclick="faqdelete();">FAQ 삭제</button>	 	
+							</c:if>
+							<c:if test="${sessionScope.sid != faq.memId}">
+							<button id="none" ></button>
+							<button id="none" ></button>
+							</c:if>		
 						</div>
 					</div>
 					<!-- Table -->
