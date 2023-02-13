@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+body{
+	width:1600px;
+	margin: auto;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+#wrap{
+	margin-top: 69px;
+	font-weight: 400;
+}
+
+.sec1{
+	display: flex;
+	float: left;
+	margin-left: 5%;
+	margin-top: 100px;
+	margin-right: 5%;
+	
+	
+}
+.sec1 li{
+font-size: 19px;
+margin: 20px 0px;
+list-style: none;
+}
+#myp:hover{
+cursor:pointer;
+font-weight: bold;
+}
+#infoedit{
+cursor:pointer;
+font-weight: bold;
+border-bottom: 3px solid;
+}
+#myreiew:hover{
+cursor:pointer;
+font-weight: bold;	
+}
+
+#selectreg:hover{
+cursor:pointer;
+font-weight: bold;	
+}
+
+
+.sec2{
+	display:inline-block;
+	width:1288.8px;
+	background-color: var(--color4);
+	border-left: 1px solid;
+	height: 800px;
+}
+.card-body{
+	text-align: center;
+	margin-top: 200px;
+}
+.form-control {
+	height:30px;
+	font-size:17px;
+	border-radius:8px;
+	border-color:white;
+	margin-bottom: 10px;
+}
