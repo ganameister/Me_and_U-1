@@ -4,17 +4,16 @@
  
  $(document).ready(function(){
 	$('#checkPwd').on('click',function() {
-	event.preventDefault();
 		$.ajax({
 			type: "post",
-			url: "/myinfoeditcheckpage",
+			url: "/myInfoPwCheck",
 			data: {
-				"pw": $('#pw').val()
+				"memPw": $('#password').val()
 			},
 			dataType:'text',
-			success:function(result){
-				if(result == "success"){
-					location.href="/myinfoeditpage";
+			success:function(result) {
+				if(result == "success") {
+					location.href="/myInfoEditPage";
 				} else {
 					alert("비밀번호가 일치하지 않습니다.");
 				}
@@ -22,7 +21,7 @@
 		});	// ajax 종료
 	});
 	
- $cateBtn = $(".cateBtn");
+ /*$cateBtn = $(".cateBtn");
 	$cateBtn.each(function(index) {
 		var search = ["전체", "여행", "운동", "게임", "문화", "음악","기타"];
 		$('#categ' + index).on('click', function() {
@@ -48,7 +47,7 @@
             location.href="/myselectregpage";
     });
   
-  
+  */
 	// 로그인 성공 시 페이지
 
 	
