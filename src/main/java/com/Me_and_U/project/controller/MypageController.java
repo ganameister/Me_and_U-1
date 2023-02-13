@@ -31,6 +31,8 @@ public class MypageController {
 	@RequestMapping("/mypage")
 	private String mypage(Model model,HttpSession session) {
 		String memId = (String) session.getAttribute("sid");
+		model.addAttribute("info", Memservice.getMemInfo(memId));
+		
 		ArrayList<MyBKListVO> myBKList = BKLservice.MypagemyBKListView(memId);
 		model.addAttribute("myBKList", myBKList);
 		
@@ -58,7 +60,7 @@ public class MypageController {
 	}
 	
 	
-
+	//찜한정기모임
 	@RequestMapping("/myselectregpage")
 	private String myselectregpage() {
 		return "jsp/myselectregpage";
@@ -80,5 +82,17 @@ public class MypageController {
 		
 		//Memservice.updateMember(vo);
 		return "jsp/mypage";
+	}
+	
+	//개인정보수정
+	@RequestMapping("/myinfoeditpage")
+	private String myinfoeditpage() {
+		return "jsp/myinfoeditpage";
+	}
+	
+	//개인정보수정전 비밀번호 확인
+	@RequestMapping("/myinfoeditcheckpage")
+	private String myinfoeditcheckpage() {
+		return "jsp/myinfoeditcheckpage";
 	}
 }
