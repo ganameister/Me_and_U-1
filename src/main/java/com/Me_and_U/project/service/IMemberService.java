@@ -15,4 +15,5 @@ public interface IMemberService {
 	public MemberVO memIdInfo(String memName, String memEmail);	// 아이디 값 가져오기
 	public void pwChage(MemberVO vo);	// 비밀번호 찾기
 	public void MyInfoPwChange(MemberVO vo);	// 비밀번호 변경
+	public String myInfoPwCheck(MemberVO vo);	// 비밀번호 일치여부 체크
 }

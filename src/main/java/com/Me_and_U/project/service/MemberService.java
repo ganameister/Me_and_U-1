@@ -102,4 +102,16 @@ public class MemberService implements IMemberService {
 		dao.MyInfoPwChange(vo);
 	}
 
+	@Override
+	public String myInfoPwCheck(MemberVO vo) {
+		// id값에 맞는 암호화된 pw값을 가져옴
+		String encodedPw = dao.myInfoPwCheck(vo);
+		String result = "fail";
+		// 가져온 pw값을 입력한 pw값과 비교
+		if(passwordEncoder.matches(vo.getMemPw(), encodedPw)) {
+			result = "success";
+		}
+		return result;
+	}
+
 }

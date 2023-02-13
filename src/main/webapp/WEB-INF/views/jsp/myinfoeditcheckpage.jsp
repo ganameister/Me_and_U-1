@@ -29,7 +29,6 @@
 					<div class="text-start">
 							<div class="input-group input-group-outline my-3">
 								<label class="form-label">비밀번호 확인</label><br>
-									<input type="hidden" id="password" name="password" class="form-control" value="${memPw }">
 									<input type="password" id="password" name="password" class="form-control" placeholder="비밀번호를 입력하세요">
 							</div>
 					</div>
