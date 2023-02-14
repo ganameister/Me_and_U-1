@@ -1,5 +1,5 @@
 /**
- * myinfoeditpage.js
+ * myinfoeditcheckpage.js
  */
  
  $(document).ready(function(){
@@ -21,19 +21,8 @@
 		});	// ajax 종료
 	});
 	
- /*$cateBtn = $(".cateBtn");
-	$cateBtn.each(function(index) {
-		var search = ["전체", "여행", "운동", "게임", "문화", "음악","기타"];
-		$('#categ' + index).on('click', function() {
-			if(search[index - 1] == "전체") {
-				$(".review_container").show();
-			} else {
-				$(".review_container").hide();
-				$('.review_container[value*=' + search[index - 1] + ']').show();
-			}
-		});
-	});
-	
+
+	// 로그인 성공 시 페이지
 	$("#myp").click(function() {
             location.href="/mypage";
     });
@@ -46,10 +35,6 @@
     $("#selectreg").click(function() {
             location.href="/myselectregpage";
     });
-  
-  */
-	// 로그인 성공 시 페이지
-
 	
 
 

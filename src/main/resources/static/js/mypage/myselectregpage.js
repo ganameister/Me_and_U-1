@@ -21,7 +21,7 @@
             location.href="/mypage";
     });
 	$("#infoedit").click(function() {
-            location.href="/myinfoeditpage";
+            location.href="/myinfoeditcheckpage";
     });
     $("#myreiew").click(function() {
             location.href="/myreviewpage";

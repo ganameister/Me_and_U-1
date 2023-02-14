@@ -28,6 +28,7 @@ public class MypageController {
 	@Autowired
 	MemberService Memservice;
 	
+	//마이페이지
 	@RequestMapping("/mypage")
 	private String mypage(Model model,HttpSession session) {
 		String memId = (String) session.getAttribute("sid");
@@ -41,15 +42,7 @@ public class MypageController {
 		return "jsp/mypage";
 	}
 	
-	@RequestMapping("/reviewMypage")
-	public String reviewMypage(Model model,HttpSession session) {
-		String memId = (String) session.getAttribute("sid");
-		
-		ArrayList<ReviewVO> reviewMy = Revservice.reviewMypage(memId);
-		model.addAttribute("reviewMy",reviewMy);			
-		return "jsp/reviewMypage";
-	}
-	
+	//내가 쓴 리뷰 페이지
 	@RequestMapping("/myreviewpage")
 	public String myreviewpage(Model model,HttpSession session) {
 		String memId = (String) session.getAttribute("sid");
@@ -58,7 +51,14 @@ public class MypageController {
 		model.addAttribute("reviewMy",reviewMy);			
 		return "jsp/myreviewpage";
 	}
-	
+	/*
+	 * @RequestMapping("/reviewMypage") public String reviewMypage(Model
+	 * model,HttpSession session) { String memId = (String)
+	 * session.getAttribute("sid");
+	 * 
+	 * ArrayList<ReviewVO> reviewMy = Revservice.reviewMypage(memId);
+	 * model.addAttribute("reviewMy",reviewMy); return "jsp/reviewMypage"; }
+	 */
 	
 	//찜한정기모임
 	@RequestMapping("/myselectregpage")

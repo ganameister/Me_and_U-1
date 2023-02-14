@@ -132,64 +132,34 @@
 					</article>
 					</div>
 					<div class="thbox">
-						<table style="border: 1px solid;">
+						<table>
 						 <tr>
-							<td>${info.memId}</td>
+							<td>아이디</td><td>${info.memId}</td>
 						</tr>
 						<tr>
-							<td>${info.memEmail}</td>
+							<td>이름</td><td>${info.memName}</td>
 						</tr>
 						<tr>
-							<td>${info.memBirth}</td>
+							<td>이메일</td><td>${info.memEmail}</td>
 						</tr>
-						<%-- <tr>
-							<td>${info.Gender}성별</td>
-						</tr>  --%>
 						<tr>
-							<td>${info.memAddress1}</td>
-							<td>${info.memAddress2}</td>
+							<td>생년월일</td><td>${info.memBirth}</td>
+						</tr>
+						<tr>
+							<td>주소</td>	<td>${info.memAddress1}${info.memAddress2}</td>
 						</tr>
 						 <tr>
-							<td>${info.memJoy1}</td>
+							<td>관심분야</td><td>${info.memJoy1}</td>
 						</tr> 
 						<tr>
-							<td>${info.memJoy2}</td>
-						</tr>
-						<tr>
-							<td><fmt:formatDate value="${info.memJoinDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+							<td>전화번호</td><td>${info.memHP}</td>
 						</tr> 
+						 
 						
 
 						</table>
 					</div>
-				</section><!-- 글 목록? -->
-				<!-- <section class="sec3">
-				<div>
-					<table style="border: 1px solid;">
-					<tr>
-						<td>이름</td>
-					</tr>
-					<tr>
-						<td>이메일</td>
-					</tr>
-					<tr>
-						<td>생년월일</td>
-					</tr>
-					<tr>
-						<td>성별</td>
-					</tr>
-					<tr>
-						<td>주소</td>
-					</tr>
-					<tr>
-						<td>관심분야1</td>
-					</tr>
-					<tr>
-						<td>가입날짜</td>
-					</tr>
-					</table>
-					</div>
-				</section> -->
+				</section>
 			</div><!-- main -->
 			<c:import url="/WEB-INF/views/layout/bottom.jsp" /> 
 		</div><!-- wrap -->
