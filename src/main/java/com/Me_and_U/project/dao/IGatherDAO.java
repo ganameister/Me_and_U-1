@@ -11,6 +11,5 @@ import com.Me_and_U.project.model.RegGatherVO;
 
 public interface IGatherDAO {
 	public void regGatherInsert(RegGatherVO regGather); // 정기 모임 등록
-	//public ArrayList<RegGatherVO > listAllGather();	
-	public RegGatherVO listAllGather(String regGatherNo);
+	public ArrayList<RegGatherVO > listAllGather();	
 }

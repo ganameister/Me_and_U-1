@@ -15,18 +15,18 @@ public class GatherListViewController {
 	@Autowired
 	GatherService service;
 	
-	// 정기모임 리스트 전체 보기
-//	@RequestMapping("/regGatherListView")
-//	public String regGatherListView(Model model) {
-//		ArrayList<RegGatherVO> regGList = service.listAllGather();
-//		model.addAttribute("regGList", regGList);
-//		return "jsp/regGatherListView";
-//	}	
-//	@RequestMapping("/regGatherListView")
-//	public String regGatherListView(Model model,RegGatherVO reggather) {
-//		reggather = service.listAllGather();
-//		//model.addAttribute("regGList", regGList);
-//		return "jsp/regGatherListView";
-//	}	
+//	 정기모임 리스트 전체 보기
+	@RequestMapping("/regGatherListView")
+	public String regGatherListView(Model model) {
+		ArrayList<RegGatherVO> regGList = service.listAllGather();
+		model.addAttribute("regGList", regGList);
+		
+		String a = regGList.get(0).getRegGatherStartDate().substring(0, 16);
+		model.addAttribute("regGatherStartDate", a);
+		String b = regGList.get(0).getRegGatherEndDate().substring(0, 16);
+		model.addAttribute("regGatherEndDate", b);
+		
+		return "jsp/regGatherListView";
+	}
 	
 }

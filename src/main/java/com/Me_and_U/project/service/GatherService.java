@@ -20,13 +20,8 @@ public class GatherService implements IGatherService {
 	}
 
 	@Override
-	public RegGatherVO listAllGather(String regGatherNo) {
-		return dao.listAllGather(regGatherNo);
+	public ArrayList<RegGatherVO> listAllGather() {
+		return dao.listAllGather();
 	}
-
-//	@Override
-//	public ArrayList<RegGatherVO> listAllGather() {
-//		return dao.listAllGather();
-//	}
 
 }
