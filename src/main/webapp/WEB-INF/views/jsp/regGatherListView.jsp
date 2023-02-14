@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -82,157 +83,46 @@
 			            <option>이름순</option>
 					</select>
 				</div>
-				<div class="newRegister"><input type="button" class="newRegisterBtn" value="모임 개설"></div>
+				<div class="newRegister"><input type="button" class="newRegisterBtn" id="newRegisterBtn" value="모임 개설"></div>
 			</div>
 			<!-- 모임 리스트 보기 -->
-			<!-- 프론트용 임시 -->
 			<div class="listView">
-				<ul>
-					<li class="categoryList" value="여행">
-						<a href="#">
-							<div class ="gatherInfo" >
-								<div class="bottom">
-									<input type="button" class="doIt" value="해보기">
+				<ul class="categoryUl">
+					<c:forEach var="regG" items="${regGList}">
+						<li class="categoryList" value="${regG.ctgNo}">
+							<a href="#">
+								<div class ="gatherInfo" >
+									<div class="bottom">
+										<input type="button" class="doIt" value="해보기">
+									</div>
+									<img src="<c:url value='/images/${regG.regGatherImg}' />" class="preview">
+									<div class="gatherName">${regG.regGatherTitle}</div>
+									<table class="gather_InfoTbl">
+										<tr class="content">
+											<th>모집기간</th>
+											<td><span class="diff_bar"> | </span>&nbsp;<%-- <fmt:parseDate value="${regG.regGatherStartDate}" var="regGatherStartDate" pattern="yyyy-MM-dd HH:mm"/> --%>
+											${regG.regGatherStartDate} ~ ${regG.regGatherEndDate}
+											<%-- <fmt:parseDate value="${regG.regGatherEndDate}" var="regGatherEndDate" pattern="yyyy-MM-dd HH:mm"/> --%></td>
+											
+											
+										</tr>
+										<tr class="content">
+											<th>지역</th>
+											<td><span class="diff_bar"> | </span>&nbsp;${regG.regGatherArea}</td>
+										</tr>
+										<tr class="content">
+											<th>조회수</th>
+											<td><span class="diff_bar"> | </span>&nbsp;100</td>
+										</tr>
+									</table>
+									<div class="gather_progress" >
+										<span class="progressBox"><progress value="0" min="0" max="${regG.regGatherMaxNum}" class="recruit_Rate" id="recruit_Rate"></progress></span>
+										<span class="recruit_RateTxt">${regG.regGatherNowNum}명 / ${regG.regGatherMaxNum}명</span>
+									</div>											
 								</div>
-								<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
-								<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
-								<table class="gather_InfoTbl">
-									<tr class="content">
-										<th>모집기간</th>
-										<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
-									</tr>
-									<tr class="content">
-										<th>지역</th>
-										<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
-									</tr>
-									<tr class="content">
-										<th>조회수</th>
-										<td><span class="diff_bar"> | </span>&nbsp;100</td>
-									</tr>
-								</table>
-								<div class="gather_progress" >
-									<span class="progressBox"><progress value="80" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
-									<span class="recruit_RateTxt">80명 / 100명</span>
-								</div>											
-							</div>
-						</a>
-					</li>
-					<li class="categoryList" value="여행">
-						<a href="#">
-							<div class ="gatherInfo" >
-								<div class="bottom">
-									<input type="button" value="해보기">
-								</div>
-								<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
-								<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
-								<table class="gather_InfoTbl">
-									<tr class="content">
-										<th>모집기간</th>
-										<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
-									</tr>
-									<tr class="content">
-										<th>지역</th>
-										<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
-									</tr>
-									<tr class="content">
-										<th>조회수</th>
-										<td><span class="diff_bar"> | </span>&nbsp;100</td>
-									</tr>
-								</table>
-								<div class="gather_progress" >
-									<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
-									<span class="recruit_RateTxt">20명 / 100명</span>
-								</div>											
-							</div>
-						</a>
-					</li>
-					<li class="categoryList" value="여행">
-						<a href="#">
-							<div class ="gatherInfo" >
-								<div class="bottom">
-									<input type="button" value="해보기">
-								</div>
-								<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
-								<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
-								<table class="gather_InfoTbl">
-									<tr class="content">
-										<th>모집기간</th>
-										<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
-									</tr>
-									<tr class="content">
-										<th>지역</th>
-										<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
-									</tr>
-									<tr class="content">
-										<th>조회수</th>
-										<td><span class="diff_bar"> | </span>&nbsp;100</td>
-									</tr>
-								</table>
-								<div class="gather_progress" >
-									<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
-									<span class="recruit_RateTxt">20명 / 100명</span>
-								</div>											
-							</div>
-						</a>
-					</li>
-					<li class="categoryList" value="여행">
-						<a href="#">
-							<div class ="gatherInfo" >
-								<div class="bottom">
-									<input type="button" value="해보기">
-								</div>
-								<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
-								<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
-								<table class="gather_InfoTbl">
-									<tr class="content">
-										<th>모집기간</th>
-										<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
-									</tr>
-									<tr class="content">
-										<th>지역</th>
-										<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
-									</tr>
-									<tr class="content">
-										<th>조회수</th>
-										<td><span class="diff_bar"> | </span>&nbsp;100</td>
-									</tr>
-								</table>
-								<div class="gather_progress" >
-									<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
-									<span class="recruit_RateTxt">20명 / 100명</span>
-								</div>											
-							</div>
-						</a>
-					</li>
-					<li class="categoryList" value="여행">
-						<a href="#">
-							<div class ="gatherInfo" >
-								<div class="bottom">
-									<input type="button" value="해보기">
-								</div>
-								<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
-								<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
-								<table class="gather_InfoTbl">
-									<tr class="content">
-										<th>모집기간</th>
-										<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
-									</tr>
-									<tr class="content">
-										<th>지역</th>
-										<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
-									</tr>
-									<tr class="content">
-										<th>조회수</th>
-										<td><span class="diff_bar"> | </span>&nbsp;100</td>
-									</tr>
-								</table>
-								<div class="gather_progress" >
-									<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
-									<span class="recruit_RateTxt">20명 / 100명</span>
-								</div>											
-							</div>
-						</a>
-					</li>
+							</a>
+						</li>
+					</c:forEach>
 				</ul>
 			</div>
 		</section>
