@@ -71,7 +71,12 @@ font-weight: bold;
 }
 .thbox{
 	float: right;
-	padding: 60px;
+    padding-top: 50px;
+    padding-right: 30px;
+}
+table {
+	border:1px solid;
+	 border-spacing: 10px;
 }
 #combkImg{
 	width: 200px;

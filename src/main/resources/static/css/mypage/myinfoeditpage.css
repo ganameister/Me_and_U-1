@@ -51,6 +51,7 @@ font-weight: bold;
 	width:1288.8px;
 	background-color: var(--color4);
 	border-left: 1px solid;
+	margin-bottom: -24px;
 }
 .h3{
 	border-bottom: 1px solid rgba(128, 128, 128, 0.483);
