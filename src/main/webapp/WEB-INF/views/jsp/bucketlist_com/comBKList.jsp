@@ -10,6 +10,7 @@
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<script src="<c:url value='/js/bucketList/combucketlist.js'/>"></script>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/bucketList/combucketlist.css'/>">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,200" />
 	</head>
 	<body>
 		<!-- top import -->
@@ -25,9 +26,9 @@
 					</div>
 					<div id="slideShowBox">
 						<div id="slidePanel">
-							<img src="<c:url value='/images/배낭여행.jpg'/>" class="slideImage">
-							<img src="<c:url value='/images/런던브릿지1.jpg'/>" class="slideImage">
-							<img src="<c:url value='/images/사이클1.jpg'/>" class="slideImage">
+							<img src="<c:url value='/images/모두의버킷리스트1.jpg'/>" class="slideImage">
+							<img src="<c:url value='/images/모두의버킷리스트2.jpg'/>" class="slideImage">
+							<img src="<c:url value='/images/모두의버킷리스트3.jpg'/>" class="slideImage">
 						</div>
 					</div>
 				</div>
@@ -61,8 +62,10 @@
 								<option value="combkListSubtitle" <c:if test="${type eq 'combkListSubtitle'}">selected</c:if>>한줄 설명</option>
 								<option value="combkListWrite" <c:if test="${type eq 'combkListWrite'}">selected</c:if>>내용</option>
 							</select>
-							<input type="text" name="keyword" id="searchText" class="searchText" placeholder="검색 내용을 입력해주세요." value="${keyword }">
-							<input type="submit" value="Enter" id="searchBtn" class="searchBtn">
+							<div id="textWrap">
+								<input type="text" name="keyword" id="searchText" class="searchText" placeholder="검색 내용을 입력해주세요." value="${keyword }">
+								<button type="submit" id="searchBtn" class="searchBtn"><span class="material-symbols-outlined">search</span></button>
+							</div>
 						</form>
 						<a href="<c:url value='/comBKList/1'/>"><button id="AllListBtn">전체 보기</button></a>
 					</div>
@@ -95,10 +98,10 @@
 			<section>
 				<div class="page">
 					<c:if test="${currentPage > 1}">
-	   					<a href="/comBKList/${currentPage - 1}?sortOption=${sortOption}"><button id="previousBtn" class="pageBTN"> < Prev </button></a>
+	   					<a href="/comBKList/${currentPage - 1}?sortOption=${sortOption}&type=${type}&keyword=${keyword}"><button id="previousBtn" class="pageBTN"> < Prev </button></a>
 	 				</c:if>
-	 				<c:if test="${currentPage < pageNum || displayPostSize > 8}">
-					    <a href="/comBKList/${currentPage + 1}?sortOption=${sortOption}"><button id="nextBtn" class="pageBTN"> Next > </button></a>
+	 				<c:if test="${currentPage < pageNum && currentPage < pageNum2}">
+					    <a href="/comBKList/${currentPage + 1}?sortOption=${sortOption}&type=${type}&keyword=${keyword}"><button id="nextBtn" class="pageBTN"> Next > </button></a>
 					</c:if>
 				</div>
 			</section>
