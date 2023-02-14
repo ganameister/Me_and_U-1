@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -132,48 +133,32 @@
 					</div>
 					<div class="thbox">
 						<table style="border: 1px solid;">
+						 <tr>
+							<td>${info.memId}</td>
+						</tr>
 						<tr>
-						<td>이름</td>
-					</tr>
-					<tr>
-						<td>이메일</td>
-					</tr>
-					<tr>
-						<td>생년월일</td>
-					</tr>
-					<tr>
-						<td>성별</td>
-					</tr>
-					<tr>
-						<td>주소</td>
-					</tr>
-					<tr>
-						<td>관심분야1</td>
-					</tr>
-					<tr>
-						<td>가입날짜</td>
-					</tr>
+							<td>${info.memEmail}</td>
+						</tr>
+						<tr>
+							<td>${info.memBirth}</td>
+						</tr>
 						<%-- <tr>
-							<td>${memVO.memId}</td>
-						</tr>
+							<td>${info.Gender}성별</td>
+						</tr>  --%>
 						<tr>
-							<td>${memVO.memEmail}</td>
-						</tr>
-						<tr>
-							<td>${memVO.memBirth}생년월일</td>
+							<td>${info.memAddress1}</td>
+							<td>${info.memAddress2}</td>
 						</tr>
 						 <tr>
-							<td>${memVO.Gender}성별</td>
+							<td>${info.memJoy1}</td>
 						</tr> 
 						<tr>
-							<td>${memVO.memAddress1}${memVO.memAddress2}주소</td>
+							<td>${info.memJoy2}</td>
 						</tr>
-						 <tr>
-							<td>${memVO.memJoy1}관심분야1</td>
-						</tr> 
 						<tr>
-							<td>${memVO.memJoinDate}</td>
-						</tr> --%>
+							<td><fmt:formatDate value="${info.memJoinDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+						</tr> 
+						
 
 						</table>
 					</div>

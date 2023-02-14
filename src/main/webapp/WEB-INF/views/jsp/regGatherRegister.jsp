@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -51,7 +52,7 @@
 			<h4>정기 모임 개설</h4>
 			<h5>모임 정보</h5>
 			<hr id="line">
-			<form id="regGather_frm" class="regGather_frm" method="post">
+			<form id="regGather_frm" class="regGather_frm" method="post"  action="<c:url value='/regGather/RegGatherInsert'/>" enctype="multipart/form-data">
 				<table id="gatherInfo_tbl" class="gatherInfo_tbl">
 					<tr>
 						<!-- 이미지 미리보기 영역-->
@@ -66,39 +67,58 @@
 					<tr>
 						<th>모임명</th>
 						<td>
-							<input type="text" class="gatherInfo_input" placeholder="모임명 입력">
+							<input type="text" class="gatherInfo_input" id="gatherInfo_input1" name="regGatherTitle" placeholder="모임명 입력">
 						</td>
 						<th>모임정원</th>
 						<td>
-							<input type="text" class="gatherInfo_input" placeholder="모임 정원 입력">
+							<input type="text" class="gatherInfo_input" id="gatherInfo_input2" name="regGatherMaxNum" placeholder="모임 정원 입력">
+							<!-- <input type="hidden" class="gatherInfo_input" name="regGatherNowNum" placeholder="모임 정원 입력"> -->
 						</td>
 					</tr>
 					<tr>
 						<th>카테고리</th>
 						<td>
-							<input type="text" class="gatherInfo_input" placeholder="메인 카테고리 입력">
+							<select class="gatherInfo_sel" id="gatherInfo_input3" name="ctgNo">
+								<option value="0" selected>카테고리 선택</option>
+								<option value="1">여행/아웃도어</option>
+								<option value="2">운동/스포츠</option>
+								<option value="3">게임/오락</option>
+								<option value="4">문화/공연/축제</option>
+								<option value="5">음악/악기</option>
+								<option value="6">기타</option>
+							</select>
 						</td>
 						<th>하위카테고리</th>
 						<td>
-							<input type="text" class="gatherInfo_input" placeholder="세부 카테고리 입력">
+							<select class="gatherInfo_sel" id="gatherInfo_input4" name="subctgNo">
+								<option value="0" selected>하위카테고리</option>
+								<option value="1">여행/아웃도어</option>
+								<option value="2">운동/스포츠</option>
+								<option value="3">게임/오락</option>
+								<option value="4">문화/공연/축제</option>
+								<option value="5">음악/악기</option>
+								<option value="6">기타</option>
+							</select>
 						</td>
 					</tr>
 					<tr>
 						<th>지역</th>
 						<td>
-							<input type="text" class="gatherInfo_input" placeholder="지역 입력">
+							<input type="text" class="gatherInfo_input" id="gatherInfo_input5" name="regGatherArea" placeholder="지역 입력">
 						</td>
 						<th>세부지역</th>
 						<td>
-							<input type="text" class="gatherInfo_input" placeholder="세부 지역 입력">
+							<input type="text" class="gatherInfo_input" id="gatherInfo_input6" name="regGatherAreasub" placeholder="세부 지역 입력">
 						</td>
 					</tr>
 					<tr>
 						<th>모집일자</th>
 						<td colspan="3">
-							<input type="datetime-local" class="gatherInfo_inputTime" id="startDate">
-							&nbsp;~&nbsp;
-							<input type="datetime-local" class="gatherInfo_inputTime" id="endDate">
+							<input type="datetime-local" class="gatherInfo_inputTime" name="regGatherStartDate" id="startDate" format="yyyy-MM-ddTHH:mm">
+							<%-- <fmt:formatDate value="${brd.boardDate }" pattern="yy-MM-dd HH:mm"/> --%>
+							&nbsp;&nbsp; ~&nbsp;&nbsp;
+							<input type="datetime-local" class="gatherInfo_inputTime" name="regGatherEndDate" id="endDate" format="yyyy-MM-dd HH:mm">
+							<%-- <fmt:formatDate value="${brd.boardDate }" pattern="yy-MM-dd HH:mm"/> --%>
 						</td>
 					</tr>
 					<tr>
@@ -112,8 +132,9 @@
 					<tr>
 						<td>
 							<div class="filebox">
-								<label for="imgUpload">이미지 선택</label>
-								<input type="file" id="imgUpload" value="이미지 선택">
+							
+								<label for="uploadFileOrigin">이미지 선택</label>
+								<input type="file" id="uploadFileOrigin" name="uploadFileOrigin" value="이미지 선택">
 							</div>
 						</td>
 					</tr>
@@ -123,9 +144,9 @@
 				<script>imgSize("img");</script>
 				<br>
 				<h5>모임 상세 설명</h5>
-				<textarea id="summernote" name="editordata"></textarea>
+				<textarea id="summernote" name="regGatherDiscript"></textarea>
 				<br>
-				<input type="button" id="info_Input" class="info_Input" value="등록하기">
+				<input type="submit" id="info_Input" class="info_Input" value="등록하기">
 			</form>
 		</div>
 		<br>

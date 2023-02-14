@@ -134,4 +134,92 @@ public class LoginController {
 		memberservice.pwChage(vo);
 		return "jsp/memManagement/login";
 	}
+	
+	//개인정보 수정 전 비밀번호 확인 페이지
+	@RequestMapping("/myinfoeditcheckpage")
+	private String myinfoeditcheckpage() {
+		return "jsp/myinfoeditcheckpage";
+	}
+	
+	// 개인정보 수정 - 비밀번호 확인 버튼 클릭
+	@ResponseBody
+	@RequestMapping("/myInfoPwCheck")
+	public String myInfoPwCheck(@RequestParam("memPw") String memPw, MemberVO vo,
+								HttpSession session) {
+		String memId = (String)session.getAttribute("sid");
+		vo.setMemId(memId);
+		vo.setMemPw(memPw);
+		
+		String result = "none";
+		String no_result = memberservice.myInfoPwCheck(vo);
+		if(no_result == "success") {
+			result = "success";
+		}
+		return result;
+	}
+	
+	// 마이페이지 - 개인정보수정 페이지
+	@RequestMapping("/myInfoEditPage")
+	public String myInfoEditPage(HttpSession session, MemberVO vo,
+								 Model model) {
+		
+		String memId = (String)session.getAttribute("sid");
+		vo = memberservice.getMemInfo(memId);
+		model.addAttribute("memInfo", vo);
+		
+		String memPhNum = vo.getMemHP();
+		String[] phNum = memPhNum.split("-", -1);
+		String memHp1 = phNum[0];
+		model.addAttribute("memHp1", memHp1);
+		String memHp2 = phNum[1];
+		model.addAttribute("memHp2", memHp2);
+		String memHp3 = phNum[2];
+		model.addAttribute("memHp3", memHp3);
+		
+		String Email = vo.getMemEmail();
+		String[] email = Email.split("@", -1);
+		String memEmail = email[0];
+		model.addAttribute("memEmail", memEmail);
+		String memDomain = email[1];
+		model.addAttribute("memDomain", memDomain);
+		
+		
+		return "jsp/myinfoeditpage";
+	}
+	
+	// 개인정보수정 - 비밀번호 변경 버튼 클릭
+	@RequestMapping("/member/MyInfoPwChange")
+	public String MyInfoPwChange(@RequestParam("memPw") String memPw, MemberVO vo,
+								 HttpSession session) {
+		
+		String memId = (String)session.getAttribute("sid");
+		vo.setMemId(memId);
+		vo.setMemPw(memPw);
+		memberservice.MyInfoPwChange(vo);
+		
+		return "jsp/myinfoeditpage";
+	}
+	
+	// 개인정보수정 버튼 클릭
+	@RequestMapping("/member/memInfoChange")
+	public String memInfoChange(MemberVO vo, @RequestParam("memHp1") String memHp1,
+								@RequestParam("memHp2") String memHp2,
+								@RequestParam("memHp3") String memHp3,
+								@RequestParam("memEmail") String memEmail,
+								@RequestParam("memDomain") String memDomain, HttpSession session) {
+		String memId = (String)session.getAttribute("sid");
+		vo.setMemId(memId);
+		vo.setMemHP(memHp1 + "-" + memHp2 + "-" + memHp3);
+		vo.setMemEmail(memEmail + "@" + memDomain);
+		
+		memberservice.memInfoChange(vo);
+		return "redirect:/myInfoEditPage";
+	}
+	
+	
+	
+	
+	
+	
+	
 }

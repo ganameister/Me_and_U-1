@@ -78,6 +78,10 @@
 			UPDATE member SET memPw=#{memPw} WHERE memId=#{memId}
 		</update>
 		
+		<!-- 마이페이지 - 개인정보수정 비밀번호 확인 -->
+		<select id="myInfoPwCheck" resultType="String">
+			SELECT memPw FROM member WHERE memId=#{memId}
+		</select>
 		
 	</mapper>
 

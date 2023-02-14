@@ -31,6 +31,8 @@ public class MypageController {
 	@RequestMapping("/mypage")
 	private String mypage(Model model,HttpSession session) {
 		String memId = (String) session.getAttribute("sid");
+		model.addAttribute("info", Memservice.getMemInfo(memId));
+		
 		ArrayList<MyBKListVO> myBKList = BKLservice.MypagemyBKListView(memId);
 		model.addAttribute("myBKList", myBKList);
 		
@@ -58,27 +60,10 @@ public class MypageController {
 	}
 	
 	
-
+	//찜한정기모임
 	@RequestMapping("/myselectregpage")
 	private String myselectregpage() {
 		return "jsp/myselectregpage";
 	}
-	
-	// 회원가입 완료시
-	@RequestMapping("/member/update")
-	public String Update(MemberVO vo, @RequestParam("memHp1") String memHp1,
-									  @RequestParam("memHp2") String memHp2,
-									  @RequestParam("memHp3") String memHp3,
-									  @RequestParam("memBirth1") String memBirth1,
-									  @RequestParam("memBirth2") String memBirth2,
-									  @RequestParam("memBirth3") String memBirth3,
-									  @RequestParam("memEmail") String memEmail,
-									  @RequestParam("memDomain") String memDomain) {
-		vo.setMemHP(memHp1 + "-" + memHp2 + "-" + memHp3);
-		vo.setMemBirth(memBirth1 + "-" + memBirth2 + "-" + memBirth3);
-		vo.setMemEmail(memEmail + "@" + memDomain);
-		
-		//Memservice.updateMember(vo);
-		return "jsp/mypage";
-	}
+
 }
