@@ -203,6 +203,7 @@ public class BucketListController {
 	    }
 		
 		int displayPostSize = sortedComBKList.size();
+		int pageNum2 = (int) Math.ceil((double) displayPostSize / postNum);
 		
 		for (int i = displayPost; i < displayPost + postNum && i < sortedComBKList.size(); i++) {
 	        comBKList.add(sortedComBKList.get(i));
@@ -211,9 +212,10 @@ public class BucketListController {
 		model.addAttribute("pageNum", pageNum);
 		model.addAttribute("comBKList", comBKList);
 		model.addAttribute("sortOption", sortOption);
-		model.addAttribute("displayPostSize", displayPostSize);
+		model.addAttribute("pageNum2", pageNum2);
 		model.addAttribute("type", type);
 		model.addAttribute("keyword", keyword);
+		model.addAttribute("currentPage", num);
 
 		return "jsp/bucketlist_com/comBKList";
 	}

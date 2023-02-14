@@ -42,7 +42,7 @@
                             location.href="/myBKList";
                         },
                         error: function(error){
-                            alert("실패");
+                            alert("로그인 후 이용해주세요.");
                         }
                     });
                 }else{
@@ -50,7 +50,7 @@
                 }
             },
             error: function(error){
-                alert("실패");
+                alert("로그인 후 이용해주세요.");
             }
         });
     }
