@@ -32,11 +32,6 @@
   	<!-- 정기모임 리스트 보기 -->
   	<select id="listAllGather" resultMap="regGatherResult">
   		SELECT * FROM reggather ORDER BY regGatherNo DESC
-  		<!-- SELECT 
-  		  	regGatherTitle,regGatherDiscript,DATE_FORMAT(regGatherStartDate, '%y-%m-%d %H:%i'), DATE_FORMAT(regGatherEndDate, '%y-%m-%d %H:%i'),
-  		  	regGatherArea,regGatherAreasub, regGatherMaxNum,regGatherNowNum,regGatherImg,ctgNo,memId
-  		FROM reggather
-  		ORDER BY regGatherNo DESC -->
   	</select>
   	
   	<!-- 정기모임 리스트 보기 날짜만 따로 뽑기 -->

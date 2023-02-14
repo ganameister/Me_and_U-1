@@ -101,7 +101,7 @@
 										<tr class="content">
 											<th>모집기간</th>
 											<td><span class="diff_bar"> | </span>&nbsp;<%-- <fmt:parseDate value="${regG.regGatherStartDate}" var="regGatherStartDate" pattern="yyyy-MM-dd HH:mm"/> --%>
-											${regG.regGatherStartDate} ~ ${regG.regGatherEndDate}
+											${regGatherStartDate} ~ ${regGatherEndDate}
 											<%-- <fmt:parseDate value="${regG.regGatherEndDate}" var="regGatherEndDate" pattern="yyyy-MM-dd HH:mm"/> --%></td>
 											
 											
