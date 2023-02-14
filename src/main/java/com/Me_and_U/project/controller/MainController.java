@@ -32,13 +32,4 @@ public class MainController {
 		return "index";
 	}
 	
-	
-	// 정기모임 개설 페이지 열기
-	@RequestMapping("/regGatherRegister")
-	public String regGatherRegister() {
-		return "jsp/regGatherRegister";
-	}
-	
-	
-    
 }

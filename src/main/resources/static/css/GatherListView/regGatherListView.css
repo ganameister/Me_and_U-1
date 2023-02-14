@@ -199,6 +199,7 @@ input {
 	font-size:0;	/* ul에 비어있는 줄의 간격을 줄일 수 있음 */
 	padding : 0px;	
 	margin : 0px;
+	margin-left : 3%;	/* 내 화면용 ?  */
     list-style:none;
 }
 

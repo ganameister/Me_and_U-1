@@ -35,9 +35,24 @@ body{
   border-radius : 5px;
   font-family: 'Noto Sans KR', sans-serif;
 }
+
+.gatherInfo_sel{
+	text-align : center;
+	width: 158px; 
+	height : 36px;
+	padding: .3em .5em; 
+	font-family: 'Noto Sans KR', sans-serif;
+	background: url('/images/selectArrow.jpg') no-repeat 100% 50%; 
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 5px;
+	cursor : pointer;
+}
+
 #gatherInfo_tbl .gatherInfo_inputLong {
   left : 100px;
-  width : 500px;
+  width : 502px;
   height : 30px;
   vertical-align: middle;
   text-align : center;
