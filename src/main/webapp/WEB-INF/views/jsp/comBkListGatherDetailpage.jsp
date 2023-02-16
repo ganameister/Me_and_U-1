@@ -22,16 +22,16 @@
 			<div id="seconddiv">
 				<table >
 					<tr><td colspan="2">모집기간 : ${cblg.comBkListGatherStartDate } ~ ${cblg.comBkListGatherEndDate}</td></tr>
-					<tr><td>지역 : ${cblg.comBkListGatherArea} </td><td>세부지역 : ${cblg.comBkListGatherAreasub }</td></tr>
+					<tr><td colspan="2">지역 : ${cblg.comBkListGatherArea} </td></tr>
 					<tr><td colspan="2">카테고리 : ${cblg.ctgNo }</td></tr>
-					<tr><td colspan="2">모임 : ${cblg.subctgNo }</td></tr>
 					<tr><td colspan="2">최대 정원 : ${cblg.comBkListGatherNum }</td></tr>
+					<tr><td colspan="2">현재 정원 : ${cblg.subctgNo }</td></tr>
 				</table>
 			</div>
 			<div id="thirddiv">
-				<div id="memImg2">
+				<%-- <div id="memImg2">
 					<img src="<c:url value='${mem.memImg }'/>" id="memImg">
-				</div>
+				</div> --%>
 				<div id="memtext">
 					모임장 명 : ${mem.memId }<br>
 					모임장 활동 지역 : ${cblg.comBkListGatherArea} <br>

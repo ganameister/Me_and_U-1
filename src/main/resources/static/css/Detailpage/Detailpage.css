@@ -37,14 +37,14 @@ body{
 }
 #seconddiv{
     float: left;
-    width:300px;
+    width:400px;
     height: 333px;
     text-align: left;
      margin-right: 10px;
 }
 table {
 	border-spacing: 10px 23px;
-	width: 300px;
+	width: 400px;
 	height: 333px;
 }
 table td{

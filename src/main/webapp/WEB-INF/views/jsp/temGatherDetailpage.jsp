@@ -21,16 +21,16 @@
 		<div id="seconddiv">
 			<table >
 				<tr><td colspan="2">모집기간 : ${tem.temGatherStartDate } ~ ${tem.temGatherEndDate}</td></tr>
-				<tr><td>지역 : ${tem.temGatherArea} </td><td>세부지역 : ${tem.temGatherAreasub }</td></tr>
+				<tr><td colspan="2">지역 : ${tem.temGatherArea} </td></tr>
 				<tr><td colspan="2">카테고리 : ${ctg.ctgNo }</td></tr>
-				<tr><td colspan="2">모임 : ${sub.subctgNo }</td></tr>
 				<tr><td colspan="2">최대 정원 : ${tem.temGatherNum }</td></tr>
+				<tr><td colspan="2">현재 정원 : ${sub.subctgNo }</td></tr>
 			</table>
 		</div>
 		<div id="thirddiv">
-			<div id="memImg2">
+			<%-- <div id="memImg2">
 				<img src="<c:url value='${mem.memImg }'/>" id="memImg">
-			</div>
+			</div> --%>
 			<div id="memtext">
 				모임장 명 : ${mem.memId }<br>
 				모임장 활동 지역 : ${tem.temGatherArea} <br>
