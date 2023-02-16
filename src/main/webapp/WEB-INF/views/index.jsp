@@ -100,7 +100,7 @@
 						<div id="itemListBox">
 							<ul>
 								<c:forEach var="com" items="${combkRec }">
-								    	<li class="itemContainer" value="${com.combkListCtg}">
+								    	<li class="itemContainer" value="${com.ctgNo}">
 								    		<a href="<c:url value='/comBKList/comBkListDetailpage/${com.combkListNo}'/>">
 									    		<table class="comTable">
 										    		<tr height="290">

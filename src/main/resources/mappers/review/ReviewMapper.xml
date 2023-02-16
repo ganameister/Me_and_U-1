@@ -13,10 +13,7 @@
 	  		<result property="reviewDate"  column="reviewDate"  />
 	  		<result property="reviewCount"  column="reviewCount"  />
 	  		<result property="reviewCtg"  column="reviewCtg"  />
-	  		<result property="subctgNo"  column="subctgNo"  />
-	  		<result property="ctgNo"  column="ctgNo"  />
 	  		<result property="memId"  column="memId"  />
-	  		<result property="memImg"  column="memImg"  />
 	  	</resultMap>
 
 		<!-- 리뷰게시판메인 -->

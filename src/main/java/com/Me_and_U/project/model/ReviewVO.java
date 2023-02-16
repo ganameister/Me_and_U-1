@@ -14,10 +14,8 @@ public class ReviewVO {
 	private Date reviewDate;
 	private int	reviewCount;
 	private String	reviewCtg;
-	private int	subctgNo;
-	private int	ctgNo;
 	private String	memId;
-	private String	memImg;
+	
 	public int getReviewNo() {
 		return reviewNo;
 	}
@@ -66,30 +64,13 @@ public class ReviewVO {
 	public void setReviewCtg(String reviewCtg) {
 		this.reviewCtg = reviewCtg;
 	}
-	public int getSubctgNo() {
-		return subctgNo;
-	}
-	public void setSubctgNo(int subctgNo) {
-		this.subctgNo = subctgNo;
-	}
-	public int getCtgNo() {
-		return ctgNo;
-	}
-	public void setCtgNo(int ctgNo) {
-		this.ctgNo = ctgNo;
-	}
 	public String getMemId() {
 		return memId;
 	}
 	public void setMemId(String memId) {
 		this.memId = memId;
 	}
-	public String getMemImg() {
-		return memImg;
-	}
-	public void setMemImg(String memImg) {
-		this.memImg = memImg;
-	}
+	
 	
 	
 	
