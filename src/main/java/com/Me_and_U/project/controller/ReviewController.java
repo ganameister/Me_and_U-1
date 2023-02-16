@@ -70,7 +70,8 @@ public class ReviewController {
 			HttpSession session) throws IOException {
 
 		String memId = (String) session.getAttribute("sid");
-		String uploadPath = "C:/springWorkspace/me_and_u_images/";
+//		String uploadPath = "C:/springWorkspace/me_and_u_images/"; // 로컬 호스트용
+		String uploadPath = "/usr/local/project/upload_me_and_u_images/"; // 서버 전용
 		String originalFileName = file.getOriginalFilename();
 		File sendFile = new File(uploadPath + originalFileName);
 		file.transferTo(sendFile);

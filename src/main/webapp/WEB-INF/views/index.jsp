@@ -104,7 +104,7 @@
 								    		<a href="<c:url value='/comBKList/comBkListDetailpage/${com.combkListNo}'/>">
 									    		<table class="comTable">
 										    		<tr height="290">
-											    		<td><img class="combkListImg" src="<c:url value='/images/${com.combkListImg}' />" width="320" height="290"></td>			               
+											    		<td><img class="combkListImg" src="<c:url value='/images_upload/${com.combkListImg}' />" width="320" height="290"></td>			               
 											    	</tr>
 											    	<tr>
 											    		<th class="tableText">${com.combkListTitle }</th>
@@ -346,7 +346,7 @@
 											<div class ="review-Info" >
 												<!--  리뷰이미지  -->
 												
-												<img  class="review-img" src="<c:url value='/images/${revs.reviewImg }'/>" >																					
+												<img  class="review-img" src="<c:url value='/images_upload/${revs.reviewImg }'/>" >																					
 												<!--  리뷰상세박스-글 -->
 												<div class="review_underBox">									
 													<!-- 하트하트 -->

@@ -37,7 +37,8 @@ public class ChatbotRestController {
 	public String stt(@RequestParam("uploadFile") MultipartFile file,
 			  Model model) throws IOException {
 
-		String uploadPath = "C:/springWorkspace/upload/";
+//		String uploadPath = "C:/springWorkspace/me_and_u_audio/"; // 로컬 호스트용
+		String uploadPath = "/usr/local/project/upload_me_and_u_audios/"; // 서버 전용
 		
 		String originalFileName = file.getOriginalFilename();
 		String filePathName = uploadPath + originalFileName;

@@ -76,7 +76,7 @@
 							    		<a href="<c:url value='/comBKList/comBkListDetailpage/${com.combkListNo}'/>">
 								    		<table>
 									    		<tr height="260">
-										    		<td><img class="combkListImg" src="<c:url value='/images/${com.combkListImg}' />" width="320" height="260"></td>			               
+										    		<td><img class="combkListImg" src="<c:url value='/images_upload/${com.combkListImg}' />" width="320" height="260"></td>			               
 										    	</tr>
 										    	<tr>
 										    		<th class="tableText">${com.combkListTitle }</th>
