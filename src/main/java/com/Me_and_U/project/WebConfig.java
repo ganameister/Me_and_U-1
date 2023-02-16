@@ -10,12 +10,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//		registry.addResourceHandler("/images/**")
+//		.addResourceLocations("file:///C:/springWorkspace/me_and_u_images/",
+//				"file:///C:/springWorkspace/upload/");
 		registry.addResourceHandler("/images/**")
-		.addResourceLocations("file:///C:/springWorkspace/me_and_u_images/",
-				"file:///usr/local/project/me_and_u_images/",
-				"file:///C:/springWorkspace/upload/");
+		.addResourceLocations("file:///usr/local/project/me_and_u_images/");
+		
+		registry.addResourceHandler("/images_upload/**")
+		.addResourceLocations("file:///usr/local/project/upload_me_and_u_images/");
 	
+//		registry.addResourceHandler("/audio/**")
+//		.addResourceLocations("file:///C:/springWorkspace/upload/");
 		registry.addResourceHandler("/audio/**")
-		.addResourceLocations("file:///C:/springWorkspace/upload/");
+		.addResourceLocations("file:///usr/local/project/upload_me_and_u_audios/");
 	}
 }

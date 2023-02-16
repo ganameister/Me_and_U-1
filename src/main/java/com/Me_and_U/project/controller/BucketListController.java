@@ -3,7 +3,6 @@ package com.Me_and_U.project.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -20,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.Me_and_U.project.model.ComBKListVO;
 import com.Me_and_U.project.model.MyBKListVO;
 import com.Me_and_U.project.model.MyComBKListVO;
-import com.Me_and_U.project.model.ReviewVO;
 import com.Me_and_U.project.service.BKListService;
 
 @Controller
@@ -239,8 +237,9 @@ public class BucketListController {
 												HttpSession session) throws  IOException {
 			
 			String memId = (String) session.getAttribute("sid");		
-			String uploadPath = "C:/springWorkspace/me_and_u_images/";				
-			String originalFileName = file.getOriginalFilename();	
+//			String uploadPath = "C:/springWorkspace/me_and_u_images/"; // 로컬 호스트용		
+			String uploadPath = "/usr/local/project/upload_me_and_u_images/"; // 서버 전용		
+			String originalFileName = file.getOriginalFilename();
 			
 			File sendFile = new File(uploadPath + originalFileName);		
 			file.transferTo(sendFile);		
@@ -248,9 +247,10 @@ public class BucketListController {
 			combklist.setCombkListImg(originalFileName);	
 			combklist.setMemId(memId);		
 			
-			service.comBKListInsert(combklist);		
+			service.comBKListInsert(combklist);
 			
 			return "redirect:/comBKList/1";
+			
 		}
 
 	// 모두의 버킷리스트 상세 페이지 열기 (글 주인에게만 삭제버튼 보임)
