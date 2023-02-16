@@ -29,8 +29,8 @@
 		<!-- 회원등록-->
 		<insert id="insertMember">
 			INSERT INTO member(memId, memPw, memName, memEmail, memBirth, Gender, memHP, memZipcode,
-							   memAddress1, memAddress2, memImg, memJoy1, memJoy2)
-			VALUE(#{memId}, #{memPw}, #{memName}, #{memEmail}, #{memBirth}, #{Gender}, #{memHP}, #{memZipcode}, #{memAddress1}, #{memAddress2}, #{memImg},
+							   memAddress1, memAddress2, memJoy1, memJoy2)
+			VALUE(#{memId}, #{memPw}, #{memName}, #{memEmail}, #{memBirth}, #{Gender}, #{memHP}, #{memZipcode}, #{memAddress1}, #{memAddress2},
 				  #{memJoy1}, #{memJoy2})
 		
 		</insert>
