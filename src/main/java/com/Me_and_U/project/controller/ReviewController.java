@@ -130,7 +130,8 @@ public class ReviewController {
 	          //if(file.getOriginalFilename() != null && !file.getOriginalFilename().equals(""))
 	         
 	    	  //기존 파일을 삭제
-	          String uploadPath = "C:/springWorkspace/me_and_u_images/";
+//	  	      String uploadPath = "C:/springWorkspace/me_and_u_images/"; // 로컬 호스트용
+	  		  String uploadPath = "/usr/local/project/upload_me_and_u_images/"; // 서버 전용
 	          new File(uploadPath + request.getParameter("reviewImg")).delete();
 
 	          //새로 파일을 등록
