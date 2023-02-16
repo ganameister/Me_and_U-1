@@ -40,8 +40,8 @@ public class GatherListViewController {
 		String memId = (String) session.getAttribute("sid");
 		model.addAttribute("memId", memId);
 		
-		RegGatherVO reggatherDetail = service.detailViewRegGather(regGatherNo);
-		model.addAttribute("reggatherDetail", reggatherDetail);
+		// RegGatherVO reggatherDetail = service.detailViewRegGather(regGatherNo);
+		// model.addAttribute("reggatherDetail", reggatherDetail);
 		
 		return "jsp/regGatherDetailpage";
 	}

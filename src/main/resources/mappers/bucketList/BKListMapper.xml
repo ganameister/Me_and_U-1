@@ -105,8 +105,7 @@
  		<result property="combkListWrite" column="combkListWrite"/>
  		<result property="combkListImg" column="combkListImg"/>
  		<result property="combkListDate" column="combkListDate"/>
- 		<result property="combkListFinished" column="combkListFinished"/>
- 		<result property="combkListCtg" column="combkListCtg"/>
+ 		<result property="combkListView" column="combkListView"/>
  		<result property="memId" column="memId"/>
  		<result property="ctgNo" column="ctgNo"/>
  	</resultMap>

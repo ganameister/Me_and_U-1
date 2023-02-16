@@ -12,10 +12,8 @@ public class ComBKListVO {
 	private String combkListImg;
 	private Date combkListDate;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private int combkListFinished;
 	private String memId;
 	private int ctgNo;
-	private String combkListCtg;
 	private int combkListView;
 	
 	// 조인용 데이터
@@ -33,12 +31,6 @@ public class ComBKListVO {
 	}
 	public void setCombkListView(int combkListView) {
 		this.combkListView = combkListView;
-	}
-	public String getCombkListCtg() {
-		return combkListCtg;
-	}
-	public void setCombkListCtg(String combkListCtg) {
-		this.combkListCtg = combkListCtg;
 	}
 	public int getCombkListNo() {
 		return combkListNo;
@@ -75,12 +67,6 @@ public class ComBKListVO {
 	}
 	public void setCombkListDate(Date combkListDate) {
 		this.combkListDate = combkListDate;
-	}
-	public int getCombkListFinished() {
-		return combkListFinished;
-	}
-	public void setCombkListFinished(int combkListFinished) {
-		this.combkListFinished = combkListFinished;
 	}
 	public String getMemId() {
 		return memId;
