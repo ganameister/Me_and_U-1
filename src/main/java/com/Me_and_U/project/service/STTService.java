@@ -21,7 +21,7 @@ public class STTService {
 	public String stt(String filePathName) {
 		String result="";
 		
-			
+		
 		
 		/////////String clientId="";배포용 꼭 지우기!!!!!
 		///////String clientSecret= "";  
