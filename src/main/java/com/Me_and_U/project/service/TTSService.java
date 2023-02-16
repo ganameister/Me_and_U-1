@@ -21,8 +21,7 @@ import org.springframework.stereotype.Service;
 public class TTSService {
 	public String chatbotTTS(String message) {
 
-		String clientId = "ffi3xseu1j";
-		String clientSecret = "Z8HSryH1tIsZES1U1fytQQwxHcSWGlOnon1Hnxed";
+		
     
 	/////////String clientId="";배포용 꼭 지우기!!!!!
 	///////String clientSecret= ""; 
@@ -59,7 +58,7 @@ public class TTSService {
             //File f = new File("C:/springWorkspace/upload/tts_" + tempname + ".mp3"); // 파일 저장 경로 변경
             // 음성 파일명 
             voiceFileName = "tts_" + tempname + ".mp3";
-            File f = new File("C:/springWorkspace/upload/" + voiceFileName);///
+            File f = new File("/usr/local/project/upload_me_and_u_audios/" + voiceFileName);///
             f.createNewFile();
             OutputStream outputStream = new FileOutputStream(f);
 	            while ((read =is.read(bytes)) != -1) {
