@@ -8,39 +8,32 @@ public class RegGatherVO {
 	private int regGatherNo;
 	private String regGatherTitle;
 	private String regGatherDiscript;
-	private String regGatherArea;
-	private String regGatherAreasub;
 	private String regGatherImg;
-	
-	//모임 시작 및 종료일자 형식 변경에 따른 포맷 형식 변경
-//	private Date regGatherStartDate;
-//	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm")
-//	private Date regGatherEndDate;
-//	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm")
 	private String regGatherStartDate;
 	private String regGatherEndDate;
-	
-	public String getRegGatherStartDate() {
-		return regGatherStartDate;
-	}
-	public void setRegGatherStartDate(String regGatherStartDate) {
-		this.regGatherStartDate = regGatherStartDate;
-	}
-	public String getRegGatherEndDate() {
-		return regGatherEndDate;
-	}
-	public void setRegGatherEndDate(String regGatherEndDate) {
-		this.regGatherEndDate = regGatherEndDate;
-	}
-	
 	private int regGatherMaxNum;	// 모임 최대정원
 	private int regGatherNowNum;	// 모임 현재정원
+	private int regGatherViewNum;	// 모임 조회수
 	
 	private String memId;
 	private int ctgNo;
-	private int subctgNo;
+	private int areaNo;
 	
+	// 조인용 데이터
+	private String areaName;
 	
+	public String getAreaName() {
+		return areaName;
+	}
+	public void setAreaName(String areaName) {
+		this.areaName = areaName;
+	}
+	public int getAreaNo() {
+		return areaNo;
+	}
+	public void setAreaNo(int areaNo) {
+		this.areaNo = areaNo;
+	}
 	public int getRegGatherNo() {
 		return regGatherNo;
 	}
@@ -59,36 +52,24 @@ public class RegGatherVO {
 	public void setRegGatherDiscript(String regGatherDiscript) {
 		this.regGatherDiscript = regGatherDiscript;
 	}
-	public String getRegGatherArea() {
-		return regGatherArea;
-	}
-	public void setRegGatherArea(String regGatherArea) {
-		this.regGatherArea = regGatherArea;
-	}
-	public String getRegGatherAreasub() {
-		return regGatherAreasub;
-	}
-	public void setRegGatherAreasub(String regGatherAreasub) {
-		this.regGatherAreasub = regGatherAreasub;
-	}
 	public String getRegGatherImg() {
 		return regGatherImg;
 	}
 	public void setRegGatherImg(String regGatherImg) {
 		this.regGatherImg = regGatherImg;
 	}
-//	public Date getRegGatherStartDate() {
-//		return regGatherStartDate;
-//	}
-//	public void setRegGatherStartDate(Date regGatherStartDate) {
-//		this.regGatherStartDate = regGatherStartDate;
-//	}
-//	public Date getRegGatherEndDate() {
-//		return regGatherEndDate;
-//	}
-//	public void setRegGatherEndDate(Date regGatherEndDate) {
-//		this.regGatherEndDate = regGatherEndDate;
-//	}
+	public String getRegGatherStartDate() {
+		return regGatherStartDate;
+	}
+	public void setRegGatherStartDate(String regGatherStartDate) {
+		this.regGatherStartDate = regGatherStartDate;
+	}
+	public String getRegGatherEndDate() {
+		return regGatherEndDate;
+	}
+	public void setRegGatherEndDate(String regGatherEndDate) {
+		this.regGatherEndDate = regGatherEndDate;
+	}
 	public int getRegGatherMaxNum() {
 		return regGatherMaxNum;
 	}
@@ -101,6 +82,12 @@ public class RegGatherVO {
 	public void setRegGatherNowNum(int regGatherNowNum) {
 		this.regGatherNowNum = regGatherNowNum;
 	}
+	public int getRegGatherViewNum() {
+		return regGatherViewNum;
+	}
+	public void setRegGatherViewNum(int regGatherViewNum) {
+		this.regGatherViewNum = regGatherViewNum;
+	}
 	public String getMemId() {
 		return memId;
 	}
@@ -112,11 +99,5 @@ public class RegGatherVO {
 	}
 	public void setCtgNo(int ctgNo) {
 		this.ctgNo = ctgNo;
-	}
-	public int getSubctgNo() {
-		return subctgNo;
-	}
-	public void setSubctgNo(int subctgNo) {
-		this.subctgNo = subctgNo;
 	}
 }

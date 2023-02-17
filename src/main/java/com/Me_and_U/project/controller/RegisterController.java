@@ -50,13 +50,16 @@ public class RegisterController {
 			reggather.setRegGatherImg(originalFileName);
 			reggather.setMemId(memId);	
 			reggather.setRegGatherNowNum(0);
-			//조회수도 0으로 넘겨줘야 함
+			reggather.setRegGatherViewNum(0);
+			
 			System.out.println(reggather.getRegGatherStartDate());
 			
 			service.regGatherInsert(reggather);		
 			
 			return "redirect:/regGatherListView";
-	}//
+	}
+	
+	
 
 	@RequestMapping("/temGatherRegister")
 	public String temGatherRegister(Model model) {

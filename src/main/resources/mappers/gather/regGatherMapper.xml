@@ -8,32 +8,45 @@
  		<result property="regGatherNo" column="regGatherNo"/>
  		<result property="regGatherTitle" column="regGatherTitle"/>
  		<result property="regGatherDiscript" column="regGatherDiscript"/>
- 		<result property="regGatherArea" column="regGatherArea"/>
- 		<result property="regGatherAreasub" column="regGatherAreasub"/>
- 		<result property="regGatherImg" column="regGatherImg"/>
  		<result property="regGatherStartDate" column="regGatherStartDate"/>
  		<result property="regGatherEndDate" column="regGatherEndDate"/>
  		<result property="regGatherMaxNum" column="regGatherMaxNum"/>
  		<result property="regGatherNowNum" column="regGatherNowNum"/>
- 		
+ 		<result property="regGatherViewNum" column="regGatherViewNum"/>
+ 		<result property="regGatherImg" column="regGatherViewNum"/>
  		<result property="memId" column="memId"/>
  		<result property="ctgNo" column="ctgNo"/>
- 		<result property="subctgNo" column="subctgNo"/>
+ 		<result property="areaNo" column="areaNo"/>
  	</resultMap>
  	
  	<!-- 정기모임등록 등록 -->
  	<insert id="regGatherInsert" >
-  		INSERT INTO reggather (regGatherTitle,regGatherDiscript,regGatherStartDate,regGatherEndDate,regGatherArea,regGatherAreasub, 
-  								regGatherMaxNum,regGatherNowNum,regGatherImg,ctgNo,memId) 		
-		 VALUES (#{regGatherTitle},#{regGatherDiscript},#{regGatherStartDate},#{regGatherEndDate}, #{regGatherArea}, #{regGatherAreasub},
-		 		  #{regGatherMaxNum}, #{regGatherNowNum},#{regGatherImg},#{ctgNo},#{memId})	
+  		INSERT INTO 
+  			reggather (regGatherTitle,regGatherDiscript,regGatherStartDate,regGatherEndDate,
+  			     	   regGatherMaxNum,regGatherNowNum,regGatherViewNum,regGatherImg,ctgNo,memId,areaNo) 		
+		VALUES 
+			(#{regGatherTitle},#{regGatherDiscript},#{regGatherStartDate},#{regGatherEndDate}, 
+		 	 #{regGatherMaxNum}, #{regGatherNowNum},#{regGatherViewNum},#{regGatherImg},#{ctgNo},#{memId},#{areaNo})	
   	</insert>
   	
-  	<!-- 정기모임 리스트 보기 -->
+  	<!-- 정기모임 리스트 보기(최신순) -->
   	<select id="listAllGather" resultMap="regGatherResult">
-  		SELECT * FROM reggather ORDER BY regGatherNo DESC
+  		SELECT * FROM reggather ORDER BY regGatherNo DESC 
+  		<!-- SELECT 
+  			r.regGatherTitle, r.regGatherStartDate, r.regGatherEndDate,
+  			r.regGatherMaxNum, r.regGatherNowNum, r.regGatherViewNum, r.regGatherViewNum
+  			a.areaName
+  		FROM reggather r, area a
+  		WHERE r.areaNo = a.areaNo AND r.regGatherNo = #{regGatherNo}
+  		ORDER BY regGatherNo DESC -->
+  		
   	</select>
   	
-  	<!-- 정기모임 리스트 보기 날짜만 따로 뽑기 -->
+  	<!-- 정기모임 상세 페이지 -->
+  	<!-- <select id="regGatherDetailpage" parameterType="int" resultType="com.Me_and_U.project.model.RegGatherVO">
+  		SELECT
+  		FROM reggather r, category c, area a
+  		WHERE c.ctgNo
+  	</select> -->
   		
   </mapper>

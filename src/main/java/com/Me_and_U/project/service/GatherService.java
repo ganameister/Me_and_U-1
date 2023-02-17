@@ -24,4 +24,9 @@ public class GatherService implements IGatherService {
 		return dao.listAllGather();
 	}
 
+	@Override
+	public RegGatherVO detailViewRegGather(int reggatherNo) {
+		return dao.detailViewRegGather(reggatherNo);
+	}
+
 }

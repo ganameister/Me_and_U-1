@@ -50,6 +50,10 @@ body{
 	cursor : pointer;
 }
 
+.gatherInfo_sel option[value=""][disabled] {
+	display: none;
+}
+
 #gatherInfo_tbl .gatherInfo_inputLong {
   left : 100px;
   width : 502px;

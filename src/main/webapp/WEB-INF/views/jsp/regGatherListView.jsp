@@ -28,28 +28,25 @@
 				<tr>
 					<th>카테고리</th>
 					<td>
-						<select id="memJoy1" class="detailSel">
-							<option value="a">전체</option>
-							<option value="b">여행</option>
-							<option value="c">운동</option>
-							<option value="d">음식</option>
-							<option value="e">공연</option>
-							<option value="f">취미</option>
-							<option value="g">기타</option>
+						<select id="gatherJoy" class="detailSel">
+							<option value="0">전체</option>
+							<option value="1">여행/아웃도어</option>
+							<option value="2">운동/스포츠</option>
+							<option value="3">게임/오락</option>
+							<option value="4">문화/공연/축제</option>
+							<option value="5">음악/악기</option>
+							<option value="6">기타</option>
 						</select>
 					</td>
 					<th>지역</th>
 					<td>
-						<select id="memJoy2" class="detailSel">
-							<option value="1">전체</option>
-							<option value="2">서울</option>
-							<option value="3">경기</option>
-							<option value="4">충남</option>
-							<option value="5">충북</option>
-							<option value="6">전남</option>
-							<option value="7">전북</option>
-							<option value="8">경남</option>
-							<option value="9">경북</option>
+						<select id="gatherArea" class="detailSel">
+							<option value="0">전체</option>
+							<option value="1">서울</option>
+							<option value="2">경기</option>
+							<option value="3">충청</option>
+							<option value="4">경상</option>
+							<option value="5">전라</option>
 						</select>
 					</td>
 					<th>모임명</th>
@@ -80,7 +77,6 @@
 					<select class="searchSel">
 						<option>최신순</option>
 			            <option>인기순</option>
-			            <option>이름순</option>
 					</select>
 				</div>
 				<div class="newRegister"><input type="button" class="newRegisterBtn" id="newRegisterBtn" value="모임 개설"></div>
@@ -108,11 +104,11 @@
 										</tr>
 										<tr class="content">
 											<th>지역</th>
-											<td><span class="diff_bar"> | </span>&nbsp;${regG.regGatherArea}</td>
+											<td><span class="diff_bar"> | </span>&nbsp;<span value="${regG.areaNo}" id="ararName"></span></td>
 										</tr>
 										<tr class="content">
 											<th>조회수</th>
-											<td><span class="diff_bar"> | </span>&nbsp;100</td>
+											<td><span class="diff_bar"> | </span>&nbsp;${regG.regGatherViewNum}</td>
 										</tr>
 									</table>
 									<div class="gather_progress" >
