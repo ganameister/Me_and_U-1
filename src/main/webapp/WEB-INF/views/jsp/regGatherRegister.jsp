@@ -26,7 +26,7 @@
   		    var height = eval("document."+which+".height");
   		    var temp = 0; 
  		    var max_width= 350;   // 이미지의 가로 최대 크기    
- 		    var max_height = 350; // 이미지의 세로 최대 크기
+ 		    var max_height = 325; // 이미지의 세로 최대 크기
     
   		  	if ( width > max_width ) {  // 업로드하는 이미지의 width가 max_width보다 크다면 너비를 width으로 맞우고 비율에 맞춰 세로값을 변경한다.      
   		   	   height = height/(width / max_width);
@@ -57,7 +57,7 @@
 					<tr>
 						<!-- 이미지 미리보기 영역-->
 						<td rowspan="8">
-							<img id="preview" src="/images/thumbnail.png" width="350" height="350">
+							<img id="preview" src="/images/thumbnail.png" width="350" height="325">
 						</td>
 					</tr>
 					<!-- 높이를 맞추기 위한 빈 행 -->
@@ -76,10 +76,21 @@
 						</td>
 					</tr>
 					<tr>
+						<th>지역</th>
+						<td>
+							<select class="gatherInfo_sel" id="gatherInfo_input5" name="areaNo">
+								<option value="" disabled selected>지역 선택</option>
+								<option value="1">서울</option>
+								<option value="2">경기</option>
+								<option value="3">충청</option>
+								<option value="4">경상</option>
+								<option value="5">전라</option>
+							</select>
+						</td>
 						<th>카테고리</th>
 						<td>
 							<select class="gatherInfo_sel" id="gatherInfo_input3" name="ctgNo">
-								<option value="0" selected>카테고리 선택</option>
+								<option value="" disabled selected>카테고리 선택</option>
 								<option value="1">여행/아웃도어</option>
 								<option value="2">운동/스포츠</option>
 								<option value="3">게임/오락</option>
@@ -87,28 +98,6 @@
 								<option value="5">음악/악기</option>
 								<option value="6">기타</option>
 							</select>
-						</td>
-						<th>하위카테고리</th>
-						<td>
-							<select class="gatherInfo_sel" id="gatherInfo_input4" name="subctgNo">
-								<option value="0" selected>하위카테고리</option>
-								<option value="1">여행/아웃도어</option>
-								<option value="2">운동/스포츠</option>
-								<option value="3">게임/오락</option>
-								<option value="4">문화/공연/축제</option>
-								<option value="5">음악/악기</option>
-								<option value="6">기타</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<th>지역</th>
-						<td>
-							<input type="text" class="gatherInfo_input" id="gatherInfo_input5" name="regGatherArea" placeholder="지역 입력">
-						</td>
-						<th>세부지역</th>
-						<td>
-							<input type="text" class="gatherInfo_input" id="gatherInfo_input6" name="regGatherAreasub" placeholder="세부 지역 입력">
 						</td>
 					</tr>
 					<tr>
@@ -129,16 +118,18 @@
 					<tr>
 						<td>&nbsp;</td>
 					</tr>
+					<!-- 높이를 맞추기 위한 빈 행 -->
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
 					<tr>
 						<td>
 							<div class="filebox">
-							
 								<label for="uploadFileOrigin">이미지 선택</label>
 								<input type="file" id="uploadFileOrigin" name="uploadFileOrigin" value="이미지 선택">
 							</div>
 						</td>
 					</tr>
-					
 				</table>
 				<!-- 이미지 사이즈를 조절해주는 함수 cf) 테이블 밖에 선언해주어야함 -->	
 				<script>imgSize("img");</script>

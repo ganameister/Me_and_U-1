@@ -34,16 +34,16 @@ public class GatherListViewController {
 	}
 	
 	// 정기 모임 상세 페이지 열기
-	@RequestMapping("/regGather/regGatherDetailpage/{regGatherNo}")
-	public String regGatherDetailpage(@PathVariable int regGatherNo, Model model, 
-									  HttpSession session ) {
-		String memId = (String) session.getAttribute("sid");
-		model.addAttribute("memId", memId);
-		
-		// RegGatherVO reggatherDetail = service.detailViewRegGather(regGatherNo);
-		// model.addAttribute("reggatherDetail", reggatherDetail);
-		
-		return "jsp/regGatherDetailpage";
-	}
+//	@RequestMapping("/regGather/regGatherDetailpage/{regGatherNo}")
+//	public String regGatherDetailpage(@PathVariable int regGatherNo, Model model, 
+//									  HttpSession session ) {
+//		String memId = (String) session.getAttribute("sid");
+//		model.addAttribute("memId", memId);
+//		
+//		RegGatherVO regListDetail = service.detailViewRegGather(regGatherNo);
+//		model.addAttribute("regListDetail", regListDetail);
+//		
+//		return "jsp/regGatherDetailpage";
+//	}
 	
 }
