@@ -21,7 +21,7 @@
 		<div id="seconddiv">
 			<table >
 				<tr><td colspan="2">모집기간 : ${reg.regGatherStartDate } ~ ${reg.regGatherEndDate}</td></tr>
-				<tr><td colspan="2">지역 : ${reg.regGatherArea} </td></tr>
+				<tr><td colspan="2">지역 : ${area.areaName} </td></tr>
 				<tr><td colspan="2">카테고리 : ${ctg.ctgNo }</td></tr>
 				<tr><td colspan="2">최대 정원 : ${reg.regGatherMaxNum }</td></tr>
 				<tr><td colspan="2">현재 정원 : ${sub.regGatherNowNum }</td></tr>

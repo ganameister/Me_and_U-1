@@ -64,22 +64,15 @@
 			<!-- 모임 조건 별 검색 및 등록 버튼 -->
 			<div class="listViewTop">
 				<div class="listViewTitle">모두의 버킷리스트 모임</div>
-				<div class="listViewSearchCondition">
-					<input type="button" class="categoryBtn" id="category1" value="전체">
-					<input type="button" class="categoryBtn" id="category2" value="여행">
-					<input type="button" class="categoryBtn" id="category3" value="운동">
-					<input type="button" class="categoryBtn" id="category4" value="게임">
-					<input type="button" class="categoryBtn" id="category5" value="문화">
-					<input type="button" class="categoryBtn" id="category6" value="음악">
-					<input type="button" class="categoryBtn" id="category7" value="기타">
-				</div>
 				<div class="listViewSearchCondition2">
 					<select class="searchSel">
 						<option>최신순</option>
 			            <option>인기순</option>
 					</select>
 				</div>
-				<div class="newRegister"><input type="button" class="newRegisterBtn" id="newRegisterBtn" value="모임 개설"></div>
+				<div class="newRegister">
+					<input type="button" class="newRegisterBtn" id="newRegisterBtn" value="모임 개설">
+				</div>
 			</div>
 			<!-- 모임 리스트 보기 -->
 			<div class="listView">
@@ -89,7 +82,7 @@
 							<a href="#">
 								<div class ="gatherInfo" >
 									<div class="bottom">
-										<input type="button" class="doIt" value="해보기">
+										<input type="button" class="doIt" value="찜하기">
 									</div>
 									<img src="<c:url value='/images/${regG.regGatherImg}' />" class="preview">
 									<div class="gatherName">${regG.regGatherTitle}</div>
@@ -104,7 +97,7 @@
 										</tr>
 										<tr class="content">
 											<th>지역</th>
-											<td><span class="diff_bar"> | </span>&nbsp;<span value="${regG.areaNo}" id="ararName"></span></td>
+											<td><span class="diff_bar"> | </span>&nbsp;${regG.areaName }</td>
 										</tr>
 										<tr class="content">
 											<th>조회수</th>
