@@ -60,22 +60,10 @@
 			$('#gatherInfo_input3').focus();
 			return false;
 		} 
-		// 하위 카테고리를 선택 안했을 때
-		else if($('#gatherInfo_input4').val() == "0") {
-			alert("하위 카테고리를 선택하세요");
-			$('#gatherInfo_input4').focus();
-			return false;
-		} 
 		// 지역 확인
 		else if($('#gatherInfo_input5').val() == "") {
 			alert("지역을 입력하세요");
 			$('#gatherInfo_input5').focus();
-			return false;
-		}
-		// 세부지역 확인
-		else if($('#gatherInfo_input6').val() == "") {
-			alert("세부지역을 입력하세요");
-			$('#gatherInfo_input6').focus();
 			return false;
 		}
 		// 모집일자 확인(시작일)

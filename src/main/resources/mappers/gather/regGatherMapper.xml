@@ -30,16 +30,14 @@
   	</insert>
   	
   	<!-- 정기모임 리스트 보기(최신순) -->
-  	<select id="listAllGather" resultMap="regGatherResult">
-  		SELECT * FROM reggather ORDER BY regGatherNo DESC 
-  		<!-- SELECT 
-  			r.regGatherTitle, r.regGatherStartDate, r.regGatherEndDate,
-  			r.regGatherMaxNum, r.regGatherNowNum, r.regGatherViewNum, r.regGatherViewNum
-  			a.areaName
-  		FROM reggather r, area a
-  		WHERE r.areaNo = a.areaNo AND r.regGatherNo = #{regGatherNo}
-  		ORDER BY regGatherNo DESC -->
-  		
+  	<select id="listAllGather" resultMap="regGatherResult"> 
+  		SELECT 
+		    r.regGatherTitle, r.regGatherStartDate, r.regGatherEndDate,
+		    r.regGatherMaxNum, r.regGatherNowNum, r.regGatherViewNum,
+		    a.areaName
+		FROM reggather r
+		INNER JOIN area a ON r.areaNo = a.areaNo
+		ORDER BY r.regGatherNo DESC
   	</select>
   	
   	<!-- 정기모임 상세 페이지 -->

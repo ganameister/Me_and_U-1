@@ -5,6 +5,7 @@
 
 $(document).ready(function(){    
 	
+	
 	//등록 페이지로 이동
 	$('#newRegisterBtn').on('click',function(){
 		location.href="/regGatherRegister";
