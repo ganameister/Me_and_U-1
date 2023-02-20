@@ -89,4 +89,7 @@ table td{
 	width: 100px;
 	margin-left: 10px;
 }
+.btn {
+	cursor : pointer;
+}
 

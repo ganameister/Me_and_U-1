@@ -24,40 +24,45 @@
 		<!-- 검색창 섹션 -->
 		<section id="searchSec" class="sec">
 			<br><br><br>
-			<table class="searchCondition" >
-				<tr>
-					<th>카테고리</th>
-					<td>
-						<select id="gatherJoy" class="detailSel">
-							<option value="0">전체</option>
-							<option value="1">여행/아웃도어</option>
-							<option value="2">운동/스포츠</option>
-							<option value="3">게임/오락</option>
-							<option value="4">문화/공연/축제</option>
-							<option value="5">음악/악기</option>
-							<option value="6">기타</option>
-						</select>
-					</td>
-					<th>지역</th>
-					<td>
-						<select id="gatherArea" class="detailSel">
-							<option value="0">전체</option>
-							<option value="1">서울</option>
-							<option value="2">경기</option>
-							<option value="3">충청</option>
-							<option value="4">경상</option>
-							<option value="5">전라</option>
-						</select>
-					</td>
-					<th>모임명</th>
-					<td>
-						<div class="search">
-			 				 <input type="text" class="searchName" id="searchName" placeholder="모임명 입력">
-			  				 <img src="<c:url value='/images/search3.png'/>" class="searchImg">
-						</div>
-					</td>
-				</tr>
-			</table><br><br>
+			<form id="ctgSelectForm" action="" method="get">
+            <table class="searchCondition" >
+                <tr>
+                    <th>카테고리</th>
+                    <td>
+                        <select id="gatherJoy" class="detailSel" name="ctgSelectVal">
+                            <option value="0" ${param.ctgSelectVal == '0' ? 'selected' : '' }>전체</option>
+                            <option value="1" ${param.ctgSelectVal == '1' ? 'selected' : '' }>여행/아웃도어</option>
+                            <option value="2" ${param.ctgSelectVal == '2' ? 'selected' : '' }>운동/스포츠</option>
+                            <option value="3" ${param.ctgSelectVal == '3' ? 'selected' : '' }>게임/오락</option>
+                            <option value="4" ${param.ctgSelectVal == '4' ? 'selected' : '' }>문화/공연/축제</option>
+                            <option value="5" ${param.ctgSelectVal == '5' ? 'selected' : '' }>음악/악기</option>
+                            <option value="6" ${param.ctgSelectVal == '6' ? 'selected' : '' }>기타</option>
+                        </select>
+<!--                     </form> -->
+
+                    </td>
+                    <th>지역</th>
+                    <td>
+<!--                     <form id="areaSelectForm" action="" method="get"> -->
+                        <select id="gatherArea" class="detailSel" name="areaSelectVal">
+                            <option value="0" ${param.areaSelectVal == '0' ? 'selected' : '' }>전체</option>
+                            <option value="1" ${param.areaSelectVal == '1' ? 'selected' : '' }>서울</option>
+                            <option value="2" ${param.areaSelectVal == '2' ? 'selected' : '' }>경기</option>
+                            <option value="3" ${param.areaSelectVal == '3' ? 'selected' : '' }>충청</option>
+                            <option value="4" ${param.areaSelectVal == '4' ? 'selected' : '' }>경상</option>
+                            <option value="5" ${param.areaSelectVal == '5' ? 'selected' : '' }>전라</option>
+                        </select>
+                    </td>
+                    <th>모임명</th>
+                    <td>
+                        <div class="search">
+                              <input type="text" class="searchName" id="searchName" placeholder="모임명 입력" name="comNameSearch" value="${temp}" }>
+                               <img src="<c:url value='/images/search3.png'/>" class="searchImg">
+                        </div>
+                    </td>
+                </tr>
+            </table><br><br>
+            </form>
 		</section>
 		<!-- 모임목록 섹션 -->
 		<section class="sec">
@@ -79,7 +84,7 @@
 				<ul class="categoryUl">
 					<c:forEach var="regG" items="${regGList}">
 						<li class="categoryList" value="${regG.ctgNo}">
-							<a href="#">
+							<a href="<c:url value='/regGatherDetailpage/${regG.regGatherNo}'/> ">
 								<div class ="gatherInfo" >
 									<div class="bottom">
 										<input type="button" class="doIt" value="찜하기">
@@ -89,11 +94,9 @@
 									<table class="gather_InfoTbl">
 										<tr class="content">
 											<th>모집기간</th>
-											<td><span class="diff_bar"> | </span>&nbsp;<%-- <fmt:parseDate value="${regG.regGatherStartDate}" var="regGatherStartDate" pattern="yyyy-MM-dd HH:mm"/> --%>
-											${regGatherStartDate} ~ ${regGatherEndDate}
-											<%-- <fmt:parseDate value="${regG.regGatherEndDate}" var="regGatherEndDate" pattern="yyyy-MM-dd HH:mm"/> --%></td>
-											
-											
+											<td><span class="diff_bar"> | </span>&nbsp;
+												${regGatherStartDate} ~ ${regGatherEndDate}
+											</td>
 										</tr>
 										<tr class="content">
 											<th>지역</th>

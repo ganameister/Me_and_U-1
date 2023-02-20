@@ -29,4 +29,27 @@ public class GatherService implements IGatherService {
 		return dao.detailViewRegGather(reggatherNo);
 	}
 
+	@Override
+	public void deleteReg(int regGatherNo) {
+		dao.deleteReg(regGatherNo);
+	}
+	
+	@Override
+    public ArrayList<RegGatherVO> ctgChange(String ctgNo) {
+        // TODO Auto-generated method stub
+        return dao.ctgChange(ctgNo);
+    }
+
+    @Override
+    public ArrayList<RegGatherVO> areaChange(String areaNo) {
+        // TODO Auto-generated method stub
+        return dao.areaChange(areaNo);
+    }
+
+    @Override
+    public ArrayList<RegGatherVO> ctg_areaChange(String ctgNo, String areaNo) {
+        // TODO Auto-generated method stub
+        return dao.ctg_areaChange(ctgNo, areaNo);
+    }
+
 }
