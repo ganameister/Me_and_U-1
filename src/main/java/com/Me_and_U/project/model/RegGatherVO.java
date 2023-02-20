@@ -21,7 +21,14 @@ public class RegGatherVO {
 	
 	// 조인용 데이터
 	private String areaName;
+	private String ctgName;
 	
+	public String getCtgName() {
+		return ctgName;
+	}
+	public void setCtgName(String ctgName) {
+		this.ctgName = ctgName;
+	}
 	public String getAreaName() {
 		return areaName;
 	}

@@ -32,7 +32,7 @@
   	<!-- 정기모임 리스트 보기(최신순) -->
   	<select id="listAllGather" resultMap="regGatherResult"> 
   		SELECT 
-		    r.regGatherTitle, r.regGatherStartDate, r.regGatherEndDate,
+		    r.regGatherNo, r.regGatherTitle, r.regGatherStartDate, r.regGatherEndDate,
 		    r.regGatherMaxNum, r.regGatherNowNum, r.regGatherViewNum,
 		    a.areaName
 		FROM reggather r
@@ -41,10 +41,42 @@
   	</select>
   	
   	<!-- 정기모임 상세 페이지 -->
-  	<!-- <select id="regGatherDetailpage" parameterType="int" resultType="com.Me_and_U.project.model.RegGatherVO">
-  		SELECT
-  		FROM reggather r, category c, area a
-  		WHERE c.ctgNo
-  	</select> -->
+  	<select id="detailViewRegGather" parameterType="int" resultType="com.Me_and_U.project.model.RegGatherVO">
+  		SELECT r.regGatherNo, r.regGatherTitle, r.regGatherImg, r.regGatherStartDate, r.regGatherEndDate,
+  			   a.areaName, c.ctgName, r.regGatherNowNum, r.regGatherMaxNum, r.regGatherDiscript, r.memId
+  		FROM reggather r
+  		LEFT JOIN category c ON r.ctgNo = c.ctgNo
+  			 JOIN area a ON r.areaNo = a.areaNo
+  		WHERE r.regGatherNo=#{regGatherNo}
+  	</select>
+  	
+  	<!-- 정기모임삭제 -->
+  	<delete id="deleteReg"  parameterType="int">
+  		DELETE FROM reggather WHERE regGatherNo = #{regGatherNo}
+  	</delete>
+  	
+  	<!-- 카테고리 변경 -->
+  	<select id="ctgChange" resultMap="regGatherResult">
+          SELECT r.*, a.areaName FROM reggather r
+          INNER JOIN area a 
+          ON r.areaNo = a.areaNo
+          WHERE r.ctgNo=#{ctgNo}
+      </select>
+		
+	<!-- 지역변경 -->	
+     <select id="areaChange" resultMap="regGatherResult">
+         SELECT r.*, a.areaName FROM reggather r
+         INNER JOIN area a 
+         ON r.areaNo = a.areaNo
+         WHERE r.areaNo=#{areaNo}
+     </select>
+
+	<!-- 카테고리 지역 변경 -->
+    <select id="ctg_areaChange" resultMap="regGatherResult">
+          SELECT r.*, a.areaName FROM reggather r
+          INNER JOIN area a 
+          ON r.areaNo = a.areaNo
+          WHERE r.areaNo=#{areaNo} AND r.ctgNo=#{ctgNo}
+      </select>
   		
   </mapper>
