@@ -61,15 +61,15 @@
 				<li class="review_container" value="${reMy.reviewCtg}"> 							
 					<div class ="review-Info" >
 						<!--  리뷰이미지  -->
-						<img  class="review-img" src="<c:url value='/images/${reMy.reviewImg }'/>" >
+						<img  class="review-img" src="<c:url value='/images_upload/${reMy.reviewImg }'/>" >
 																											
 						<!--  리뷰상세박스-글 -->
 						<div class="review_underBox">									
 							<!-- 하트하트 -->
-							<div class="heartbox">							
+							<%-- <div class="heartbox">							
 							<button class="heartBtn" id="heartBtn" ><img src='<c:url value="/images/heart.png"/>' class="heartbtnImg" ></button>		
 							<span class="heartNo">${reMy.reviewHart }</span>
-							</div>
+							</div> --%>
 							<div class="review-title"><span class="title">${revs.reviewTitle }</span></div>			
 							<div class="comment"><span>${reMy.reviewWrite }</span></div>
 							<div align="right">-<span id="reviewmemId">${reMy.memId }</span>-<p id="reviewDate">

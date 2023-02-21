@@ -23,140 +23,114 @@
 							<li id="myp">마이페이지</li>
 							<li id="infoedit">개인정보수정</li>
 							<li id="myreiew">내가 쓴 후기</li>
-							<li id="selectreg">찜한 정기모임</li>
+							<li id="selectreg">찜한 모임</li>
 						</ul>
 					</nav>
 				</section><!-- 마이페이지 목록 -->
 				
 				<section class="sec2">
-				<div class="sebox">
-					<!-- 모두의 버킷리스트 -->
-					<article class="art1">
-						<div class="artnamec"><div id="artname">내가 선택한 모두의 버킷리스트</div><div class="imgdiv"><img src="<c:url value='/images/down.png' />" id="click_button1"></div></div>
-						<c:forEach var="mycbkl" items="${ mycomBKList }" end="0">
-		    			<div id="content">
-								<img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg">
-								<span class="contentText">${mycbkl.combkListTitle } <br>
-                                          ${mycbkl.combkListSubtitle }</span>
-							
-						</div>
-						</c:forEach>
-	    			<div  id="button_content1">
-		    			<c:forEach var="mycbkl" items="${ mycomBKList }" begin="1">
-		    			<div id="content">
-								<img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg">
-								<span class="contentText">${mycbkl.combkListTitle }<br>
-                               ${mycbkl.combkListSubtitle }</span>
-						</div>
-						</c:forEach>
-	    			</div>
-					</article>
-					
-					<!-- 나의 버킷리스트 -->
-					<article  class="art2">
-					<div class="artnamec"><div id="artname">나의 버킷리스트</div><div class="imgdiv"><img src="<c:url value='/images/down.png' />" id="click_button2"></div></div>
-					<c:forEach var="mybkl" items="${ myBKList }"  varStatus="status" end="0">
-		    			<div id="content">
-		    				${mybkl.mybkListWrite }<br>
-						</div>
-	    			
-	    			</c:forEach>
-					<div  id="button_content2">
-					<c:forEach var="mybkl" items="${ myBKList }"  varStatus="status" begin="1">
-		    			<div id="content">
-		    			${mybkl.mybkListWrite }<br>
-						</div>
-	    			
-	    			</c:forEach>
-					</div>
-					</article>
-					
-					<!-- 진행중인 정기모임 -->
-					<article  class="art3">
-					<div class="artnamec"><div id="artname">진행중인 정기모임</div></div>
-						<div class="artdiv">
-							<div >
-								<img src="<c:url value='/asd'/>" id="regImg"><br>
-								1동네FC<br>같이 한달에 한번씩 공차실분들~
+					<div class="sebox">
+						<!-- 모두의 버킷리스트 -->
+						<article class="art1">
+							<div class="artnamec"><div id="artname">내가 선택한 모두의 버킷리스트</div><div class="imgdiv"><img src="<c:url value='/images/down.png' />" id="click_button1"></div></div>
+							<c:forEach var="mycbkl" items="${ mycomBKList }" end="0">
+			    			<div id="content">
+									<img src="<c:url value='/images_upload/${mycbkl.combkListImg }' />" id="combkImg">
+									<span class="contentText">${mycbkl.combkListTitle } <br>
+	                                          ${mycbkl.combkListSubtitle }</span>
+								
 							</div>
-							<div>
-								<img src="<c:url value='/asd'/>" id="regImg"><br>
-								동네FC<br>같이 한달에 한번씩 공차실분들~
+							</c:forEach>
+		    			<div  id="button_content1">
+			    			<c:forEach var="mycbkl" items="${ mycomBKList }" begin="1">
+			    			<div id="content">
+									<img src="<c:url value='/images_upload/${mycbkl.combkListImg }' />" id="combkImg">
+									<span class="contentText">${mycbkl.combkListTitle }<br>
+	                               ${mycbkl.combkListSubtitle }</span>
 							</div>
-							<div>
-								<img src="<c:url value='/asd'/>" id="regImg"><br>
-								동네FC<br>같이 한달에 한번씩 공차실분들~
+							</c:forEach>
+		    			</div>
+						</article>
+						
+						<!-- 나의 버킷리스트 -->
+						<article  class="art2">
+						<div class="artnamec"><div id="artname">나의 버킷리스트</div><div class="imgdiv"><img src="<c:url value='/images/down.png' />" id="click_button2"></div></div>
+						<c:forEach var="mybkl" items="${ myBKList }"  varStatus="status" end="0">
+			    			<div id="content">
+			    				${mybkl.mybkListWrite }<br>
 							</div>
-							<div>
-								<img src="<c:url value='/asd'/>" id="regImg"><br>
-								동네FC<br>같이 한달에 한번씩 공차실분들~
+		    			
+		    			</c:forEach>
+						<div  id="button_content2">
+						<c:forEach var="mybkl" items="${ myBKList }"  varStatus="status" begin="1">
+			    			<div id="content">
+			    			${mybkl.mybkListWrite }<br>
 							</div>
-							<div>
-								<img src="<c:url value='/asd'/>" id="regImg"><br>
-								동네FC<br>같이 한달에 한번씩 공차실분들~
-							</div>
-							<div>
-								<img src="<c:url value='/asd'/>" id="regImg"><br>
-								동네FC<br>같이 한달에 한번씩 공차실분들~
-							</div>
-							<div>
-								<img src="<c:url value='/asd'/>" id="regImg"><br>
-								동네FC<br>같이 한달에 한번씩 공차실분들~
-							</div>
-							
-							
+		    			
+		    			</c:forEach>
 						</div>
-					</article>
-					
-					
-					<!-- 진행중인 번개모임 -->
-					<article  class="art4">
-					<div class="artnamec"><div id="artname">진행중인 번개모임</div></div>
-					<div class="artdiv">
-						 <div>
-							<img src="<c:url value='/asd'/>" id="temImg"><br>
-							동네FC<br>같이 한달에 한번씩 공차실분들~
-						</div> 
-						<div>
-							<img src="<c:url value='/asd'/>" id="temImg"><br>
-							동네FC<br>같이 한달에 한번씩 공차실분들~</div>
-						<div>
-							<img src="<c:url value='/asd'/>" id="temImg"><br>
-							동네FC<br>같이 한달에 한번씩 공차실분들~
-						</div>
-						<div>
-							<img src="<c:url value='/asd'/>" id="temImg"><br>
-							동네FC<br>같이 한달에 한번씩 공차실분들~
-						</div>
-					</div>
-					</article>
+						</article>
+						
+						<!-- 진행중인 모임 -->
+						<article  class="art3">
+						<div class="artnamec"><div id="artname">진행중인 모임</div></div>
+							<div class="artdiv">
+								<div >
+									<img src="<c:url value='/asd'/>" id="regImg"><br>
+									1동네FC<br>같이 한달에 한번씩 공차실분들~
+								</div>
+								<div>
+									<img src="<c:url value='/asd'/>" id="regImg"><br>
+									동네FC<br>같이 한달에 한번씩 공차실분들~
+								</div>
+								<div>
+									<img src="<c:url value='/asd'/>" id="regImg"><br>
+									동네FC<br>같이 한달에 한번씩 공차실분들~
+								</div>
+								<div>
+									<img src="<c:url value='/asd'/>" id="regImg"><br>
+									동네FC<br>같이 한달에 한번씩 공차실분들~
+								</div>
+								<div>
+									<img src="<c:url value='/asd'/>" id="regImg"><br>
+									동네FC<br>같이 한달에 한번씩 공차실분들~
+								</div>
+								<div>
+									<img src="<c:url value='/asd'/>" id="regImg"><br>
+									동네FC<br>같이 한달에 한번씩 공차실분들~
+								</div>
+								<div>
+									<img src="<c:url value='/asd'/>" id="regImg"><br>
+									동네FC<br>같이 한달에 한번씩 공차실분들~
+								</div>
+								
+								
+							</div>
+						</article>
 					</div>
 					<div class="thbox">
 						<table>
-						 <tr>
-							<td>아이디</td><td>${info.memId}</td>
-						</tr>
-						<tr>
-							<td>이름</td><td>${info.memName}</td>
-						</tr>
-						<tr>
-							<td>이메일</td><td>${info.memEmail}</td>
-						</tr>
-						<tr>
-							<td>생년월일</td><td>${info.memBirth}</td>
-						</tr>
-						<tr>
-							<td>주소</td>	<td>${info.memAddress1}${info.memAddress2}</td>
-						</tr>
-						 <tr>
-							<td>관심분야</td><td>${info.memJoy1}</td>
-						</tr> 
-						<tr>
-							<td>전화번호</td><td>${info.memHP}</td>
-						</tr> 
-						 
-						
-
+							<tr>
+								<td>아이디</td><td>${info.memId}</td>
+							</tr>
+							<tr>
+								<td>이름</td><td>${info.memName}</td>
+							</tr>
+							<tr>
+								<td>이메일</td><td>${info.memEmail}</td>
+							</tr>
+							<tr>
+								<td>생년월일</td><td>${info.memBirth}</td>
+							</tr>
+							<tr>
+								<td>주소</td>	<td>${info.memAddress1}${info.memAddress2}</td>
+						    </tr>
+							<tr>
+								<td>관심분야</td><td>${info.memJoy1}</td>
+							</tr> 
+							<tr>
+								<td>전화번호</td><td>${info.memHP}</td>
+							</tr> 
 						</table>
 					</div>
 				</section>

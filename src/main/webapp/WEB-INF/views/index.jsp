@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,9 +31,7 @@
 				<ul class="nav_menu">
 					<li><a href="<c:url value='/myBKList'/>">나의 버킷리스트</a></li>
 					<li><a href="<c:url value='/comBKList/${1 }'/>">모두의 버킷리스트</a></li>
-					<li><a href="">버킷리스트 모임</a></li>
-					<li><a href="">번개 모임</a></li>
-					<li><a href="<c:url value='/regGatherListView'/>">정기 모임</a></li>
+					<li><a href="<c:url value='/regGatherListView'/>">버킷&번개 모임</a></li>
 					<li><a href="<c:url value='/reviewListView'/>">후기</a></li>
 					<li><a href="<c:url value='/noticeListView'/>">고객센터</a></li>
 				</ul>	
@@ -124,217 +123,32 @@
 					</div>
 				</div>
 				<div class="section section-2">
-					<div class="title">번개모임</div>
+					<div class="title">모임</div>
 					<div class="content">
 						<div id="itemListBox">
 							<ul>
-								<li class="itemContainer" value="여행">
-								    <a href="#">
-										<table class="comTable">
-											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/보드게임.jpg'/>" width="320" height="260"></td></tr>
-											<tr><th class="tableText">보드게임 하실분 구합니다</th></tr>
-											<tr height="55"><td>한판 맛있게 쎄려봅시다</td></tr>
-										</table>
-									</a>
-								</li>
-								<li class="itemContainer" value="여행">
-								    <a href="#">
-										<table class="comTable">
-											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/ball.jpg'/>" width="320" height="260"></td></tr>
-											<tr><th class="tableText">축구하실분 급구</th></tr>
-											<tr height="55"><td>너만오면 11명</td></tr>
-										</table>
-									</a>
-								</li>
-								<li class="itemContainer" value="여행">
-								    <a href="#">
-										<table class="comTable">
-											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/사이클1.jpg'/>" width="320" height="260"></td></tr>
-											<tr><th class="tableText">자전거 20KM 같이 타실분</th></tr>
-											<tr height="55"><td>혼자 타면 심심해요 같이 운동해요!</td></tr>
-										</table>
-									</a>
-								</li>
-								<li class="itemContainer" value="여행">
-								    <a href="#">
-										<table class="comTable">
-											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/피파2.jpg'/>" width="320" height="260"></td></tr>
-											<tr><th class="tableText">피파 토너먼트하실분 급구</th></tr>
-											<tr height="55"><td>우승 시 3만원 드립니다</td></tr>
-										</table>
-									</a>
-								</li>
+								<c:forEach var="gather" items="${gatherRec }">
+								    	<li class="itemContainer" value="${gather.ctgNo}">
+								    		<a href="<c:url value='/comBKList/comBkListDetailpage/${gather.regGatherNo}'/>">
+									    		<table class="comTable">
+										    		<tr height="290">
+											    		<td><img class="combkListImg" src="<c:url value='/images_upload/${gather.regGatherImg}' />" width="320" height="290"></td>			               
+											    	</tr>
+											    	<tr>
+											    		<th class="tableText">${gather.regGatherTitle }</th>
+											    	</tr>
+											    	<tr height="46">
+											    		<td class="tableText">${gather.regGatherDiscript }</td>
+											    	</tr>
+									    		</table>
+									    	</a>
+								    	</li>
+							    </c:forEach>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="section section-3">
-					<div class="title">정기모임</div>
-					<div class="content">
-						<div id="itemListBox">
-							<ul>
-								<li class="itemContainer" value="여행">
-								    <a href="#">
-										<table class="comTable">
-											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/헬스.jpg'/>" width="320" height="260"></td></tr>
-											<tr><th class="tableText">매주 3일 헬스하실분</th></tr>
-											<tr height="55"><td>같이 몸과 마음을 수련해보아요</td></tr>
-										</table>
-									</a>
-								</li>
-								<li class="itemContainer" value="여행">
-								    <a href="#">
-										<table class="comTable">
-											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/축구.jpg'/>" width="320" height="260"></td></tr>
-											<tr><th class="tableText">매주 토요일 축구 하실분 구합니다</th></tr>
-											<tr height="55"><td>너만오면 11명</td></tr>
-										</table>
-									</a>
-								</li>
-								<li class="itemContainer" value="여행">
-								    <a href="#">
-										<table class="comTable">
-											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/조깅.jpg'/>" width="320" height="260"></td></tr>
-											<tr><th class="tableText">주말 아침에 10KM 같이 달리실분</th></tr>
-											<tr height="55"><td>혼자 달리면 심심해요 같이 운동해요!</td></tr>
-										</table>
-									</a>
-								</li>
-								<li class="itemContainer" value="여행">
-								    <a href="#">
-										<table class="comTable">
-											<tr height="260"><td><img class="combkListImg" src="<c:url value='/images/맛집.jpg'/>" width="320" height="260"></td></tr>
-											<tr><th class="tableText">주말에 맛집 탐방 주기적으로 가실분 구합니다</th></tr>
-											<tr height="55"><td>음료수 값정도는 내드릴게요.</td></tr>
-										</table>
-									</a>
-								</li>
-							</ul>
-						</div>
-					
-						<%-- <div class="listView">
-							<ul>
-								<li class="categoryList" value="여행">
-									<a href="#">
-										<div class ="gatherInfo" >
-											<div class="bottom">
-												<input type="button" class="doIt" value="해보기">
-											</div>
-											<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
-											<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
-											<table class="gather_InfoTbl">
-												<tr class="content">
-													<th>모집기간</th>
-													<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
-												</tr>
-												<tr class="content">
-													<th>지역</th>
-													<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
-												</tr>
-												<tr class="content">
-													<th>조회수</th>
-													<td><span class="diff_bar"> | </span>&nbsp;100</td>
-												</tr>
-											</table>
-											<div class="gather_progress" >
-												<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
-												<span class="recruit_RateTxt">20명 / 100명</span>
-											</div>											
-										</div>
-									</a>
-								</li>
-								<li class="categoryList" value="여행">
-									<a href="#">
-										<div class ="gatherInfo" >
-											<div class="bottom">
-												<input type="button" value="해보기">
-											</div>
-											<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
-											<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
-											<table class="gather_InfoTbl">
-												<tr class="content">
-													<th>모집기간</th>
-													<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
-												</tr>
-												<tr class="content">
-													<th>지역</th>
-													<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
-												</tr>
-												<tr class="content">
-													<th>조회수</th>
-													<td><span class="diff_bar"> | </span>&nbsp;100</td>
-												</tr>
-											</table>
-											<div class="gather_progress" >
-												<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
-												<span class="recruit_RateTxt">20명 / 100명</span>
-											</div>											
-										</div>
-									</a>
-								</li>
-								<li class="categoryList" value="여행">
-									<a href="#">
-										<div class ="gatherInfo" >
-											<div class="bottom">
-												<input type="button" value="해보기">
-											</div>
-											<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
-											<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
-											<table class="gather_InfoTbl">
-												<tr class="content">
-													<th>모집기간</th>
-													<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
-												</tr>
-												<tr class="content">
-													<th>지역</th>
-													<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
-												</tr>
-												<tr class="content">
-													<th>조회수</th>
-													<td><span class="diff_bar"> | </span>&nbsp;100</td>
-												</tr>
-											</table>
-											<div class="gather_progress" >
-												<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
-												<span class="recruit_RateTxt">20명 / 100명</span>
-											</div>											
-										</div>
-									</a>
-								</li>
-								<li class="categoryList" value="여행">
-									<a href="#">
-										<div class ="gatherInfo" >
-											<div class="bottom">
-												<input type="button" value="해보기">
-											</div>
-											<img src="<c:url value='/images/패러글라이딩타보기.jpg' />" class="preview">
-											<div class="gatherName">패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///패러글라이딩타보기///</div>
-											<table class="gather_InfoTbl">
-												<tr class="content">
-													<th>모집기간</th>
-													<td><span class="diff_bar"> | </span>&nbsp;2023-01-19 00시 ~ 2023-01-19 19시</td>
-												</tr>
-												<tr class="content">
-													<th>지역</th>
-													<td><span class="diff_bar"> | </span>&nbsp;강남구</td>
-												</tr>
-												<tr class="content">
-													<th>조회수</th>
-													<td><span class="diff_bar"> | </span>&nbsp;100</td>
-												</tr>
-											</table>
-											<div class="gather_progress" >
-												<span class="progressBox"><progress value="20" min="0" max="100" class="recruit_Rate" id="recruit_Rate"></progress></span>
-												<span class="recruit_RateTxt">20명 / 100명</span>
-											</div>											
-										</div>
-									</a>
-								</li>
-							</ul>
-						</div> --%>
-					</div>
-				</div>
-				<div class="section section-4">
 					<div class="title">후기</div>
 					<div class="content">
 						<div id="review_warp">	
@@ -350,10 +164,10 @@
 												<!--  리뷰상세박스-글 -->
 												<div class="review_underBox">									
 													<!-- 하트하트 -->
-													<div class="heartbox">							
-													<button class="heartBtn" id="heartBtn" ><img src='<c:url value="/images/heart.png"/>' class="heartbtnImg" ></button>		
-													<span class="heartNo">${revs.reviewHart }</span>
-													</div>
+													<%-- <div class="heartbox">							
+														<button class="heartBtn" id="heartBtn" ><img src='<c:url value="/images/heart.png"/>' class="heartbtnImg" ></button>		
+														<span class="heartNo"></span>
+													</div> --%>
 													<div class="review-title"><span class="reviewtitle">${revs.reviewTitle }</span></div>			
 													<div class="comment"><span>${revs.reviewWrite }</span></div>
 													<div align="right">-<span id="reviewmemId">${revs.memId }</span>-<p id="reviewDate">
@@ -365,6 +179,12 @@
 								</ol>												
 							</div>
 						</div>
+					</div>
+				</div>
+				<div class="section section-4">
+					<div class="title">BUCKETLIST</div>
+					<div class="content">
+						<img src="<c:url value='/images/모두의버킷리스트1.jpg'/>">
 					</div>
 				</div>
 			</div>

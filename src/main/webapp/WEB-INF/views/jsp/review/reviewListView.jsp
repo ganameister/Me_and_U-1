@@ -75,9 +75,9 @@
 								<!--  리뷰상세박스-글 -->
 								<div class="review_underBox">									
 									<!-- 하트하트 -->
-									<div class="heartbox">							
+									<%-- <div class="heartbox">							
 									<button class="heartBtn" id="heartBtn" ><img src='<c:url value="/images/heart.png"/>' class="heartbtnImg" ></button>									
-									<span class="heartNo" >${rev.reviewHart }</span>
+									<span class="heartNo" >${rev.reviewHart }</span> --%>
 									 <c:if test="${sessionScope.sid == rev.memId}">
                                         <button id="deleteReviewBTN" class="deleteReviewBTN" value="${rev.reviewNo}">삭제</button>
                                        <!-- 수정 -->
@@ -85,7 +85,7 @@
                                         <button id="updateReviewBTN" class="updateReviewBTN" value="${rev.reviewNo}" >수정</button></a>
                                         <%-- <input type="button" id="updateReviewBTN" data-reviewListNo= "${rev.reviewNo}" value="수정"> --%>
                                     </c:if>									 
-									</div>
+									<!-- </div> -->
 									<div class="review-title"><span class="title">${rev.reviewTitle }</span></div>			
 									<div class="comment"><span>${rev.reviewWrite }</span></div>
 									<div align="right">-<span id="reviewmemId">${rev.memId }</span>-<p id="reviewDate">

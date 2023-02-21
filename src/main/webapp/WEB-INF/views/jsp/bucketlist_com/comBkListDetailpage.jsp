@@ -24,7 +24,7 @@
 		</div>
 		<div id="firstbox">
 			<div id="firstdiv">
-				<img src="<c:url value='/images/${combklistDetail.combkListImg }'/>" id="comBKListImg">
+				<img src="<c:url value='/images_upload/${combklistDetail.combkListImg }'/>" id="comBKListImg">
 			</div>
 			<div id="seconddiv">
 				<table >
