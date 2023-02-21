@@ -16,4 +16,6 @@ public interface IGatherService {
 	public ArrayList<RegGatherVO > ctgChange(String ctgNo);    // 카테고리 체인지
     public ArrayList<RegGatherVO > areaChange(String areaNo);    // 지역 체인지
     public ArrayList<RegGatherVO > ctg_areaChange(String ctgNo, String areaNo);    // 둘다변경
+    
+    public ArrayList<RegGatherVO> listRecentGatherList(); // 메인 페이지 최신순
 }

@@ -17,4 +17,6 @@ public interface IGatherDAO {
     public ArrayList<RegGatherVO > areaChange(String areaNo);    // 지역 체인지
     public ArrayList<RegGatherVO > ctg_areaChange(String ctgNo, String areaNo);    // 둘다변경
 	public void deleteReg(int regGatherNo);	// 정기 모임 삭제
+	
+	public ArrayList<RegGatherVO> listRecentGatherList(); // 메인 페이지 최신순
 }

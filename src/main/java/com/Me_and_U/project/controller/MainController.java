@@ -8,8 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.Me_and_U.project.model.ComBKListVO;
+import com.Me_and_U.project.model.RegGatherVO;
 import com.Me_and_U.project.model.ReviewVO;
 import com.Me_and_U.project.service.BKListService;
+import com.Me_and_U.project.service.GatherService;
 import com.Me_and_U.project.service.ReviewService;
 
 @Controller
@@ -18,6 +20,8 @@ public class MainController {
 	ReviewService rvservice;
 	@Autowired
 	BKListService bkservice;
+	@Autowired
+	GatherService gtservice;
 	
 	// index 페이지 열기
 	@RequestMapping("/")
@@ -28,6 +32,9 @@ public class MainController {
 		
 		ArrayList<ComBKListVO> combkRec = bkservice.listRecentComBKList();
 		model.addAttribute("combkRec",combkRec);
+		
+		ArrayList<RegGatherVO> gatherRec = gtservice.listRecentGatherList();
+		model.addAttribute("gatherRec", gatherRec);
 		
 		return "index";
 	}

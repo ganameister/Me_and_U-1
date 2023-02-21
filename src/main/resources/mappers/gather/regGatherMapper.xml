@@ -77,6 +77,14 @@
           INNER JOIN area a 
           ON r.areaNo = a.areaNo
           WHERE r.areaNo=#{areaNo} AND r.ctgNo=#{ctgNo}
-      </select>
+    </select>
+      
+    <!-- Main 페이지 -->
+	<!-- 최신순 4개 출력 -->
+	<select id="listRecentGatherList" resultMap="regGatherResult">
+		SELECT * 
+		FROM reggather
+		ORDER BY regGatherNo DESC LIMIT 0,4
+	</select>
   		
   </mapper>

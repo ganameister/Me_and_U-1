@@ -52,4 +52,9 @@ public class GatherService implements IGatherService {
         return dao.ctg_areaChange(ctgNo, areaNo);
     }
 
+	@Override
+	public ArrayList<RegGatherVO> listRecentGatherList() {
+		return dao.listRecentGatherList();
+	}
+
 }

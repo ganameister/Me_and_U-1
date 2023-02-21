@@ -232,7 +232,7 @@
   	
   	
   	<!-- Main 페이지 -->
-	<!-- 최신순 3개 출력 -->
+	<!-- 최신순 4개 출력 -->
 	<select id="listRecentComBKList" resultMap="combklistResult">
 		SELECT * 
 		FROM combklist
