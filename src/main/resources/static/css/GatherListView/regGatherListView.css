@@ -1,4 +1,3 @@
-@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 @charset "UTF-8";
@@ -10,7 +9,7 @@ body{
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* 영역 체크용 
+/* �쁺�뿭 泥댄겕�슜 
 section {
 	border:1px solid red;
 }
@@ -38,7 +37,7 @@ div{
 	
 }
 
-/* 검색창 테이블 */
+/* 寃��깋李� �뀒�씠釉� */
 .searchCondition th{
 	align : left;
 	width : 100px;
@@ -53,7 +52,7 @@ div{
 	font-size: 16px;
 }
 
-/* 검색창 셀렉트  */
+/* 寃��깋李� ���젆�듃  */
 .detailSel {
 	text-align : left;
 	width: 100px; 
@@ -72,7 +71,7 @@ select::-ms-expand {
 	display: none;
 }
 
-/* 검색창 부분만(아이콘 이미지 삽입) */
+/* 寃��깋李� 遺�遺꾨쭔(�븘�씠肄� �씠誘몄� �궫�엯) */
 .search {
   position: relative;
   width: 300px;
@@ -100,10 +99,10 @@ input {
   margin-top : 2px;
   cursor : pointer;
 }
-/* 검색창 부분 끝 */
+/* 寃��깋李� 遺�遺� �걹 */
 
 
-/* 개설된 모임 목록 보여주는 Top */
+/* 媛쒖꽕�맂 紐⑥엫 紐⑸줉 蹂댁뿬二쇰뒗 Top */
 .listViewTop{
     height: 30px;
     display : block;
@@ -188,19 +187,19 @@ input {
     cursor : pointer;
 }
 
-/* 모임 리스트 div */
+/* 紐⑥엫 由ъ뒪�듃 div */
 .listView{
 	margin-top: 50px;   
     margin-bottom: 100px;
     max-width: 1300px;
-	display:table;
 }
 .categoryUl {
-	font-size:0;	/* ul에 비어있는 줄의 간격을 줄일 수 있음 */
+	font-size:0;	/* ul�뿉 鍮꾩뼱�엳�뒗 以꾩쓽 媛꾧꺽�쓣 以꾩씪 �닔 �엳�쓬 */
 	padding : 0px;	
 	margin : 0px;
-	margin-left : 3%;	/* 내 화면용 ?  */
+	margin-left : 3%;	/* �궡 �솕硫댁슜 ?  */
     list-style:none;
+    display:inline;
 }
 
 .categoryList{
@@ -219,10 +218,10 @@ input {
 	border: 1px solid lightgray;
 	border-radius: 8px;
 	position : relative;
-	overflow : hidden;	/* 요소 외부영역 가리기 */
+	overflow : hidden;	/* �슂�냼 �쇅遺��쁺�뿭 媛�由ш린 */
 }
 
- .categoryList > a .preview ::after{	/*  가상요소 삽입 */
+ .categoryList > a .preview ::after{	/*  媛��긽�슂�냼 �궫�엯 */
 	content:'';
 	display:block;
 	position:absolute;
@@ -295,8 +294,8 @@ input {
 	font-weight : bold;
 	text-align : left;
 	border-bottom : 1px solid lightgray;
-	overflow:hidden; 		/* 글자 자르기 */
-	text-overflow:ellipsis; /* 말줄임표(...) 표시 */
+	overflow:hidden; 		/* 湲��옄 �옄瑜닿린 */
+	text-overflow:ellipsis; /* 留먯쨪�엫�몴(...) �몴�떆 */
 	word-wrap: break-word;
 	display: -webkit-box;
   	-webkit-line-clamp: 2;
@@ -326,9 +325,9 @@ input {
 .gather_InfoTbl td {
 	width : 210px;
 	display : block;
-	white-space:nowrap;		/* 줄바꿈 방지 */
-	text-overflow:ellipsis; /* 말줄임표(...) 표시 */
-	overflow:hidden; 		/* 글자 자르기 */
+	white-space:nowrap;		/* 以꾨컮轅� 諛⑹� */
+	text-overflow:ellipsis; /* 留먯쨪�엫�몴(...) �몴�떆 */
+	overflow:hidden; 		/* 湲��옄 �옄瑜닿린 */
 }
 
 .infoList {
@@ -344,9 +343,9 @@ input {
 	display : inline-block;
 	width : 210px;
 	font-weight : normal;
-	white-space:nowrap;		/* 줄바꿈 방지 */
-	text-overflow:ellipsis; /* 말줄임표(...) 표시 */
-	overflow:hidden; 		/* 글자 자르기 */
+	white-space:nowrap;		/* 以꾨컮轅� 諛⑹� */
+	text-overflow:ellipsis; /* 留먯쨪�엫�몴(...) �몴�떆 */
+	overflow:hidden; 		/* 湲��옄 �옄瑜닿린 */
 }
 
 .diff_bar{
@@ -356,9 +355,7 @@ input {
 
 .categoryList{
 	float : left;
-	margin-left : -20px;
-	margin-right : 57px;
-	margin-bottom : 20px;	
+	padding:18px;
 }
 
 .progressBox{
@@ -367,7 +364,7 @@ input {
 	z-index: 2;
 }
 
-/* 모집 정원 그래프 */
+/* 紐⑥쭛 �젙�썝 洹몃옒�봽 */
 
 progress {
    background-color: #f3f3f3;
@@ -377,12 +374,12 @@ progress {
    border-radius: 6px;
    margin-top : 4px;
 }
-progress::-webkit-progress-bar {	/* 프로그래스 바 배경 */
+progress::-webkit-progress-bar {	/* �봽濡쒓렇�옒�뒪 諛� 諛곌꼍 */
     background:#f0f0f0;
     border-radius:8px;
     box-shadow: inset 3px 3px 10px #ccc;
 }
-progress::-webkit-progress-value {	/* 프로그레스 바의 진행 요소(내부 색칠 그래프) */
+progress::-webkit-progress-value {	/* �봽濡쒓렇�젅�뒪 諛붿쓽 吏꾪뻾 �슂�냼(�궡遺� �깋移� 洹몃옒�봽) */
     border-radius:8px;
     background: #50655E;
     background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);
@@ -402,7 +399,7 @@ progress::-webkit-progress-value {	/* 프로그레스 바의 진행 요소(내�
    z-index : 3;
 }
 
-/* 추가 */
+/* 異붽� */
 .recruit_RateTxt{
 	position: absolute;
 	z-index: 3;
