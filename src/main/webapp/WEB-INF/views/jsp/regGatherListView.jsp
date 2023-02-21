@@ -89,7 +89,7 @@
 									<div class="bottom">
 										<input type="button" class="doIt" value="찜하기">
 									</div>
-									<img src="<c:url value='/images/${regG.regGatherImg}' />" class="preview">
+									<img src="<c:url value='/images_upload/${regG.regGatherImg}' />" class="preview">
 									<div class="gatherName">${regG.regGatherTitle}</div>
 									<table class="gather_InfoTbl">
 										<tr class="content">
