@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>정기 모임 리스트</title>
+		<title>버킷 & 번개 모임</title>
 		<!-- Header -->
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 		<!--//Header  -->
@@ -68,7 +68,7 @@
 		<section class="sec">
 			<!-- 모임 조건 별 검색 및 등록 버튼 -->
 			<div class="listViewTop">
-				<div class="listViewTitle">모두의 버킷리스트 모임</div>
+				<div class="listViewTitle">버킷 & 번개 모임</div>
 				<div class="listViewSearchCondition2">
 					<select class="searchSel">
 						<option>최신순</option>

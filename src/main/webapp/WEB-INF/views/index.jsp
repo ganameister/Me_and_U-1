@@ -129,7 +129,7 @@
 							<ul>
 								<c:forEach var="gather" items="${gatherRec }">
 								    	<li class="itemContainer" value="${gather.ctgNo}">
-								    		<a href="<c:url value='/comBKList/comBkListDetailpage/${gather.regGatherNo}'/>">
+								    		<a href="<c:url value='/regGatherDetailpage/${gather.regGatherNo}'/>">
 									    		<table class="comTable">
 										    		<tr height="290">
 											    		<td><img class="combkListImg" src="<c:url value='/images_upload/${gather.regGatherImg}' />" width="320" height="290"></td>			               
