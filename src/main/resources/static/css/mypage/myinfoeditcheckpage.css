@@ -15,7 +15,7 @@ body::-webkit-scrollbar {
 .sec1{
 	display: flex;
 	float: left;
-	margin-left: 5%;
+	margin-left:4.33%;
 	margin-top: 100px;
 	margin-right: 5%;
 	
@@ -48,7 +48,7 @@ font-weight: bold;
 
 .sec2{
 	display:inline-block;
-	width:1288.8px;
+	width:1304.6px;
 	background-color: var(--color4);
 	border-left: 1px solid;
 	height: 800px;
