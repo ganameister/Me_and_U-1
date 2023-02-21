@@ -13,7 +13,7 @@
  		<result property="regGatherMaxNum" column="regGatherMaxNum"/>
  		<result property="regGatherNowNum" column="regGatherNowNum"/>
  		<result property="regGatherViewNum" column="regGatherViewNum"/>
- 		<result property="regGatherImg" column="regGatherViewNum"/>
+ 		<result property="regGatherImg" column="regGatherImg"/>
  		<result property="memId" column="memId"/>
  		<result property="ctgNo" column="ctgNo"/>
  		<result property="areaNo" column="areaNo"/>
