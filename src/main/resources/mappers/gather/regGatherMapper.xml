@@ -33,7 +33,7 @@
   	<select id="listAllGather" resultMap="regGatherResult"> 
   		SELECT 
 		    r.regGatherNo, r.regGatherTitle, r.regGatherStartDate, r.regGatherEndDate,
-		    r.regGatherMaxNum, r.regGatherNowNum, r.regGatherViewNum,
+		    r.regGatherMaxNum, r.regGatherNowNum, r.regGatherViewNum, r.regGatherImg,
 		    a.areaName
 		FROM reggather r
 		INNER JOIN area a ON r.areaNo = a.areaNo

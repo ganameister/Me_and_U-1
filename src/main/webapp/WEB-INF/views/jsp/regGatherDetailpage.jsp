@@ -17,7 +17,7 @@
 	<div id="firstbox">
 		<div id="firstdiv">
 			모임명 : ${reg.regGatherTitle }<br>
-			<img src="<c:url value='${reg.regGatherImg }'/>" id="GatherImg">
+			<img src="<c:url value='/images_upload/${reg.regGatherImg}'/>" id="GatherImg">
 		</div>
 		<div id="seconddiv">
 			<table >
