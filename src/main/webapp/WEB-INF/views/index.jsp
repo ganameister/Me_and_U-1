@@ -183,7 +183,7 @@
 				</div>
 				<div class="section section-4">
 					<div class="title">BUCKETLIST</div>
-					<div>
+					<div class="content">
 						<img src="<c:url value='/images/모두의버킷리스트1.jpg'/>">
 					</div>
 				</div>
