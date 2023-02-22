@@ -15,7 +15,7 @@
 	  		<result property="memZipcode"  column="memZipcode"  />
 	  		<result property="memAddress1"  column="memAddress1"  />
 	  		<result property="memAddress2"  column="memAddress2"  />
-	  		<result property="ctgmemImgNo"  column="memImg"  />
+	  		<result property="memBirth"  column="memBirth"  />
 	  		<result property="memJoy1"  column="memJoy1"  />
 	  		<result property="memJoy2"  column="memJoy2"  />
 	  		<result property="memJoinDate"  column="memJoinDate"  />

@@ -15,7 +15,6 @@ public class MemberVO {
 	private String memZipcode;
 	private String memAddress1;
 	private String memAddress2;
-	private String memImg;
 	private String memJoy1;	// 관심 분야
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date memJoinDate;
@@ -73,12 +72,6 @@ public class MemberVO {
 	}
 	public void setMemAddress2(String memAddress2) {
 		this.memAddress2 = memAddress2;
-	}
-	public String getMemImg() {
-		return memImg;
-	}
-	public void setMemImg(String memImg) {
-		this.memImg = memImg;
 	}
 	public String getMemJoy1() {
 		return memJoy1;
