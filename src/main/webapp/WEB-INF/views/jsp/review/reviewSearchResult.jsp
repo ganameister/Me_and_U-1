@@ -26,7 +26,7 @@
 							<div class ="review-Info" >
 								<!--  리뷰이미지  -->
 																								
-									<img  class="review-img" src="<c:url value='/images/${rev.reviewImg }'/>" >
+									<img  class="review-img" src="<c:url value='/images_upload/${rev.reviewImg }'/>" >
 								<!--  리뷰상세박스-글 -->
 								<div class="review_underBox">									
 									<!-- 하트하트 -->
