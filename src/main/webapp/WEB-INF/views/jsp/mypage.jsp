@@ -36,6 +36,7 @@
 							<c:forEach var="mycbkl" items="${ mycomBKList }" end="0">
 			    			<div id="content">
 									<img src="<c:url value='/images_upload/${mycbkl.combkListImg }' />" id="combkImg">
+									<%-- <img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg"> --%>
 									<span class="contentText">${mycbkl.combkListTitle } <br>
 	                                          ${mycbkl.combkListSubtitle }</span>
 								
@@ -45,6 +46,7 @@
 			    			<c:forEach var="mycbkl" items="${ mycomBKList }" begin="1">
 			    			<div id="content">
 									<img src="<c:url value='/images_upload/${mycbkl.combkListImg }' />" id="combkImg">
+									<%-- <img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg"> --%>
 									<span class="contentText">${mycbkl.combkListTitle }<br>
 	                               ${mycbkl.combkListSubtitle }</span>
 							</div>
@@ -66,7 +68,6 @@
 			    			<div id="content">
 			    			${mybkl.mybkListWrite }<br>
 							</div>
-		    			
 		    			</c:forEach>
 						</div>
 						</article>
@@ -75,37 +76,17 @@
 						<article  class="art3">
 						<div class="artnamec"><div id="artname">진행중인 모임</div></div>
 							<div class="artdiv">
-								<div >
-									<img src="<c:url value='/asd'/>" id="regImg"><br>
-									1동네FC<br>같이 한달에 한번씩 공차실분들~
-								</div>
-								<div>
-									<img src="<c:url value='/asd'/>" id="regImg"><br>
-									동네FC<br>같이 한달에 한번씩 공차실분들~
-								</div>
-								<div>
-									<img src="<c:url value='/asd'/>" id="regImg"><br>
-									동네FC<br>같이 한달에 한번씩 공차실분들~
-								</div>
-								<div>
-									<img src="<c:url value='/asd'/>" id="regImg"><br>
-									동네FC<br>같이 한달에 한번씩 공차실분들~
-								</div>
-								<div>
-									<img src="<c:url value='/asd'/>" id="regImg"><br>
-									동네FC<br>같이 한달에 한번씩 공차실분들~
-								</div>
-								<div>
-									<img src="<c:url value='/asd'/>" id="regImg"><br>
-									동네FC<br>같이 한달에 한번씩 공차실분들~
-								</div>
-								<div>
-									<img src="<c:url value='/asd'/>" id="regImg"><br>
-									동네FC<br>같이 한달에 한번씩 공차실분들~
-								</div>
 								
-								
+						<c:forEach var="reg" items="${ myregGather }" >
+			    			<div id="content">
+			    			<img src="<c:url value='/images_upload/${reg.regGatherImg }' />" id="combkImg">
+			    			${reg.regGatherTitle}<br>
+			    			${reg.regGatherDiscript}
 							</div>
+		    			</c:forEach>
+								
+								
+							</div><!-- artdiv -->
 						</article>
 					</div>
 					<div class="thbox">

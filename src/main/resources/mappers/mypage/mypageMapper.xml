@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.Me_and_U.project.dao.IMypageDAO">
+
+<resultMap id="mypageResult" type="com.Me_and_U.project.model.MypageVO" >
+        <result property="myregGatherNo" column="myregGatherNo"  />
+        <result property="regGatherNo" column="regGatherNo"  />
+        <result property="memId" column="memId"  />
+</resultMap>
+
+
+
+	<!--  모임에서 목록 가져오기 -->
+ 	<insert id="insertRegGatherInMypage" parameterType="com.Me_and_U.project.model.MypageVO">
+ 		INSERT INTO myreggather( regGatherNo,memId )
+ 		VALUES( #{regGatherNo},#{memId} )
+ 	</insert>
+ 	
+	
+	<!--  목록 출력 -->
+  	<select id="myRegGatherView" parameterType="string" resultType="com.Me_and_U.project.model.MypageVO">
+          SELECT m.myregGatherNo, r.regGatherTitle,r.regGatherDiscript,r.regGatherImg, r.regGatherNo, m.memId
+          FROM reggather r, myreggather m
+          WHERE r.regGatherNo = m.regGatherNo AND m.memId = #{memId}
+          ORDER BY m.myregGatherNo
+    </select>
+    
+    	<!--  중복 체크 -->
+ 	<select id="checkRegGatherInMypage" parameterType="hashmap" resultType="int">
+ 		SELECT COUNT(*)
+ 		FROM myreggather
+ 		WHERE regGatherNo = #{regGatherNo} AND memId = #{memId}
+ 	</select>
+ 	
+ 	
+    
+</mapper>
