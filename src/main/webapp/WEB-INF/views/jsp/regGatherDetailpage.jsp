@@ -44,7 +44,7 @@
 		<div id="text">
 			모임상세내용
 			<div  id="detailDiscript"> ${reg.regGatherDiscript }</div><br>
-				<input type="button" class="btn" value="신청">
+				<input type="button" class="btn" data-regGatherNo= "${reg.regGatherNo}" id="TryBTN" value="신청" >
 				<c:if test="${sessionScope.sid == reg.memId}">
 					<input type="button" class="btn" value="수정">
 					<input type="button" class="btn" value="삭제" id="deleteRegBTN" data-regGatherNo= "${reg.regGatherNo}">
