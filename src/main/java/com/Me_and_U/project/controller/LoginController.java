@@ -49,7 +49,7 @@ public class LoginController {
 		return result;
 	}
 	
-	//로그아웃
+	//로그아웃 
 	@RequestMapping("/member/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();

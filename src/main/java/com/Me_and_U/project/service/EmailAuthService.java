@@ -19,7 +19,7 @@ public class EmailAuthService {
 	private EmailAutoConfiguration mailConfig;
 	private int authNumber; 
 	
-	// 랜덤 난수 생성
+	// 랜덤 난수 생성 
 	public void RandomNumber() {
 		Random r = new Random();
 		int checkNum = r.nextInt(888888) + 111111;
