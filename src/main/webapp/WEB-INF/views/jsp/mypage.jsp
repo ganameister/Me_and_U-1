@@ -36,7 +36,7 @@
 							<c:forEach var="mycbkl" items="${ mycomBKList }" end="0">
 			    			<div id="content">
 									<img src="<c:url value='/images_upload/${mycbkl.combkListImg }' />" id="combkImg">
-									<%-- <img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg"> --%>
+									 <%-- <img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg"> --%>
 									<span class="contentText">${mycbkl.combkListTitle } <br>
 	                                          ${mycbkl.combkListSubtitle }</span>
 								
@@ -46,7 +46,7 @@
 			    			<c:forEach var="mycbkl" items="${ mycomBKList }" begin="1">
 			    			<div id="content">
 									<img src="<c:url value='/images_upload/${mycbkl.combkListImg }' />" id="combkImg">
-									<%-- <img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg"> --%>
+									<%-- <img src="<c:url value='/images/${mycbkl.combkListImg }' />" id="combkImg"> --%> 
 									<span class="contentText">${mycbkl.combkListTitle }<br>
 	                               ${mycbkl.combkListSubtitle }</span>
 							</div>
@@ -79,9 +79,11 @@
 								
 						<c:forEach var="reg" items="${ myregGather }" >
 			    			<div id="content">
+			    			<%-- <img src="<c:url value='/images/${reg.regGatherImg }' />" id="combkImg"> --%>
 			    			<img src="<c:url value='/images_upload/${reg.regGatherImg }' />" id="combkImg">
 			    			${reg.regGatherTitle}<br>
-			    			${reg.regGatherDiscript}
+			    			<div id="Discript">${reg.regGatherDiscript}</div>
+			    			
 							</div>
 		    			</c:forEach>
 								

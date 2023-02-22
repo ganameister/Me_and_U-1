@@ -206,4 +206,22 @@ table {
 	width: 160px;
 	height: 160px;
 }
-
+#Discript{
+	width:200px;
+	height:100px;
+	overflow-x:auto;
+}
+#Discript::-webkit-scrollbar {
+    width: 10px;
+  }
+#Discript::-webkit-scrollbar-thumb {
+    background-color: var(--color5);
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+#Discript::-webkit-scrollbar-track {
+    background-color: #ccd4c7;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
