@@ -16,7 +16,7 @@ public class EmailAuthController {
 	@Autowired
 	private MemberService memberService;
 	
-	// 이메일 인증
+	// 이메일 인증 
 	@ResponseBody
 	@RequestMapping("/emailCheck")
 	public String emailCheck(@RequestParam("email") String email) {
